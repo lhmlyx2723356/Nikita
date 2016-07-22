@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <dbtype>SQL Server</dbtype>
+  <connstr>server=(local);uid=sa;pwd=12345678;database=JewelryFranchiseeSystem;</connstr>
+  <genway>0</genway>
+  <namespace>Niunan.Test</namespace>
+  <front></front>
+  <output>D:\WorkSpace\gencode</output>
+</Config>

@@ -1,0 +1,3 @@
+Nikita.WinForm.ExtendControl 一个开源富文本编辑控件
+地址 https://github.com/UweKeim/Nikita.WinForm.ExtendControl
+http://www.cnblogs.com/wuhuacong/p/3520246.html

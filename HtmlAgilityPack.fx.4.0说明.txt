@@ -1,0 +1,2 @@
+HtmlAgilityPack.fx.4.0 是一个开源的解析HTML组件，此项目为.Net4.0版本
+开源地址：http://htmlagilitypack.codeplex.com/

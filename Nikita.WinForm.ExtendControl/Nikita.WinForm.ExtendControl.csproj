@@ -1,0 +1,1356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB3E8DD9-36C0-4163-B01F-04F09C23738A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nikita.WinForm.ExtendControl</RootNamespace>
+    <AssemblyName>Nikita.WinForm.ExtendControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\Nikita.DLL\ZetaHtmlEditControl\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HttpServer">
+      <HintPath>..\Nikita.DLL\ZetaHtmlEditControl\HttpServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SgmlReaderDll">
+      <HintPath>..\Nikita.DLL\ZetaHtmlEditControl\SgmlReaderDll.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckedComboBox\CCBoxItem.cs" />
+    <Compile Include="CheckedComboBox\CheckedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CollapseDataGridView\CModule.cs" />
+    <Compile Include="CollapseDataGridView\DetailControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CollapseDataGridView\MasterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataNavigatorControl\DataNavigator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataNavigatorControl\DataNavigator.Designer.cs">
+      <DependentUpon>DataNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataVisualControl\TimeLine\EventItem.cs" />
+    <Compile Include="DataVisualControl\TimeLine\VerticalTimeLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataVisualControl\TimeLine\VerticalTimeLine.Designer.cs">
+      <DependentUpon>VerticalTimeLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\DockContentEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\AutoHideStripBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockAreasEditor.cs" />
+    <Compile Include="Docking\DockContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\DockContentCollection.cs" />
+    <Compile Include="Docking\DockContentEventArgs.cs" />
+    <Compile Include="Docking\DockContentHandler.cs" />
+    <Compile Include="Docking\DockOutlineBase.cs" />
+    <Compile Include="Docking\DockPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPane.SplitterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPaneCaptionBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPaneCollection.cs" />
+    <Compile Include="Docking\DockPanel.Appearance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.AutoHideWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.DockDragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.DragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.FocusManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.MdiClientController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.Persistor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanel.SplitterDragHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockPanelExtender.cs" />
+    <Compile Include="Docking\DockPanelSkin.cs" />
+    <Compile Include="Docking\DockPaneStripBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindow.SplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\DockWindowCollection.cs" />
+    <Compile Include="Docking\DragForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\DummyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Enums.cs" />
+    <Compile Include="Docking\FloatWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\FloatWindowCollection.cs" />
+    <Compile Include="Docking\Helpers\DockHelper.cs" />
+    <Compile Include="Docking\Helpers\DrawHelper.cs" />
+    <Compile Include="Docking\Helpers\ResourceHelper.cs" />
+    <Compile Include="Docking\Helpers\Win32Helper.cs" />
+    <Compile Include="Docking\InertButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\InertButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Interfaces.cs" />
+    <Compile Include="Docking\ITheme.cs" />
+    <Compile Include="Docking\Localization.cs" />
+    <Compile Include="Docking\Measures.cs" />
+    <Compile Include="Docking\NestedDockingStatus.cs" />
+    <Compile Include="Docking\NestedPaneCollection.cs" />
+    <Compile Include="Docking\VS2012Renderer\VS2012ColorTable.cs" />
+    <Compile Include="Docking\VS2012Renderer\VS2012ToolStripExtender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2012Renderer\VS2012ToolStripExtender.designer.cs">
+      <DependentUpon>VS2012ToolStripExtender.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\VS2012Renderer\VS2012ToolStripRenderer.cs" />
+    <Compile Include="CommonQuery\DynamicExtention.cs" />
+    <Compile Include="CommonQuery\DynamicLinq.cs" />
+    <Compile Include="CommonQuery\Filter.cs" />
+    <Compile Include="CommonQuery\LambdaBuilder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonQuery\LambdaBuilder.designer.cs">
+      <DependentUpon>LambdaBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextEditor\AbstractMargin.cs" />
+    <Compile Include="TextEditor\Actions\AbstractEditAction.cs" />
+    <Compile Include="TextEditor\Actions\AbstractLineFormatAction.cs" />
+    <Compile Include="TextEditor\Actions\AbstractSelectionFormatAction.cs" />
+    <Compile Include="TextEditor\Actions\Backspace.cs" />
+    <Compile Include="TextEditor\Actions\BlockCommentRegion.cs" />
+    <Compile Include="TextEditor\Actions\CapitalizeAction.cs" />
+    <Compile Include="TextEditor\Actions\CaretDown.cs" />
+    <Compile Include="TextEditor\Actions\CaretLeft.cs" />
+    <Compile Include="TextEditor\Actions\CaretRight.cs" />
+    <Compile Include="TextEditor\Actions\CaretUp.cs" />
+    <Compile Include="TextEditor\Actions\ClearAllBookmarks.cs" />
+    <Compile Include="TextEditor\Actions\ClearAllSelections.cs" />
+    <Compile Include="TextEditor\Actions\ConvertLeadingSpacesToTabs.cs" />
+    <Compile Include="TextEditor\Actions\ConvertLeadingTabsToSpaces.cs" />
+    <Compile Include="TextEditor\Actions\ConvertSpacesToTabs.cs" />
+    <Compile Include="TextEditor\Actions\ConvertTabsToSpaces.cs" />
+    <Compile Include="TextEditor\Actions\Copy.cs" />
+    <Compile Include="TextEditor\Actions\Cut.cs" />
+    <Compile Include="TextEditor\Actions\Delete.cs" />
+    <Compile Include="TextEditor\Actions\DeleteLine.cs" />
+    <Compile Include="TextEditor\Actions\DeleteToLineEnd.cs" />
+    <Compile Include="TextEditor\Actions\DeleteWord.cs" />
+    <Compile Include="TextEditor\Actions\End.cs" />
+    <Compile Include="TextEditor\Actions\FormatBuffer.cs" />
+    <Compile Include="TextEditor\Actions\GotoMatchingBrace.cs" />
+    <Compile Include="TextEditor\Actions\GotoNextBookmark.cs" />
+    <Compile Include="TextEditor\Actions\GotoPrevBookmark.cs" />
+    <Compile Include="TextEditor\Actions\Home.cs" />
+    <Compile Include="TextEditor\Actions\IEditAction.cs" />
+    <Compile Include="TextEditor\Actions\IndentSelection.cs" />
+    <Compile Include="TextEditor\Actions\InvertCaseAction.cs" />
+    <Compile Include="TextEditor\Actions\MovePageDown.cs" />
+    <Compile Include="TextEditor\Actions\MovePageUp.cs" />
+    <Compile Include="TextEditor\Actions\MoveToEnd.cs" />
+    <Compile Include="TextEditor\Actions\MoveToStart.cs" />
+    <Compile Include="TextEditor\Actions\Paste.cs" />
+    <Compile Include="TextEditor\Actions\Redo.cs" />
+    <Compile Include="TextEditor\Actions\RemoveLeadingWS.cs" />
+    <Compile Include="TextEditor\Actions\RemoveTrailingWS.cs" />
+    <Compile Include="TextEditor\Actions\Return.cs" />
+    <Compile Include="TextEditor\Actions\ScrollLineDown.cs" />
+    <Compile Include="TextEditor\Actions\ScrollLineUp.cs" />
+    <Compile Include="TextEditor\Actions\SelectWholeDocument.cs" />
+    <Compile Include="TextEditor\Actions\ShiftCaretDown.cs" />
+    <Compile Include="TextEditor\Actions\ShiftCaretLeft.cs" />
+    <Compile Include="TextEditor\Actions\ShiftCaretRight.cs" />
+    <Compile Include="TextEditor\Actions\ShiftCaretUp.cs" />
+    <Compile Include="TextEditor\Actions\ShiftEnd.cs" />
+    <Compile Include="TextEditor\Actions\ShiftHome.cs" />
+    <Compile Include="TextEditor\Actions\ShiftMovePageDown.cs" />
+    <Compile Include="TextEditor\Actions\ShiftMovePageUp.cs" />
+    <Compile Include="TextEditor\Actions\ShiftMoveToEnd.cs" />
+    <Compile Include="TextEditor\Actions\ShiftMoveToStart.cs" />
+    <Compile Include="TextEditor\Actions\ShiftTab.cs" />
+    <Compile Include="TextEditor\Actions\ShiftWordLeft.cs" />
+    <Compile Include="TextEditor\Actions\ShiftWordRight.cs" />
+    <Compile Include="TextEditor\Actions\ShowDefinitionsOnly.cs" />
+    <Compile Include="TextEditor\Actions\Tab.cs" />
+    <Compile Include="TextEditor\Actions\ToggleAllFoldings.cs" />
+    <Compile Include="TextEditor\Actions\ToggleBlockComment.cs" />
+    <Compile Include="TextEditor\Actions\ToggleBookmark.cs" />
+    <Compile Include="TextEditor\Actions\ToggleComment.cs" />
+    <Compile Include="TextEditor\Actions\ToggleEditMode.cs" />
+    <Compile Include="TextEditor\Actions\ToggleFolding.cs" />
+    <Compile Include="TextEditor\Actions\ToggleLineComment.cs" />
+    <Compile Include="TextEditor\Actions\ToLowerCase.cs" />
+    <Compile Include="TextEditor\Actions\ToUpperCase.cs" />
+    <Compile Include="TextEditor\Actions\Undo.cs" />
+    <Compile Include="TextEditor\Actions\WordBackspace.cs" />
+    <Compile Include="TextEditor\Actions\WordLeft.cs" />
+    <Compile Include="TextEditor\Actions\WordRight.cs" />
+    <Compile Include="TextEditor\BracketHighlightingSheme.cs" />
+    <Compile Include="TextEditor\BrushRegistry.cs" />
+    <Compile Include="TextEditor\Caret.cs" />
+    <Compile Include="TextEditor\CaretMode.cs" />
+    <Compile Include="TextEditor\CopyTextEventArgs.cs" />
+    <Compile Include="TextEditor\CopyTextEventHandler.cs" />
+    <Compile Include="TextEditor\DialogKeyProcessor.cs" />
+    <Compile Include="TextEditor\Document\AbstractSegment.cs" />
+    <Compile Include="TextEditor\Document\Bookmark.cs" />
+    <Compile Include="TextEditor\Document\BookmarkEventArgs.cs" />
+    <Compile Include="TextEditor\Document\BookmarkEventHandler.cs" />
+    <Compile Include="TextEditor\Document\BookmarkManager.cs" />
+    <Compile Include="TextEditor\Document\BookmarkManagerMemento.cs" />
+    <Compile Include="TextEditor\Document\BracketHighlightingStyle.cs" />
+    <Compile Include="TextEditor\Document\BracketMatchingStyle.cs" />
+    <Compile Include="TextEditor\Document\ColumnRange.cs" />
+    <Compile Include="TextEditor\Document\CustomLine.cs" />
+    <Compile Include="TextEditor\Document\CustomLineManager.cs" />
+    <Compile Include="TextEditor\Document\DefaultDocument.cs" />
+    <Compile Include="TextEditor\Document\DefaultFormattingStrategy.cs" />
+    <Compile Include="TextEditor\Document\DefaultHighlightingStrategy.cs" />
+    <Compile Include="TextEditor\Document\DefaultLineManager.cs" />
+    <Compile Include="TextEditor\Document\DefaultSelection.cs" />
+    <Compile Include="TextEditor\Document\DefaultTextEditorProperties.cs" />
+    <Compile Include="TextEditor\Document\DocumentEventArgs.cs" />
+    <Compile Include="TextEditor\Document\DocumentEventHandler.cs" />
+    <Compile Include="TextEditor\Document\DocumentFactory.cs" />
+    <Compile Include="TextEditor\Document\DocumentSelectionMode.cs" />
+    <Compile Include="TextEditor\Document\FileSyntaxModeProvider.cs" />
+    <Compile Include="TextEditor\Document\FoldingManager.cs" />
+    <Compile Include="TextEditor\Document\FoldMarker.cs" />
+    <Compile Include="TextEditor\Document\FoldType.cs" />
+    <Compile Include="TextEditor\Document\FontContainer.cs" />
+    <Compile Include="TextEditor\Document\GapTextBufferStrategy.cs" />
+    <Compile Include="TextEditor\Document\HighlightBackground.cs" />
+    <Compile Include="TextEditor\Document\HighlightColor.cs" />
+    <Compile Include="TextEditor\Document\HighlightInfo.cs" />
+    <Compile Include="TextEditor\Document\HighlightingColorNotFoundException.cs" />
+    <Compile Include="TextEditor\Document\HighlightingDefinitionParser.cs" />
+    <Compile Include="TextEditor\Document\HighlightingManager.cs" />
+    <Compile Include="TextEditor\Document\HighlightingStrategyFactory.cs" />
+    <Compile Include="TextEditor\Document\HighlightRuleSet.cs" />
+    <Compile Include="TextEditor\Document\IBookmarkFactory.cs" />
+    <Compile Include="TextEditor\Document\ICustomLineManager.cs" />
+    <Compile Include="TextEditor\Document\IDocument.cs" />
+    <Compile Include="TextEditor\Document\IFoldingStrategy.cs" />
+    <Compile Include="TextEditor\Document\IFormattingStrategy.cs" />
+    <Compile Include="TextEditor\Document\IHighlightingStrategy.cs" />
+    <Compile Include="TextEditor\Document\ILineManager.cs" />
+    <Compile Include="TextEditor\Document\IndentFoldingStrategy.cs" />
+    <Compile Include="TextEditor\Document\IndentStyle.cs" />
+    <Compile Include="TextEditor\Document\ISegment.cs" />
+    <Compile Include="TextEditor\Document\ISelection.cs" />
+    <Compile Include="TextEditor\Document\ISyntaxModeFileProvider.cs" />
+    <Compile Include="TextEditor\Document\ITextBufferStrategy.cs" />
+    <Compile Include="TextEditor\Document\ITextEditorProperties.cs" />
+    <Compile Include="TextEditor\Document\LineLengthEventArgs.cs" />
+    <Compile Include="TextEditor\Document\LineLengthEventHandler.cs" />
+    <Compile Include="TextEditor\Document\LineManagerEventArgs.cs" />
+    <Compile Include="TextEditor\Document\LineManagerEventHandler.cs" />
+    <Compile Include="TextEditor\Document\LineSegment.cs" />
+    <Compile Include="TextEditor\Document\LineViewerStyle.cs" />
+    <Compile Include="TextEditor\Document\MarkerStrategy.cs" />
+    <Compile Include="TextEditor\Document\NextMarker.cs" />
+    <Compile Include="TextEditor\Document\PrevMarker.cs" />
+    <Compile Include="TextEditor\Document\ResourceSyntaxModeProvider.cs" />
+    <Compile Include="TextEditor\Document\SelectionManager.cs" />
+    <Compile Include="TextEditor\Document\Span.cs" />
+    <Compile Include="TextEditor\Document\StringTextBufferStrategy.cs" />
+    <Compile Include="TextEditor\Document\SyntaxMode.cs" />
+    <Compile Include="TextEditor\Document\TextMarker.cs" />
+    <Compile Include="TextEditor\Document\TextMarkerType.cs" />
+    <Compile Include="TextEditor\Document\TextUtilities.cs" />
+    <Compile Include="TextEditor\Document\TextWord.cs" />
+    <Compile Include="TextEditor\Document\TextWordType.cs" />
+    <Compile Include="TextEditor\DrawableLine.cs" />
+    <Compile Include="TextEditor\FoldMargin.cs" />
+    <Compile Include="TextEditor\Gui\CompletionWindow\AbstractCompletionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextEditor\Gui\CompletionWindow\CodeCompletionListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextEditor\Gui\CompletionWindow\CodeCompletionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextEditor\Gui\CompletionWindow\DeclarationViewWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextEditor\Gui\CompletionWindow\DefaultCompletionData.cs" />
+    <Compile Include="TextEditor\Gui\CompletionWindow\ICompletionData.cs" />
+    <Compile Include="TextEditor\Gui\CompletionWindow\ICompletionDataProvider.cs" />
+    <Compile Include="TextEditor\Gui\CompletionWindow\IDeclarationViewWindow.cs" />
+    <Compile Include="TextEditor\Gui\InsightWindow\IInsightDataProvider.cs" />
+    <Compile Include="TextEditor\Gui\InsightWindow\InsightWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextEditor\GutterMargin.cs" />
+    <Compile Include="TextEditor\Highlight.cs" />
+    <Compile Include="TextEditor\HRuler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextEditor\IconBarMargin.cs" />
+    <Compile Include="TextEditor\Ime.cs" />
+    <Compile Include="TextEditor\KeyEventHandler.cs" />
+    <Compile Include="TextEditor\MarginMouseEventHandler.cs" />
+    <Compile Include="TextEditor\MarginPaintEventHandler.cs" />
+    <Compile Include="TextEditor\TextArea.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextEditor\TextAreaClipboardHandler.cs" />
+    <Compile Include="TextEditor\TextAreaControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextEditor\TextAreaDragDropHandler.cs" />
+    <Compile Include="TextEditor\TextAreaMouseHandler.cs" />
+    <Compile Include="TextEditor\TextAreaUpdate.cs" />
+    <Compile Include="TextEditor\TextAreaUpdateType.cs" />
+    <Compile Include="TextEditor\TextEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextEditor\TextEditorControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextEditor\TextView.cs" />
+    <Compile Include="TextEditor\ToolTipRequestEventArgs.cs" />
+    <Compile Include="TextEditor\ToolTipRequestEventHandler.cs" />
+    <Compile Include="TextEditor\Undo\IUndoableOperation.cs" />
+    <Compile Include="TextEditor\Undo\UndoableDelete.cs" />
+    <Compile Include="TextEditor\Undo\UndoableInsert.cs" />
+    <Compile Include="TextEditor\Undo\UndoableReplace.cs" />
+    <Compile Include="TextEditor\Undo\UndoQueue.cs" />
+    <Compile Include="TextEditor\Undo\UndoStack.cs" />
+    <Compile Include="TextEditor\Util\CountTipText.cs" />
+    <Compile Include="TextEditor\Util\FileReader.cs" />
+    <Compile Include="TextEditor\Util\LookupTable.cs" />
+    <Compile Include="TextEditor\Util\RtfWriter.cs" />
+    <Compile Include="TextEditor\Util\TextUtility.cs" />
+    <Compile Include="TextEditor\Util\TipPainter.cs" />
+    <Compile Include="TextEditor\Util\TipPainterTools.cs" />
+    <Compile Include="TextEditor\Util\TipSection.cs" />
+    <Compile Include="TextEditor\Util\TipSpacer.cs" />
+    <Compile Include="TextEditor\Util\TipSplitter.cs" />
+    <Compile Include="TextEditor\Util\TipText.cs" />
+    <Compile Include="OutLookBar\Collections\CollectionWithEvents.cs" />
+    <Compile Include="OutLookBar\Collections\MenuCommandCollection.cs" />
+    <Compile Include="OutLookBar\Collections\OutlookBarBandCollection.cs" />
+    <Compile Include="OutLookBar\Collections\OutlookBarItemCollection.cs" />
+    <Compile Include="OutLookBar\Collections\RebarBandCollection.cs" />
+    <Compile Include="OutLookBar\Collections\ToolBarItemCollection.cs" />
+    <Compile Include="OutLookBar\ComboBoxBase.cs" />
+    <Compile Include="OutLookBar\CommandBars\ChevronMenu.cs" />
+    <Compile Include="OutLookBar\CommandBars\CommandBarMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutLookBar\CommandBars\Rebar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutLookBar\CommandBars\ToolBarEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutLookBar\CommandBars\ToolBarItem.cs" />
+    <Compile Include="OutLookBar\General\ColorUtil.cs" />
+    <Compile Include="OutLookBar\General\DoubleBuffer.cs" />
+    <Compile Include="OutLookBar\General\Enumerations.cs" />
+    <Compile Include="OutLookBar\General\GDIUtil.cs" />
+    <Compile Include="OutLookBar\General\ResourceUtil.cs" />
+    <Compile Include="OutLookBar\General\TextUtil.cs" />
+    <Compile Include="OutLookBar\Menus\ColorGroup.cs" />
+    <Compile Include="OutLookBar\Menus\DrawCommand.cs" />
+    <Compile Include="OutLookBar\Menus\MenuCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutLookBar\Menus\MenuControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutLookBar\Menus\MenuControlDesigner.cs" />
+    <Compile Include="OutLookBar\Menus\MenuItemEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutLookBar\Menus\PopupMenu.cs" />
+    <Compile Include="OutLookBar\OutlookBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutLookBar\TextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutLookBar\Win32\Enums.cs" />
+    <Compile Include="OutLookBar\Win32\Functions.cs" />
+    <Compile Include="OutLookBar\Win32\Structs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Docking\ResourcesVS2003.Designer.cs" />
+    <Compile Include="Docking\SplitterBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Strings.Designer.cs" />
+    <Compile Include="Docking\StringsVS2003.Designer.cs" />
+    <Compile Include="Docking\ThemeBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VisibleNestedPaneCollection.cs" />
+    <Compile Include="Docking\VS2003AutoHideStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2003DockPaneCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2003DockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2003Theme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2005AutoHideStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2005DockPaneCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2005DockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2005Theme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2012LightAutoHideStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2012LightAutoHideWindowControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2012LightDockPaneCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2012LightDockPaneStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2012LightDockWindow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2012LightSplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\VS2012LightTheme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Docking\Win32\Enums.cs" />
+    <Compile Include="Docking\Win32\NativeMethods.cs" />
+    <Compile Include="DropDownPanel\Controls\DropDownPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DropDownPanel\Controls\DropDownPanel.Designer.cs">
+      <DependentUpon>DropDownPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DropDownPanel\Events\Events.cs" />
+    <Compile Include="DropDownPanel\Forms\DropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DropDownPanel\Forms\DropDownForm.designer.cs">
+      <DependentUpon>DropDownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DropDownPanel\Helper\DropDownMessageFilter.cs" />
+    <Compile Include="DropDownPanel\Helper\DropDownWindowHelper.cs" />
+    <Compile Include="DropDownPanel\Interfaces\IDropDownAware.cs" />
+    <Compile Include="DropDownPanel\Interfaces\ILookupItem.cs" />
+    <Compile Include="DropDownPanel\Unmanaged\UIApiCalls.cs" />
+    <Compile Include="ImageViewer\GifImage.cs" />
+    <Compile Include="ImageViewer\KP-DrawEngine.cs" />
+    <Compile Include="ImageViewer\KP-DrawObject.cs" />
+    <Compile Include="ImageViewer\KP-ImageViewerV2.cs" />
+    <Compile Include="ImageViewer\KP-ImageViewerV2.Designer.cs">
+      <DependentUpon>KP-ImageViewerV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageViewer\MultiPageImage.cs" />
+    <Compile Include="ImageViewer\PanelDoubleBuffered.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListViewPrinter2010\BrushForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListViewPrinter2010\BrushForm.Designer.cs">
+      <DependentUpon>BrushForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewPrinter2010\BrushPen.DesignTime.cs" />
+    <Compile Include="ListViewPrinter2010\BrushPenData.cs" />
+    <Compile Include="ListViewPrinter2010\ListViewPrinter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\CellEditing\CellEditKeyEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\CellEditing\CellEditors.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\CellEditing\EditorRegistry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\DataListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\DataTreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\DragDrop\DragSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\DragDrop\DropSink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\DragDrop\OLVDataObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\FastDataListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\FastObjectListView.cs" />
+    <Compile Include="ObjectListView2010\Filtering\Cluster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Filtering\ClusteringStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Filtering\ClustersFromGroupsStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Filtering\DateTimeClusteringStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Filtering\FilterMenuBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Filtering\Filters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Filtering\FlagClusteringStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Filtering\ICluster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Filtering\IClusteringStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Filtering\TextMatchFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\Attributes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\Comparers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\DataSourceAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\Delegates.cs" />
+    <Compile Include="ObjectListView2010\Implementation\Enums.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\Events.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\GroupingParameters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\Groups.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\Munger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\NativeMethods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\NullableDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\OLVListItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\OLVListSubItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\OlvListViewHitTestInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\TreeDataSourceAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\VirtualGroups.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Implementation\VirtualListDataSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\ObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\ObjectListView.DesignTime.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\OLVColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Rendering\Adornments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Rendering\Decorations.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Rendering\Overlays.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Rendering\Renderers.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Rendering\Styles.cs" />
+    <Compile Include="ObjectListView2010\Rendering\TreeRenderer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\SubControls\GlassPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\SubControls\HeaderControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\SubControls\ToolStripCheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\SubControls\ToolTipControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\TreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Utilities\ColumnSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Utilities\ColumnSelectionForm.Designer.cs">
+      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectListView2010\Utilities\Generator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Utilities\OLVExporter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\Utilities\TypedObjectListView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectListView2010\VirtualObjectListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pager\ConnDbForSQL.cs" />
+    <Compile Include="Pager\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pager\Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pager\Pager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pager\Pager2.cs" />
+    <Compile Include="Pager\Pager2.designer.cs">
+      <DependentUpon>Pager2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pager\SysConst.cs" />
+    <Compile Include="RabbionControl\GlobalHook.cs" />
+    <Compile Include="RabbionControl\IContainsRibbonComponents.cs" />
+    <Compile Include="RabbionControl\IContainsSelectableRibbonItems.cs" />
+    <Compile Include="RabbionControl\IDropDownRibbonItem.cs" />
+    <Compile Include="RabbionControl\IRibbonElement.cs" />
+    <Compile Include="RabbionControl\IRibbonForm.cs" />
+    <Compile Include="RabbionControl\IScrollableRibbonItem.cs" />
+    <Compile Include="RabbionControl\Ribbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonArrowDirection.cs" />
+    <Compile Include="RabbionControl\RibbonButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonButtonCollection.cs" />
+    <Compile Include="RabbionControl\RibbonButtonDesigner.cs" />
+    <Compile Include="RabbionControl\RibbonButtonList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonButtonListDesigner.cs" />
+    <Compile Include="RabbionControl\RibbonButtonStyle.cs" />
+    <Compile Include="RabbionControl\RibbonCanvasEventArgs.cs" />
+    <Compile Include="RabbionControl\RibbonCaptionButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonColorChooser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonComboBoxDesigner.cs" />
+    <Compile Include="RabbionControl\RibbonContext.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonContextCollection.cs" />
+    <Compile Include="RabbionControl\RibbonDescriptionMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonDesigner.cs" />
+    <Compile Include="RabbionControl\RibbonDropDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonElementMeasureSizeEventArgs.cs" />
+    <Compile Include="RabbionControl\RibbonElementPaintEventArgs.cs" />
+    <Compile Include="RabbionControl\RibbonElementWithItemCollectionDesigner.cs" />
+    <Compile Include="RabbionControl\RibbonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonFormHelper.cs" />
+    <Compile Include="RabbionControl\RibbonItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonItemBoundsEventArgs.cs" />
+    <Compile Include="RabbionControl\RibbonItemCollection.cs" />
+    <Compile Include="RabbionControl\RibbonItemCollectionEditor.cs" />
+    <Compile Include="RabbionControl\RibbonItemGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonItemGroupDesigner.cs" />
+    <Compile Include="RabbionControl\RibbonItemGroupItemCollection.cs" />
+    <Compile Include="RabbionControl\RibbonItemRenderEventArgs.cs" />
+    <Compile Include="RabbionControl\RibbonMouseSensor.cs" />
+    <Compile Include="RabbionControl\RibbonNonClientMode.cs" />
+    <Compile Include="RabbionControl\RibbonOrbAdornerGlyph.cs" />
+    <Compile Include="RabbionControl\RibbonOrbDropDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonOrbDropDownEventArgs.cs" />
+    <Compile Include="RabbionControl\RibbonOrbMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonOrbMenuItemDesigner.cs" />
+    <Compile Include="RabbionControl\RibbonOrbOptionButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonOrbRecentItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonPanelCollection.cs" />
+    <Compile Include="RabbionControl\RibbonPanelDesigner.cs" />
+    <Compile Include="RabbionControl\RibbonPanelFlowDirection.cs" />
+    <Compile Include="RabbionControl\RibbonPanelGlyph.cs" />
+    <Compile Include="RabbionControl\RibbonPanelPopup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonPanelRenderEventArgs.cs" />
+    <Compile Include="RabbionControl\RibbonPanelSizeMode.cs" />
+    <Compile Include="RabbionControl\RibbonPopup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonPopupManager.cs" />
+    <Compile Include="RabbionControl\RibbonProfesionalRendererColorTable.cs" />
+    <Compile Include="RabbionControl\RibbonProfesionalRendererColorTableBlack.cs" />
+    <Compile Include="RabbionControl\RibbonProfessionalRenderer.cs" />
+    <Compile Include="RabbionControl\RibbonQuickAccessToolbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonQuickAccessToolbarGlyph.cs" />
+    <Compile Include="RabbionControl\RibbonQuickAccessToolbarItemCollection.cs" />
+    <Compile Include="RabbionControl\RibbonRenderer.cs" />
+    <Compile Include="RabbionControl\RibbonRenderEventArgs.cs" />
+    <Compile Include="RabbionControl\RibbonSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonTabCollection.cs" />
+    <Compile Include="RabbionControl\RibbonTabDesigner.cs" />
+    <Compile Include="RabbionControl\RibbonTabGlyph.cs" />
+    <Compile Include="RabbionControl\RibbonTabRenderEventArgs.cs" />
+    <Compile Include="RabbionControl\RibbonTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonTextEventArgs.cs" />
+    <Compile Include="RabbionControl\RibbonToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\RibbonWrappedDropDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RabbionControl\WinApi.cs" />
+    <Compile Include="TreeGridViewControl\TreeGridCell.cs" />
+    <Compile Include="TreeGridViewControl\TreeGridEvents.cs" />
+    <Compile Include="TreeGridViewControl\TreeGridNode.cs" />
+    <Compile Include="TreeGridViewControl\TreeGridNodeCollection.cs" />
+    <Compile Include="TreeGridViewControl\TreeGridView.cs" />
+    <Compile Include="TreeViewControl\CTreeNodeCollection\CTreeNodeCollection.cs" />
+    <Compile Include="TreeViewControl\CTreeNodeCollection\CTreeNodeCollection.Public.cs" />
+    <Compile Include="TreeViewControl\CTreeNode\CTreeNode.Internal.cs" />
+    <Compile Include="TreeViewControl\CTreeNode\CTreeNode.Public.cs" />
+    <Compile Include="TreeViewControl\CTreeViewEventArgs.cs" />
+    <Compile Include="TreeViewControl\CTreeView\CTreeView.DragDrop.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViewControl\CTreeView\CTreeView.Internal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViewControl\CTreeView\CTreeView.Protected.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViewControl\CTreeView\CTreeView.Public.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TreeViewControl\DragNodeEventArgs.cs" />
+    <Compile Include="TreeViewControl\INodeContainer.cs" />
+    <Compile Include="TreeViewControl\INodeControl.cs" />
+    <Compile Include="TreeViewControl\NodeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TreeViewControl\Other Declarations.cs" />
+    <Compile Include="WaitFormControl\WaitWindow.cs" />
+    <Compile Include="WaitFormControl\WaitWindowEventArgs.cs" />
+    <Compile Include="WaitFormControl\WaitWindowGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitFormControl\WaitWindowGUI.Designer.cs">
+      <DependentUpon>WaitWindowGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\Code\Configuration\HtmlEditControlConfiguration.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Configuration\IExternalInformationProvider.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Configuration\TextModuleInfo.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Helper\ConvertHelper.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Helper\ImageHelper.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Helper\ImageScaler.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Helper\LocalizableDescriptionAttribute.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Helper\PathHelper.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Helper\StringHelper.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Html\HtmlAgilityPackExtensions.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Html\HtmlClipboardHelper.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Html\HtmlConversionHelper.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Html\HtmlImageHelper.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Html\HtmlStringHelper.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\Html\InlineCssParser.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\HttpServer\IExternalWebServer.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\HttpServer\WebServer.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\MsHtml\MsHtmlLegacyFromBadToGoodTranslator.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\MsHtml\MsHtmlLegacyFromGoodToBadTranslator.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\MsHtml\MsHtmlMarkupPointerExtensions.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\MsHtml\MsHtmlMarkupServicesExtensions.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\PInvoke\NativeMethods.cs" />
+    <Compile Include="ZetaHtmlEditControl\Code\PInvoke\UnsafeNativeMethods.cs" />
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlBases\CoreHtmlEditControl.Base.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlBases\CoreHtmlEditControl.MarkupNavigation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlBases\CoreHtmlEditControl.Selection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlBases\CoreHtmlEditControl.TextAndImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlBases\ExtendedWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlBases\HtmlEditHost.cs" />
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlDerives\HtmlEditControl.Cans.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlDerives\HtmlEditControl.Clipboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlDerives\HtmlEditControl.Keyboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlDerives\HtmlEditControl.Main.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlDerives\HtmlEditControl.Main.Designer.cs">
+      <DependentUpon>HtmlEditControl.Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlDerives\HtmlEditControl.Operations.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\EditControlDerives\HtmlEditControl.Paste.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\Helper\MyToolStripRenderer.cs" />
+    <Compile Include="ZetaHtmlEditControl\UI\HtmlEditUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\HtmlEditUserControl.Designer.cs">
+      <DependentUpon>HtmlEditUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\Tools\HtmlEditorCellPropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\Tools\HtmlEditorCellPropertiesForm.Designer.cs">
+      <DependentUpon>HtmlEditorCellPropertiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\Tools\HtmlEditorTableNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\Tools\HtmlEditorTableNewForm.Designer.cs">
+      <DependentUpon>HtmlEditorTableNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\Tools\HtmlSourceTextEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZetaHtmlEditControl\UI\Tools\HtmlSourceTextEditForm.Designer.cs">
+      <DependentUpon>HtmlSourceTextEditForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CollapseDataGridView\MasterControl.resx">
+      <DependentUpon>MasterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataNavigatorControl\DataNavigator.resx">
+      <DependentUpon>DataNavigator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataVisualControl\TimeLine\VerticalTimeLine.resx">
+      <DependentUpon>VerticalTimeLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\ResourcesVS2003.resx" />
+    <EmbeddedResource Include="CommonQuery\LambdaBuilder.resx">
+      <DependentUpon>LambdaBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutLookBar\ComboBoxBase.resx">
+      <DependentUpon>ComboBoxBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutLookBar\CommandBars\ChevronMenu.resx">
+      <DependentUpon>ChevronMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutLookBar\CommandBars\CommandBarMenu.resx">
+      <DependentUpon>CommandBarMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutLookBar\CommandBars\Rebar.resx">
+      <DependentUpon>Rebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutLookBar\CommandBars\ToolBarEx.resx">
+      <DependentUpon>ToolBarEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutLookBar\Menus\MenuCommand.resx">
+      <DependentUpon>MenuCommand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutLookBar\Menus\MenuControl.resx">
+      <DependentUpon>MenuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutLookBar\Menus\MenuItemEx.resx">
+      <DependentUpon>MenuItemEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutLookBar\OutlookBar.resx">
+      <DependentUpon>OutlookBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Controls.resX" />
+    <EmbeddedResource Include="Properties\ImagesColorPicker.resX" />
+    <EmbeddedResource Include="Properties\ImagesMenu.resX" />
+    <EmbeddedResource Include="Properties\MenuControlImages.resX" />
+    <EmbeddedResource Include="Properties\SortedListView.resX" />
+    <EmbeddedResource Include="OutLookBar\TextBoxEx.resx">
+      <DependentUpon>TextBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\StringsVS2003.resx" />
+    <EmbeddedResource Include="DropDownPanel\Forms\DropDownForm.resx">
+      <DependentUpon>DropDownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageViewer\KP-ImageViewerV2.resx">
+      <DependentUpon>KP-ImageViewerV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListViewPrinter2010\BrushForm.resx">
+      <DependentUpon>BrushForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectListView2010\Utilities\ColumnSelectionForm.resx">
+      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pager\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pager\Pager.resx">
+      <DependentUpon>Pager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pager\Pager2.resx">
+      <DependentUpon>Pager2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeViewControl\CTreeView\CTreeView.Internal.resx">
+      <DependentUpon>CTreeView.Internal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeViewControl\NodeControl.resx">
+      <DependentUpon>NodeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitFormControl\WaitWindowGUI.resx">
+      <DependentUpon>WaitWindowGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZetaHtmlEditControl\UI\EditControlDerives\HtmlEditControl.Main.de.resx">
+      <DependentUpon>HtmlEditControl.Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZetaHtmlEditControl\UI\EditControlDerives\HtmlEditControl.Main.resx">
+      <DependentUpon>HtmlEditControl.Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZetaHtmlEditControl\UI\HtmlEditUserControl.de.resx">
+      <DependentUpon>HtmlEditUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZetaHtmlEditControl\UI\HtmlEditUserControl.resx">
+      <DependentUpon>HtmlEditUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZetaHtmlEditControl\UI\Tools\HtmlEditorCellPropertiesForm.de.resx">
+      <DependentUpon>HtmlEditorCellPropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZetaHtmlEditControl\UI\Tools\HtmlEditorCellPropertiesForm.resx">
+      <DependentUpon>HtmlEditorCellPropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZetaHtmlEditControl\UI\Tools\HtmlEditorTableNewForm.de.resx">
+      <DependentUpon>HtmlEditorTableNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZetaHtmlEditControl\UI\Tools\HtmlEditorTableNewForm.resx">
+      <DependentUpon>HtmlEditorTableNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZetaHtmlEditControl\UI\Tools\HtmlSourceTextEditForm.de.resx">
+      <DependentUpon>HtmlSourceTextEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZetaHtmlEditControl\UI\Tools\HtmlSourceTextEditForm.resx">
+      <DependentUpon>HtmlSourceTextEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataVisualControl\DataVisual.Control说明.txt" />
+    <EmbeddedResource Include="TextEditor\Resources\RightArrow.cur" />
+    <EmbeddedResource Include="TextEditor\Resources\rightarrow1.cur" />
+    <EmbeddedResource Include="TextEditor\Resources\rightarrow2.cur" />
+    <EmbeddedResource Include="TextEditor\Resources\SyntaxModes.xml" />
+    <EmbeddedResource Include="TextEditor\Resources\TextEditorControl.bmp" />
+    <Content Include="Properties\DragCursor.cur" />
+    <None Include="Resources\syntaxmodes.xml" />
+    <Content Include="ZetaHtmlEditControl\ZetaHtmlEditControl说明.txt" />
+    <EmbeddedResource Include="DataVisualControl\template1.html" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\css\about.css" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\img\dian.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\img\dian2.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\img\dian3.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\img\ictb.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\img\jian.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\img\logo.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\img\morelink.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\img\pagination_1.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\img\titlebg.jpg" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\index.html" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\js\jquery.min_v1.0.js" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\说明.htm" />
+    <Content Include="DataVisualControl\页面\jiaoben1645\说明.txt" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\css\history.css" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\images\clock.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\images\date.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\images\icons.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\images\point.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\images\vertical.png" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\index.html" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\js\history.js" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\js\jquery.easing.js" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\js\jquery.js" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\js\jquery.mousewheel.js" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\说明.htm" />
+    <Content Include="DataVisualControl\页面\jiaoben1762\说明.txt" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\css\style.css" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\images\bg_1.png" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\images\log\circle.png" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\images\log\clock.png" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\images\log\content-bg.png" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\images\log\light-top.png" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\images\log\light.png" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\images\log\line-bg.png" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\images\log\release-bg.png" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\index.html" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\js\jquery.min.js" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\说明.htm" />
+    <Content Include="DataVisualControl\页面\jiaoben2181\说明.txt" />
+    <Content Include="DataVisualControl\页面\jiaoben241\css\history.css" />
+    <Content Include="DataVisualControl\页面\jiaoben241\images\arrow.png" />
+    <Content Include="DataVisualControl\页面\jiaoben241\images\icon06.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben241\images\icon07.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben241\images\icon08.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben241\images\icon09.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben241\images\line04.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben241\index.html" />
+    <Content Include="DataVisualControl\页面\jiaoben241\js\jquery.js" />
+    <Content Include="DataVisualControl\页面\jiaoben241\js\main.js" />
+    <Content Include="DataVisualControl\页面\jiaoben241\test.html" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\css\aio_9296f24.css" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\css\common_612e26a.css" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\active.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\aio_z_3b5a56c.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\allTagTop_eec0d13.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\authcode.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\baby-content_6d3551b.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\background6_d1cd0ea.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\background_ffc87c2.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\ball-outer_be7df66.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\bd-login_89b2f92.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\beg-truth_3a32743.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\btn32bg-hover-green.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\close_d890e8d.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\common_z_f6ea7a7.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\dialog-title-bg_886e018.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\dot-hover-icon_4eb7701.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\editor-bar-bg_80f0d39.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\editor-icon_76dc4d3.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\emergency_97d2cb1.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\file-icon_1f12636.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\i-close.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\i-download-big_214116a.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\i-expand.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\i-loading-16_07a851c.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\i-loading-24_2c3af4d.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\i-loading-32_cc48fd9.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\i-loading-48_f37ef32.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\i-msg-tri_ce8ab57.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\i-ok-green_7718b60.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\i-upload-big_f3979c7.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\icons-all_885afa0.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\icons_3d93820.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\icons_88a8401.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\ie-ball_1fa9f0a.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\ie-bg_0b5d7e0.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\ie-screen3-content_1271253.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\ik-arraw-down_5f408d9.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\ik-arraw-up_bc99ba1.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\iknow-content_573b2ec.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\key-word-icon.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\loading_07cc0e0.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\logo.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\menu-back_3521665.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\menu-bg_1117283.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\muzhi-content_edc0d83.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\nav_f93a1fa.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\next_8b0c828.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\prof-star_9bc8561.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\progress-bar-wait.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\progress-bar_899ab2a.gif" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\screen-1-parallax-0_0f527b5.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\screen-1-parallax-1_5bae679.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\screen-1-parallax-2_8ff6abd.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\screen-2-bg_bdce4fc.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\screen-2-parallax-1_92705aa.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\screen-4-parallax-0_d28e9f3.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\screen-5-baby_9bec77c.jpg" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\screen-5-iknow_1735b5c.jpg" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\screen-5-muzhi_5624883.jpg" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\screen-5-zuoyebang_bb20fe6.jpg" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\setcarefield-btn-new.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\success_0269a35.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\video_a16199a.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\with-ten-year_7350d72.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\x_0d41d40.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\images\zuoyebang-content_549f55b.png" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\index.html" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\js\aio_af34563.js" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\js\Cango3D.js" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\js\d3.v3.min.js" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\js\framework_af469f5.js" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\js\module_c1a3b8c.js" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\js\mod_96dd55b.js" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\js\more_0e338e4.js" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\说明.htm" />
+    <Content Include="DataVisualControl\页面\jiaoben3492\说明.txt" />
+    <Content Include="Docking\DockControl说明.txt" />
+    <Content Include="Docking\DockPanel.bmp" />
+    <Content Include="Docking\ResourcesVS2003\DockPaneCaption_AutoHideNo.png" />
+    <Content Include="Docking\ResourcesVS2003\DockPaneCaption_AutoHideYes.png" />
+    <Content Include="Docking\ResourcesVS2003\DockPaneCaption_CloseDisabled.png" />
+    <Content Include="Docking\ResourcesVS2003\DockPaneCaption_CloseEnabled.png" />
+    <Content Include="Docking\ResourcesVS2003\DockPaneStrip_CloseDisabled.png" />
+    <Content Include="Docking\ResourcesVS2003\DockPaneStrip_CloseEnabled.png" />
+    <Content Include="Docking\ResourcesVS2003\DockPaneStrip_ScrollLeftDisabled.png" />
+    <Content Include="Docking\ResourcesVS2003\DockPaneStrip_ScrollLeftEnabled.png" />
+    <Content Include="Docking\ResourcesVS2003\DockPaneStrip_ScrollRightDisabled.png" />
+    <Content Include="Docking\ResourcesVS2003\DockPaneStrip_ScrollRightEnabled.png" />
+    <Content Include="Docking\Resources\ActiveTabHover_Close.png" />
+    <Content Include="Docking\Resources\ActiveTab_Close.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Bottom.png" />
+    <Content Include="Docking\Resources\Dockindicator_PaneDiamond_Fill.png" />
+    <Content Include="Docking\Resources\Dockindicator_PaneDiamond_Fill_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Hotspot.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_HotspotIndex.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_HotspotIndex_VS2012.png" />
+    <Content Include="Docking\Resources\Dockindicator_PaneDiamond_Hotspot_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Left.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Right.png" />
+    <Content Include="Docking\Resources\DockIndicator_PaneDiamond_Top.png" />
+    <Content Include="Docking\Resources\Dockindicator_PaneDiamond_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelBottom.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelBottom_Active.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelBottom_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelFill.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelFill_Active.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelFill_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelLeft.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelLeft_Active.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelLeft_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelRight.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelRight_Active.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelRight_VS2012.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelTop.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelTop_Active.png" />
+    <Content Include="Docking\Resources\DockIndicator_PanelTop_VS2012.png" />
+    <Content Include="Docking\Resources\DockPane_AutoHide.png" />
+    <Content Include="Docking\Resources\DockPane_Close.png" />
+    <Content Include="Docking\Resources\DockPane_Dock.png" />
+    <Content Include="Docking\Resources\DockPane_Option.png" />
+    <Content Include="Docking\Resources\DockPane_OptionOverflow.png" />
+    <Content Include="Docking\Resources\InactiveTabHover_Close.png" />
+    <Content Include="Docking\Resources\LostFocusTabHover_Close.png" />
+    <Content Include="Docking\Resources\LostFocusTab_Close.png" />
+    <Content Include="ObjectListView2010\CustomDictionary.xml" />
+    <Content Include="ObjectListView2010\ObjectListView说明.txt" />
+    <Content Include="ObjectListView2010\Resources\coffee.jpg" />
+    <Content Include="TreeViewControl\ControlTreeView说明.txt" />
+    <EmbeddedResource Include="TreeViewControl\Resources\plus.bmp" />
+    <EmbeddedResource Include="TreeViewControl\Resources\minus.bmp" />
+    <EmbeddedResource Include="TextEditor\Resources\ASPX.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\BAT-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\Boo.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\Coco-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\CPP-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\CSharp-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\HTML-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\Java-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\JavaScript-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\Mode.xsd">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextEditor\Resources\PHP-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\Tex-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\TSQL-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\VBNET-Mode.xshd" />
+    <EmbeddedResource Include="TextEditor\Resources\XML-Mode.xshd" />
+    <None Include="ObjectListView2010\FullClassDiagram.cd" />
+    <None Include="ObjectListView2010\Resources\clear-filter.png" />
+    <None Include="ObjectListView2010\Resources\filter-icons3.png" />
+    <None Include="ObjectListView2010\Resources\filter.png" />
+    <None Include="ObjectListView2010\Resources\sort-ascending.png" />
+    <None Include="ObjectListView2010\Resources\sort-descending.png" />
+    <None Include="Resources\btnBack.png" />
+    <None Include="Resources\btnDrag.png" />
+    <None Include="Resources\btnFitToScreen.png" />
+    <None Include="Resources\btnNext.png" />
+    <None Include="Resources\btnOpen.png" />
+    <None Include="Resources\btnPreview.png" />
+    <None Include="Resources\btnRotate270.png" />
+    <None Include="Resources\btnRotate90.png" />
+    <None Include="Resources\btnSelect.png" />
+    <None Include="Resources\btnZoomIn.png" />
+    <None Include="Resources\btnZoomOut.png" />
+    <EmbeddedResource Include="Resources\Drag.cur" />
+    <EmbeddedResource Include="Resources\Grab.cur" />
+    <Content Include="Nikita.WinForm.ExtendControl说明.txt" />
+    <None Include="TreeViewControl\ClassDiagram1.cd" />
+    <None Include="TreeViewControl\ClassDiagram2.cd" />
+    <None Include="ZetaHtmlEditControl\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OutLookBar\Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

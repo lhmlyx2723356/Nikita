@@ -1,0 +1,3 @@
+﻿Nikita.Assist.WebService 可以用来对于外部数据交换
+暂未提供交换方式
+可以采用XML 或者JSON 

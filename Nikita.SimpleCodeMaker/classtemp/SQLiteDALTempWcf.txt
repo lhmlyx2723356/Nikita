@@ -1,0 +1,179 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+
+namespace @namespace@.DAL
+{
+    /// <summary>@tabname@表数据访问类
+    /// 作者:
+    /// 创建时间:@createdate@
+    /// </summary>
+    public partial class @classname@DAL
+    {
+        public @classname@DAL()
+        { }
+        /// <summary>增加一条数据
+        /// 
+        /// </summary>
+        public int Add(@namespace@.Model.@classname@ model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into @tabname@(");
+            strSql.Append("@insertfields@)");
+            strSql.Append(" values (");
+            strSql.Append("@insertvalues@)");
+            SQLiteHelper h = new SQLiteHelper();
+
+            h.CreateCommand(strSql.ToString());
+            @insertparam@
+
+            h.ExecuteNonQuery();
+            string sql2 = "select max(id) from @tabname@";
+            h.CreateCommand(sql2);
+            int result;
+            string obj = h.ExecuteScalar();
+            if (!int.TryParse(obj, out result))
+            {
+                return 0;
+            }
+            return result;
+        }
+
+        /// <summary>更新一条数据
+        /// 
+        /// </summary>
+        public bool Update(@namespace@.Model.@classname@ model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update @tabname@ set ");
+            strSql.Append("@updatefields@ ");
+            strSql.Append(" where id=@id ");
+            SQLiteHelper h = new SQLiteHelper();
+            h.CreateCommand(strSql.ToString());
+            @updateparam@
+            return h.ExecuteNonQuery();
+        }
+
+        /// <summary>删除一条数据
+        /// 
+        /// </summary>
+        public bool Delete(int id)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from @tabname@ ");
+            strSql.Append(" where id=@id ");
+            SQLiteHelper h = new SQLiteHelper();
+            h.CreateCommand(strSql.ToString());
+            h.AddParameter("@id", id);
+            return h.ExecuteNonQuery();
+        }
+
+        /// <summary>根据条件删除数据
+        /// 
+        /// </summary>
+        public bool DeleteByCond(string cond)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from @tabname@ ");
+            if (!string.IsNullOrEmpty(cond))
+            {
+                strSql.Append(" where " + cond);
+            }
+            SQLiteHelper h = new SQLiteHelper();
+            h.CreateCommand(strSql.ToString());
+            return h.ExecuteNonQuery();
+        }
+
+     
+ 
+        /// <summary>获得数据列表
+        /// 
+        /// </summary>
+        public DataSet GetList(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * ");
+            strSql.Append(" FROM @tabname@  ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            SQLiteHelper h = new SQLiteHelper();
+            h.CreateCommand(strSql.ToString());
+            DataTable dt = h.ExecuteQuery();
+            DataSet ds = new DataSet();
+            ds.Tables.Add(dt);
+            return ds;
+        }
+		/// <summary>获得数据列表
+        /// 
+        /// </summary>
+        public DataSet GetList(string strWhere,string Filds)
+        {
+            StringBuilder strSql = new StringBuilder();
+			  strSql.Append("select " + Filds + " ");
+            strSql.Append(" FROM @tabname@  ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            SQLiteHelper h = new SQLiteHelper();
+            h.CreateCommand(strSql.ToString());
+            DataTable dt = h.ExecuteQuery();
+            DataSet ds = new DataSet();
+            ds.Tables.Add(dt);
+            return ds;
+        }
+        /// <summary>分页获取数据列表
+        /// 
+        /// </summary>
+        public DataSet GetList(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
+        {
+            SQLiteHelper h = new SQLiteHelper();
+            DataTable dt = h.FengYe("@tabname@", fileds, order, ordertype, strWhere, PageSize, PageIndex);
+            DataSet ds = new DataSet();
+            ds.Tables.Add(dt);
+            return ds;
+        }
+
+     
+        /// <summary>分页获取数据列表
+        /// 
+        /// </summary>
+        public List<@namespace@.Model.@classname@> GetListArray(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
+        {
+            SQLiteHelper h = new SQLiteHelper();
+            DataTable dt = h.FengYe("@tabname@", fileds, order, ordertype, strWhere, PageSize, PageIndex);
+            List<@namespace@.Model.@classname@> list = new List<@namespace@.Model.@classname@>();
+            foreach (DataRow row in dt.Rows)
+            {
+                list.Add(new Model.@classname@()
+                {
+                    @GetListArrayParam@
+                });
+            }
+            return list;
+        }
+
+    
+        /// <summary>计算记录数
+        /// 
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public int CalcCount(string cond)
+        {
+            string sql = "select count(1) from @tabname@";
+            if (!string.IsNullOrEmpty(cond))
+            {
+                sql += " where " + cond;
+            }
+            SQLiteHelper h = new SQLiteHelper();
+            h.CreateCommand(sql);
+            return int.Parse(h.ExecuteScalar());
+        }
+    }
+}
+

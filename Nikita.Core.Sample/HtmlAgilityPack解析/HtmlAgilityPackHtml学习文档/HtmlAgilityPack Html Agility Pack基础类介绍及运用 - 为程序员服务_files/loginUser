@@ -1,0 +1,12 @@
+window.loginUser={id:0,screenName:'访客',isGuest:true,reputation:0,flags:'0'}
+
+$('.userStatus').html('<a href="http://outofmemory.cn/user/register">注册</a> &nbsp; | &nbsp;'
+    +'<a href="http://outofmemory.cn/user/login" class="login">登录</a> &nbsp; | &nbsp;'
+    +'<a href="http://outofmemory.cn/weibo/login" class="weibo-login">微博登录</a>'
+    +'&nbsp; &nbsp;'
+    +'<a href="http://outofmemory.cn/qq/login" class="qq-login">QQ登录</a>');
+
+
+$(function(){
+onGetVoteStatus({"type": 0, "success": true});onGetFavoriteCodeStatus(false);showCommentCaptcha();
+});

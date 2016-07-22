@@ -1,0 +1,2 @@
+Nikita.Core
+该组件是用于基础的一些常用的类库集合（WinForm控件相关控件集合放置在Nikita.Core.WinForm）

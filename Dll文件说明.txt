@@ -1,0 +1,42 @@
+1，System.Data.SQLite.dll 【SQLite数据库操作类】
+2，UtilityLibrary.dll     【伍华聪自定义控件】
+3，WeifenLuo.WinFormsUI.Docking.dll 【DockPanel控件】
+4，Newtonsoft.Json.dll    【Json.Net 4.0版本】
+5，log4net.dll  【开源日志组件】      
+6，Common.Logging.Core.dll【开源任务调度组件配合使用的日志组件】 
+7，Common.Logging.dll【开源任务调度组件配合使用的日志组件】 
+8，Quartz.dll【开源任务调度组件配合使用的】
+9，ICSharpCode.SharpZipLib.dll 【开源压缩解压组件】 
+10，DotNetPrint.dll 【DataGirdView打印控件】
+11，NPOI.dll【DataGirdView打印控件配合使用】
+12，zxing.dll 【DataGirdView打印控件配合使用】
+13，NPOI4.0【文件夹下的dll是用于Excel处理的dll】 
+14，ZetaHtmlEditControl 【文件夹下的dll是用于富文本控件的dll】 
+15，HtmlAgilityPack.dll【Html Agility Pack 是CodePlex 上的一个开源项目。它提供了标准的DOM API 和XPath 导航--即使 HTML 不是适当的格式！】
+16，MySql.Data 【MySql数据库操作类】
+17，Microsoft.ReportViewer.Common.dll 【微软ReportViewer报表打印】
+18，Microsoft.ReportViewer.WinForms.dll 【微软ReportViewer报表打印】
+19，Microsoft.ReportViewer.ProcessingObjectModel.dll 【微软ReportViewer报表打印】
+20，Microsoft.ReportViewer.DataVisualization.dll 【微软ReportViewer报表打印】 
+21，EntityFramework【微软ORM】 
+22，EntityFramework.SqlServer【微软ORM】 
+23，LinqKit.dll 【LinqToSQL扩展】
+24，EntityFramework.Extend.dll  【微软EF扩展】
+25，EntityFramework.BulkInsert.dll  【微软EF批量插入扩展】
+26，EntityFramework.MappingAPI.dll【配合微软EF批量插入扩展】
+27，ExfSoft.EntityFramework.Extension.dll 【微软EF分页扩展】 基于.Net 4.5.1有点坑爹
+28，MySql.Data.dll 【MySql数据访问类】
+29，DNTProfiler.Common.dll  【跟踪EF生成SQL所需类库】
+30，DNTProfiler.EntityFramework.Core.dll  【跟踪EF生成SQL所需类库】
+31，Newtonsoft.Json.dll  【跟踪EF生成SQL所需类库】
+32，System.Windows.Interactivity.dll  【跟踪EF生成SQL所需类库】
+33，System.Data.SQLite.dll 【EFSQLite所需类库】
+34，System.Data.SQLite.EF6.dll 【EFSQLite所需类库】
+35，System.Data.SQLite.Linq.dll【EFSQLite所需类库】
+36，IconLibrary 文件夹里的Dll 是一些图标DLL
+37，WebKitBrowser.dll 是一个谷歌内核浏览器
+38，Xant.Querier.dll 是一个开源通用查询组件  https://git.oschina.net/xant77/Xant.Querier
+39，FluentMigrator.dll 是一个数据建表，删除，回滚等方式的组件。 nuget上有，最新版现在是1.6
+40，SpireOfficeFree 文件夹中的DLL是DocViewer和PDFViewer 控件所需组件，免费版，有限制。
+41，KP-ImageViewerV2.dll 是一个开源的图片浏览控件
+

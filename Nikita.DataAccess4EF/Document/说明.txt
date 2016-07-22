@@ -1,0 +1,7 @@
+﻿Nikita.DataAccess4EF
+一个EF数据访问库
+
+EF SQLite DBFirst，建立实体模型的时候，选择不到数据源，应该先安装
+开源下载\SQLite\.Net4.5.1
+sqlite-netFx451-setup-x86-2013-1.0.97.0.exe
+sqlite-netFx451-setup-bundle-x86-2013-1.0.97.0.exe 最好是完全安装

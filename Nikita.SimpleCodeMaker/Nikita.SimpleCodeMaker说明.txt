@@ -1,0 +1,2 @@
+﻿Nikita.Assist.SimpleCodeMaker项目是一个简易的代码生成器，在牛腩代码生成器的基础上做了一些修改。用于生成简易的小项目
+包含DAL层跟Model层

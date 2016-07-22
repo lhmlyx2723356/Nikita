@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#bottomsitefeedbacklink")!=null&&$("#bottomsitefeedbacklink").click(function(){return window.open($("#bottomsitefeedbacklink").attr("href"),"SiteFeedback","width=670,resizable=no,height=700,toolbar=no,location=no,scrollbars=yes,directories=no,status=no,menubar=no"),!1})});

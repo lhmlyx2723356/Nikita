@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A939C25E-8300-48CA-AD10-48755C95FED8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nikita.Core</RootNamespace>
+    <AssemblyName>Nikita.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Nikita发布\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Nikita发布\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Nikita.DLL\NPOI4.0\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Nikita.DLL\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\Nikita.DLL\NPOI4.0\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\Nikita.DLL\NPOI4.0\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\Nikita.DLL\NPOI4.0\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\Nikita.DLL\NPOI4.0\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoRunHelper.cs" />
+    <Compile Include="CacheHelper.cs" />
+    <Compile Include="CodeTimer.cs" />
+    <Compile Include="CodeTimerResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommPortHelper.cs" />
+    <Compile Include="ConfigHelper.cs" />
+    <Compile Include="Images\ExifThumbReader.cs" />
+    <Compile Include="HotKey.cs" />
+    <Compile Include="ThirdPart\Autofac\IIocRegisterType.cs" />
+    <Compile Include="ThirdPart\Autofac\IIocResolver.cs" />
+    <Compile Include="ThirdPart\Autofac\IocRegisterType.cs" />
+    <Compile Include="ThirdPart\Autofac\IocResolver.cs" />
+    <Compile Include="ThirdPart\Literacy\AttributeCollection.cs" />
+    <Compile Include="ThirdPart\Literacy\Convert2.cs" />
+    <Compile Include="ThirdPart\Literacy\Delegate.cs" />
+    <Compile Include="ThirdPart\Literacy\ILoadMember.cs" />
+    <Compile Include="ThirdPart\Literacy\IMemberMappingAttribute.cs" />
+    <Compile Include="ThirdPart\Literacy\Literacy.cs" />
+    <Compile Include="ThirdPart\Literacy\MemberMappingAttribute.cs" />
+    <Compile Include="ThirdPart\Literacy\ObjectProperty.cs" />
+    <Compile Include="ThirdPart\Literacy\ObjectPropertyCollection.cs" />
+    <Compile Include="ThirdPart\Literacy\TypeCodes.cs" />
+    <Compile Include="ThirdPart\Literacy\TypeInfo.cs" />
+    <Compile Include="ThirdPart\Literacy\TypesHelper.cs" />
+    <Compile Include="WinForm\ControlManager.cs" />
+    <Compile Include="ConvertHelper.cs" />
+    <Compile Include="DataTableHelper.cs" />
+    <Compile Include="DateHelper.cs" />
+    <Compile Include="DateTimeHelper.cs" />
+    <Compile Include="Encrypt\DESEncryptHelper.cs" />
+    <Compile Include="EmailHelper.cs" />
+    <Compile Include="ThirdPart\NPOI\ExcelHelper.cs" />
+    <Compile Include="ExportCSVHelper.cs" />
+    <Compile Include="ThirdPart\Compression\FileCompression.cs" />
+    <Compile Include="FileHelper.cs" />
+    <Compile Include="HttpHelper.cs" />
+    <Compile Include="Images\ImageHelper.cs" />
+    <Compile Include="XML\LinqToXmlHelper.cs" />
+    <Compile Include="LogHelper.cs" />
+    <Compile Include="MachineInfoHelper.cs" />
+    <Compile Include="Encrypt\MD5Helper.cs" />
+    <Compile Include="WinForm\MessageBoxHelper.cs" />
+    <Compile Include="ModelHandler.cs" />
+    <Compile Include="MsDBHelper.cs" />
+    <Compile Include="ThirdPart\NPOI\NPOIHelper.cs" />
+    <Compile Include="PrintHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomHelper.cs" />
+    <Compile Include="SearchCondition.cs" />
+    <Compile Include="StartupHelper.cs" />
+    <Compile Include="StaticInfoHelper.cs" />
+    <Compile Include="StringHelper.cs" />
+    <Compile Include="ThreadHelper.cs" />
+    <Compile Include="UserInfoHelper.cs" />
+    <Compile Include="ValidateHelper.cs" />
+    <Compile Include="WebServiceHelper.cs" />
+    <Compile Include="WinForm\CheckedComboBoxHelper.cs" />
+    <Compile Include="WinForm\CheckedListBoxHelper.cs" />
+    <Compile Include="WinForm\ComboBoxHelper.cs" />
+    <Compile Include="WinForm\DataGridViewHelper.cs" />
+    <Compile Include="WinForm\TreeViewHelper.cs" />
+    <Compile Include="XML\XmlConvertor.cs" />
+    <Compile Include="XML\XmlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Nikita.Core说明.txt" />
+    <Content Include="ThirdPart\Literacy\开源地址.txt" />
+    <Content Include="WinForm\WinForm文件说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nikita.WinForm.ExtendControl\Nikita.WinForm.ExtendControl.csproj">
+      <Project>{db3e8dd9-36c0-4163-b01f-04f09c23738a}</Project>
+      <Name>Nikita.WinForm.ExtendControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ThirdPart\Aop\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

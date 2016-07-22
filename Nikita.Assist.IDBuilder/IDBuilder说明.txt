@@ -1,0 +1,2 @@
+﻿Nikita.Assist.IDBuilder项目是一个生成ID和业务单据流水号的类库
+

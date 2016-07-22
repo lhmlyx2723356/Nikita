@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21CCE3A7-385E-4CD0-B25F-C36DD09AA96C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nikita.Report.WinForm</RootNamespace>
+    <AssemblyName>Nikita.Report.WinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Nikita发布\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ReportViewer\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ReportViewer\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DynamicMatrix\FrmDynamicMatrixDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DynamicMatrix\FrmDynamicMatrixDemo.designer.cs">
+      <DependentUpon>FrmDynamicMatrixDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicMatrix\MatrixDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DynamicMatrix\MatrixDialog.designer.cs">
+      <DependentUpon>MatrixDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicMatrix\MatrixRdlGenerator.cs" />
+    <Compile Include="DynamicMatrix\RdlGenerator.cs" />
+    <Compile Include="DynamicTable\FrmDynamicTableDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DynamicTable\FrmDynamicTableDemo.designer.cs">
+      <DependentUpon>FrmDynamicTableDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicTable\RdlGeneratorTable.cs" />
+    <Compile Include="DynamicTable\ReportOptionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DynamicTable\ReportOptionsDialog.designer.cs">
+      <DependentUpon>ReportOptionsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicTable\TableRdlGenerator.cs" />
+    <Compile Include="FrmReportBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportBase.designer.cs">
+      <DependentUpon>FrmReportBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportBaseBottom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportBaseBottom.Designer.cs">
+      <DependentUpon>FrmReportBaseBottom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DynamicMatrix\FrmDynamicMatrixDemo.resx">
+      <DependentUpon>FrmDynamicMatrixDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DynamicMatrix\MatrixDialog.resx">
+      <DependentUpon>MatrixDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DynamicTable\FrmDynamicTableDemo.resx">
+      <DependentUpon>FrmDynamicTableDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DynamicTable\ReportOptionsDialog.resx">
+      <DependentUpon>ReportOptionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportBase.resx">
+      <DependentUpon>FrmReportBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportBaseBottom.resx">
+      <DependentUpon>FrmReportBaseBottom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysRpt\RptNewA4.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DynamicMatrix\demo1.xml" />
+    <Content Include="DynamicMatrix\demo2.xml" />
+    <Content Include="DynamicTable\test.xml" />
+    <Content Include="Nikita.Report.WinForm.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

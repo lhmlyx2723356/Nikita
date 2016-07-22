@@ -1,0 +1,241 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.OleDb;
+using System.Data;
+
+namespace @namespace@.DAL
+{
+    /// <summary>
+    ///Access数据库操作类
+    ///创建时间：2010年4月16日17时9分
+    ///作者：UsTeam
+    ///QQ: 164423073
+    /// </summary>
+    public class AccessHelper
+    {
+        private OleDbConnection conn = null;
+        private OleDbCommand cmd = null;
+        private OleDbDataReader sdr = null;
+
+
+        public AccessHelper()
+        {
+            //  string connStr = WebConfigurationManager.ConnectionStrings["connStr"].ToString();
+            string connStr = @"@connstr@";
+            conn = new OleDbConnection(connStr);
+        }
+
+
+        /// <summary>创建Command对象
+        /// 
+        /// </summary>
+        /// <param name="sql">SQL语句</param>
+        public void CreateCommand(string sql)
+        {
+            conn.Open();
+            cmd = new OleDbCommand(sql, conn);
+        }
+
+
+        /// <summary>添加参数
+        /// 
+        /// </summary>
+        /// <param name="paramName">参数名称</param>
+        /// <param name="value">值</param>
+        public void AddParameter(string paramName, object value)
+        {
+            cmd.Parameters.Add(new OleDbParameter(paramName, value));
+
+
+        }
+
+
+        /// <summary>执行不带参数的增删改SQL语句
+        ///  
+        /// </summary>
+        /// <param name="cmdText">增删改SQL语句</param>
+        /// <param name="ct">命令类型</param>
+        /// <returns></returns>
+        public bool ExecuteNonQuery()
+        {
+            int res;
+            try
+            {
+                res = cmd.ExecuteNonQuery();
+                if (res > 0)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return false;
+        }
+
+
+        /// <summary>执行查询SQL语句
+        ///  
+        /// </summary>
+        /// <param name="cmdText">查询SQL语句</param>
+        /// <returns></returns>
+        public DataTable ExecuteQuery()
+        {
+            DataTable dt = new DataTable();
+            using (sdr = cmd.ExecuteReader(CommandBehavior.CloseConnection))
+            {
+                dt.Load(sdr);
+            }
+            return dt;
+        }
+
+
+        /// <summary>分页
+        /// 
+        /// </summary>
+        /// <param name="tblName">表名</param>
+        /// <param name="fldName">字段名</param>
+        /// <param name="OrderfldName">排序字段名</param>
+        /// <param name="OrderType">排序方式：asc或者desc</param>
+        /// <param name="strWhere">条件，不用加where</param>
+        /// <param name="PageSize">页大小</param>
+        /// <param name="PageIndex">页索引</param>
+        /// <returns></returns>
+        public DataTable FengYe(string tblName, string fldName, string OrderfldName, string OrderType, string strWhere, int PageSize, int PageIndex)
+        {
+            DataTable dt = new DataTable();
+            string strSQL = ""; // 主语句 
+            string strTmp = ""; // 临时变量 
+            string strOrder = ""; // 排序类型
+
+
+            if (OrderType == "desc")
+            {
+                // 降序
+                strTmp = "<(select min";
+                strOrder = " order by " + OrderfldName + " desc";
+            }
+            else
+            {
+                // 升序
+                strTmp = ">(select max";
+                strOrder = " order by " + OrderfldName + " asc";
+            }
+
+
+            #region 第一页
+            if (PageIndex == 1)
+            {
+                strTmp = string.IsNullOrEmpty(strWhere) ? "" : " where " + strWhere;
+                strSQL = "select top " + PageSize + " " + fldName + " from " + tblName + strTmp + " " + strOrder;
+                CreateCommand(strSQL);
+                dt = ExecuteQuery();
+                return dt;
+            }
+            #endregion
+
+
+            #region 不是第一页
+            if (string.IsNullOrEmpty(strWhere))
+            {
+                // 条件为空
+                strSQL = string.Format("select top {0} {1} from {2} where {3}{4}({5}) from (select top {6} {7} from {8} {9}) as tblTmp) {10}", PageSize, fldName, tblName, OrderfldName, strTmp, OrderfldName, (PageIndex - 1) * PageSize, OrderfldName, tblName, strOrder, strOrder);
+                CreateCommand(strSQL);
+                dt = ExecuteQuery();
+            }
+            else
+            {
+                // 条件不为空
+                strSQL = string.Format("select top {0} {1} from {2} where  {3}{4}({5}) from (select top {6} {7} from {8} where {9} {10}) as tblTmp) and {11} {12}", PageSize, fldName, tblName, OrderfldName, strTmp, OrderfldName, (PageIndex - 1) * PageSize, OrderfldName, tblName, strWhere, strOrder, strWhere, strOrder);
+                CreateCommand(strSQL);
+                dt = ExecuteQuery();
+            }
+            #endregion
+
+
+            return dt;
+        }
+
+
+        /// <summary>返回查询SQL语句查询出的结果的第一行第一列的值
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public string ExecuteScalar()
+        {
+            string res = "";
+            try
+            {
+                object obj = cmd.ExecuteScalar();
+                if (obj != null)
+                {
+                    res = obj.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return res;
+        }
+
+        /// <summary>返回IDataReader只读数据流
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IDataReader ExecuteReader()
+        {
+            try
+            {
+                sdr = cmd.ExecuteReader();
+                return sdr;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        /// <summary>关闭数据库连接
+        /// 
+        /// </summary>
+        public void CloseConn()
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+    }
+
+}

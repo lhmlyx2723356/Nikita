@@ -1,0 +1,52 @@
+﻿--SQL2008查找某数据库中的列是否存在某个值
+create proc spFind_Column_In_DB
+(
+    @type int,--类型：1为文字类型、2为数值类型
+    @str nvarchar(100)--需要搜索的名字
+)
+as
+    --创建临时表存放结果
+    create table #tbl(PK int identity primary key ,tbl sysname,col sysname)
+    declare @tbl nvarchar(300),@col sysname,@sql nvarchar(1000)
+    if @type=1 
+    begin
+        declare curTable cursor fast_forward
+        for 
+            select '['+SCHEMA_NAME(SCHEMA_ID)+'].['+o.name+']' tableName,'['+c.name+']' columnName from sys.columns c inner join sys.objects o on c.object_id=o.object_id
+            where o.type_desc='user_table' and user_type_id in (167,175,231,239,35,99)
+     end
+
+
+  else
+    begin 
+        declare curTable cursor fast_forward
+        for 
+        select '['+SCHEMA_NAME(SCHEMA_ID)+'].['+o.name+']' tableName,'['+c.name+']' columnName from sys.columns c inner join sys.objects o on c.object_id=o.object_id
+            where o.type_desc='user_table' and user_type_id in (56,48,52,59,60,62,106,108,122)
+    end
+    open curtable
+    fetch next from curtable into @tbl,@col
+    while @@FETCH_STATUS=0
+    begin
+        set @sql='if exists (select * from '+@tbl+' where '
+        if @type=1
+        begin
+            set @sql += @col + ' like ''%'+@str +'%'')'
+        end
+        else 
+        begin
+            set @sql +=@col + ' in ('+@str+'))'
+        end
+
+        set @sql += ' INSERT #TBL(tbl,col) VALUES('''+@tbl+''','''+@col+''')'
+        --print @sql
+        exec (@sql)
+        fetch next from curtable into @tbl,@col
+    end
+    close curtable 
+    deallocate curtable
+    select * from #tbl
+
+--使用例子，查询库中存在aaa这个值的列：
+exec  spFind_Column_In_DB  1,'aaa'
+ 

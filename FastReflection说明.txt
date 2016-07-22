@@ -1,0 +1,3 @@
+老赵的快速反射 http://fastreflectionlib.codeplex.com/
+
+http://www.cnblogs.com/JeffreyZhao/archive/2009/01/31/fast-reflection-library.html

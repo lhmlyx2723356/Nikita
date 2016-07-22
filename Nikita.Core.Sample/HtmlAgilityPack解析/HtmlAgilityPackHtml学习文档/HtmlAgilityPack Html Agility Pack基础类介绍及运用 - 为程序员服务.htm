@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="description" content="Html Agility Pack基础类介绍及运用 
+
+Html Agility Pack 源码中的类大概有28个左右，其实不算一个很复杂的类库，但它的功能确不弱，为解析DOM已经提供了足够强大的功能支持，可以跟jQuery">
+    <meta name="keywords" content="HtmlAgilityPack,c# Html Agility Pack基础类介绍及运用">
+    <title>HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务</title>
+    <link href="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/1.8.9.css" type="text/css" rel="stylesheet">
+    
+    <link rel="shortcut icon" href="http://outofmemory.cn/favicon.ico" type="image/x-icon">
+    
+<style type="text/css">
+iframe[src^="http://outofmemory.cn/static/tgs/juke_"],.wrap.tgBar,.adsbygoogle,.homeADTR {display:none!important;display:none}</style>
+<link href="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/bdsstyle.css" rel="stylesheet" type="text/css"><script src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/logger.js"></script><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_renren rrw">人人网</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_douban db">豆瓣网</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_thx thx">和讯微博</a></li><li><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="bds_more">更多...</a></li></ul><p><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" class="goWebsite">百度分享</a></p></div></div></div>
+
+
+<div id="head">
+    <div id="headLeft">
+        <div class="logo">
+            <a href="http://outofmemory.cn/" title="OutOfMemory.CN 为程序员服务">OutOfMemory.CN 为程序员服务</a>
+        </div><div class="beta"><sup>β</sup></div>
+        <div class="siteSlogan">为程序员服务</div>
+
+        <ul id="headNav">
+            <li><a href="http://ju.outofmemory.cn/" title="聚客：编程技术网站牛人牛博聚集地">聚客</a></li>
+            <li><a class="current" href="http://outofmemory.cn/code-snippet/" title="代码：分享代码 分享经验">代码</a></li>
+            
+            <li><a href="http://j.outofmemory.cn/" title="技术专栏，精华">专栏</a></li>
+            <li><a href="http://outofmemory.cn/tutorial/" title="简单易学的技术教程">教程</a></li>
+            <li><a href="http://maven.outofmemory.cn/" title="Maven信息库速查">Maven</a></li>
+            <li><a href="http://outofmemory.cn/tag/" title="标签">标签</a></li>
+        </ul>
+    </div>
+    <div id="headRight">
+        <div class="searchBox">
+            <form action="http://outofmemory.cn/search" method="GET">
+                <input type="text" class="search" name="q">
+            </form>
+        </div>
+        <div class="userStatus topRight"><a href="http://outofmemory.cn/user/register">注册</a> &nbsp; | &nbsp;<a href="http://outofmemory.cn/user/login?url=http%3A%2F%2Foutofmemory.cn%2Fcode-snippet%2F2003%2FHtml-Agility-Pack-jichulei-introduction-and-yunyong" class="login">登录</a> &nbsp; | &nbsp;<a href="http://outofmemory.cn/weibo/login?returnUrl=http%3A%2F%2Foutofmemory.cn%2Fcode-snippet%2F2003%2FHtml-Agility-Pack-jichulei-introduction-and-yunyong" class="weibo-login">微博登录</a>&nbsp; &nbsp;<a href="http://outofmemory.cn/qq/login?returnUrl=http%3A%2F%2Foutofmemory.cn%2Fcode-snippet%2F2003%2FHtml-Agility-Pack-jichulei-introduction-and-yunyong" class="qq-login">QQ登录</a></div>
+    </div>
+</div>
+<div id="headPlaceHolder">&nbsp;</div>
+<div class="subNavWrap">
+<div class="subNav">
+    <ul id="subNavA">
+    <li><a href="http://outofmemory.cn/code-snippet/c/java/">Java</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/.Net/">.Net</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/qianduan/">前端</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/iOS/">iOS</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/PHP/">PHP</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/python/">Python</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/Ruby/">Ruby</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/NodeJs/">NodeJs</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/PHP/">PHP</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/linux/">Linux</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/Test/">测试</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/MySQL/">MySQL</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/Database/">数据库</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/Android/">Android</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/NoSql/">NoSql</a></li>
+
+    <li><a href="http://outofmemory.cn/code-snippet/c/c/">C</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/c%2B%2B/">C++</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/system/">系统运维</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/SEO/">SEO</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/golang/">golang</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/Erlang/">Erlang</a></li>
+    <li><a href="http://outofmemory.cn/code-snippet/c/Raspberry/">Raspberry</a></li>
+</ul>
+
+</div>
+</div>
+<div id="subNavPlaceHolder">&nbsp;</div>
+<span id="subNavArrow" style="left: 358.96875px; top: 38px; display: inline;"></span>
+<p id="back-to-top" style="display: block;"><a href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#top"><span></span>返回顶部</a></p>
+
+
+<div class="wrap">
+    <div class="favoriteBox"><a href="javascript:void(0)" class="favorite assertLogin unfavorited" title="这个代码对您有用？收藏它吧！">收藏</a></div><h1>Html Agility Pack基础类介绍及运用</h1>
+
+    <div class="content">
+
+
+<div class="bshare-custom" style="float:right;">
+    
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a class="bds_qzone" title="分享到QQ空间" href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#"></a>
+<a class="bds_tsina" title="分享到新浪微博" href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#"></a>
+<a class="bds_tqq" title="分享到腾讯微博" href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#"></a>
+<a class="bds_renren" title="分享到人人网" href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#"></a>
+<a class="bds_t163" title="分享到网易微博" href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#"></a>
+<span class="bds_more">更多</span>
+<a class="shareCount" href="http://outofmemory.cn/code-snippet/2003/Html-Agility-Pack-jichulei-introduction-and-yunyong#" title="累计分享2次">2</a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6762184" src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src =
+            "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+
+
+</div>
+
+
+<div class="tagList">
+    <div class="tag" title="HtmlAgilityPack">
+        <div class="ar"></div>
+        <div class="co">
+            <a href="http://outofmemory.cn/code-snippet/tagged/HtmlAgilityPack" class="name">
+            <strong>HtmlAgilityPack</strong>
+            </a>
+        </div>
+    </div>
+    <div class="tag" title="c#">
+        <div class="ar"></div>
+        <div class="co">
+            <a href="http://outofmemory.cn/code-snippet/tagged/c%23" class="name">
+            <strong>c#</strong>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="iloveoutofmemory660" style="height:90px;overflow:hidden;background:transparent;margin:2px 0 4px 0;border:1px solid lightblue">
+    <script async="" src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2260568282752965" data-ad-slot="8664881273"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="snippetWrap">
+    <div class="snippet">
+        <div class="md">
+        <p>Html Agility Pack 源码中的类大概有28个左右，其实不算一个很复杂的类库，但它的功能确不弱，为解析DOM已经提供了足够强大的功能支持，可以跟jQuery操作DOM媲美：）</p>
+<p>基础类和基础方法介绍</p>
+<p>Html Agility Pack最常用的基础类其实不多，对解析DOM来说，就只有HtmlDocument和HtmlNode这两个常用的类，还有一个 HtmlNodeCollection集合类。</p>
+<p><strong>HtmlDocument类</strong></p>
+<p>当然在解析DOM前需要加载html原始文件或者html的字符串，HtmlDocument类封装了支持此功能的方法，下面是加载html的方法介绍。</p>
+<p>HtmlDocument类定义了多个重载的Load方法来实现以不同方式加载html，其实主要分为两种，一种是从Stream中加载html，另外一种是从物理路径加载html，分别见下面：</p>
+<p>方法：public void Load(TextReader reader)<br>
+说明：从指定的 TextReader对象中加载Html<br>
+示例：</p>
+<pre class="prettyprint cs prettyprinted"><span class="typ">HtmlDcument</span><span class="pln"> doc </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">HtmlDocument</span><span class="pun">();</span><span class="pln">
+</span><span class="typ">StreamReader</span><span class="pln"> sr </span><span class="pun">=</span><span class="pln"> </span><span class="typ">File</span><span class="pun">.</span><span class="typ">OpenText</span><span class="pun">(</span><span class="str">"file path"</span><span class="pun">);</span><span class="pln">
+doc</span><span class="pun">.</span><span class="typ">Load</span><span class="pun">(</span><span class="pln">sr</span><span class="pun">);</span></pre>
+
+<p>基于上面方法，衍生出了几个不同重载方法。</p>
+<p>以指定的Stream对象为主的有：</p>
+<p>（1）public void Load(Stream stream)    ///从指定的Stream对象中加载html；</p>
+<p>（2）public void Load(Stream stream, bool detectEncodingFromByteOrderMarks)    ///指定是否从顺序字节流中解析编码格式</p>
+<p>（3）public void Load(Stream stream, Encoding encoding)    ///指定编码格式</p>
+<p>（4）public void Load(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks)</p>
+<p>（5）public void Load(Stream stream, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)</p>
+<p>以指定的物理路径为主的有：</p>
+<p>（1）public void Load(string path)</p>
+<p>（2）public void Load(string path, bool detectEncodingFromByteOrderMarks)    ///指定是否从顺序字节流中解析编码格式</p>
+<p>（3）public void Load(string path, Encoding encoding)    ///指定编码格式</p>
+<p>（4）public void Load(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks)</p>
+<p>（5）public void Load(string path, Encoding encoding, bool detectEncodingFromByteOrderMarks, int buffersize)</p>
+<p><strong>HtmlDocument类中还定义了直接从html字符串中加载Html，如下：</strong></p>
+<p>方法：public void LoadHtml(string html)<br>
+说明：从指定的html字符串中加载html<br>
+示例：</p>
+<pre class="prettyprint cs prettyprinted"><span class="typ">HtmlDocument</span><span class="pln"> doc </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">HtmlDocument</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">string</span><span class="pln"> html </span><span class="pun">=</span><span class="pln"> </span><span class="str">"&lt;div id="</span><span class="pln">demo</span><span class="str">"&gt;&lt;span style="</span><span class="pln">color</span><span class="pun">:</span><span class="pln">red</span><span class="pun">;</span><span class="str">"&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/span&gt;&lt;/div&gt;"</span><span class="pun">;</span><span class="pln">
+doc</span><span class="pun">.</span><span class="typ">LoadHtml</span><span class="pun">(</span><span class="pln">html</span><span class="pun">);</span></pre>
+
+<p>HtmlDocument类还有其他写DOM方法的定义，这里不作详细介绍，留作以后专门介绍Html Agility Pack写DOM章节介绍吧，这里着重介绍Html Agility pack解析DOM的细节。</p>
+<p>HtmlNode类和HtmlNodeCollection类</p>
+<p>通过HtmlDocument把html加载进来后，接着是要做什么呢？当然是对html解析了，解析DOM就需要提到HtmlNode类了。 HtmlDocument类由属性DocumentNode属性返回当前Html解析后的一个全局的HtmlNode对象；如果想获取某一个元素的 HtmlNode，可以通过HtmlDocument类的GetElementbyId(string Id)方法来获取，返回指定某一个html元素的HtmlNode对象。如何通过HtmlNode对象来访问DOM呢？介绍之前先对它的功能了解下。</p>
+<p>HtmlNode类实现了IXPathNavigable接口，这说明了它可以通过xpath来查询DOM了，如果对System.Xml命名空间下的 XmlDocument类了解的，特别是使用过了SelectNodes()和SelectSingleNode()方法的朋友对使用HtmlNode类将会很熟悉。其实Html Agility Pack内部是把html解析成xml文档格式了的，所以支持xml中的一些常用查询方式。下面对HtmlNode的一些主要的常用成员作简要的说明。</p>
+<p>HtmlNode类的主要属性</p>
+<p>1）Attributes属性</p>
+<p>获取当前Html元素的属性的集合，返回的是一个HtmlAttributeCollection对象。如一个div元素，它可能会定义一些属性，如：&lt;div id="title" name="title" class="class-name" title="title div"&gt;***&lt;/div&gt;，那Attributes返回的HtmlAttributeCollection就包含了 “id，name，class，title”的信息。HtmlAttributeCollection类是实现了接口 IList&lt;HtmlAttribute&gt;的一个集合类，故此可以通过下面代码方式访问每一个成员。</p>
+<pre class="prettyprint cs prettyprinted"><span class="typ">HtmlNode</span><span class="pln"> node </span><span class="pun">=</span><span class="pln"> doc</span><span class="pun">.</span><span class="typ">GetElementbyId</span><span class="pun">(</span><span class="str">"title"</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">string</span><span class="pln"> titleValue </span><span class="pun">=</span><span class="pln"> node</span><span class="pun">.</span><span class="typ">Attributes</span><span class="pun">[</span><span class="str">"title"</span><span class="pun">].</span><span class="typ">Value</span><span class="pun">;</span></pre>
+
+<p>或者</p>
+<pre class="prettyprint cs prettyprinted"><span class="kwd">foreach</span><span class="pun">(</span><span class="typ">HtmlAttribute</span><span class="pln"> attr </span><span class="kwd">in</span><span class="pln"> node</span><span class="pun">.</span><span class="typ">Attributes</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="str">"{0}={1}"</span><span class="pun">,</span><span class="pln">attr</span><span class="pun">.</span><span class="typ">Name</span><span class="pun">,</span><span class="pln">attr</span><span class="pun">.</span><span class="typ">Value</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></pre>
+
+<p>在获取属性值时，如果某一个属性名称不存在的话，Attributes["name"]返回的是null值。</p>
+<p>2）FirstChild,LastChild,ChildNodes,ParentNode属性</p>
+<p>FirstChild属性:返回所有子节点的第一个节点，如下面代码：</p>
+<pre class="prettyprint cs prettyprinted"><span class="kwd">string</span><span class="pln"> html </span><span class="pun">=</span><span class="pln"> </span><span class="str">"&lt;div id="</span><span class="pln">demo</span><span class="str">"&gt;&lt;span style="</span><span class="pln">color</span><span class="pun">:</span><span class="pln">red</span><span class="pun">;</span><span class="str">"&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/span&gt;&lt;div id="</span><span class="pln">innerDiv</span><span class="str">"&gt;inner div&lt;/div&gt;&lt;/div&gt;"</span><span class="pun">;</span></pre>
+
+<p>FirstChild则返回的是“&lt;span style="color:red;"&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/span&gt;” 的节点。</p>
+<p>LastChild属性：返回所有子节点的最后一个节点，以上面的html为例，则返回“&lt;div id="innerDiv"&gt;inner div&lt;/div&gt;”节点。</p>
+<p>ChildNodes属性：返回当前节点所有直接一代的子节点的集合，不包括跨代子节点，以上面的html为例，则返回“&lt;span style="color:red;"&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/span&gt;” 和“&lt;div id="innerDiv"&gt;inner div&lt;/div&gt;”两个节点。</p>
+<p>ParentNode属性：返回当前节点的直接父节点。</p>
+<p>3)获取Html源码和文本</p>
+<p>HtmlNode类设计了OuterHtml属性和InnerHtml属性用于获取当前节点的Html源码。两者不同之处是，OuterHtml属性返回的是包含当前节点的Html代码在内的所有Html代码，而InnerHtml属性返回的是当前节点里面子节点的所有Html代码。如下面：</p>
+<p>代码</p>
+<pre class="prettyprint cs prettyprinted"><span class="typ">HtmlDocument</span><span class="pln"> doc </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">HtmlDocument</span><span class="pun">();</span><span class="pln">
+</span><span class="kwd">string</span><span class="pln"> html </span><span class="pun">=</span><span class="pln"> </span><span class="str">"&lt;div id="</span><span class="pln">demo</span><span class="str">"&gt;&lt;span style="</span><span class="pln">color</span><span class="pun">:</span><span class="pln">red</span><span class="pun">;</span><span class="str">"&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/span&gt;&lt;/div&gt;"</span><span class="pun">;</span><span class="pln">
+doc</span><span class="pun">.</span><span class="typ">LoadHtml</span><span class="pun">(</span><span class="pln">html</span><span class="pun">);</span><span class="pln">
+
+</span><span class="typ">HtmlNode</span><span class="pln"> node </span><span class="pun">=</span><span class="pln"> doc</span><span class="pun">.</span><span class="typ">HtmlDocument</span><span class="pun">;</span><span class="pln">
+</span><span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">node</span><span class="pun">.</span><span class="typ">OuterHtml</span><span class="pun">);</span><span class="pln"> </span><span class="com">/// return "&lt;div id="demo"&gt;&lt;span style="color:red;"&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/span&gt;&lt;/div&gt;";</span><span class="pln">
+</span><span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">node</span><span class="pun">.</span><span class="typ">InnerHtml</span><span class="pun">);</span><span class="pln"> </span><span class="com">/// return "&lt;span style="color:red;"&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/span&gt;";</span><span class="pln">
+</span></pre>
+
+<p>如要获取节点的文本值，通过InnerText属性来获取，InnerText属性过滤掉了所有的Html标记代码，只返回文本值，如下面：</p>
+<pre class="prettyprint cs prettyprinted"><span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">node</span><span class="pun">.</span><span class="typ">InnerText</span><span class="pun">);</span><span class="com">/// return "Hello World!";</span></pre>
+
+<p><strong>HtmlNode类的主要方法</strong></p>
+<p>HtmlNode类提供了足够丰富的方法供查询当前节点下的子节点（元素），当然也包括查询当前节点的父节点（元素）的方法，下面列出主要的方法和使用说明。</p>
+<p>获取父节点的系列方法：</p>
+<p>1）public IEnumerable&lt;HtmlNode&gt; Ancestors()</p>
+<p>获取当前节点的父节点列表（不包含自身）。</p>
+<p>2）public IEnumerable&lt;HtmlNode&gt; Ancestors(string name)</p>
+<p>以指定一个名称来获取父节点的列表（不包含自身）。</p>
+<p>3）public IEnumerable&lt;HtmlNode&gt; AncestorsAndSelf()</p>
+<p>获取当前节点的父节点列表（包含自身）。</p>
+<p>4）public IEnumerable&lt;HtmlNode&gt; AncestorsAndSelf(string name)</p>
+<p>以指定一个名称来获取父节点的列表（包含自身）。</p>
+<p>获取子节点的系列方法：</p>
+<p>1）public IEnumerable&lt;HtmlNode&gt; DescendantNodes()</p>
+<p>获取当前节点下的所有子节点的列表，包括子节点的子节点（不包含自身）。</p>
+<p>2）public IEnumerable&lt;HtmlNode&gt; DescendantNodesAndSelf()</p>
+<p>获取当前节点下的所有子节点的列表，包括子节点的子节点（包含自身）。</p>
+<p>3）public IEnumerable&lt;HtmlNode&gt; Descendants()</p>
+<p>获取当前节点下的直接子节点的列表（不包含自身）。</p>
+<p>4）public IEnumerable&lt;HtmlNode&gt; DescendantsAndSelf()</p>
+<p>获取当前节点下的直接子节点的列表（包含自身）。</p>
+<p>5）public IEnumerable&lt;HtmlNode&gt; Descendants(string name)</p>
+<p>获取当前节点下的以指定名称的子节点列表。</p>
+<p>6）public IEnumerable&lt;HtmlNode&gt; DescendantsAndSelf(string name)</p>
+<p>获取当前节点下的以指定名称的子节点的列表（包含自身）。</p>
+<p>7）public HtmlNode Element(string name)</p>
+<p>获取第一个符合指定名称的直接子节点的节点元素。</p>
+<p>8）public IEnumerable&lt;HtmlNode&gt; Elements(string name)</p>
+<p>获取符合指定名称的所有直接子节点的节点列表。</p>
+<p>9）public HtmlNodeCollection SelectNodes(string xpath)</p>
+<p>获取符合指定的xpath的子节点列表。</p>
+<p>10）public HtmlNode SelectSingleNode(string xpath)</p>
+<p>获取符合指定的xpath的单个字节点元素。</p>
+<p>查询节点的方法主要是上面10个方法，该类还有其他写节点的系列方法，这里不详细介绍写操作的方法，留作以后详细介绍。</p>
+<p>结合Xpath进行查询节点是功能比较强大，这像操作xml那样方便。</p>
+<p>简单例子的代码</p>
+<p>下面例子是把博客园的精华区博客列表查询出来。</p>
+<pre class="prettyprint cs prettyprinted"><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="typ">Collections</span><span class="pun">.</span><span class="typ">Generic</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="typ">Linq</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="typ">Text</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">System</span><span class="pun">.</span><span class="pln">IO</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">using</span><span class="pln"> </span><span class="typ">HtmlAgilityPack</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">namespace</span><span class="pln"> </span><span class="typ">DemoCnBlogs</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Program</span><span class="pln">
+  </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">Main</span><span class="pun">(</span><span class="kwd">string</span><span class="pun">[]</span><span class="pln"> args</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+      </span><span class="typ">HtmlWeb</span><span class="pln"> web </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">HtmlWeb</span><span class="pun">();</span><span class="pln">
+      </span><span class="typ">HtmlDocument</span><span class="pln"> doc </span><span class="pun">=</span><span class="pln"> web</span><span class="pun">.</span><span class="typ">Load</span><span class="pun">(</span><span class="str">"http://www.cnblogs.com/pick/"</span><span class="pun">);</span><span class="pln">
+
+      </span><span class="typ">HtmlNode</span><span class="pln"> node </span><span class="pun">=</span><span class="pln"> doc</span><span class="pun">.</span><span class="typ">GetElementbyId</span><span class="pun">(</span><span class="str">"post_list"</span><span class="pun">);</span><span class="pln">
+
+      </span><span class="typ">StreamWriter</span><span class="pln"> sw </span><span class="pun">=</span><span class="pln"> </span><span class="typ">File</span><span class="pun">.</span><span class="typ">CreateText</span><span class="pun">(</span><span class="str">"log.txt"</span><span class="pun">);</span><span class="pln">
+
+      </span><span class="kwd">foreach</span><span class="pun">(</span><span class="typ">HtmlNode</span><span class="pln"> child </span><span class="kwd">in</span><span class="pln"> node</span><span class="pun">.</span><span class="typ">ChildNodes</span><span class="pun">)</span><span class="pln">
+      </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">child</span><span class="pun">.</span><span class="typ">Attributes</span><span class="pun">[</span><span class="str">"class"</span><span class="pun">]</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pln"> </span><span class="pun">||</span><span class="pln"> child</span><span class="pun">.</span><span class="typ">Attributes</span><span class="pun">[</span><span class="str">"class"</span><span class="pun">].</span><span class="typ">Value</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> </span><span class="str">"post_item"</span><span class="pun">)</span><span class="pln">
+          </span><span class="kwd">continue</span><span class="pun">;</span><span class="pln">
+        </span><span class="typ">HtmlNode</span><span class="pln"> hn </span><span class="pun">=</span><span class="pln"> </span><span class="typ">HtmlNode</span><span class="pun">.</span><span class="typ">CreateNode</span><span class="pun">(</span><span class="pln">child</span><span class="pun">.</span><span class="typ">OuterHtml</span><span class="pun">);</span><span class="pln">
+
+        </span><span class="com">///如果用child.SelectSingleNode("//*[@class=\"titlelnk\"]").InnerText这样的方式查询，是永远以整个document为基准来查询，</span><span class="pln">
+        </span><span class="com">///这点就不好，理应以当前child节点的html为基准才对。</span><span class="pln">
+        </span><span class="typ">Write</span><span class="pun">(</span><span class="pln">sw</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pun">.</span><span class="typ">Format</span><span class="pun">(</span><span class="str">"推荐：{0}"</span><span class="pun">,</span><span class="pln"> hn</span><span class="pun">.</span><span class="typ">SelectSingleNode</span><span class="pun">(</span><span class="str">"//*[@class=\"diggnum\"]"</span><span class="pun">).</span><span class="typ">InnerText</span><span class="pun">));</span><span class="pln">
+        </span><span class="typ">Write</span><span class="pun">(</span><span class="pln">sw</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pun">.</span><span class="typ">Format</span><span class="pun">(</span><span class="str">"标题：{0}"</span><span class="pun">,</span><span class="pln"> hn</span><span class="pun">.</span><span class="typ">SelectSingleNode</span><span class="pun">(</span><span class="str">"//*[@class=\"titlelnk\"]"</span><span class="pun">).</span><span class="typ">InnerText</span><span class="pun">));</span><span class="pln">
+        </span><span class="typ">Write</span><span class="pun">(</span><span class="pln">sw</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pun">.</span><span class="typ">Format</span><span class="pun">(</span><span class="str">"介绍：{0}"</span><span class="pun">,</span><span class="pln"> hn</span><span class="pun">.</span><span class="typ">SelectSingleNode</span><span class="pun">(</span><span class="str">"//*[@class=\"post_item_summary\"]"</span><span class="pun">).</span><span class="typ">InnerText</span><span class="pun">));</span><span class="pln">
+        </span><span class="typ">Write</span><span class="pun">(</span><span class="pln">sw</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pun">.</span><span class="typ">Format</span><span class="pun">(</span><span class="str">"信息：{0}"</span><span class="pun">,</span><span class="pln"> hn</span><span class="pun">.</span><span class="typ">SelectSingleNode</span><span class="pun">(</span><span class="str">"//*[@class=\"post_item_foot\"]"</span><span class="pun">).</span><span class="typ">InnerText</span><span class="pun">));</span><span class="pln">
+
+        </span><span class="typ">Write</span><span class="pun">(</span><span class="pln">sw</span><span class="pun">,</span><span class="pln"> </span><span class="str">"----------------------------------------"</span><span class="pun">);</span><span class="pln">
+
+      </span><span class="pun">}</span><span class="pln">
+
+      sw</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span><span class="pln">
+
+      </span><span class="typ">Console</span><span class="pun">.</span><span class="typ">ReadLine</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">Write</span><span class="pun">(</span><span class="typ">StreamWriter</span><span class="pln"> writer</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> str</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+      </span><span class="typ">Console</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">str</span><span class="pun">);</span><span class="pln">
+      writer</span><span class="pun">.</span><span class="typ">WriteLine</span><span class="pun">(</span><span class="pln">str</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+        <div class="tagList"><div class="tag" title="HtmlAgilityPack"><div class="ar"></div><div class="co"><a href="http://outofmemory.cn/code-snippet/tagged/HtmlAgilityPack" class="name"><strong>HtmlAgilityPack</strong></a></div></div><div class="tag" title="c#"><div class="ar"></div><div class="co"><a href="http://outofmemory.cn/code-snippet/tagged/c%23" class="name"><strong>c#</strong></a></div></div></div>
+        </div>
+    </div>
+
+
+
+
+    <div class="commandBar">
+        <a href="http://outofmemory.cn/code-snippet/2003/edit" target="_self" class="edit assertLogin" rel="nofollow">编辑</a>
+        <span>|</span>
+        
+        
+        <a href="javascript:;" class="deleteCode assertLogin">删除</a>
+    </div>
+
+
+    <div class="favoriteBox">
+        <a href="javascript:void(0)" class="favorite assertLogin unfavorited" title="这个代码对您有用？收藏它吧！">收藏</a>
+        <p align="center"><span class="num">0</span>人收藏</p>
+    </div>
+
+
+    
+    
+    <div class="votes">
+        <div class="voteUp">
+            <a href="javascript:void(0)" title="这个代码有用，支持" class="assertLogin">支持</a>
+            <p><span class="num">0</span> 顶</p>
+        </div>
+        <div class="voteDown">
+            <a href="javascript:void(0)" title="这个代码没用，踩一脚" class="assertLogin">反对</a>
+            <p><span class="num">0</span> 踩</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="similarCodes">
+    <div class="t"><a href="http://outofmemory.cn/interesting/" style="float:right">»更多</a> 您可能<a href="http://outofmemory.cn/interesting/" rel="nofollow" class="guess">感兴趣</a>的代码</div>
+    <ol>
+        <li><span class="time" title="2013-01-25 21:39:03">2年前</span><a href="http://outofmemory.cn/code-snippet/2002/HtmlAgilityPack-zhuaqu-zhongwen-page-luanma-question-resolve-scheme">HtmlAgilityPack 抓取中文页面乱码问题的解决方案</a> by <a href="http://outofmemory.cn/user/39">GauSir</a></li>
+        <li><span class="time" title="2013-01-25 21:59:01">2年前</span><a href="http://outofmemory.cn/code-snippet/2004/usage-HtmlAgilityPack-parse-HTML-wangye">使用HtmlAgilityPack解析HTML网页</a> by <a href="http://outofmemory.cn/user/63">arden</a></li>
+        <li><span class="time" title="2013-01-20 16:03:47">2年前</span><a href="http://outofmemory.cn/code-snippet/1929/HtmlAgilityPack--parse-html-caiji-wangye-shenbing-liqi">HtmlAgilityPack——解析html和采集网页的神兵利器</a> by <a href="http://outofmemory.cn/user/36">clt</a></li>
+        <li><span class="time" title="2013-01-21 15:54:21">2年前</span><a href="http://outofmemory.cn/code-snippet/1941/c-usage-HTMLAgilityPack-parse-html">c#使用HTMLAgilityPack 解析html</a> by <a href="http://outofmemory.cn/user/56">梁方</a></li>
+        <li><span class="time" title="2013-01-22 11:07:54">2年前</span><a href="http://outofmemory.cn/code-snippet/1950/c-usage-HtmlAgilityPack-parse-CSDN-blog">c#使用HtmlAgilityPack解析CSDN博客</a> by <a href="http://outofmemory.cn/user/128">南宫傲</a></li>
+        <li><span class="time" title="2012-11-03 21:19:19">2年前</span><a href="http://outofmemory.cn/code-snippet/207/C-call-MySQL-storage-procedure">在 C# 中调用 MySQL 存储过程</a> by <a href="http://outofmemory.cn/user/123">奔小康</a></li>
+        <li><span class="time" title="2012-11-10 10:10:59">2年前</span><a href="http://outofmemory.cn/code-snippet/470/c-open-close-CD-DVD-guangqu-code">c#打开关闭CD/DVD光驱代码</a> by <a href="http://outofmemory.cn/user/20">甄码农</a></li>
+        <li><span class="time" title="2012-11-18 00:18:31">2年前</span><a href="http://outofmemory.cn/code-snippet/648/C-usage-OdbcCommand-duqu-data-to-form-fill">C# 使用 OdbcCommand 读取数据并进行表格填充</a> by <a href="http://outofmemory.cn/user/83">empireghost</a></li>
+        <li><span class="time" title="2012-11-21 18:06:19">2年前</span><a href="http://outofmemory.cn/code-snippet/830/C-delete-file-file-jia-come-recover-office-code">C#删除文件和文件夹到回收站的代码</a> by <a href="http://outofmemory.cn/user/48">云香水识</a></li>
+        <li><span class="time" title="2012-11-24 13:22:00">2年前</span><a href="http://outofmemory.cn/code-snippet/949/C-call-MySQL-storage-procedure-duqu-record-code-example">C# 调用 MySQL存储过程,读取记录代码示例</a> by <a href="http://outofmemory.cn/user/54">sunqi</a></li>
+    </ol>
+</div>
+<div class="similarCodes">
+    <div class="t">相关聚客文章</div>
+    <ol>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/903/" title="Herb Sutter">Herb Sutter</a> 发表 <span class="time" title="2012-12-03 21:34:30">2年前</span></span>
+<a href="http://ju.outofmemory.cn/entry/16350" class="codeTitle">Perspective: “Why C++ Is Not ‘Back’”</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/487/" title="IT路人">IT路人</a> 发表 <span class="time" title="2013-07-05 05:00:00">1年前</span></span>
+<a href="http://ju.outofmemory.cn/entry/34229" class="codeTitle">利用C# .net在WP8里面异步加载任务</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/1124/" title="admin">admin</a> 发表 <span class="time" title="2013-07-20 08:46:03">1年前</span></span>
+<a href="http://ju.outofmemory.cn/entry/41032" class="codeTitle">C#中指针使用总结</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/1231/" title="chuchur">chuchur</a> 发表 <span class="time" title="2013-06-09 05:11:45">2年前</span></span>
+<a href="http://ju.outofmemory.cn/entry/55969" class="codeTitle">Win8下 VirtualBox常见错误解决办法</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/493/" title="米豆网 - 1000seo">米豆网 - 1000seo</a> 发表 <span class="time" title="2012-09-11 02:56:18">2年前</span></span>
+<a href="http://ju.outofmemory.cn/entry/78253" class="codeTitle">2012年8月“我最喜爱的编程语言”排行榜</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/1291/" title="逝去日子">逝去日子</a> 发表 <span class="time" title="2014-10-08 08:59:55">8月前</span></span>
+<a href="http://ju.outofmemory.cn/entry/94539" class="codeTitle">c#连接远程oracle数据库</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/910/" title="jonskeet">jonskeet</a> 发表 <span class="time" title="2014-08-22 18:39:50">10月前</span></span>
+<a href="http://ju.outofmemory.cn/entry/105993" class="codeTitle">When is a constant not a constant? When it’s a dec</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/910/" title="skeet">skeet</a> 发表 <span class="time" title="2012-01-01 20:43:10">3年前</span></span>
+<a href="http://ju.outofmemory.cn/entry/16446" class="codeTitle">Awaiting CodeMash 2012</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/487/" title="IT路人">IT路人</a> 发表 <span class="time" title="2013-07-05 05:30:06">1年前</span></span>
+<a href="http://ju.outofmemory.cn/entry/34259" class="codeTitle">利用C#获取并输出系统信息</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/1124/" title="admin">admin</a> 发表 <span class="time" title="2013-08-01 12:25:02">1年前</span></span>
+<a href="http://ju.outofmemory.cn/entry/41035" class="codeTitle">C# 理解键盘事件</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/1231/" title="chuchur">chuchur</a> 发表 <span class="time" title="2013-07-11 09:18:34">1年前</span></span>
+<a href="http://ju.outofmemory.cn/entry/55970" class="codeTitle">JSON数据中DateTime类型的处理方法</a>
+</li>
+    <li><span class="meta"><a href="http://ju.outofmemory.cn/feed/493/" title="米豆网 - 1000seo">米豆网 - 1000seo</a> 发表 <span class="time" title="2012-09-18 02:36:45">2年前</span></span>
+<a href="http://ju.outofmemory.cn/entry/78259" class="codeTitle">Visual Studio 2012 and .NET Framework 4.5 released</a>
+</li>
+</ol>
+
+</div>
+
+
+
+
+
+<div class="comments">
+<a name="comments"></a>
+</div>
+
+
+
+<div class="newComment"><a name="newComment"></a>
+<h3>发表评论</h3>
+<form action="http://outofmemory.cn/code-snippet/comment/add" method="POST">
+    <input type="hidden" name="targetId" value="2003">
+    <input type="hidden" name="title" value="回复:Html Agility Pack基础类介绍及运用">
+    <input type="hidden" name="replyId">
+    <textarea name="content" cols="100" rows="6" class="mdInput" style="width:98%"></textarea>
+    <p>
+        <button type="button" id="btnComment">发表评论</button><span id="commentTip"></span>
+    </p>
+</form>
+</div>
+
+</div>
+    <div class="sidebar">
+<div class="box">
+    <div class="boxTitle">作者信息</div>
+    <div class="boxBody user">
+        <div class="userDetails">
+            <div class="logo">
+                <a href="http://outofmemory.cn/user/36"><img src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/36.png" width="48" class="logoImg avatar"></a>
+            </div>
+            <div class="info">
+                <div><a href="http://outofmemory.cn/user/36">clt</a></div>
+                <div>荣誉：787</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box">
+    <div class="boxTitle">相关标签</div>
+    <div class="tagList boxBody">
+        <div class="tagWrap" style="clear:both;float:none">
+            <div class="tag" title="HtmlAgilityPack">
+                <div class="ar"></div>
+                <div class="co">
+                    <a href="http://outofmemory.cn/code-snippet/tagged/HtmlAgilityPack" class="name" id="tag812">
+                        <strong>HtmlAgilityPack</strong>
+                    </a>
+                </div>
+            </div>
+            <span class="num"> x <b>6</b></span>
+        </div>
+        <div class="tagWrap" style="clear:both;float:none">
+            <div class="tag" title="c#">
+                <div class="ar"></div>
+                <div class="co">
+                    <a href="http://outofmemory.cn/code-snippet/tagged/c%23" class="name" id="tag81">
+                        <strong>c#</strong>
+                    </a>
+                </div>
+            </div>
+            <span class="num"> x <b>1791</b></span>
+        </div>
+    </div>
+</div>
+
+<div class="sidebarISO">
+    <script async="" src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/adsbygoogle.js"></script>
+    
+    <ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px" data-ad-client="ca-pub-2260568282752965" data-ad-slot="6249647899"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="barBox">
+    <div class="t">相关专栏文章</div>
+    <ul class="similarPages">
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-constants.html">C# 常量</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-namespace.html">C# 命名空间（Namespace）</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-operators.html">C# 运算符</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-preprocessor-directives.html">C# 预处理器指令</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-decision.html">C# 判断</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-regular-expressions.html">C# 正则表达式</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-loops.html">C# 循环</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-exception-handling.html">C# 异常处理</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-encapsulation.html">C# 封装</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-file-io.html">C# 文件的输入与输出</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-methods.html">C# 方法</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-attribute.html">C# 特性（Attribute）</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-nullable.html">C# 可空类型（Nullable）</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-reflection.html">C# 反射（Reflection）</a>
+
+</li>
+    <li><a href="http://outofmemory.cn/csharp/tutorial/csharp-array.html">C# 数组（Array）</a>
+
+</li>
+</ul>
+
+</div>
+
+
+
+
+
+<div class="sidebarISO">
+<script async="" src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px" data-ad-client="ca-pub-2260568282752965" data-ad-slot="4089126592"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+</div>
+</div>
+<script src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/jquery-1.7.2.min.js"></script>
+<script src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/loginUser" charset="utf-8"></script>
+<script src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/prettify.js" type="text/javascript"></script>
+<script src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/site.js"></script>
+
+<script>var codeId = 2003;var voteTargetType='code-snippet';var voteTargetId=codeId;</script>
+<script src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/code-details-all-in-one.js"></script>
+
+
+
+<div class="wrap">
+    
+    
+    
+
+    <div class="footer">
+
+    <span class="timespent"><i>0.067@0317093208</i></span>
+    © 2012 - 2015 <a href="http://outofmemory.cn/">OutOfMemory.CN</a>
+        &nbsp; &nbsp;
+        <a href="mailto:outofmemory_cn@126.com">联系我们</a>
+        
+        
+        &nbsp;<a href="http://outofmemory.cn/c/dotNet-outOfMemoryException" title=".Net c#内存溢出处理">.Net内存溢出处理</a>
+        &nbsp;<a href="http://outofmemory.cn/c/java-outOfMemoryError" title="Java内存溢出处理">Java内存溢出处理</a>
+        &nbsp;<a href="http://outofmemory.cn/novel/outofmemory/">OutOfMemory小说连载</a>
+        &nbsp;<a href="http://doc.outofmemory.cn/">程序员文档</a>
+        &nbsp;<a href="http://outofmemory.cn/sitemap/">站点地图</a>
+
+        
+        
+        <div class="bdtj"><script type="text/javascript">
+
+
+document.write(unescape("%3Cscript src='/static/js/h.js%3Fe0c09a12211b95eae1f5244f2ac2afa3' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/h.js" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=e0c09a12211b95eae1f5244f2ac2afa3" target="_blank"><img border="0" src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/21.gif" width="20" height="20"></a>
+</div>
+    </div>
+</div><style type="text/css">.adsbygoogle{display:none!important;}</style><style type="text/css">.adsbygoogle{display:none!important;}</style><style type="text/css">.adsbygoogle{display:none!important;}</style>
+
+
+
+
+
+
+
+
+<img class="img_sina_share" id="imgSinaShare" title="将选中内容分享到新浪微博" src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/sina-share.gif" style="display: none; left: 789px; top: 4436px;"><img class="img_qq_share" id="imgQqShare" title="将选中内容分享到腾讯微博" src="./HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files/qq-share.gif" style="display: none; left: 819px; top: 4436px;"><div class="codeTools" style="left: 854.5px; top: 4017px;"><div id="copyCode">复制代码</div><div id="saveCode">保存代码</div><div id="runCode" style="display: none;">试试效果</div></div><div style="position: absolute; left: 861px; top: 4025px; width: 50px; height: 15px; z-index: 99;"><embed id="ZeroClipboardMovie_1" src="/static/clipboard/ZeroClipboard10.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="50" height="15" name="ZeroClipboardMovie_1" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=1&amp;width=50&amp;height=15" wmode="transparent"></div></body></html>

@@ -1,0 +1,4 @@
+﻿说明：该项目主要用于WinForm的一些传统控件的辅助类
+1,WinFormHelperFactory 所有控件 辅助类的统一公共实例化入口
+2，DataGridViewHelper 传统WinFrom DataGridView控件辅助类
+3，TreeViewHelper 传统WinFrom TreeView控件辅助类

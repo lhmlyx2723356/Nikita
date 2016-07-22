@@ -1,0 +1,4 @@
+数据库列表
+IDBuilder,生成主键ID序列号数据库
+Permission,权限管理系统数据库
+WcfConfig,Wcf服务配置信息数据库

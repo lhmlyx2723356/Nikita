@@ -1,0 +1,275 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+namespace @namespace@.DAL
+{
+    /// <summary>@tabname@表数据访问类
+    /// 作者:
+    /// 创建时间:@createdate@
+    /// </summary>
+    public partial class @classname@DAL
+    {
+        public @classname@DAL()
+        { }
+        /// <summary>增加一条数据
+        /// 
+        /// </summary>
+        public int Add(@namespace@.Model.@classname@ model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into @tabname@(");
+            strSql.Append("@insertfields@ )");
+            strSql.Append(" values (");
+            strSql.Append("@insertvalues@ )");
+            strSql.Append(";select @@IDENTITY");
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateCommand(strSql.ToString());
+@insertparam@
+            int result;
+            string obj = h.ExecuteScalar();
+            if (!int.TryParse(obj, out result))
+            {
+                return 0;
+            }
+            return result;
+        }
+
+        /// <summary>更新一条数据
+        /// 
+        /// </summary>
+        public bool Update(@namespace@.Model.@classname@ model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("update @tabname@ set ");
+            strSql.Append("@updatefields@ ");
+            strSql.Append(" where @pkey@=@@pkey@ ");
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateCommand(strSql.ToString());
+@updateparam@
+            return h.ExecuteNonQuery();
+        }
+
+        /// <summary>删除一条数据
+        /// 
+        /// </summary>
+        public bool Delete(int @pkey@)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from @tabname@ ");
+            strSql.Append(" where @pkey@=@@pkey@ ");
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateCommand(strSql.ToString());
+            h.AddParameter("@@pkey@", @pkey@);
+            return h.ExecuteNonQuery();
+        }
+
+        /// <summary>根据条件删除数据
+        /// 
+        /// </summary>
+        public bool DeleteByCond(string cond)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("delete from @tabname@ ");
+            if (!string.IsNullOrEmpty(cond))
+            {
+                strSql.Append(" where " + cond);
+            }
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateCommand(strSql.ToString());
+            return h.ExecuteNonQuery();
+        }
+
+        /// <summary>得到一个对象实体
+        /// 
+        /// </summary>
+        public @namespace@.Model.@classname@ GetModel(int @pkey@)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * from @tabname@ ");
+            strSql.Append(" where @pkey@=@@pkey@ ");
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateCommand(strSql.ToString());
+            h.AddParameter("@@pkey@", @pkey@);
+            @namespace@.Model.@classname@ model = null;
+            using (IDataReader dataReader = h.ExecuteReader())
+            {
+                if (dataReader.Read())
+                {
+                    model = ReaderBind(dataReader);
+                }
+                h.CloseConn();
+            }
+            return model;
+        }
+
+        /// <summary>根据条件得到一个对象实体
+        /// 
+        /// </summary>
+        public @namespace@.Model.@classname@ GetModelByCond(string cond)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select top 1 * from @tabname@ ");
+            if (!string.IsNullOrEmpty(cond))
+            {
+                strSql.Append(" where " + cond);
+            }
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateCommand(strSql.ToString());
+            @namespace@.Model.@classname@ model = null;
+            using (IDataReader dataReader = h.ExecuteReader())
+            {
+                if (dataReader.Read())
+                {
+                    model = ReaderBind(dataReader);
+                }
+                h.CloseConn();
+            }
+            return model;
+        }
+
+        /// <summary>获得数据列表
+        /// 
+        /// </summary>
+        public DataSet GetList(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * ");
+            strSql.Append(" FROM @tabname@ ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateCommand(strSql.ToString());
+            DataTable dt = h.ExecuteQuery();
+            DataSet ds = new DataSet();
+            ds.Tables.Add(dt);
+            return ds;
+        }
+
+		
+        /// <summary>获得数据列表
+        /// 
+        /// </summary>
+        public DataSet GetList(string strWhere, string Filds)
+        {
+            StringBuilder strSql = new StringBuilder(); 
+			  strSql.Append("select " + Filds + " ");
+            strSql.Append(" FROM @tabname@ ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateCommand(strSql.ToString());
+            DataTable dt = h.ExecuteQuery();
+            DataSet ds = new DataSet();
+            ds.Tables.Add(dt);
+            return ds;
+        }
+
+
+        /// <summary>分页获取数据列表
+        /// 
+        /// </summary>
+        public DataSet GetList(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
+        {
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateStoredCommand("[proc_SplitPage]");
+            h.AddParameter("@tblName", "@tabname@");
+            h.AddParameter("@strFields", fileds);
+            h.AddParameter("@strOrder", order);
+            h.AddParameter("@strOrderType", ordertype);
+            h.AddParameter("@PageSize", PageSize);
+            h.AddParameter("@PageIndex", PageIndex);
+            h.AddParameter("@strWhere", strWhere);
+            DataTable dt = h.ExecuteQuery();
+            DataSet ds = new DataSet();
+            ds.Tables.Add(dt);
+            return ds;
+        }
+
+        /// <summary>获得数据列表（比DataSet效率高，推荐使用）
+        /// 
+        /// </summary>
+        public List<@namespace@.Model.@classname@> GetListArray(string strWhere)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * ");
+            strSql.Append(" FROM @tabname@ ");
+            if (strWhere.Trim() != "")
+            {
+                strSql.Append(" where " + strWhere);
+            }
+            List<@namespace@.Model.@classname@> list = new List<@namespace@.Model.@classname@>();
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateCommand(strSql.ToString());
+            using (IDataReader dataReader = h.ExecuteReader())
+            {
+                while (dataReader.Read())
+                {
+                    list.Add(ReaderBind(dataReader));
+                }
+                h.CloseConn();
+            }
+            return list;
+        }
+
+        /// <summary>分页获取数据列表
+        /// 
+        /// </summary>
+        public List<@namespace@.Model.@classname@> GetListArray(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
+        {
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateStoredCommand("[proc_SplitPage]");
+            h.AddParameter("@tblName", "@tabname@");
+            h.AddParameter("@strFields", fileds);
+            h.AddParameter("@strOrder", order);
+            h.AddParameter("@strOrderType", ordertype);
+            h.AddParameter("@PageSize", PageSize);
+            h.AddParameter("@PageIndex", PageIndex);
+            h.AddParameter("@strWhere", strWhere);
+            List<@namespace@.Model.@classname@> list = new List<@namespace@.Model.@classname@>();
+            using (IDataReader dataReader = h.ExecuteReader())
+            {
+                while (dataReader.Read())
+                {
+                    list.Add(ReaderBind(dataReader));
+                }
+                h.CloseConn();
+            }
+            return list;
+        }
+
+        /// <summary>对象实体绑定数据
+        /// 
+        /// </summary>
+        public @namespace@.Model.@classname@ ReaderBind(IDataReader dataReader)
+        {
+            @namespace@.Model.@classname@ model = new @namespace@.Model.@classname@();
+            object ojb;
+@ReaderBindParam@
+            return model;
+        }
+
+        /// <summary>计算记录数
+        /// 
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public int CalcCount(string cond)
+        {
+            string sql = "select count(1) from @tabname@";
+            if (!string.IsNullOrEmpty(cond))
+            {
+                sql += " where " + cond;
+            }
+            MSSQLHelper h = new MSSQLHelper();
+            h.CreateCommand(sql);
+            return int.Parse(h.ExecuteScalar());
+        }
+    }
+}
+

@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0046)https://msdn.microsoft.com/en-us/data/dn456843 -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+    <meta name="search.content.shortId" content="dn456843">
+    <meta name="ms.shortidmsdn" content="dn456843">
+    <meta name="search.content.locale" content="en-us">
+    <meta name="MN" content="EE4293C3-6:12:47 PM">
+    <meta http-equiv="content-language" content="en">
+    
+      <link rel="canonical" href="https://msdn.microsoft.com/en-us/data/dn456843.aspx">
+      
+      <meta name="NormalizedUrl" content="https://msdn.microsoft.com/en-us/data/dn456843(d=default,l=en-us,v=MSDN.10).aspx">
+      <meta name="ms.normalizedurl" content="https://msdn.microsoft.com/en-us/data/dn456843(d=default,l=en-us,v=MSDN.10).aspx">
+    
+        <meta name="Title" content="Entity Framework Working with Transactions (EF6 Onwards)">
+    
+        <meta name="description" content="This document will describe using transactions in EF6 including the enhancements we have added since EF5 to make working with transactions easy.">
+    
+        <meta name="PTSearchTitle" content="Entity Framework Working with Transactions (EF6 Onwards)">
+    
+        <meta name="Search.MSCategory" content="aa937736">
+    
+        <meta name="Search.MSCategory" content="aa937737">
+    
+        <meta name="Search.MSCategory" content="ee722004">
+    
+        <meta name="Search.MSCategory" content="hh913623">
+    
+        <meta name="Search.MSCategory" content="dn456843">
+    
+        <meta name="Search.TocNodeId" content="dn456843">
+    
+        <meta name="ROBOTS" content="INDEX,FOLLOW">
+    
+    <script type="text/javascript" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/ai.js" async=""></script><script type="text/javascript" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/jquery-1.8.2.min.js" data-do-not-move="true" data-provides="jQuery"></script>
+    <script type="text/javascript" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/jquery.partial.js" data-do-not-move="true" data-requires="jQuery" data-provides="jQuery.partial"></script>
+    
+
+    
+    
+    <script type="text/javascript" data-do-not-move="true">
+        //<![CDATA[
+        
+        window.appInsightsId = '60854590-027a-4ae4-98be-2741a40f355f';
+        //]]>
+    </script>
+    
+
+    <title>Entity Framework Working with Transactions (EF6 Onwards)</title>
+    <link rel="stylesheet" type="text/css" href="./Entity Framework Working with Transactions (EF6 Onwards)_files/Combined.css"><script class="mtps-injected">try {
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "https://i-msdn.sec.s-msft.com", 
+	"js": "https://i2-msdn.sec.s-msft.com", 
+	"css": "https://i-msdn.sec.s-msft.com", 
+	"xap": "https://msdn.microsoft.com"
+});
+/**/
+} finally { MTPS._injectNextScript_0 && MTPS._injectNextScript_0(); }</script><script class="mtps-injected" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/Combined.js"></script><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><script class="mtps-injected">try {
+$("#c_55de227f8abb41e7af401b2cde1a718b").chili();
+    $(".CodeHighlighter pre").unbind("mousedown").unbind("mouseup");
+} finally { MTPS._injectNextScript_2 && MTPS._injectNextScript_2(); }</script><style type="text/css">/* Chili -- cs */
+.cs__mlcom { color: #4040c2; }
+.cs__com { color: green; }
+.cs__string { color: teal; }
+.cs__preproc { color: red; }
+.cs__number { color: red; }
+.cs__keyword { color: navy; font-weight: bold; }</style><script class="mtps-injected">try {
+$("#c_1c620f09a911423bbe8695c3ee49bc4f").chili();
+    $(".CodeHighlighter pre").unbind("mousedown").unbind("mouseup");
+} finally { MTPS._injectNextScript_3 && MTPS._injectNextScript_3(); }</script><script class="mtps-injected">try {
+$("#c_28555523751346b29ecfb374d8f1aabc").chili();
+    $(".CodeHighlighter pre").unbind("mousedown").unbind("mouseup");
+} finally { MTPS._injectNextScript_4 && MTPS._injectNextScript_4(); }</script><script class="mtps-injected">try {
+$("#c_bac8a7a110904c52acc6a7e5aa75e407").chili();
+    $(".CodeHighlighter pre").unbind("mousedown").unbind("mouseup");
+} finally { MTPS._injectNextScript_5 && MTPS._injectNextScript_5(); }</script><script class="mtps-injected">try {
+$("#c_9fc29e2bc79c421b8fbf1eac5fb72bfd").chili();
+    $(".CodeHighlighter pre").unbind("mousedown").unbind("mouseup");
+} finally { MTPS._injectNextScript_6 && MTPS._injectNextScript_6(); }</script><script class="mtps-injected">try {
+//
+    if (!$.Microsoft) $.Microsoft = {};
+    if (!$.Microsoft.Mtps) $.Microsoft.Mtps = {};
+    if (!$.Microsoft.Mtps.NetReflectorInit)
+        $.Microsoft.Mtps.NetReflectorInit = {
+            surveyUrl: "http://vp-nri.com/take?i=163849&h=H41J2551cej2lQalR7bf-g ",
+            throttleRate: "15",
+            privacyStatementText: "Privacy Statement",
+            trackerWindowText: "Please do not close this window.<br /><br />Thank you! The survey will appear here when you've completed your visit, so please do not close this window.",
+            brandId: 'msdn'
+        };
+//
+} finally { MTPS._injectNextScript_7 && MTPS._injectNextScript_7(); }</script><script class="mtps-injected" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/Combined(1).js"></script><script class="mtps-injected">try {
+//
+    function SearchClick() {
+        window.location = "https://social.msdn.microsoft.com/search/en-us/?query=" + document.getElementById("HeaderSearchTextBox").value();
+    }
+
+    function SearchClientClick() {
+        if (document.getElementById("HeaderSearchTextBox").value == document.getElementById("HeaderSearchTextBox").title) return false;
+        document.HeaderSearchForm.submit();return true;
+    }
+//
+} finally { MTPS._injectNextScript_9 && MTPS._injectNextScript_9(); }</script><script class="mtps-injected">try {
+//
+            $(document).ready(function () {
+                var scriptElem = document.createElement('script');
+                scriptElem.src = "https://i4.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026brand=MSDN\u0026loc=en-us\u0026Refinement=95\u0026watermark=Data\u0026focusOnInit=false";
+                scriptElem.id = "mscom.srch.searchBox";
+                scriptElem.defer="defer";
+                document.getElementsByTagName('head')[0].appendChild(scriptElem);
+            });
+        //
+} finally { MTPS._injectNextScript_10 && MTPS._injectNextScript_10(); }</script><script src="./Entity Framework Working with Transactions (EF6 Onwards)_files/SearchBox.jss" id="mscom.srch.searchBox" defer=""></script><script class="mtps-injected" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/SiteFeedback.js"></script><script class="mtps-injected">try {
+/**/
+    
+      var wt_nvr_ru = "WT_NVR_RU";
+      var wt_fpcdom = ".microsoft.com";
+      var wt_domlist = "msdn.microsoft.com";
+      var wt_pathlist = "";var wt_paramlist = "DCSext.mtps_devcenter";
+      var wt_siteid = "MSDN";
+      var gDomain="m.webtrends.com";
+    var gDcsId = "dcsmgru7m99k7mqmgrhudo0k8_8c6m";
+    var gFpc = "WT_FPC";
+    if (document.cookie.indexOf(gFpc + "=") == -1) {
+        var scriptElem = document.createElement('script');
+        scriptElem.src = "http" + (window.location.protocol.indexOf('https:') == 0 ? 's' : '') + "://" + gDomain + "/" + gDcsId + "/wtid.js";
+        document.getElementsByTagName('head')[0].appendChild(scriptElem);
+    }
+    var detectedLocale = "en-us";
+    var wtsp = "_data_";
+    var gTrackEvents = "1";
+    /**/
+} finally { MTPS._injectNextScript_12 && MTPS._injectNextScript_12(); }</script><script class="mtps-injected" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/webtrendsscript.js"></script><script class="mtps-injected">try {
+var omni_guid = 'c_95f83ea4fb4547bba941590ef3823506';
+} finally { MTPS._injectNextScript_14 && MTPS._injectNextScript_14(); }</script><script class="mtps-injected" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/omni_rsid.js"></script><script class="mtps-injected" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/broker.js"></script></head>
+    
+    <body id="MTPS_Body" class="MsdnPageBody">
+        
+        <div id="BodyBackground">
+            <div id="JelloSizer">
+                <div id="JelloExpander">
+                    <div id="JelloWrapper">
+                        <div class="Clear"> </div>
+                        <span class="skipnav"><a href="https://msdn.microsoft.com/en-us/data/dn456843#MainContent">Skip to main content</a></span>
+                        
+<div class="Masthead">
+    
+<div class="BrandLogo">
+  <a title="Data Developer Center" href="https://msdn.microsoft.com/en-us/data">
+    <span>
+      Data Developer Center
+    </span>
+  </a>
+</div>
+
+
+<div class="Search">    
+    <div class="SearchBox">
+    <form name="HeaderSearchForm" method="get" action="https://social.technet.microsoft.com/search/">
+        <input type="hidden" name="SearchAction" value="search">
+        <input id="HeaderSearchTextBox" name="query" class="TextBoxSearch" type="text" title="Search Data with Bing" autocomplete="off" style="color: rgb(170, 170, 170); font-style: italic;">
+        <input id="HeaderSearchButton" onclick="if (document.getElementById(&#39;HeaderSearchTextBox&#39;).value != document.getElementById(&#39;HeaderSearchTextBox&#39;).title) {window.location = &#39;https://social.msdn.microsoft.com/search/en-us/?query=&#39; + document.getElementById(&#39;HeaderSearchTextBox&#39;).value; return true;} else return false;" class="SearchButton" type="button" alt="Click here to search" title="Search Data with Bing">
+        <span class="Bing"></span>
+        
+    <div id="SearchFlyoutContainer" style="display: none; text-align: left; border: 1px solid buttonshadow; position: absolute; z-index: 1000; padding: 2px; color: rgb(0, 0, 0); font-family: Arial; font-size: 13px; background-color: rgb(255, 255, 255);"><div id="SuggestionContainer"><ul style="list-style: none; padding: 4px 2px 0px 1px; cursor: pointer; margin: 1px; white-space: nowrap;"></ul></div></div></form>
+    </div>
+</div>
+
+    <div class="GlobalBar">
+        
+<div class="PassportScarab">
+    <a id="idPPScarab" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=12&ct=1435972368&rver=6.0.5276.0&wp=MCMBI&wlcxt=msdn%24msdn%24msdn&wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2fdata%2fdn456843&lc=1033&id=254354&mkt=en-US"><span id="idPPScarabSIT">Sign in</span></a>
+</div>
+<div id="LocaleSelector">
+    <form id="ChangeLocaleForm" action="https://msdn.microsoft.com/en-us/data/SelectLocale?pageid=dn456843">    
+        <input type="hidden" name="fromPage" value="/en-us/data/dn456843">
+        <div id="FlyoutTop">
+            <a title="Change your language" href="https://msdn.microsoft.com/en-us/data/dn456843#Change your language" onclick="$(&#39;#ChangeLocaleForm&#39;).submit();return false;" id="LinkCountryLanguage" class="LocaleManagementFlyoutStaticLink">
+                    United States (English)
+                </a>
+        </div>
+    </form>
+</div>
+
+        <div class="Clear">
+        </div>
+        
+    </div>
+    <div class="Clear">
+    </div>
+    
+<div class="networkTagLineArea NetworkLogo">
+  
+        <a title="Microsoft Developer Network" href="https://msdn.microsoft.com/en-us"></a>
+   
+</div>
+
+<div class="leftcap"></div>
+    <div class="internav">
+    
+<a href="https://msdn.microsoft.com/en-us/data/default" class="normal" title="Home">
+Home</a>
+<a href="https://msdn.microsoft.com/library/951h6we4.aspx" class="normal" title="Library">
+Library</a>
+<a href="https://msdn.microsoft.com/en-us/data/aa937721" class="active" title="Learn">
+Learn</a>
+<a href="https://msdn.microsoft.com/en-us/data/aa937695" class="normal" title="Downloads">
+Downloads</a>
+<a href="https://msdn.microsoft.com/en-us/data/aa937735" class="normal" title="Support">
+Support</a>
+<a href="https://msdn.microsoft.com/en-us/data/aa937688" class="normal" title="Community">
+Community</a>
+<a href="http://social.msdn.microsoft.com/Forums/en-US/category/dataplatformdev" class="normal" title="Forums">
+Forums</a>
+</div>
+<div class="rightcap"></div>
+<div class="Clear"></div>
+
+<div class="LocalNavigation">
+    <div class="localleftcap"></div>
+    <div class="HeaderTabs">
+    <div class="TabOff">
+<a href="https://msdn.microsoft.com/en-us/data/bb419139" class="normal" title="Documentation">
+Documentation</a></div><div class="TabOff">
+<a href="https://msdn.microsoft.com/en-us/data/cc300162" class="normal" title="Videos">
+Videos</a></div><div class="TabOff">
+<a href="https://msdn.microsoft.com/en-us/data/aa937699" class="normal" title="Articles">
+Articles</a></div><div class="TabOff">
+<a href="https://msdn.microsoft.com/en-us/data/aa937716" class="normal" title="Books">
+Books</a></div><div class="TabOff">
+<a href="https://msdn.microsoft.com/en-us/data/gg427655" class="normal" title="Hands-on Labs">
+Hands-on Labs</a></div><div class="TabOff">
+<a href="https://msdn.microsoft.com/en-us/data/aa937693" class="normal" title="Webcasts">
+Webcasts</a></div>
+    </div>
+    <div class="localrightcap"></div>
+</div>
+
+</div>
+
+
+                        <div class="Clear"> </div>
+                        <div class="topleftcorner"> </div>
+                        <div class="toprightcorner"> </div>
+                        <div class="alley">
+                            <div class="wrapper">
+                                <div class="inner">
+                                  
+                                    <div class="Clear"> </div>
+                                    <div class="BreadCrumb"><div class="BreadCrumbInner EyebrowContainer">
+<a href="https://msdn.microsoft.com/en-us/data/default" class="EyebrowLink" title="Data Developer Center">
+Data Developer Center</a> &gt; 
+<a href="https://msdn.microsoft.com/en-us/data/aa937721" class="EyebrowLink" title="Learn">
+Learn</a> &gt; 
+<a href="https://msdn.microsoft.com/en-us/data/aa937723" class="EyebrowLink" title="Entity Framework">
+Entity Framework</a> &gt; 
+<a href="https://msdn.microsoft.com/en-us/data/ee712907" class="EyebrowLink" title="Get Started">
+Get Started</a> &gt; <span class="EyebrowElement">Working with Transactions (EF6 Onwards)</span>
+    
+    </div></div>
+                                    <a name="MainContent"></a>
+                                    <div class="BostonPostCard"><hr><p><span style="color:red;"><strong>EF6 Onwards Only</strong></span> - The features, APIs, etc. discussed in this page were introduced in Entity Framework 6. If you are using an earlier version, some or all of the information does not apply.</p><hr><p>&nbsp;</p><h1>Working with Transactions (EF6 Onwards)</h1><p>This document will describe using transactions in EF6 including the enhancements we have added since EF5 to make working with transactions easy.</p><ul><li><a href="https://msdn.microsoft.com/en-us/data/dn456843#default">What EF does by default</a></li><li><a href="https://msdn.microsoft.com/en-us/data/dn456843#apis">How the APIs work</a><ul><li><a href="https://msdn.microsoft.com/en-us/data/dn456843#several">Combining several operations into one transaction within the same context</a></li><li><a href="https://msdn.microsoft.com/en-us/data/dn456843#existing">Passing an existing transaction to the context</a></li></ul></li><li><a href="https://msdn.microsoft.com/en-us/data/dn456843#features">Using transactions with other features</a><ul><li><a href="https://msdn.microsoft.com/en-us/data/dn456843#retry">Connection resiliency</a></li><li><a href="https://msdn.microsoft.com/en-us/data/dn456843#async">Asynchronous methods</a></li><li><a href="https://msdn.microsoft.com/en-us/data/dn456843#transactionScope">TransactionScope transactions</a></li></ul></li></ul><h1 id="default">What EF does by default</h1><p>In all versions of Entity Framework, whenever you execute <strong>SaveChanges()</strong> to insert, update or delete on the database the framework will wrap that operation in a transaction. This transaction lasts only long enough to execute the operation and then completes. When you execute another such operation a new transaction is started.</p><p>Starting with EF6 <strong>Database.ExecuteSqlCommand()</strong> by default will wrap the command in a transaction if one was not already present. There are overloads of this method that allow you to override this behavior if you wish. Also in EF6 execution of stored procedures included in the model through APIs such as <strong>ObjectContext.ExecuteFunction()</strong> does the same (except that the default behavior cannot at the moment be overridden).</p><p>In either case, the isolation level of the transaction is whatever isolation level the database provider considers its default setting. By default, for instance, on SQL Server this is READ COMMITTED.</p><p>Entity Framework does not wrap queries in a transaction.</p><p>This default functionality is suitable for a lot of users and if so there is no need to do anything different in EF6; just write the code as you always did.</p><p>However some users require greater control over their transactions – this is covered in the following sections.</p><p>&nbsp;</p><h1 id="apis">How the APIs work</h1><p>Prior to EF6 Entity Framework insisted on opening the database connection itself (it threw an exception if it was passed a connection that was already open). Since a transaction can only be started on an open connection, this meant that the only way a user could wrap several operations into one transaction was either to use a 
+<a href="https://msdn.microsoft.com/en-us/library/system.transactions.transactionscope.aspx">
+TransactionScope</a> or use the <strong>ObjectContext.Connection</strong> property and start calling <strong>Open()</strong> and <strong>BeginTransaction()</strong> directly on the returned <strong>EntityConnection</strong> object. In addition, API calls which contacted the database would fail if you had started a transaction on the underlying database connection on your own.</p><p><em><strong>Note:</strong> The limitation of only accepting closed connections was removed in Entity Framework 6. For details, see 
+<a href="https://msdn.microsoft.com/en-us/data/dn456849">
+Connection</a>
+<a href="https://msdn.microsoft.com/en-us/data/dn456849">
+Management (EF6 Onwards)</a>.</em></p><p>Starting with EF6 the framework now provides:</p><ol><li><strong>Database.BeginTransaction()&nbsp;</strong>: An easier method for a user to start and complete transactions themselves within an existing DbContext – allowing several operations to be combined within the same transaction and hence either all committed or all rolled back as one. It also allows the user to more easily specify the isolation level for the transaction.</li><li><strong>Database.UseTransaction()</strong>&nbsp;: which allows the DbContext to use a transaction which was started outside of the Entity Framework.</li></ol><h2 id="several">Combining several operations into one transaction within the same context</h2><p><strong>Database.BeginTransaction()</strong> has two overrides – one which takes an explicit 
+<a href="https://msdn.microsoft.com/en-us/library/system.data.isolationlevel.aspx">
+IsolationLevel</a> and one which takes no arguments and uses the default IsolationLevel from the underlying database provider. Both overrides return a <strong>DbContextTransaction</strong>&nbsp;object which provides <strong>Commit()</strong> and <strong>Rollback()</strong> methods which perform commit and rollback on the underlying store transaction.</p><p>The <strong>DbContextTransaction</strong> is meant to be disposed once it has been committed or rolled back. One easy way to accomplish this is the <strong>using(…) {…}</strong> syntax which will automatically call <strong>Dispose()</strong> when the using block completes:</p></div>
+
+
+
+<div class="CodeHighlighter">
+  <pre><code id="c_55de227f8abb41e7af401b2cde1a718b" class="csharp"><span class="cs__keyword">using</span>&nbsp;System;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Collections.Generic;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Data.Entity;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Data.SqlClient;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Linq;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Transactions;&nbsp;<br>&nbsp;<br><span class="cs__keyword">namespace</span>&nbsp;TransactionsExamples&nbsp;<br>{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">class</span>&nbsp;TransactionsExample&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;StartOwnTransactionWithinContext()&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;context&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BloggingContext())&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;dbContextTransaction&nbsp;=&nbsp;context.Database.BeginTransaction())&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">try</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.Database.ExecuteSqlCommand(&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@<span class="cs__string">"UPDATE&nbsp;Blogs&nbsp;SET&nbsp;Rating&nbsp;=&nbsp;5"</span>&nbsp;+&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">"&nbsp;WHERE&nbsp;Name&nbsp;LIKE&nbsp;'%Entity&nbsp;Framework%'"</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;query&nbsp;=&nbsp;context.Posts.Where(p&nbsp;=&gt;&nbsp;p.Blog.Rating&nbsp;&gt;=&nbsp;<span class="cs__number">5</span>);&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;post&nbsp;<span class="cs__keyword">in</span>&nbsp;query)&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;post.Title&nbsp;+=&nbsp;<span class="cs__string">"[Cool&nbsp;Blog]"</span>;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.SaveChanges();&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dbContextTransaction.Commit();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">catch</span>&nbsp;(Exception)&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dbContextTransaction.Rollback();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>}</code></pre>
+</div>
+
+<div class="BostonPostCard"><p>&nbsp;</p><p><em><strong>Note:</strong> Beginning a transaction requires that the underlying store connection is open. So calling Database.BeginTransaction() will open the connection&nbsp; if it is not already opened. If DbContextTransaction opened the connection then it will close it when Dispose() is called.</em></p><h2 id="existing">Passing an existing transaction to the context</h2><p>Sometimes you would like a transaction which is even broader in scope and which includes operations on the same database but outside of EF completely. To accomplish this you must open the connection and start the transaction yourself and then tell EF a) to use the already-opened database connection, and b) to use the existing transaction on that connection.</p><p>To do this you must define and use a constructor on your context class which inherits from one of the DbContext constructors which take i) an existing connection parameter and ii) the contextOwnsConnection boolean.</p><p><em><strong>Note:</strong> The contextOwnsConnection flag must be set to false when called in this scenario. This is important as it informs Entity Framework that it should not close the connection when it is done with it (e.g. see line 4 below):</em></p></div>
+
+
+
+<div class="CodeHighlighter">
+  <pre><code id="c_1c620f09a911423bbe8695c3ee49bc4f" class="csharp"><span class="cs__keyword">using</span>&nbsp;(var&nbsp;conn&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlConnection(<span class="cs__string">"..."</span>))&nbsp;<br>{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;conn.Open();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;context&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BloggingContext(conn,&nbsp;contextOwnsConnection:&nbsp;<span class="cs__keyword">false</span>))&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>}</code></pre>
+</div>
+
+<div class="BostonPostCard"><p>&nbsp;</p><p>Furthermore, you must start the transaction yourself (including the IsolationLevel if you want to avoid the default setting) and let the Entity Framework know that there is an existing transaction already started on the connection (see line 33 below).</p><p>Then you are free to execute database operations either directly on the SqlConnection itself, or on the DbContext. All such operations are executed within one transaction. You take responsibility for committing or rolling back the transaction and for calling Dispose() on it, as well as for closing and disposing the database connection. E.g.:</p></div>
+
+
+
+<div class="CodeHighlighter">
+  <pre><code id="c_28555523751346b29ecfb374d8f1aabc" class="csharp"><span class="cs__keyword">using</span>&nbsp;System;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Collections.Generic;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Data.Entity;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Data.SqlClient;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Linq;&nbsp;<br>sing&nbsp;System.Transactions;&nbsp;<br>&nbsp;<br><span class="cs__keyword">namespace</span>&nbsp;TransactionsExamples&nbsp;<br>{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">class</span>&nbsp;TransactionsExample&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;UsingExternalTransaction()&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;conn&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlConnection(<span class="cs__string">"..."</span>))&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conn.Open();&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;sqlTxn&nbsp;=&nbsp;conn.BeginTransaction(System.Data.IsolationLevel.Snapshot))&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">try</span>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;sqlCommand&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlCommand();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlCommand.Connection&nbsp;=&nbsp;conn;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlCommand.Transaction&nbsp;=&nbsp;sqlTxn;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlCommand.CommandText&nbsp;=&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@<span class="cs__string">"UPDATE&nbsp;Blogs&nbsp;SET&nbsp;Rating&nbsp;=&nbsp;5"</span>&nbsp;+&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">"&nbsp;WHERE&nbsp;Name&nbsp;LIKE&nbsp;'%Entity&nbsp;Framework%'"</span>;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlCommand.ExecuteNonQuery();&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;context&nbsp;=&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">new</span>&nbsp;BloggingContext(conn,&nbsp;contextOwnsConnection:&nbsp;<span class="cs__keyword">false</span>))&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.Database.UseTransaction(sqlTxn);&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;query&nbsp;=&nbsp;&nbsp;context.Posts.Where(p&nbsp;=&gt;&nbsp;p.Blog.Rating&nbsp;&gt;=&nbsp;<span class="cs__number">5</span>);&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;post&nbsp;<span class="cs__keyword">in</span>&nbsp;query)&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;post.Title&nbsp;+=&nbsp;<span class="cs__string">"[Cool&nbsp;Blog]"</span>;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.SaveChanges();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlTxn.Commit();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">catch</span>&nbsp;(Exception)&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlTxn.Rollback();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>}</code></pre>
+</div>
+
+<div class="BostonPostCard"><p>&nbsp;</p><p><strong>Notes:</strong></p><ul><li>You can pass null to Database.UseTransaction() to clear Entity Framework’s knowledge of the current transaction. Entity Framework will neither commit nor rollback the existing transaction when you do this, so use with care and only if you’re sure this is what you want to do.</li><li>You will see an exception from Database.UseTransaction() if you pass a transaction: <ul><li>When the Entity Framework already has an existing transaction</li><li>When Entity Framework is already operating within a TransactionScope</li><li>Whose connection object is null (i.e. one which has no connection – usually this is a sign that that transaction has already completed)</li><li>Whose connection object does not match the Entity Framework’s connection.</li></ul></li></ul><p> &nbsp;</p><h1 id="features">Using transactions with other features</h1><p>This section details how the above transactions interact with:</p><ul><li>Connection resiliency</li><li>Asynchronous methods</li><li>TransactionScope transactions</li></ul><h2 id="retry">Connection Resiliency</h2><p>The new Connection Resiliency feature does <em>not</em> work with user-initiated transactions. For details, see 
+<a href="https://msdn.microsoft.com/en-us/data/dn307226">
+Limitations with Retrying Execution Strategies</a>.</p><h2 id="async">Asynchronous Programming</h2><p>The approach outlined in the previous sections needs no further options or settings to work with the 
+<a href="https://msdn.microsoft.com/en-us/data/jj819165">
+asynchronous query and save methods</a>. But be aware that, depending on what you do within the asynchronous methods, this may result in long-running transactions – which can in turn cause deadlocks or blocking which is bad for the performance of the overall application.</p><h2 id="transactionScope">TransactionScope Transactions</h2><p>Prior to EF6 the recommended way of providing larger scope transactions was to use a TransactionScope object:</p></div>
+
+
+
+<div class="CodeHighlighter">
+  <pre><code id="c_bac8a7a110904c52acc6a7e5aa75e407" class="csharp"><span class="cs__keyword">using</span>&nbsp;System.Collections.Generic;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Data.Entity;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Data.SqlClient;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Linq;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Transactions;&nbsp;<br>&nbsp;<br><span class="cs__keyword">namespace</span>&nbsp;TransactionsExamples&nbsp;<br>{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">class</span>&nbsp;TransactionsExample&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;UsingTransactionScope()&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;scope&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;TransactionScope(TransactionScopeOption.Required))&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;conn&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlConnection(<span class="cs__string">"..."</span>))&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conn.Open();&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;sqlCommand&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlCommand();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlCommand.Connection&nbsp;=&nbsp;conn;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlCommand.CommandText&nbsp;=&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@<span class="cs__string">"UPDATE&nbsp;Blogs&nbsp;SET&nbsp;Rating&nbsp;=&nbsp;5"</span>&nbsp;+&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">"&nbsp;WHERE&nbsp;Name&nbsp;LIKE&nbsp;'%Entity&nbsp;Framework%'"</span>;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlCommand.ExecuteNonQuery();&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;context&nbsp;=&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">new</span>&nbsp;BloggingContext(conn,&nbsp;contextOwnsConnection:&nbsp;<span class="cs__keyword">false</span>))&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;query&nbsp;=&nbsp;context.Posts.Where(p&nbsp;=&gt;&nbsp;p.Blog.Rating&nbsp;&gt;&nbsp;<span class="cs__number">5</span>);&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;post&nbsp;<span class="cs__keyword">in</span>&nbsp;query)&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;post.Title&nbsp;+=&nbsp;<span class="cs__string">"[Cool&nbsp;Blog]"</span>;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.SaveChanges();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scope.Complete();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>}</code></pre>
+</div>
+
+<div class="BostonPostCard"><p>&nbsp;</p><p>The SqlConnection and Entity Framework would both use the ambient TransactionScope transaction and hence be committed together.</p><p>Starting with .NET 4.5.1 TransactionScope has been updated to also work with asynchronous methods via the use of the 
+<a href="https://msdn.microsoft.com/en-us/library/system.transactions.transactionscopeasyncflowoption.aspx">
+TransactionScopeAsyncFlowOption</a> enumeration:</p></div>
+
+
+
+<div class="CodeHighlighter">
+  <pre><code id="c_9fc29e2bc79c421b8fbf1eac5fb72bfd" class="csharp"><span class="cs__keyword">using</span>&nbsp;System.Collections.Generic;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Data.Entity;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Data.SqlClient;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Linq;&nbsp;<br><span class="cs__keyword">using</span>&nbsp;System.Transactions;&nbsp;<br>&nbsp;<br><span class="cs__keyword">namespace</span>&nbsp;TransactionsExamples&nbsp;<br>{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">class</span>&nbsp;TransactionsExample&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;AsyncTransactionScope()&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;scope&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;TransactionScope(TransactionScopeAsyncFlowOption.Enabled))&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;conn&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlConnection(<span class="cs__string">"..."</span>))&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;conn.OpenAsync();&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;sqlCommand&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;SqlCommand();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlCommand.Connection&nbsp;=&nbsp;conn;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sqlCommand.CommandText&nbsp;=&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@<span class="cs__string">"UPDATE&nbsp;Blogs&nbsp;SET&nbsp;Rating&nbsp;=&nbsp;5"</span>&nbsp;+&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__string">"&nbsp;WHERE&nbsp;Name&nbsp;LIKE&nbsp;'%Entity&nbsp;Framework%'"</span>;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;sqlCommand.ExecuteNonQueryAsync();&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(var&nbsp;context&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;BloggingContext(conn,&nbsp;contextOwnsConnection:&nbsp;<span class="cs__keyword">false</span>))&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;query&nbsp;=&nbsp;context.Posts.Where(p&nbsp;=&gt;&nbsp;p.Blog.Rating&nbsp;&gt;&nbsp;<span class="cs__number">5</span>);&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;post&nbsp;<span class="cs__keyword">in</span>&nbsp;query)&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;post.Title&nbsp;+=&nbsp;<span class="cs__string">"[Cool&nbsp;Blog]"</span>;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;context.SaveChangesAsync();&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<br>}</code></pre>
+</div>
+
+<div class="BostonPostCard"><p>&nbsp;</p><p>There are still some limitations to the TransactionScope approach:</p><ul><li>Requires .NET 4.5.1 or greater to work with asynchronous methods.</li><li>It cannot be used in cloud scenarios unless you are sure you have one and only one connection (cloud scenarios do not support distributed transactions).</li><li>It cannot be combined with the Database.UseTransaction() approach of the previous sections.</li><li>It will throw exceptions if you issue any DDL (e.g. because of a 
+<a href="https://msdn.microsoft.com/en-us/data/gg194002.aspx">
+Database Initializer</a>) and have not enabled distributed transactions through the MSDTC Service.</li></ul><p>Advantages of the TransactionScope approach:</p><ul><li>It will automatically upgrade a local transaction to a distributed transaction if you make more than one connection to a given database or combine a connection to one database with a connection to a different database within the same transaction (note: you must have the MSDTC service configured to allow distributed transactions for this to work).</li><li>Ease of coding. If you prefer the transaction to be ambient and dealt with implicitly in the background rather than explicitly under you control then the TransactionScope approach may suit you better.</li></ul><p>In summary, with the new Database.BeginTransaction() and Database.UseTransaction() APIs above, the TransactionScope approach is no longer necessary for most users. If you do continue to use TransactionScope then be aware of the above limitations. We recommend using the approach outlined in the previous sections instead where possible.</p></div>
+                                     
+    <div id="footerAd" style="margin-left:auto;margin-right:auto;display:table">
+        <div><p></p></div>
+    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ClearBottom"> </div>
+                        <div class="bottomleftcorner"> </div>
+                        <div class="bottomrightcorner"> </div>  
+                      <div class="FooterLinks"><span class="FooterCopyright" title="© 2012 Microsoft. All rights reserved.">© 2015 Microsoft. All rights reserved.</span>
+<a href="https://msdn.microsoft.com/cc300389.aspx" title="Terms of Use">
+Terms of Use</a><span class="Pipe">&nbsp;|&nbsp;</span>
+<a href="https://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx" title="Trademarks">
+Trademarks</a><span class="Pipe">&nbsp;|&nbsp;</span>
+<a href="http://go.microsoft.com/fwlink/?LinkId=248681" title="Privacy Statement">
+Privacy Statement</a>&nbsp;<span style="list-style-type:none;display:inline-block;">
+<li>
+    
+    <span class="Pipe"> | </span>
+    <a target="_blank" id="bottomsitefeedbacklink" title="Site Feedback" href="https://lab.msdn.microsoft.com/mailform/contactus.aspx?refurl=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2fdata%2fdn456843.aspx&loc=en-us">Site Feedback</a>
+</li>
+</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+<noscript>
+&lt;img alt="DCSIMG" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;amp;WT.js=No" /&gt;
+</noscript>
+
+
+<script type="text/JavaScript" data-do-not-move="true">
+    //<![CDATA[
+    var varAutoFirePV = 1;
+    var varClickTracking = 1;
+    var varCustomerTracking = 1;
+    var route = "";
+    var ctrl = "";
+    document.write("<script type='text/javascript' src='" + (window.location.protocol) + "//c.microsoft.com/ms.js'" + "><\/script>");
+    //]]>
+</script><script type="text/javascript" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/ms.js"></script><iframe id="_msnFrame" src="./Entity Framework Working with Transactions (EF6 Onwards)_files/c.gif" style="z-index:-1;height:1px;width:1px;display:none;visibility:hidden;"></iframe>
+<noscript>&lt;a href="http://www.omniture.com" title="Web Analytics"&gt;
+&lt;img src="http://msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" /&gt;
+&lt;/a&gt;</noscript>
+
+
+
+
+<div class="NetReflectorMain">
+  <div class="NRHeader"></div>
+  <div class="NRCloseButton">
+  </div>
+  <div class="NRTopStripe"></div>
+  <div class="NRNotification">
+    <div>Microsoft is conducting an online survey to understand your opinion of the MSDN Web site. If you choose to participate, the online survey will be presented to you when you leave the MSDN Web site.<br><br>Would you like to participate?
+    </div>
+    <input class="NRSubmit" type="button" value="Yes">
+    <input class="NRCancel" type="button" value="No">
+    <div class="PrivacyStatement"><a id="PrivacyStatement" href="javascript:void(0)">Privacy Statement</a></div>
+  </div>
+  <div class="NRBottomStripe"></div>
+</div>
+
+
+
+
+
+
+    <script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"xap\": \"https://msdn.microsoft.com\"\r\n});\r\n/**/" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:jquery.cookie,0:jquery.chili-2.2,0:recipes;/Areas/Sto/Content/Scripts:0\u0026amp;hashKey=F3244639EB50DFB374A90650DE3D4662\u0026amp;v=967392CC37D0A5C5327D30394187A8C7" },
+	{ txt: "$(\"#c_55de227f8abb41e7af401b2cde1a718b\").chili();\n    $(\".CodeHighlighter pre\").unbind(\"mousedown\").unbind(\"mouseup\");" },
+	{ txt: "$(\"#c_1c620f09a911423bbe8695c3ee49bc4f\").chili();\n    $(\".CodeHighlighter pre\").unbind(\"mousedown\").unbind(\"mouseup\");" },
+	{ txt: "$(\"#c_28555523751346b29ecfb374d8f1aabc\").chili();\n    $(\".CodeHighlighter pre\").unbind(\"mousedown\").unbind(\"mouseup\");" },
+	{ txt: "$(\"#c_bac8a7a110904c52acc6a7e5aa75e407\").chili();\n    $(\".CodeHighlighter pre\").unbind(\"mousedown\").unbind(\"mouseup\");" },
+	{ txt: "$(\"#c_9fc29e2bc79c421b8fbf1eac5fb72bfd\").chili();\n    $(\".CodeHighlighter pre\").unbind(\"mousedown\").unbind(\"mouseup\");" },
+	{ txt: "//\n    if (!$.Microsoft) $.Microsoft = {};\n    if (!$.Microsoft.Mtps) $.Microsoft.Mtps = {};\n    if (!$.Microsoft.Mtps.NetReflectorInit)\n        $.Microsoft.Mtps.NetReflectorInit = {\n            surveyUrl: \"http://vp-nri.com/take?i=163849\u0026h=H41J2551cej2lQalR7bf-g \",\n            throttleRate: \"15\",\n            privacyStatementText: \"Privacy Statement\",\n            trackerWindowText: \"Please do not close this window.\u003cbr /\u003e\u003cbr /\u003eThank you! The survey will appear here when you\u0027ve completed your visit, so please do not close this window.\",\n            brandId: \u0027msdn\u0027\n        };\n//" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:NetReflector,1:AppInsightsPerf;/Areas/Sto/Content/Scripts:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=624335A4DAD545C3F26D44BC1DA80DF1\u0026amp;v=967392CC37D0A5C5327D30394187A8C7" },
+	{ txt: "//\n    function SearchClick() {\n        window.location = \"https://social.msdn.microsoft.com/search/en-us/?query=\" + document.getElementById(\"HeaderSearchTextBox\").value();\n    }\n\n    function SearchClientClick() {\n        if (document.getElementById(\"HeaderSearchTextBox\").value == document.getElementById(\"HeaderSearchTextBox\").title) return false;\n        document.HeaderSearchForm.submit();return true;\n    }\n//" },
+	{ txt: "//\n            $(document).ready(function () {\n                var scriptElem = document.createElement(\u0027script\u0027);\n                scriptElem.src = \"https://i4.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\\u0026btnid=HeaderSearchButton\\u0026brand=MSDN\\u0026loc=en-us\\u0026Refinement=95\\u0026watermark=Data\\u0026focusOnInit=false\";\n                scriptElem.id = \"mscom.srch.searchBox\";\n                scriptElem.defer=\"defer\";\n                document.getElementsByTagName(\u0027head\u0027)[0].appendChild(scriptElem);\n            });\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Sto/Content/Scripts/SiteFeedback.js" },
+	{ txt: "/**/\n    \n      var wt_nvr_ru = \"WT_NVR_RU\";\n      var wt_fpcdom = \".microsoft.com\";\n      var wt_domlist = \"msdn.microsoft.com\";\n      var wt_pathlist = \"\";var wt_paramlist = \"DCSext.mtps_devcenter\";\n      var wt_siteid = \"MSDN\";\n      var gDomain=\"m.webtrends.com\";\n    var gDcsId = \"dcsmgru7m99k7mqmgrhudo0k8_8c6m\";\n    var gFpc = \"WT_FPC\";\n    if (document.cookie.indexOf(gFpc + \"=\") == -1) {\n        var scriptElem = document.createElement(\u0027script\u0027);\n        scriptElem.src = \"http\" + (window.location.protocol.indexOf(\u0027https:\u0027) == 0 ? \u0027s\u0027 : \u0027\u0027) + \"://\" + gDomain + \"/\" + gDcsId + \"/wtid.js\";\n        document.getElementsByTagName(\u0027head\u0027)[0].appendChild(scriptElem);\n    }\n    var detectedLocale = \"en-us\";\n    var wtsp = \"_data_\";\n    var gTrackEvents = \"1\";\n    /**/" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Sto/Content/Scripts/webtrendsscript.js" },
+	{ txt: "var omni_guid = \u0027c_95f83ea4fb4547bba941590ef3823506\u0027;" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Sto/Content/Scripts/omni_rsid.js" },
+	{ url: "https://www.microsoft.com/library/svy/sto/https/broker.js" }
+]);
+
+/*]]>*/
+</script>
+
+    
+<!--[CDATA[     
+Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx.
+]]-->
+
+<script src="./Entity Framework Working with Transactions (EF6 Onwards)_files/broker-config.js"></script></body></html>

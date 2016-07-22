@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71BE6F6D-4843-4652-84AD-10646648CAC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nikita.Base.CacheStore</RootNamespace>
+    <AssemblyName>Nikita.Base.CacheStore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Nikita发布\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\Nikita.Base.Autofac\DLL\Autofac3.5.2\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Helios.NET40">
+      <HintPath>..\Nikita.DLL\Helios4.0\Helios.NET40.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nikita.DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CacheSyn\CacheManager.cs" />
+    <Compile Include="CacheSyn\CacheMessageEntity.cs" />
+    <Compile Include="DAL\CacheConfigDAL.cs" />
+    <Compile Include="DAL\CacheSettingDAL.cs" />
+    <Compile Include="DAL\CacheTablesDAL.cs" />
+    <Compile Include="Forms\FrmCacheConfigSimpleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCacheConfigSimpleDialog.designer.cs">
+      <DependentUpon>FrmCacheConfigSimpleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCacheConfigSimpleQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCacheConfigSimpleQuery.Designer.cs">
+      <DependentUpon>FrmCacheConfigSimpleQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCacheSettingSimpleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCacheSettingSimpleDialog.designer.cs">
+      <DependentUpon>FrmCacheSettingSimpleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCacheSettingSimpleQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCacheSettingSimpleQuery.Designer.cs">
+      <DependentUpon>FrmCacheSettingSimpleQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCacheTablesSimpleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCacheTablesSimpleDialog.designer.cs">
+      <DependentUpon>FrmCacheTablesSimpleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCacheTablesSimpleQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCacheTablesSimpleQuery.designer.cs">
+      <DependentUpon>FrmCacheTablesSimpleQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalHelp.cs" />
+    <Compile Include="CacheSyn\CacheListener.cs" />
+    <Compile Include="Model\CacheConfig.cs" />
+    <Compile Include="Model\CacheSetting.cs" />
+    <Compile Include="Model\CacheTables.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseSchemaReader\Nikita.Base.DbSchemaReader.csproj">
+      <Project>{a0a8fdd0-2399-462c-80a1-8c3fec7e4d7b}</Project>
+      <Name>Nikita.Base.DbSchemaReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.BasicDAL\Nikita.Base.IDAL.csproj">
+      <Project>{fc9e5c67-4c86-4cd0-be8c-5091820bb805}</Project>
+      <Name>Nikita.Base.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
+      <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
+      <Name>Nikita.Base.Define</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.Helios.Common\Nikita.Base.HeliosCommon.csproj">
+      <Project>{0753c8e7-ef9e-482a-a384-f96f93dd8526}</Project>
+      <Name>Nikita.Base.HeliosCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Core\Nikita.Core.csproj">
+      <Project>{a939c25e-8300-48ca-ad10-48755c95fed8}</Project>
+      <Name>Nikita.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.DataAccess4DBHelper\Nikita.DataAccess4DBHelper.csproj">
+      <Project>{1d3d3ba5-fa80-4e3a-8c8d-4f189652d69f}</Project>
+      <Name>Nikita.DataAccess4DBHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.ExtendControl\Nikita.WinForm.ExtendControl.csproj">
+      <Project>{db3e8dd9-36c0-4163-b01f-04f09c23738a}</Project>
+      <Name>Nikita.WinForm.ExtendControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmCacheConfigSimpleDialog.resx">
+      <DependentUpon>FrmCacheConfigSimpleDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCacheConfigSimpleQuery.resx">
+      <DependentUpon>FrmCacheConfigSimpleQuery.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

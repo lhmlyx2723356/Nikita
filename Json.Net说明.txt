@@ -1,0 +1,5 @@
+官方网站：http://www.newtonsoft.com/
+Newtonsoft.Json.Net40
+Newtonsoft.Json.Tests.Net40为下载项目源码.Net4.0版本
+
+

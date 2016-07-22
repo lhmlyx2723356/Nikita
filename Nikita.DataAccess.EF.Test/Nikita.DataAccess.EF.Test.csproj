@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32E199F7-8644-46C7-AC67-5C698189C267}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nikita.DataAccess.EF.Test</RootNamespace>
+    <AssemblyName>Nikita.DataAccess.EF.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Nikita发布\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DNTProfiler.Common">
+      <HintPath>..\packages\DNTProfiler.EntityFramework.Core.1.5.849.0\lib\net45\DNTProfiler.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DNTProfiler.EntityFramework.Core">
+      <HintPath>..\packages\DNTProfiler.EntityFramework.Core.1.5.849.0\lib\net45\DNTProfiler.EntityFramework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSecondLevelCache">
+      <HintPath>..\packages\EFSecondLevelCache.1.1.3.0\lib\net45\EFSecondLevelCache.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert, Version=6.0.2.8, Culture=neutral, PublicKeyToken=630a17433349cb76, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.133\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI">
+      <HintPath>..\packages\EntityFramework.MappingAPI.6.0.0.7\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExfSoft.EntityFramework.Extension">
+      <HintPath>..\packages\ExfSoft.EntityFramework.Extension.1.0.1.5\lib\net45\ExfSoft.EntityFramework.Extension.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bse_AccountUser.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_City.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Config.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_District.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Exception.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Log.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Mene_Shortcut.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Menu.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Organize.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Province.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Role.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Role_Menu.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_SetInfo.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_SetOrd.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_SetOrd_Tree.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Shortcut.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_System.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_User.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_User_Organize.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_User_Role.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bse_Version_UpdateLog.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CacheContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CacheContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CacheContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CacheContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CacheContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Class.cs">
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClassInfo.cs">
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cools.cs">
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLambdaBuilderTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLambdaBuilderTest.Designer.cs">
+      <DependentUpon>FrmLambdaBuilderTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainBase.Designer.cs">
+      <DependentUpon>FrmMainBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainBulkInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainBulkInsert.Designer.cs">
+      <DependentUpon>FrmMainBulkInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainCache.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainCache.Designer.cs">
+      <DependentUpon>FrmMainCache.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainExtend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainExtend.Designer.cs">
+      <DependentUpon>FrmMainExtend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainPager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainPager.Designer.cs">
+      <DependentUpon>FrmMainPager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="news.cs">
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permission.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Permission.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permission.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permission.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Permission.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="stu.cs">
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentInfo.cs">
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stus.cs">
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stuu.cs">
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tabdb.cs">
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb.cs">
+      <DependentUpon>Permission.tt</DependentUpon>
+    </Compile>
+    <Compile Include="test.cs">
+      <DependentUpon>CacheContext.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmLambdaBuilderTest.resx">
+      <DependentUpon>FrmLambdaBuilderTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainBase.resx">
+      <DependentUpon>FrmMainBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainBulkInsert.resx">
+      <DependentUpon>FrmMainBulkInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainCache.resx">
+      <DependentUpon>FrmMainCache.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainExtend.resx">
+      <DependentUpon>FrmMainExtend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainPager.resx">
+      <DependentUpon>FrmMainPager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="CacheContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CacheContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CacheContext.edmx.diagram">
+      <DependentUpon>CacheContext.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="Permission.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Permission.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Permission.edmx.diagram">
+      <DependentUpon>Permission.edmx</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nikita.DataAccess4EF\Nikita.DataAccess4EF.csproj">
+      <Project>{3b266466-5923-4a18-9460-09be4c302bc8}</Project>
+      <Name>Nikita.DataAccess4EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.ExtendControl\Nikita.WinForm.ExtendControl.csproj">
+      <Project>{db3e8dd9-36c0-4163-b01f-04f09c23738a}</Project>
+      <Name>Nikita.WinForm.ExtendControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CacheContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CacheContext.edmx</DependentUpon>
+      <LastGenOutput>CacheContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CacheContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CacheContext.edmx</DependentUpon>
+      <LastGenOutput>CacheContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="EFSqlServer配置文件.txt" />
+    <Content Include="Permission.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Permission.edmx</DependentUpon>
+      <LastGenOutput>Permission.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Permission.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Permission.edmx</DependentUpon>
+      <LastGenOutput>Permission.cs</LastGenOutput>
+    </Content>
+    <Content Include="readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

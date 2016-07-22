@@ -1,0 +1,51 @@
+﻿http://www.cnblogs.com/VolcanoCloud/p/4481582.html
+
+http://www.cnblogs.com/24la/p/ef6-mysql.html EF6使用MySQL
+http://www.cnblogs.com/goldli/p/4057969.html
+
+http://www.zzzprojects.com/ 非常优秀的很多扩展项目
+ 
+nuget 扩展
+https://www.nuget.org/packages/Hummingbird.EntityFramework.Autofac/ 
+https://www.nuget.org/packages/EntityFramework.Serilog/1.0.4-Beta 记录日志
+https://www.nuget.org/packages/EntityFramework.Cache/ 二级缓存
+http://blog.3d-logic.com/2014/03/20/second-level-cache-for-ef-6-1/ 上面使用网址
+https://github.com/VahidN/EFSecondLevelCache 另外一个二级缓存类库
+
+
+http://www.cnblogs.com/anorthwolf/archive/2009/12/07/1618665.html 缓存依赖
+memcached 缓存可用于分布式，如果是非分布式系统可能还会拖慢系统
+http://www.cnblogs.com/tenghoo/archive/2010/02/23/1671838.html
+
+https://msdn.microsoft.com/en-us/data/dn582034   ngen工具提速
+
+http://www.cnblogs.com/leslies2/archive/2012/07/30/2608784.html ef并发处理详解
+
+http://www.dotblogs.com.tw/wasichris/archive/2014/12/20/147734.aspx linqKit 动态条件设置
+
+http://www.scip.be/index.php?Page=ArticlesNET24  EF查询 元数据
+http://www.tuicool.com/articles/jMvU3y 开源项目
+https://efbulkinsert.codeplex.com/ 
+
+https://msdn.microsoft.com/en-us/data/dn456843 EF事务
+http://www.360doc.com/content/12/0610/11/466494_217206273.shtml 事务操作
+http://www.cnblogs.com/cjw0511/category/674572.html ef 读写分离
+
+http://bbs.csdn.net/topics/390823046/
+http://www.cnblogs.com/dudu/archive/2011/01/29/entity_framework_connection_string.html 动态修改字符串
+http://www.cnblogs.com/cate/ef/ 博客园EF专题
+http://www.cnblogs.com/wintersun/archive/2011/07/28/2119851.html 使用LinqPad调试EF
+http://www.hibernatingrhinos.com/products/EFProf 调试工具
+http://www.ormprofiler.com/Pages/trial.aspx 
+http://www.albahari.com/nutshell/linqkit.aspx  linq扩展
+http://www.dotblogs.com.tw/wasichris/archive/2014/12/20/147734.aspx linq扩展linqkit使用
+
+http://www.open-open.com/news/view/1e0ac75  希望改进点
+
+http://blog.csdn.net/lijun7788/article/details/8309661 调用存储过程
+
+
+SQLite 下载地址 http://system.data.sqlite.org/index.html/doc/trunk/www/downloads.wiki 
+
+EF6 在 SQLite中使用备忘 http://www.cnblogs.com/adswads/p/3808549.html
+http://www.cnblogs.com/liqipeng/p/4608508.html

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C92C15B8-CE9F-4A20-B94D-F91F73F01E09}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nikita.Assist.SimpleCodeMaker</RootNamespace>
+    <AssemblyName>Nikita.Assist.SimpleCodeMaker</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Nikita发布\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>frame.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nikita.DLL\MySql.Data.6.9.6\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nikita.DLL\SQLite.1.0.95.0\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GenDAL_SQLite_Wcf.cs" />
+    <Compile Include="GenDAL_MySQL_Wcf.cs" />
+    <Compile Include="GenDAL_Access_Wcf.cs" />
+    <Compile Include="GenDAL_MSSQL_Wcf.cs" />
+    <Content Include="classtemp\AccessDALTemp.txt">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="classtemp\AccessHelperTemp.txt" />
+    <Content Include="classtemp\MSSQLDALTemp.txt" />
+    <Content Include="classtemp\MySQLHelperTemp.txt" />
+    <Content Include="classtemp\SQLiteHelperTemp.txt" />
+    <Content Include="classtemp\SQLiteDALTemp.txt" />
+    <Content Include="classtemp\MSSQLHelperTemp.txt" />
+    <Compile Include="DBDocGen.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenDAL_Access_niunan.cs" />
+    <Compile Include="GenDAL_MSSQL.cs" />
+    <Compile Include="GenDAL_MSSQL_niunan.cs" />
+    <Compile Include="GenDAL_MySQL_niunan.cs" />
+    <Compile Include="GenDAL_SQLite_niunan.cs" />
+    <Compile Include="GenExtendClass.cs" />
+    <Compile Include="GenModel_Access.cs" />
+    <Compile Include="GenModel_MSSQL.cs" />
+    <Compile Include="GenModel_MySQL.cs" />
+    <Compile Include="GenModel_SQLite.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools.cs" />
+    <Content Include="classtemp\MySQLDALTemp.txt" />
+    <Content Include="classtemp\DBTemp.html" />
+    <Content Include="classtemp\MSSQLDALTempExtend.txt" />
+    <Content Include="classtemp\AccessDALTempExtend.txt" />
+    <Content Include="classtemp\MySQLDALTempExtend.txt" />
+    <Content Include="classtemp\SQLiteDALTempExtend.txt" />
+    <Content Include="classtemp\SQLiteDALTempWcf.txt" />
+    <Content Include="classtemp\MySQLDALTempWcf.txt" />
+    <Content Include="classtemp\AccessDALTempWcf.txt" />
+    <Content Include="classtemp\MSSQLDALTempWcf.txt" />
+    <Content Include="frame.ico" />
+    <Content Include="Nikita.SimpleCodeMaker说明.txt" />
+    <Content Include="更新记录.txt" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appconfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PermissionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bse_AccountUser">
+          <Key>
+            <PropertyRef Name="Module_Id" />
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="Module_Id" Type="int" Nullable="false" />
+          <Property Name="User_Id" Type="bigint" Nullable="false" />
+          <Property Name="Allowed_Operator" Type="varchar(max)" Nullable="false" />
+          <Property Name="IsAllow" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Permission.dbo.Bse_City”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Bse_City">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProvinceID" Type="bigint" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Permission.dbo.Bse_Config”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Bse_Config">
+          <Key>
+            <PropertyRef Name="Config_Id" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="Remark" />
+          </Key>
+          <Property Name="Config_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="PY" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="State" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Permission.dbo.Bse_District”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Bse_District">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DistrictName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CityID" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Bse_Exception">
+          <Key>
+            <PropertyRef Name="Exception_Id" />
+          </Key>
+          <Property Name="Exception_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemId" Type="int" />
+          <Property Name="EventId" Type="int" />
+          <Property Name="Category" Type="nvarchar" MaxLength="64" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="Severity" Type="nvarchar" MaxLength="32" />
+          <Property Name="Title" Type="nvarchar" MaxLength="256" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="MachineName" Type="nvarchar" MaxLength="32" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="40" />
+          <Property Name="AppDomainName" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ProcessID" Type="nvarchar" MaxLength="256" />
+          <Property Name="ProcessName" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ThreadName" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Win32ThreadId" Type="nvarchar" MaxLength="128" />
+          <Property Name="Message" Type="nvarchar" MaxLength="2000" />
+          <Property Name="FormattedMessage" Type="ntext" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bse_Log">
+          <Key>
+            <PropertyRef Name="Log_Id" />
+          </Key>
+          <Property Name="Log_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemId" Type="int" />
+          <Property Name="ProcessId" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProcessName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MethodId" Type="nvarchar" MaxLength="50" />
+          <Property Name="MethodName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Parameters" Type="nvarchar" MaxLength="200" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UrlReferrer" Type="nvarchar" MaxLength="800" />
+          <Property Name="WebUrl" Type="nvarchar" MaxLength="800" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bse_Mene_Shortcut">
+          <Key>
+            <PropertyRef Name="ShortCut_Id" />
+          </Key>
+          <Property Name="ShortCut_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Module_Id" Type="int" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="PY" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="BlocName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="State" Type="int" />
+        </EntityType>
+        <EntityType Name="Bse_Menu">
+          <Key>
+            <PropertyRef Name="Module_Id" />
+          </Key>
+          <Property Name="Module_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Number" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
+          <Property Name="GroupTxt" Type="varchar" MaxLength="50" />
+          <Property Name="ImagUrl" Type="nvarchar" MaxLength="200" />
+          <Property Name="ImageIndex" Type="nvarchar" MaxLength="50" />
+          <Property Name="SelectedImageIndex" Type="nvarchar" MaxLength="50" />
+          <Property Name="NavigateUrl" Type="nvarchar" MaxLength="200" />
+          <Property Name="Target" Type="nvarchar" MaxLength="100" />
+          <Property Name="FormName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeletionStateCode" Type="int" />
+          <Property Name="IsPublic" Type="bit" />
+          <Property Name="Expand" Type="int" />
+          <Property Name="AllowEdit" Type="int" />
+          <Property Name="AllowDelete" Type="int" />
+          <Property Name="PY" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="BlocName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="EditUserId" Type="int" />
+          <Property Name="EditUserName" Type="varchar" MaxLength="50" />
+          <Property Name="EditDate" Type="varchar" MaxLength="50" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" />
+          <Property Name="State" Type="int" />
+          <Property Name="TileItemSize" Type="varchar" MaxLength="50" />
+          <Property Name="SystemId" Type="int" />
+        </EntityType>
+        <EntityType Name="Bse_Organize">
+          <Key>
+            <PropertyRef Name="Organize_Id" />
+          </Key>
+          <Property Name="Organize_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
+          <Property Name="OuterPhone" Type="nvarchar" MaxLength="100" />
+          <Property Name="InnerPhone" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Postalcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Web" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bank" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="Layer" Type="int" />
+          <Property Name="IsInnerOrganize" Type="int" />
+          <Property Name="DeletionStateCode" Type="int" />
+          <Property Name="PY" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="BlocName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="EditUserId" Type="int" />
+          <Property Name="EditUserName" Type="varchar" MaxLength="50" />
+          <Property Name="EditDate" Type="varchar" MaxLength="50" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" />
+          <Property Name="State" Type="int" />
+          <Property Name="SystemId" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“Permission.dbo.Bse_Province”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Bse_Province">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProvinceName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Bse_Role">
+          <Key>
+            <PropertyRef Name="Role_Id" />
+          </Key>
+          <Property Name="Role_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SystemId" Type="int" />
+          <Property Name="RoleNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="AllowEdit" Type="int" Nullable="false" />
+          <Property Name="AllowDelete" Type="int" Nullable="false" />
+          <Property Name="IsVisible" Type="int" Nullable="false" />
+          <Property Name="OwnerCompany" Type="int" />
+          <Property Name="PY" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="BlocName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="EditUserId" Type="int" />
+          <Property Name="EditUserName" Type="varchar" MaxLength="50" />
+          <Property Name="EditDate" Type="varchar" MaxLength="50" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="State" Type="int" />
+        </EntityType>
+        <EntityType Name="Bse_Role_Menu">
+          <Key>
+            <PropertyRef Name="Account_Id" />
+          </Key>
+          <Property Name="Account_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Module_Id" Type="int" Nullable="false" />
+          <Property Name="Role_Id" Type="int" Nullable="false" />
+          <Property Name="Allowed_Operator" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="BlocName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="EditUserId" Type="int" />
+          <Property Name="EditUserName" Type="varchar" MaxLength="50" />
+          <Property Name="EditDate" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="int" />
+          <Property Name="SystemId" Type="int" />
+        </EntityType>
+        <EntityType Name="Bse_SetInfo">
+          <Key>
+            <PropertyRef Name="SetInfo_Id" />
+          </Key>
+          <Property Name="SetInfo_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SetOrd_Id" Type="int" Nullable="false" />
+          <Property Name="SetInfo_Key" Type="varchar" MaxLength="50" />
+          <Property Name="SetInfo_Value" Type="varchar" MaxLength="50" />
+          <Property Name="Number" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="PY" Type="nchar" MaxLength="10" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="State" Type="int" />
+          <Property Name="SystemId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bse_SetOrd">
+          <Key>
+            <PropertyRef Name="SetOrd_Id" />
+          </Key>
+          <Property Name="SetOrd_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SetOrd_Key" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="PY" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="State" Type="int" />
+          <Property Name="SystemId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bse_SetOrd_Tree">
+          <Key>
+            <PropertyRef Name="SetTree_Id" />
+          </Key>
+          <Property Name="SetTree_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SetTree_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SetTree_EName" Type="varchar" MaxLength="50" />
+          <Property Name="SetTree_Key" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SetTree_Level" Type="tinyint" Nullable="false" />
+          <Property Name="Parent_SetTree_Id" Type="int" Nullable="false" />
+          <Property Name="SetTree_Type" Type="int" />
+          <Property Name="SetTree_PY" Type="varchar" MaxLength="50" />
+          <Property Name="SetTree_Sort" Type="int" />
+        </EntityType>
+        <EntityType Name="Bse_Shortcut">
+          <Key>
+            <PropertyRef Name="Shortcut_Id" />
+          </Key>
+          <Property Name="Shortcut_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Shortcut_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Shortcut_Key" Type="varchar" MaxLength="50" />
+          <Property Name="Shortcut_Form" Type="varchar" MaxLength="50" />
+          <Property Name="NavigaUrl" Type="varchar" MaxLength="50" />
+          <Property Name="Shortcut_ImageUrl" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="System" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Bse_System">
+          <Key>
+            <PropertyRef Name="System_Id" />
+          </Key>
+          <Property Name="System_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="System_Name" Type="varchar" MaxLength="50" />
+          <Property Name="System_Number" Type="varchar" MaxLength="50" />
+          <Property Name="System_Type" Type="varchar" MaxLength="50" />
+          <Property Name="System_Version" Type="varchar" MaxLength="50" />
+          <Property Name="System_Language" Type="varchar" MaxLength="50" />
+          <Property Name="CustNumber" Type="varchar" MaxLength="50" />
+          <Property Name="LimitNumber" Type="varchar" MaxLength="50" />
+          <Property Name="PY" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="BlocName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="EditUserId" Type="int" />
+          <Property Name="EditUserName" Type="varchar" MaxLength="50" />
+          <Property Name="EditDate" Type="varchar" MaxLength="50" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" />
+          <Property Name="State" Type="int" />
+        </EntityType>
+        <EntityType Name="Bse_User">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Realname" Type="nvarchar" MaxLength="50" />
+          <Property Name="NiName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserFrom" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="ChangePasswordDate" Type="smalldatetime" />
+          <Property Name="Duty" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lang" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="50" />
+          <Property Name="Birthday" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="QQ" Type="nvarchar" MaxLength="50" />
+          <Property Name="SFZNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="HomeAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="HomeTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkAddress" Type="varchar" MaxLength="250" />
+          <Property Name="WorkTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Theme" Type="nvarchar" MaxLength="50" />
+          <Property Name="AllowStartTime" Type="smalldatetime" />
+          <Property Name="AllowEndTime" Type="smalldatetime" />
+          <Property Name="LockStartDate" Type="smalldatetime" />
+          <Property Name="LockEndDate" Type="smalldatetime" />
+          <Property Name="FirstVisit" Type="smalldatetime" />
+          <Property Name="PreviousVisit" Type="smalldatetime" />
+          <Property Name="LastVisit" Type="smalldatetime" />
+          <Property Name="LogOnCount" Type="int" />
+          <Property Name="IsStaff" Type="int" />
+          <Property Name="IsVisible" Type="int" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="MACAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="Question" Type="nvarchar" MaxLength="50" />
+          <Property Name="AnswerQuestion" Type="nvarchar" MaxLength="200" />
+          <Property Name="UserAddressId" Type="int" />
+          <Property Name="AuditStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="PY" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="BlocName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="EditUserId" Type="int" />
+          <Property Name="EditUserName" Type="varchar" MaxLength="50" />
+          <Property Name="EditDate" Type="varchar" MaxLength="50" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" />
+          <Property Name="State" Type="int" />
+          <Property Name="SystemId" Type="int" />
+        </EntityType>
+        <EntityType Name="Bse_User_Organize">
+          <Key>
+            <PropertyRef Name="User_Organize_Id" />
+          </Key>
+          <Property Name="User_Organize_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Id" Type="int" />
+          <Property Name="Organize_Id" Type="int" />
+          <Property Name="DeletionStateCode" Type="int" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="BlocName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="EditUserId" Type="int" />
+          <Property Name="EditUserName" Type="varchar" MaxLength="50" />
+          <Property Name="EditDate" Type="varchar" MaxLength="50" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="State" Type="int" />
+          <Property Name="SystemId" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Bse_User_Role">
+          <Key>
+            <PropertyRef Name="User_Role_Id" />
+          </Key>
+          <Property Name="User_Role_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="PY" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Dept_Id" Type="int" />
+          <Property Name="DeptName" Type="varchar" MaxLength="50" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="Bloc_Id" Type="int" />
+          <Property Name="BlocName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUserId" Type="int" />
+          <Property Name="CreateName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="EditUserId" Type="int" />
+          <Property Name="EditUserName" Type="varchar" MaxLength="50" />
+          <Property Name="EditDate" Type="varchar" MaxLength="50" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="State" Type="int" />
+          <Property Name="SystemId" Type="int" />
+        </EntityType>
+        <EntityType Name="Bse_Version_UpdateLog">
+          <Key>
+            <PropertyRef Name="Version_Id" />
+          </Key>
+          <Property Name="Version_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Version" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FileNames" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tb">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="PermissionModelStoreContainer">
+          <EntitySet Name="Bse_AccountUser" EntityType="Self.Bse_AccountUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_Exception" EntityType="Self.Bse_Exception" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_Log" EntityType="Self.Bse_Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_Mene_Shortcut" EntityType="Self.Bse_Mene_Shortcut" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_Menu" EntityType="Self.Bse_Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_Organize" EntityType="Self.Bse_Organize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_Role" EntityType="Self.Bse_Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_Role_Menu" EntityType="Self.Bse_Role_Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_SetInfo" EntityType="Self.Bse_SetInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_SetOrd" EntityType="Self.Bse_SetOrd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_SetOrd_Tree" EntityType="Self.Bse_SetOrd_Tree" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_Shortcut" EntityType="Self.Bse_Shortcut" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_System" EntityType="Self.Bse_System" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_User" EntityType="Self.Bse_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_User_Organize" EntityType="Self.Bse_User_Organize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_User_Role" EntityType="Self.Bse_User_Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_Version_UpdateLog" EntityType="Self.Bse_Version_UpdateLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb" EntityType="Self.tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bse_City" EntityType="Self.Bse_City" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Bse_City].[ID] AS [ID], 
+    [Bse_City].[CityName] AS [CityName], 
+    [Bse_City].[ZipCode] AS [ZipCode], 
+    [Bse_City].[ProvinceID] AS [ProvinceID]
+    FROM [dbo].[Bse_City] AS [Bse_City]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Bse_Config" EntityType="Self.Bse_Config" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Bse_Config].[Config_Id] AS [Config_Id], 
+    [Bse_Config].[Number] AS [Number], 
+    [Bse_Config].[Name] AS [Name], 
+    [Bse_Config].[PY] AS [PY], 
+    [Bse_Config].[Sort] AS [Sort], 
+    [Bse_Config].[Dept_Id] AS [Dept_Id], 
+    [Bse_Config].[Company_Id] AS [Company_Id], 
+    [Bse_Config].[Bloc_Id] AS [Bloc_Id], 
+    [Bse_Config].[CreateUserId] AS [CreateUserId], 
+    [Bse_Config].[CreateName] AS [CreateName], 
+    [Bse_Config].[CreateDate] AS [CreateDate], 
+    [Bse_Config].[Remark] AS [Remark], 
+    [Bse_Config].[State] AS [State]
+    FROM [dbo].[Bse_Config] AS [Bse_Config]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Bse_District" EntityType="Self.Bse_District" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Bse_District].[ID] AS [ID], 
+    [Bse_District].[DistrictName] AS [DistrictName], 
+    [Bse_District].[CityID] AS [CityID]
+    FROM [dbo].[Bse_District] AS [Bse_District]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Bse_Province" EntityType="Self.Bse_Province" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Bse_Province].[ID] AS [ID], 
+    [Bse_Province].[ProvinceName] AS [ProvinceName]
+    FROM [dbo].[Bse_Province] AS [Bse_Province]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PermissionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bse_AccountUser">
+          <Key>
+            <PropertyRef Name="Module_Id" />
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="Module_Id" Type="Int32" Nullable="false" />
+          <Property Name="User_Id" Type="Int64" Nullable="false" />
+          <Property Name="Allowed_Operator" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsAllow" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bse_Exception">
+          <Key>
+            <PropertyRef Name="Exception_Id" />
+          </Key>
+          <Property Name="Exception_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemId" Type="Int32" />
+          <Property Name="EventId" Type="Int32" />
+          <Property Name="Category" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="Severity" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="MachineName" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="IPAddress" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="AppDomainName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessID" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ThreadName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Win32ThreadId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="FormattedMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Bse_Log">
+          <Key>
+            <PropertyRef Name="Log_Id" />
+          </Key>
+          <Property Name="Log_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemId" Type="Int32" />
+          <Property Name="ProcessId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MethodId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MethodName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Parameters" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UrlReferrer" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+          <Property Name="WebUrl" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Bse_Mene_Shortcut">
+          <Key>
+            <PropertyRef Name="ShortCut_Id" />
+          </Key>
+          <Property Name="ShortCut_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Module_Id" Type="Int32" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="BlocName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bse_Menu">
+          <Key>
+            <PropertyRef Name="Module_Id" />
+          </Key>
+          <Property Name="Module_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GroupTxt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImagUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ImageIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SelectedImageIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NavigateUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Target" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FormName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DeletionStateCode" Type="Int32" />
+          <Property Name="IsPublic" Type="Boolean" />
+          <Property Name="Expand" Type="Int32" />
+          <Property Name="AllowEdit" Type="Int32" />
+          <Property Name="AllowDelete" Type="Int32" />
+          <Property Name="PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="BlocName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="EditUserId" Type="Int32" />
+          <Property Name="EditUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="TileItemSize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SystemId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bse_Organize">
+          <Key>
+            <PropertyRef Name="Organize_Id" />
+          </Key>
+          <Property Name="Organize_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OuterPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InnerPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Postalcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Web" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Layer" Type="Int32" />
+          <Property Name="IsInnerOrganize" Type="Int32" />
+          <Property Name="DeletionStateCode" Type="Int32" />
+          <Property Name="PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="BlocName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="EditUserId" Type="Int32" />
+          <Property Name="EditUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="SystemId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bse_Role">
+          <Key>
+            <PropertyRef Name="Role_Id" />
+          </Key>
+          <Property Name="Role_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SystemId" Type="Int32" />
+          <Property Name="RoleNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AllowEdit" Type="Int32" Nullable="false" />
+          <Property Name="AllowDelete" Type="Int32" Nullable="false" />
+          <Property Name="IsVisible" Type="Int32" Nullable="false" />
+          <Property Name="OwnerCompany" Type="Int32" />
+          <Property Name="PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="BlocName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditUserId" Type="Int32" />
+          <Property Name="EditUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bse_Role_Menu">
+          <Key>
+            <PropertyRef Name="Account_Id" />
+          </Key>
+          <Property Name="Account_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Module_Id" Type="Int32" Nullable="false" />
+          <Property Name="Role_Id" Type="Int32" Nullable="false" />
+          <Property Name="Allowed_Operator" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="BlocName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditUserId" Type="Int32" />
+          <Property Name="EditUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="SystemId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bse_SetInfo">
+          <Key>
+            <PropertyRef Name="SetInfo_Id" />
+          </Key>
+          <Property Name="SetInfo_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SetOrd_Id" Type="Int32" Nullable="false" />
+          <Property Name="SetInfo_Key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SetInfo_Value" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PY" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="SystemId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bse_SetOrd">
+          <Key>
+            <PropertyRef Name="SetOrd_Id" />
+          </Key>
+          <Property Name="SetOrd_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SetOrd_Key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="SystemId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bse_SetOrd_Tree">
+          <Key>
+            <PropertyRef Name="SetTree_Id" />
+          </Key>
+          <Property Name="SetTree_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SetTree_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SetTree_EName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SetTree_Key" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SetTree_Level" Type="Byte" Nullable="false" />
+          <Property Name="Parent_SetTree_Id" Type="Int32" Nullable="false" />
+          <Property Name="SetTree_Type" Type="Int32" />
+          <Property Name="SetTree_PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SetTree_Sort" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bse_Shortcut">
+          <Key>
+            <PropertyRef Name="Shortcut_Id" />
+          </Key>
+          <Property Name="Shortcut_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Shortcut_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Shortcut_Key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Shortcut_Form" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NavigaUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Shortcut_ImageUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="System" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Bse_System">
+          <Key>
+            <PropertyRef Name="System_Id" />
+          </Key>
+          <Property Name="System_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="System_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="System_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="System_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="System_Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="System_Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LimitNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="BlocName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="EditUserId" Type="Int32" />
+          <Property Name="EditUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bse_User">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Realname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NiName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ChangePasswordDate" Type="DateTime" Precision="0" />
+          <Property Name="Duty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QQ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SFZNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HomeAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="HomeTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="WorkTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Theme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AllowStartTime" Type="DateTime" Precision="0" />
+          <Property Name="AllowEndTime" Type="DateTime" Precision="0" />
+          <Property Name="LockStartDate" Type="DateTime" Precision="0" />
+          <Property Name="LockEndDate" Type="DateTime" Precision="0" />
+          <Property Name="FirstVisit" Type="DateTime" Precision="0" />
+          <Property Name="PreviousVisit" Type="DateTime" Precision="0" />
+          <Property Name="LastVisit" Type="DateTime" Precision="0" />
+          <Property Name="LogOnCount" Type="Int32" />
+          <Property Name="IsStaff" Type="Int32" />
+          <Property Name="IsVisible" Type="Int32" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MACAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Question" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AnswerQuestion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UserAddressId" Type="Int32" />
+          <Property Name="AuditStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="BlocName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="EditUserId" Type="Int32" />
+          <Property Name="EditUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="SystemId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bse_User_Organize">
+          <Key>
+            <PropertyRef Name="User_Organize_Id" />
+          </Key>
+          <Property Name="User_Organize_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Id" Type="Int32" />
+          <Property Name="Organize_Id" Type="Int32" />
+          <Property Name="DeletionStateCode" Type="Int32" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="BlocName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditUserId" Type="Int32" />
+          <Property Name="EditUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="SystemId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Bse_User_Role">
+          <Key>
+            <PropertyRef Name="User_Role_Id" />
+          </Key>
+          <Property Name="User_Role_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="BlocName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EditUserId" Type="Int32" />
+          <Property Name="EditUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EditDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="SystemId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bse_Version_UpdateLog">
+          <Key>
+            <PropertyRef Name="Version_Id" />
+          </Key>
+          <Property Name="Version_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FileNames" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tb">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Bse_City">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinceID" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Bse_Config">
+          <Key>
+            <PropertyRef Name="Config_Id" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="Remark" />
+          </Key>
+          <Property Name="Config_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Dept_Id" Type="Int32" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="Bloc_Id" Type="Int32" />
+          <Property Name="CreateUserId" Type="Int32" />
+          <Property Name="CreateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bse_District">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CityID" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Bse_Province">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProvinceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PermissionEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bse_AccountUser" EntityType="Self.Bse_AccountUser" />
+          <EntitySet Name="Bse_Exception" EntityType="Self.Bse_Exception" />
+          <EntitySet Name="Bse_Log" EntityType="Self.Bse_Log" />
+          <EntitySet Name="Bse_Mene_Shortcut" EntityType="Self.Bse_Mene_Shortcut" />
+          <EntitySet Name="Bse_Menu" EntityType="Self.Bse_Menu" />
+          <EntitySet Name="Bse_Organize" EntityType="Self.Bse_Organize" />
+          <EntitySet Name="Bse_Role" EntityType="Self.Bse_Role" />
+          <EntitySet Name="Bse_Role_Menu" EntityType="Self.Bse_Role_Menu" />
+          <EntitySet Name="Bse_SetInfo" EntityType="Self.Bse_SetInfo" />
+          <EntitySet Name="Bse_SetOrd" EntityType="Self.Bse_SetOrd" />
+          <EntitySet Name="Bse_SetOrd_Tree" EntityType="Self.Bse_SetOrd_Tree" />
+          <EntitySet Name="Bse_Shortcut" EntityType="Self.Bse_Shortcut" />
+          <EntitySet Name="Bse_System" EntityType="Self.Bse_System" />
+          <EntitySet Name="Bse_User" EntityType="Self.Bse_User" />
+          <EntitySet Name="Bse_User_Organize" EntityType="Self.Bse_User_Organize" />
+          <EntitySet Name="Bse_User_Role" EntityType="Self.Bse_User_Role" />
+          <EntitySet Name="Bse_Version_UpdateLog" EntityType="Self.Bse_Version_UpdateLog" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="tb" EntityType="Self.tb" />
+          <EntitySet Name="Bse_City" EntityType="Self.Bse_City" />
+          <EntitySet Name="Bse_Config" EntityType="Self.Bse_Config" />
+          <EntitySet Name="Bse_District" EntityType="Self.Bse_District" />
+          <EntitySet Name="Bse_Province" EntityType="Self.Bse_Province" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PermissionModelStoreContainer" CdmEntityContainer="PermissionEntities1">
+          <EntitySetMapping Name="Bse_AccountUser">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_AccountUser">
+              <MappingFragment StoreEntitySet="Bse_AccountUser">
+                <ScalarProperty Name="Module_Id" ColumnName="Module_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="Allowed_Operator" ColumnName="Allowed_Operator" />
+                <ScalarProperty Name="IsAllow" ColumnName="IsAllow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Exception">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Exception">
+              <MappingFragment StoreEntitySet="Bse_Exception">
+                <ScalarProperty Name="Exception_Id" ColumnName="Exception_Id" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Severity" ColumnName="Severity" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="AppDomainName" ColumnName="AppDomainName" />
+                <ScalarProperty Name="ProcessID" ColumnName="ProcessID" />
+                <ScalarProperty Name="ProcessName" ColumnName="ProcessName" />
+                <ScalarProperty Name="ThreadName" ColumnName="ThreadName" />
+                <ScalarProperty Name="Win32ThreadId" ColumnName="Win32ThreadId" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="FormattedMessage" ColumnName="FormattedMessage" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Log">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Log">
+              <MappingFragment StoreEntitySet="Bse_Log">
+                <ScalarProperty Name="Log_Id" ColumnName="Log_Id" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+                <ScalarProperty Name="ProcessId" ColumnName="ProcessId" />
+                <ScalarProperty Name="ProcessName" ColumnName="ProcessName" />
+                <ScalarProperty Name="MethodId" ColumnName="MethodId" />
+                <ScalarProperty Name="MethodName" ColumnName="MethodName" />
+                <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="UrlReferrer" ColumnName="UrlReferrer" />
+                <ScalarProperty Name="WebUrl" ColumnName="WebUrl" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Mene_Shortcut">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Mene_Shortcut">
+              <MappingFragment StoreEntitySet="Bse_Mene_Shortcut">
+                <ScalarProperty Name="ShortCut_Id" ColumnName="ShortCut_Id" />
+                <ScalarProperty Name="Module_Id" ColumnName="Module_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="PY" ColumnName="PY" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="BlocName" ColumnName="BlocName" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Menu">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Menu">
+              <MappingFragment StoreEntitySet="Bse_Menu">
+                <ScalarProperty Name="Module_Id" ColumnName="Module_Id" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="GroupTxt" ColumnName="GroupTxt" />
+                <ScalarProperty Name="ImagUrl" ColumnName="ImagUrl" />
+                <ScalarProperty Name="ImageIndex" ColumnName="ImageIndex" />
+                <ScalarProperty Name="SelectedImageIndex" ColumnName="SelectedImageIndex" />
+                <ScalarProperty Name="NavigateUrl" ColumnName="NavigateUrl" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="FormName" ColumnName="FormName" />
+                <ScalarProperty Name="DeletionStateCode" ColumnName="DeletionStateCode" />
+                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+                <ScalarProperty Name="Expand" ColumnName="Expand" />
+                <ScalarProperty Name="AllowEdit" ColumnName="AllowEdit" />
+                <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+                <ScalarProperty Name="PY" ColumnName="PY" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="BlocName" ColumnName="BlocName" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EditUserId" ColumnName="EditUserId" />
+                <ScalarProperty Name="EditUserName" ColumnName="EditUserName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="TileItemSize" ColumnName="TileItemSize" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Organize">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Organize">
+              <MappingFragment StoreEntitySet="Bse_Organize">
+                <ScalarProperty Name="Organize_Id" ColumnName="Organize_Id" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="OuterPhone" ColumnName="OuterPhone" />
+                <ScalarProperty Name="InnerPhone" ColumnName="InnerPhone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Postalcode" ColumnName="Postalcode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Web" ColumnName="Web" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+                <ScalarProperty Name="Layer" ColumnName="Layer" />
+                <ScalarProperty Name="IsInnerOrganize" ColumnName="IsInnerOrganize" />
+                <ScalarProperty Name="DeletionStateCode" ColumnName="DeletionStateCode" />
+                <ScalarProperty Name="PY" ColumnName="PY" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="BlocName" ColumnName="BlocName" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EditUserId" ColumnName="EditUserId" />
+                <ScalarProperty Name="EditUserName" ColumnName="EditUserName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Role">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Role">
+              <MappingFragment StoreEntitySet="Bse_Role">
+                <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+                <ScalarProperty Name="RoleNumber" ColumnName="RoleNumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="AllowEdit" ColumnName="AllowEdit" />
+                <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="OwnerCompany" ColumnName="OwnerCompany" />
+                <ScalarProperty Name="PY" ColumnName="PY" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="BlocName" ColumnName="BlocName" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EditUserId" ColumnName="EditUserId" />
+                <ScalarProperty Name="EditUserName" ColumnName="EditUserName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Role_Menu">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Role_Menu">
+              <MappingFragment StoreEntitySet="Bse_Role_Menu">
+                <ScalarProperty Name="Account_Id" ColumnName="Account_Id" />
+                <ScalarProperty Name="Module_Id" ColumnName="Module_Id" />
+                <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+                <ScalarProperty Name="Allowed_Operator" ColumnName="Allowed_Operator" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="BlocName" ColumnName="BlocName" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EditUserId" ColumnName="EditUserId" />
+                <ScalarProperty Name="EditUserName" ColumnName="EditUserName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_SetInfo">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_SetInfo">
+              <MappingFragment StoreEntitySet="Bse_SetInfo">
+                <ScalarProperty Name="SetInfo_Id" ColumnName="SetInfo_Id" />
+                <ScalarProperty Name="SetOrd_Id" ColumnName="SetOrd_Id" />
+                <ScalarProperty Name="SetInfo_Key" ColumnName="SetInfo_Key" />
+                <ScalarProperty Name="SetInfo_Value" ColumnName="SetInfo_Value" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PY" ColumnName="PY" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_SetOrd">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_SetOrd">
+              <MappingFragment StoreEntitySet="Bse_SetOrd">
+                <ScalarProperty Name="SetOrd_Id" ColumnName="SetOrd_Id" />
+                <ScalarProperty Name="SetOrd_Key" ColumnName="SetOrd_Key" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PY" ColumnName="PY" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_SetOrd_Tree">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_SetOrd_Tree">
+              <MappingFragment StoreEntitySet="Bse_SetOrd_Tree">
+                <ScalarProperty Name="SetTree_Id" ColumnName="SetTree_Id" />
+                <ScalarProperty Name="SetTree_Name" ColumnName="SetTree_Name" />
+                <ScalarProperty Name="SetTree_EName" ColumnName="SetTree_EName" />
+                <ScalarProperty Name="SetTree_Key" ColumnName="SetTree_Key" />
+                <ScalarProperty Name="SetTree_Level" ColumnName="SetTree_Level" />
+                <ScalarProperty Name="Parent_SetTree_Id" ColumnName="Parent_SetTree_Id" />
+                <ScalarProperty Name="SetTree_Type" ColumnName="SetTree_Type" />
+                <ScalarProperty Name="SetTree_PY" ColumnName="SetTree_PY" />
+                <ScalarProperty Name="SetTree_Sort" ColumnName="SetTree_Sort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Shortcut">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Shortcut">
+              <MappingFragment StoreEntitySet="Bse_Shortcut">
+                <ScalarProperty Name="Shortcut_Id" ColumnName="Shortcut_Id" />
+                <ScalarProperty Name="Shortcut_Name" ColumnName="Shortcut_Name" />
+                <ScalarProperty Name="Shortcut_Key" ColumnName="Shortcut_Key" />
+                <ScalarProperty Name="Shortcut_Form" ColumnName="Shortcut_Form" />
+                <ScalarProperty Name="NavigaUrl" ColumnName="NavigaUrl" />
+                <ScalarProperty Name="Shortcut_ImageUrl" ColumnName="Shortcut_ImageUrl" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="System" ColumnName="System" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_System">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_System">
+              <MappingFragment StoreEntitySet="Bse_System">
+                <ScalarProperty Name="System_Id" ColumnName="System_Id" />
+                <ScalarProperty Name="System_Name" ColumnName="System_Name" />
+                <ScalarProperty Name="System_Number" ColumnName="System_Number" />
+                <ScalarProperty Name="System_Type" ColumnName="System_Type" />
+                <ScalarProperty Name="System_Version" ColumnName="System_Version" />
+                <ScalarProperty Name="System_Language" ColumnName="System_Language" />
+                <ScalarProperty Name="CustNumber" ColumnName="CustNumber" />
+                <ScalarProperty Name="LimitNumber" ColumnName="LimitNumber" />
+                <ScalarProperty Name="PY" ColumnName="PY" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="BlocName" ColumnName="BlocName" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EditUserId" ColumnName="EditUserId" />
+                <ScalarProperty Name="EditUserName" ColumnName="EditUserName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_User">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_User">
+              <MappingFragment StoreEntitySet="Bse_User">
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Realname" ColumnName="Realname" />
+                <ScalarProperty Name="NiName" ColumnName="NiName" />
+                <ScalarProperty Name="UserFrom" ColumnName="UserFrom" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ChangePasswordDate" ColumnName="ChangePasswordDate" />
+                <ScalarProperty Name="Duty" ColumnName="Duty" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="SFZNumber" ColumnName="SFZNumber" />
+                <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+                <ScalarProperty Name="HomeTel" ColumnName="HomeTel" />
+                <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
+                <ScalarProperty Name="WorkTel" ColumnName="WorkTel" />
+                <ScalarProperty Name="Theme" ColumnName="Theme" />
+                <ScalarProperty Name="AllowStartTime" ColumnName="AllowStartTime" />
+                <ScalarProperty Name="AllowEndTime" ColumnName="AllowEndTime" />
+                <ScalarProperty Name="LockStartDate" ColumnName="LockStartDate" />
+                <ScalarProperty Name="LockEndDate" ColumnName="LockEndDate" />
+                <ScalarProperty Name="FirstVisit" ColumnName="FirstVisit" />
+                <ScalarProperty Name="PreviousVisit" ColumnName="PreviousVisit" />
+                <ScalarProperty Name="LastVisit" ColumnName="LastVisit" />
+                <ScalarProperty Name="LogOnCount" ColumnName="LogOnCount" />
+                <ScalarProperty Name="IsStaff" ColumnName="IsStaff" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="MACAddress" ColumnName="MACAddress" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="AnswerQuestion" ColumnName="AnswerQuestion" />
+                <ScalarProperty Name="UserAddressId" ColumnName="UserAddressId" />
+                <ScalarProperty Name="AuditStatus" ColumnName="AuditStatus" />
+                <ScalarProperty Name="PY" ColumnName="PY" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="BlocName" ColumnName="BlocName" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EditUserId" ColumnName="EditUserId" />
+                <ScalarProperty Name="EditUserName" ColumnName="EditUserName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_User_Organize">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_User_Organize">
+              <MappingFragment StoreEntitySet="Bse_User_Organize">
+                <ScalarProperty Name="User_Organize_Id" ColumnName="User_Organize_Id" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="Organize_Id" ColumnName="Organize_Id" />
+                <ScalarProperty Name="DeletionStateCode" ColumnName="DeletionStateCode" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="BlocName" ColumnName="BlocName" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EditUserId" ColumnName="EditUserId" />
+                <ScalarProperty Name="EditUserName" ColumnName="EditUserName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_User_Role">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_User_Role">
+              <MappingFragment StoreEntitySet="Bse_User_Role">
+                <ScalarProperty Name="User_Role_Id" ColumnName="User_Role_Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="PY" ColumnName="PY" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="BlocName" ColumnName="BlocName" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EditUserId" ColumnName="EditUserId" />
+                <ScalarProperty Name="EditUserName" ColumnName="EditUserName" />
+                <ScalarProperty Name="EditDate" ColumnName="EditDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="SystemId" ColumnName="SystemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Version_UpdateLog">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Version_UpdateLog">
+              <MappingFragment StoreEntitySet="Bse_Version_UpdateLog">
+                <ScalarProperty Name="Version_Id" ColumnName="Version_Id" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="FileNames" ColumnName="FileNames" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PermissionModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb">
+            <EntityTypeMapping TypeName="PermissionModel.tb">
+              <MappingFragment StoreEntitySet="tb">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_City">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_City">
+              <MappingFragment StoreEntitySet="Bse_City">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Config">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Config">
+              <MappingFragment StoreEntitySet="Bse_Config">
+                <ScalarProperty Name="Config_Id" ColumnName="Config_Id" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PY" ColumnName="PY" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Dept_Id" ColumnName="Dept_Id" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="Bloc_Id" ColumnName="Bloc_Id" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_District">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_District">
+              <MappingFragment StoreEntitySet="Bse_District">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bse_Province">
+            <EntityTypeMapping TypeName="PermissionModel.Bse_Province">
+              <MappingFragment StoreEntitySet="Bse_Province">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

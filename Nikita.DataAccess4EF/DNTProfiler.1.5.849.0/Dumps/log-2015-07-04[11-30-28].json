@@ -1,0 +1,1319 @@
+﻿[
+{
+    "$type": "DNTProfiler.Common.Models.CommandConnection, DNTProfiler.Common",
+    "AppDomainSnapshot": {
+        "$type": "DNTProfiler.Common.Models.AppDomainMonitorSnapshot, DNTProfiler.Common",
+        "TotalAllocatedMemorySize": 9722700,
+        "TotalProcessorTime": 1453
+    },
+    "ApplicationIdentity": {
+        "$type": "DNTProfiler.Common.Models.AppIdentity, DNTProfiler.Common",
+        "AppDomainId": 1,
+        "AppDomainName": "Nikita.DataAccess.EF.Test.vshost.exe",
+        "ProcessId": 17872,
+        "ProcessName": "Nikita.DataAccess.EF.Test.vshost"
+    },
+    "AtDateTime": "2015-07-04T11:30:23.0167346+08:00",
+    "CommandsIds": [
+        
+    ],
+    "ConnectionId": 1,
+    "ConnectionString": "data source=UKYNDA-001;initial catalog=Permission;persist security info=True;user id=sa;password=12345678;MultipleActiveResultSets=True;App=EntityFramework",
+    "Exception": "",
+    "HttpInfo": {
+        "$type": "DNTProfiler.Common.Models.HttpInfo, DNTProfiler.Common",
+        "Url": "",
+        "UrlHash": ""
+    },
+    "InfoType": "CommandConnection",
+    "ManagedThreadId": 9,
+    "StackTrace": {
+        "$type": "DNTProfiler.Common.Models.CallingMethodStackTrace, DNTProfiler.Common",
+        "CallingMethodInfoList": [
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Microsoft.VisualStudio.HostingProcess.Utilities, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+                "CallingMethod": "RunUsersAssembly",
+                "StackTrace": "Void Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 17,
+                "CallingFile": "Program.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\Program.cs",
+                "CallingLine": 25,
+                "CallingMethod": "Main",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.Program.Main()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext",
+                "StackTrace": "System.Data.Entity.Core.Objects.ObjectContext System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "ForceOSpaceLoadingForKnownEntityTypes",
+                "StackTrace": "Void System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Initialize",
+                "StackTrace": "Void System.Data.Entity.Internal.InternalContext.Initialize()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "InitializeDatabase",
+                "StackTrace": "Void System.Data.Entity.Internal.LazyInternalContext.InitializeDatabase()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "InitializeDatabaseAction",
+                "StackTrace": "Void System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(System.Action`1[System.Data.Entity.Internal.InternalContext])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "PerformAction",
+                "StackTrace": "Void System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "<InitializeDatabase>b__4",
+                "StackTrace": "Void System.Data.Entity.Internal.LazyInternalContext.<InitializeDatabase>b__4(System.Data.Entity.Internal.InternalContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "PerformDatabaseInitialization",
+                "StackTrace": "Void System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DisposeTempObjectContext",
+                "StackTrace": "Void System.Data.Entity.Internal.InternalContext.DisposeTempObjectContext()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.Internal.ClonedObjectContext.Dispose()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Dispose(System.Data.Common.DbConnection, System.Data.Entity.Infrastructure.Interception.DbInterceptionContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispatch",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget, System.Action`2[TTarget,TInterceptionContext], TInterceptionContext, System.Action`3[TInterceptor,TTarget,TInterceptionContext], System.Action`3[TInterceptor,TTarget,TInterceptionContext])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "<Dispose>b__d",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Dispose>b__d(System.Data.Entity.Infrastructure.Interception.IDbConnectionInterceptor, System.Data.Common.DbConnection, System.Data.Entity.Infrastructure.Interception.DbConnectionInterceptionContext)"
+            }
+        ],
+        "CommandStatistics": {
+            "$type": "DNTProfiler.Common.Models.CommandStatistics, DNTProfiler.Common"
+        },
+        "ContextStatistics": {
+            "$type": "DNTProfiler.Common.Models.ContextStatistics, DNTProfiler.Common",
+            "UsedInThreadIds": [
+                
+            ]
+        },
+        "StackTraceHash": "12ABC47C"
+    },
+    "Type": "Disposed"
+},
+{
+    "$type": "DNTProfiler.Common.Models.CommandConnection, DNTProfiler.Common",
+    "AppDomainSnapshot": {
+        "$type": "DNTProfiler.Common.Models.AppDomainMonitorSnapshot, DNTProfiler.Common",
+        "TotalAllocatedMemorySize": 20925072,
+        "TotalProcessorTime": 4078
+    },
+    "ApplicationIdentity": {
+        "$type": "DNTProfiler.Common.Models.AppIdentity, DNTProfiler.Common",
+        "AppDomainId": 1,
+        "AppDomainName": "Nikita.DataAccess.EF.Test.vshost.exe",
+        "ProcessId": 17872,
+        "ProcessName": "Nikita.DataAccess.EF.Test.vshost"
+    },
+    "AtDateTime": "2015-07-04T11:30:25.6063357+08:00",
+    "CommandsIds": [
+        
+    ],
+    "ConnectionId": 2,
+    "ConnectionString": "data source=UKYNDA-001;initial catalog=Permission;persist security info=True;user id=sa;password=12345678;MultipleActiveResultSets=True;App=EntityFramework",
+    "Exception": "",
+    "HttpInfo": {
+        "$type": "DNTProfiler.Common.Models.HttpInfo, DNTProfiler.Common",
+        "Url": "",
+        "UrlHash": ""
+    },
+    "InfoType": "CommandConnection",
+    "ManagedThreadId": 9,
+    "StackTrace": {
+        "$type": "DNTProfiler.Common.Models.CallingMethodStackTrace, DNTProfiler.Common",
+        "CallingMethodInfoList": [
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Microsoft.VisualStudio.HostingProcess.Utilities, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+                "CallingMethod": "RunUsersAssembly",
+                "StackTrace": "Void Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 13,
+                "CallingFile": "Program.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\Program.cs",
+                "CallingLine": 28,
+                "CallingMethod": "Main",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.Program.Main()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.DbContext.Dispose()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.DbContext.Dispose(Boolean)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.Internal.InternalContext.Dispose()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DisposeContext",
+                "StackTrace": "Void System.Data.Entity.Internal.LazyInternalContext.DisposeContext(Boolean)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.Internal.LazyInternalConnection.Dispose()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.ComponentModel.Component.Dispose()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.Core.EntityClient.EntityConnection.Dispose(Boolean)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Dispose(System.Data.Common.DbConnection, System.Data.Entity.Infrastructure.Interception.DbInterceptionContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispatch",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget, System.Action`2[TTarget,TInterceptionContext], TInterceptionContext, System.Action`3[TInterceptor,TTarget,TInterceptionContext], System.Action`3[TInterceptor,TTarget,TInterceptionContext])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "<Dispose>b__d",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Dispose>b__d(System.Data.Entity.Infrastructure.Interception.IDbConnectionInterceptor, System.Data.Common.DbConnection, System.Data.Entity.Infrastructure.Interception.DbConnectionInterceptionContext)"
+            }
+        ],
+        "CommandStatistics": {
+            "$type": "DNTProfiler.Common.Models.CommandStatistics, DNTProfiler.Common"
+        },
+        "ContextStatistics": {
+            "$type": "DNTProfiler.Common.Models.ContextStatistics, DNTProfiler.Common",
+            "UsedInThreadIds": [
+                
+            ]
+        },
+        "StackTraceHash": "99F32C06"
+    },
+    "Type": "Disposed"
+},
+{
+    "$type": "DNTProfiler.Common.Models.CommandConnection, DNTProfiler.Common",
+    "AppDomainSnapshot": {
+        "$type": "DNTProfiler.Common.Models.AppDomainMonitorSnapshot, DNTProfiler.Common",
+        "TotalAllocatedMemorySize": 23079568,
+        "TotalProcessorTime": 5031
+    },
+    "ApplicationIdentity": {
+        "$type": "DNTProfiler.Common.Models.AppIdentity, DNTProfiler.Common",
+        "AppDomainId": 1,
+        "AppDomainName": "Nikita.DataAccess.EF.Test.vshost.exe",
+        "ProcessId": 17872,
+        "ProcessName": "Nikita.DataAccess.EF.Test.vshost"
+    },
+    "AtDateTime": "2015-07-04T11:30:34.8925547+08:00",
+    "CommandsIds": [
+        
+    ],
+    "ConnectionId": 3,
+    "ConnectionString": "data source=UKYNDA-001;initial catalog=Permission;persist security info=True;user id=sa;password=12345678;MultipleActiveResultSets=True;App=EntityFramework",
+    "Exception": "",
+    "HttpInfo": {
+        "$type": "DNTProfiler.Common.Models.HttpInfo, DNTProfiler.Common",
+        "Url": "",
+        "UrlHash": ""
+    },
+    "InfoType": "CommandConnection",
+    "ManagedThreadId": 9,
+    "ObjectContextId": 1,
+    "ObjectContextName": "PermissionEntities",
+    "StackTrace": {
+        "$type": "DNTProfiler.Common.Models.CallingMethodStackTrace, DNTProfiler.Common",
+        "CallingMethodInfoList": [
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Microsoft.VisualStudio.HostingProcess.Utilities, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+                "CallingMethod": "RunUsersAssembly",
+                "StackTrace": "Void Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 13,
+                "CallingFile": "Program.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\Program.cs",
+                "CallingLine": 29,
+                "CallingMethod": "Main",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.Program.Main()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Run",
+                "StackTrace": "Void System.Windows.Forms.Application.Run(System.Windows.Forms.Form)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoop",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoop(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoopInner",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoopInner(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop",
+                "StackTrace": "Boolean System.Windows.Forms.Application+ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr, Int32, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DispatchMessageW",
+                "StackTrace": "IntPtr System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DebuggableCallback",
+                "StackTrace": "IntPtr System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr, Int32, IntPtr, IntPtr)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMessage",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.OnMessage(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Button.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.ButtonBase.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WmMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Control.WmMouseUp(System.Windows.Forms.Message ByRef, System.Windows.Forms.MouseButtons, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Button.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Control.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 13,
+                "CallingFile": "FrmMainBase.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\FrmMainBase.cs",
+                "CallingLine": 35,
+                "CallingMethod": "button3_Click",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.FrmMainBase.button3_Click(System.Object, System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "ShowDialog",
+                "StackTrace": "System.Windows.Forms.DialogResult System.Windows.Forms.Form.ShowDialog()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "ShowDialog",
+                "StackTrace": "System.Windows.Forms.DialogResult System.Windows.Forms.Form.ShowDialog(System.Windows.Forms.IWin32Window)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunDialog",
+                "StackTrace": "Void System.Windows.Forms.Application.RunDialog(System.Windows.Forms.Form)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoop",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoop(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoopInner",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoopInner(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop",
+                "StackTrace": "Boolean System.Windows.Forms.Application+ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr, Int32, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DispatchMessageW",
+                "StackTrace": "IntPtr System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DebuggableCallback",
+                "StackTrace": "IntPtr System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr, Int32, IntPtr, IntPtr)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMessage",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.OnMessage(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Button.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.ButtonBase.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WmMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Control.WmMouseUp(System.Windows.Forms.Message ByRef, System.Windows.Forms.MouseButtons, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Button.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Control.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 17,
+                "CallingFile": "FrmMainPager.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\FrmMainPager.cs",
+                "CallingLine": 35,
+                "CallingMethod": "button5_Click",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.FrmMainPager.button5_Click(System.Object, System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "ExfSoft.EntityFramework.Extension, Version=1.0.1.2, Culture=neutral, PublicKeyToken=null",
+                "CallingMethod": "ToPager",
+                "StackTrace": "ExfSoft.EntityFramework.Extension.PagerResultModel`1[TSource] ExfSoft.EntityFramework.Extension.PagerExtension.ToPager[TSource](System.Linq.IQueryable`1[TSource], Int32, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "GetEnumerator",
+                "StackTrace": "System.Collections.Generic.IEnumerator`1[T] EntityFramework.Future.FutureQuery`1.GetEnumerator()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "GetResult",
+                "StackTrace": "System.Collections.Generic.IEnumerable`1[T] EntityFramework.Future.FutureQueryBase`1.GetResult()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "ExecuteFutureQueries",
+                "StackTrace": "Void EntityFramework.Future.FutureContext.ExecuteFutureQueries()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "ExecuteFutureQueries",
+                "StackTrace": "Void EntityFramework.Future.FutureRunner.ExecuteFutureQueries(System.Data.Entity.Core.Objects.ObjectContext, System.Collections.Generic.IList`1[EntityFramework.Future.IFutureQuery])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "TryInvokeMember",
+                "StackTrace": "Boolean EntityFramework.Reflection.DynamicProxy.TryInvokeMember(System.Dynamic.InvokeMemberBinder, System.Object[], System.Object ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "Invoke",
+                "StackTrace": "System.Object EntityFramework.Reflection.MethodAccessor.Invoke(System.Object, System.Object[])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "EnsureConnection",
+                "StackTrace": "Void System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Open",
+                "StackTrace": "Void System.Data.Entity.Core.EntityClient.EntityConnection.Open()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Execute",
+                "StackTrace": "Void System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(System.Action)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Execute",
+                "StackTrace": "TResult System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](System.Func`1[TResult])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "<Execute>b__0",
+                "StackTrace": "System.Object System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy+<>c__DisplayClass1.<Execute>b__0()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "<Open>b__2",
+                "StackTrace": "Void System.Data.Entity.Core.EntityClient.EntityConnection.<Open>b__2()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Open",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(System.Data.Common.DbConnection, System.Data.Entity.Infrastructure.Interception.DbInterceptionContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispatch",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget, System.Action`2[TTarget,TInterceptionContext], TInterceptionContext, System.Action`3[TInterceptor,TTarget,TInterceptionContext], System.Action`3[TInterceptor,TTarget,TInterceptionContext])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "<Open>b__38",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Open>b__38(System.Data.Entity.Infrastructure.Interception.IDbConnectionInterceptor, System.Data.Common.DbConnection, System.Data.Entity.Infrastructure.Interception.DbConnectionInterceptionContext)"
+            }
+        ],
+        "CommandStatistics": {
+            "$type": "DNTProfiler.Common.Models.CommandStatistics, DNTProfiler.Common"
+        },
+        "ContextStatistics": {
+            "$type": "DNTProfiler.Common.Models.ContextStatistics, DNTProfiler.Common",
+            "UsedInThreadIds": [
+                
+            ]
+        },
+        "StackTraceHash": "8E23BB42"
+    },
+    "Type": "Opened"
+},
+{
+    "$type": "DNTProfiler.Common.Models.CommandConnection, DNTProfiler.Common",
+    "AppDomainSnapshot": {
+        "$type": "DNTProfiler.Common.Models.AppDomainMonitorSnapshot, DNTProfiler.Common",
+        "TotalAllocatedMemorySize": 38348980,
+        "TotalProcessorTime": 8359
+    },
+    "ApplicationIdentity": {
+        "$type": "DNTProfiler.Common.Models.AppIdentity, DNTProfiler.Common",
+        "AppDomainId": 1,
+        "AppDomainName": "Nikita.DataAccess.EF.Test.vshost.exe",
+        "ProcessId": 17872,
+        "ProcessName": "Nikita.DataAccess.EF.Test.vshost"
+    },
+    "AtDateTime": "2015-07-04T11:30:41.2079777+08:00",
+    "CommandsIds": [
+        
+    ],
+    "ConnectionId": 3,
+    "ConnectionString": "data source=UKYNDA-001;initial catalog=Permission;persist security info=True;user id=sa;password=12345678;MultipleActiveResultSets=True;App=EntityFramework",
+    "Exception": "",
+    "HttpInfo": {
+        "$type": "DNTProfiler.Common.Models.HttpInfo, DNTProfiler.Common",
+        "Url": "",
+        "UrlHash": ""
+    },
+    "InfoType": "CommandConnection",
+    "ManagedThreadId": 9,
+    "ObjectContextId": 1,
+    "ObjectContextName": "PermissionEntities",
+    "StackTrace": {
+        "$type": "DNTProfiler.Common.Models.CallingMethodStackTrace, DNTProfiler.Common",
+        "CallingMethodInfoList": [
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Microsoft.VisualStudio.HostingProcess.Utilities, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+                "CallingMethod": "RunUsersAssembly",
+                "StackTrace": "Void Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 13,
+                "CallingFile": "Program.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\Program.cs",
+                "CallingLine": 29,
+                "CallingMethod": "Main",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.Program.Main()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Run",
+                "StackTrace": "Void System.Windows.Forms.Application.Run(System.Windows.Forms.Form)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoop",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoop(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoopInner",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoopInner(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop",
+                "StackTrace": "Boolean System.Windows.Forms.Application+ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr, Int32, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DispatchMessageW",
+                "StackTrace": "IntPtr System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DebuggableCallback",
+                "StackTrace": "IntPtr System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr, Int32, IntPtr, IntPtr)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMessage",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.OnMessage(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Button.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.ButtonBase.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WmMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Control.WmMouseUp(System.Windows.Forms.Message ByRef, System.Windows.Forms.MouseButtons, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Button.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Control.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 13,
+                "CallingFile": "FrmMainBase.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\FrmMainBase.cs",
+                "CallingLine": 35,
+                "CallingMethod": "button3_Click",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.FrmMainBase.button3_Click(System.Object, System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "ShowDialog",
+                "StackTrace": "System.Windows.Forms.DialogResult System.Windows.Forms.Form.ShowDialog()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "ShowDialog",
+                "StackTrace": "System.Windows.Forms.DialogResult System.Windows.Forms.Form.ShowDialog(System.Windows.Forms.IWin32Window)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunDialog",
+                "StackTrace": "Void System.Windows.Forms.Application.RunDialog(System.Windows.Forms.Form)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoop",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoop(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoopInner",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoopInner(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop",
+                "StackTrace": "Boolean System.Windows.Forms.Application+ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr, Int32, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DispatchMessageW",
+                "StackTrace": "IntPtr System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DebuggableCallback",
+                "StackTrace": "IntPtr System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr, Int32, IntPtr, IntPtr)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMessage",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.OnMessage(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Button.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.ButtonBase.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WmMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Control.WmMouseUp(System.Windows.Forms.Message ByRef, System.Windows.Forms.MouseButtons, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Button.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Control.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 17,
+                "CallingFile": "FrmMainPager.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\FrmMainPager.cs",
+                "CallingLine": 35,
+                "CallingMethod": "button5_Click",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.FrmMainPager.button5_Click(System.Object, System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "ExfSoft.EntityFramework.Extension, Version=1.0.1.2, Culture=neutral, PublicKeyToken=null",
+                "CallingMethod": "ToPager",
+                "StackTrace": "ExfSoft.EntityFramework.Extension.PagerResultModel`1[TSource] ExfSoft.EntityFramework.Extension.PagerExtension.ToPager[TSource](System.Linq.IQueryable`1[TSource], Int32, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "GetEnumerator",
+                "StackTrace": "System.Collections.Generic.IEnumerator`1[T] EntityFramework.Future.FutureQuery`1.GetEnumerator()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "GetResult",
+                "StackTrace": "System.Collections.Generic.IEnumerable`1[T] EntityFramework.Future.FutureQueryBase`1.GetResult()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "ExecuteFutureQueries",
+                "StackTrace": "Void EntityFramework.Future.FutureContext.ExecuteFutureQueries()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "ExecuteFutureQueries",
+                "StackTrace": "Void EntityFramework.Future.FutureRunner.ExecuteFutureQueries(System.Data.Entity.Core.Objects.ObjectContext, System.Collections.Generic.IList`1[EntityFramework.Future.IFutureQuery])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "TryInvokeMember",
+                "StackTrace": "Boolean EntityFramework.Reflection.DynamicProxy.TryInvokeMember(System.Dynamic.InvokeMemberBinder, System.Object[], System.Object ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584",
+                "CallingMethod": "Invoke",
+                "StackTrace": "System.Object EntityFramework.Reflection.MethodAccessor.Invoke(System.Object, System.Object[])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "ReleaseConnection",
+                "StackTrace": "Void System.Data.Entity.Core.Objects.ObjectContext.ReleaseConnection()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Close",
+                "StackTrace": "Void System.Data.Entity.Core.EntityClient.EntityConnection.Close()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "StoreCloseHelper",
+                "StackTrace": "Void System.Data.Entity.Core.EntityClient.EntityConnection.StoreCloseHelper()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Close",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Close(System.Data.Common.DbConnection, System.Data.Entity.Infrastructure.Interception.DbInterceptionContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispatch",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget, System.Action`2[TTarget,TInterceptionContext], TInterceptionContext, System.Action`3[TInterceptor,TTarget,TInterceptionContext], System.Action`3[TInterceptor,TTarget,TInterceptionContext])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "<Close>b__8",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Close>b__8(System.Data.Entity.Infrastructure.Interception.IDbConnectionInterceptor, System.Data.Common.DbConnection, System.Data.Entity.Infrastructure.Interception.DbConnectionInterceptionContext)"
+            }
+        ],
+        "CommandStatistics": {
+            "$type": "DNTProfiler.Common.Models.CommandStatistics, DNTProfiler.Common"
+        },
+        "ContextStatistics": {
+            "$type": "DNTProfiler.Common.Models.ContextStatistics, DNTProfiler.Common",
+            "UsedInThreadIds": [
+                
+            ]
+        },
+        "StackTraceHash": "34847FBA"
+    },
+    "Type": "Closed"
+},
+{
+    "$type": "DNTProfiler.Common.Models.CommandConnection, DNTProfiler.Common",
+    "AppDomainSnapshot": {
+        "$type": "DNTProfiler.Common.Models.AppDomainMonitorSnapshot, DNTProfiler.Common",
+        "TotalAllocatedMemorySize": 39334504,
+        "TotalProcessorTime": 8484
+    },
+    "ApplicationIdentity": {
+        "$type": "DNTProfiler.Common.Models.AppIdentity, DNTProfiler.Common",
+        "AppDomainId": 1,
+        "AppDomainName": "Nikita.DataAccess.EF.Test.vshost.exe",
+        "ProcessId": 17872,
+        "ProcessName": "Nikita.DataAccess.EF.Test.vshost"
+    },
+    "AtDateTime": "2015-07-04T11:30:41.3360623+08:00",
+    "CommandsIds": [
+        
+    ],
+    "ConnectionId": 3,
+    "ConnectionString": "data source=UKYNDA-001;initial catalog=Permission;persist security info=True;user id=sa;password=12345678;MultipleActiveResultSets=True;App=EntityFramework",
+    "Exception": "",
+    "HttpInfo": {
+        "$type": "DNTProfiler.Common.Models.HttpInfo, DNTProfiler.Common",
+        "Url": "",
+        "UrlHash": ""
+    },
+    "InfoType": "CommandConnection",
+    "ManagedThreadId": 9,
+    "StackTrace": {
+        "$type": "DNTProfiler.Common.Models.CallingMethodStackTrace, DNTProfiler.Common",
+        "CallingMethodInfoList": [
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Microsoft.VisualStudio.HostingProcess.Utilities, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+                "CallingMethod": "RunUsersAssembly",
+                "StackTrace": "Void Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 13,
+                "CallingFile": "Program.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\Program.cs",
+                "CallingLine": 29,
+                "CallingMethod": "Main",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.Program.Main()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Run",
+                "StackTrace": "Void System.Windows.Forms.Application.Run(System.Windows.Forms.Form)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoop",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoop(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoopInner",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoopInner(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop",
+                "StackTrace": "Boolean System.Windows.Forms.Application+ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr, Int32, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DispatchMessageW",
+                "StackTrace": "IntPtr System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DebuggableCallback",
+                "StackTrace": "IntPtr System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr, Int32, IntPtr, IntPtr)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMessage",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.OnMessage(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Button.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.ButtonBase.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WmMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Control.WmMouseUp(System.Windows.Forms.Message ByRef, System.Windows.Forms.MouseButtons, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Button.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Control.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 13,
+                "CallingFile": "FrmMainBase.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\FrmMainBase.cs",
+                "CallingLine": 35,
+                "CallingMethod": "button3_Click",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.FrmMainBase.button3_Click(System.Object, System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "ShowDialog",
+                "StackTrace": "System.Windows.Forms.DialogResult System.Windows.Forms.Form.ShowDialog()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "ShowDialog",
+                "StackTrace": "System.Windows.Forms.DialogResult System.Windows.Forms.Form.ShowDialog(System.Windows.Forms.IWin32Window)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunDialog",
+                "StackTrace": "Void System.Windows.Forms.Application.RunDialog(System.Windows.Forms.Form)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoop",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoop(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "RunMessageLoopInner",
+                "StackTrace": "Void System.Windows.Forms.Application+ThreadContext.RunMessageLoopInner(Int32, System.Windows.Forms.ApplicationContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop",
+                "StackTrace": "Boolean System.Windows.Forms.Application+ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr, Int32, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DispatchMessageW",
+                "StackTrace": "IntPtr System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DebuggableCallback",
+                "StackTrace": "IntPtr System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr, Int32, IntPtr, IntPtr)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMessage",
+                "StackTrace": "Void System.Windows.Forms.Control+ControlNativeWindow.OnMessage(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Button.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.ButtonBase.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WndProc",
+                "StackTrace": "Void System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message ByRef)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "WmMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Control.WmMouseUp(System.Windows.Forms.Message ByRef, System.Windows.Forms.MouseButtons, Int32)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnMouseUp",
+                "StackTrace": "Void System.Windows.Forms.Button.OnMouseUp(System.Windows.Forms.MouseEventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Button.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "OnClick",
+                "StackTrace": "Void System.Windows.Forms.Control.OnClick(System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "Nikita.DataAccess.EF.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "CallingCol": 13,
+                "CallingFile": "FrmMainPager.cs",
+                "CallingFileFullName": "d:\\GitHub\\学习使用\\Nikita-2013\\Nikita.DataAccess.EF.Test\\FrmMainPager.cs",
+                "CallingLine": 39,
+                "CallingMethod": "button5_Click",
+                "StackTrace": "Void Nikita.DataAccess.EF.Test.FrmMainPager.button5_Click(System.Object, System.EventArgs)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.DbContext.Dispose()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.DbContext.Dispose(Boolean)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.Internal.InternalContext.Dispose()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "DisposeContext",
+                "StackTrace": "Void System.Data.Entity.Internal.LazyInternalContext.DisposeContext(Boolean)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.Internal.LazyInternalConnection.Dispose()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.ComponentModel.Component.Dispose()"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.Core.EntityClient.EntityConnection.Dispose(Boolean)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispose",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Dispose(System.Data.Common.DbConnection, System.Data.Entity.Infrastructure.Interception.DbInterceptionContext)"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "Dispatch",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget, System.Action`2[TTarget,TInterceptionContext], TInterceptionContext, System.Action`3[TInterceptor,TTarget,TInterceptionContext], System.Action`3[TInterceptor,TTarget,TInterceptionContext])"
+            },
+            {
+                "$type": "DNTProfiler.Common.Models.CallingMethodInfo, DNTProfiler.Common",
+                "AssemblyName": "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "CallingMethod": "<Dispose>b__d",
+                "StackTrace": "Void System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Dispose>b__d(System.Data.Entity.Infrastructure.Interception.IDbConnectionInterceptor, System.Data.Common.DbConnection, System.Data.Entity.Infrastructure.Interception.DbConnectionInterceptionContext)"
+            }
+        ],
+        "CommandStatistics": {
+            "$type": "DNTProfiler.Common.Models.CommandStatistics, DNTProfiler.Common"
+        },
+        "ContextStatistics": {
+            "$type": "DNTProfiler.Common.Models.ContextStatistics, DNTProfiler.Common",
+            "UsedInThreadIds": [
+                
+            ]
+        },
+        "StackTraceHash": "757042A5"
+    },
+    "Type": "Disposed"
+},
+]

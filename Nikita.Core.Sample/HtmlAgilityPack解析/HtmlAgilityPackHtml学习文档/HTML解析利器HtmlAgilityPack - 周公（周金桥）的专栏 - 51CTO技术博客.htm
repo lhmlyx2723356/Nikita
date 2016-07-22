@@ -1,0 +1,1613 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0046)http://zhoufoxcn.blog.51cto.com/792419/595344/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<script async="" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/analytics.js"></script><script async="" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/analytics.js"></script><script id="allmobilize" charset="utf-8" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/allmobilize.min.js"></script><style type="text/css"></style><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="http://zhoufoxcn.blog.51cto.com/#">
+
+
+<title>HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客</title>
+<meta name="description" content="&#160;在以前的项目中周公曾有解析HTML的情况，当时是采用正则表达式一步步将无关的HTML注释及JS代码部分删除掉，然后再用正则表达式找出需要提取的部分，可以说使用正则表达式来做是一个比较繁琐的过程，特别是..">
+<meta name="keywords" content="HtmlAgilityPack,HTML,.NET,休闲,C#">
+<meta http-equiv="Cache-Control" content="private">
+<!--<base href="http://zhoufoxcn.blog.51cto.com/">--><base href=".">
+<script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/def.js"></script>
+<script language="javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/message.js" type="text/javascript"></script>
+<script language="javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/user_comment.js" type="text/javascript"></script>
+<script language="javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/base2.js" type="text/javascript"></script>
+<script language="javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/dialog_utf8.js" type="text/javascript"></script>
+<link href="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/26.css" rel="stylesheet" type="text/css">
+<link rel="alternate" href="http://zhoufoxcn.blog.51cto.com/rss.php?uid=792419" type="application/rss+xml" title="RSS 2.0">
+<link rel="edituri" type="application/rsd+xml" title="rsd" href="http://zhoufoxcn.blog.51cto.com/xmlrpc.php?rsd=1">
+<link href="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/header_master_top.css" rel="stylesheet" type="text/css">
+<link href="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	.mainNav li a{display:inline-block}
+</style>
+<script>
+var myid = "";
+function add_flink(){
+	if(myid==""){
+
+        var refurlk = "http://zhoufoxcn.blog.51cto.com/792419/595344";
+
+				//commentSubmit("",refurlk);
+				location.href="http://home.51cto.com/index.php?reback="+encodeURIComponent(encodeURIComponent(refurlk));
+				
+				return false;
+	}else{
+		var mtk = "f9cc82c53819c81d2fb86bf5788243f3";
+      		var url='/mod/edit_flink.php?type=addflink&uid=792419&flink=http://zhoufoxcn.blog.51cto.com&mtk='+mtk;
+		var ajax = InitAjax1();
+		ajax.open("GET", url, true);
+		ajax.onreadystatechange = function() {
+			if (ajax.readyState == 4 && ajax.status == 200) {
+				/*if(myid == 5290427){
+					alert(ajax.responseText);
+				}*/
+				if(ajax.responseText==""){
+					alert("添加成功。");
+				}
+				if(ajax.responseText=="1"){
+				alert("链接指向自己。");
+				}
+				if(ajax.responseText=="2"){
+				alert("友情链接已存在。")
+				}
+				if(ajax.responseText=="4"){
+					alert("验证已过期。")
+					}
+			}
+		}
+		ajax.send(null);
+	}
+
+
+
+}
+function sendmessage(){
+
+	var refurlk = "http://zhoufoxcn.blog.51cto.com/792419/595344";
+
+	if(myid){
+		return true;
+	}else{
+		commentSubmit("",refurlk);
+		return false;
+	}
+}
+function copylink(ourl){
+	if(!ourl){
+		var clipBoardContent = "http://zhoufoxcn.blog.51cto.com";
+	}else{
+		var clipBoardContent = ourl;
+	}
+	window.clipboardData.setData("Text",clipBoardContent);
+	alert("复制成功!");
+	return false;
+}
+function correctPNG() {
+if (document.getElementById('blog_touxian'))
+{
+var img = document.getElementById('blog_touxian');
+      var imgName = img.src.toUpperCase()
+      var imgID = (img.id) ? "id='" + img.id + "' " : ""
+      var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+      var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+      var imgStyle = "display:inline-block;" + img.style.cssText
+      if (img.align == "left") imgStyle = "float:left;" + imgStyle
+      if (img.align == "right") imgStyle = "float:right;" + imgStyle
+      if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+      var strNewHTML = "<span " + imgID + imgClass + imgTitle
+         + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+         + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+         + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>" ;
+      img.outerHTML = strNewHTML;
+}
+}
+//window.attachEvent("onload", correctPNG);
+window.onload=correctPNG;
+
+function copy(){
+var text=document.getElementById("txtUser").value;
+if(copy2Clipboard(text)!=false){ 
+alert("复制成功了！ "); 
+} 
+}
+function copy2Clipboard(txt){ 
+if(window.clipboardData){ 
+window.clipboardData.clearData(); 
+window.clipboardData.setData("Text",txt); 
+}else if(navigator.userAgent.indexOf("Opera")!=-1){ 
+window.location=txt; 
+}else if(window.netscape){ 
+try{ 
+netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect"); 
+} 
+catch(e){ 
+alert("您使用的浏览器不支持此复制功能，请使用Ctrl+C或鼠标右键。"); 
+return false; 
+} 
+var clip=Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard); 
+if(!clip)return; 
+var trans=Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable); 
+if(!trans)return; 
+trans.addDataFlavor('text/unicode'); 
+var str=new Object(); 
+var len=new Object(); 
+var str=Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString); 
+var copytext=txt;str.data=copytext; 
+trans.setTransferData("text/unicode",str,copytext.length*2); 
+var clipid=Components.interfaces.nsIClipboard; 
+if(!clip)return false; 
+clip.setData(trans,null,clipid.kGlobalClipboard); 
+return true;
+} 
+}
+
+function mod_close(){
+  document.getElementById('mod_tg').style.display="none";
+}
+
+function match_invite(uid) {
+    var url='/mod/match_invite.php';
+	var ajax = InitAjax();
+    var re = 'uid=' + uid;
+	ajax.open("POST", url, true);
+    ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	ajax.send(re);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+            if(ajax.responseText == 1){
+                alert("邀请信息已经发送成功。");
+            } else if(ajax.responseText=="-1"){
+                alert("邀请失败，请稍候再试。");
+            } else if(ajax.responseText=="2"){
+                alert("该用户已经报名了。")
+            }
+        }
+    }
+}
+
+</script>
+<style type="text/css">
+/*
+.artContent img {max-width:450px !important;}
+.showContent img{max-width:650px!important;}
+*/
+
+.artContent img{max-width: 450px; width:expression(this.width > 450 ? "450px" : this.width)}
+/*
+.showContent img{max-width: 450px; width:expression(this.width > 650 ? "650px" : this.width)}
+*/
+
+
+</style>
+<style type="text/css">
+#message.blogpop {display:none!important;display:none}.banner_head > a[href*="_adid="]{display:none;position:absolute;top:-1000000px;visibility:hidden}#s3 + .g_39.mb10{display:none;position:absolute;top:-1000000px;visibility:hidden}[id^="ad_w_0"]{display:none;position:absolute;top:-1000000px;visibility:hidden}li[id^="ad_"]:not(.banner_head){display:none;position:absolute;top:-1000000px;visibility:hidden}p.ad,#js_ads_banner_top,.topad,.adbox,#tonglanad{display:none;position:absolute;top:-1000000px;visibility:hidden}</style>
+<script language="javascript" type="text/javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/35ff706fd57d11c141cdefcd58d6562b.js" charset="gb2312"></script><script type="text/javascript">
+bcccccccccc('#tonglanad,.adbox,.topad,li[id^="ad_"]:not(.banner_head),#js_ads_banner_top,[id^="ad_w_0"],#s3 + .g_39.mb10,p.ad,.banner_head > a[href*="_adid="]');</script><script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/share.js"></script><script charset="utf-8" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/lightapp.js" async="" name="baidu-tc-cerfication"></script><style id="list">
+.showContent ol,.showContent ul{margin:0;pading:0;}.showContent .list-paddingleft-1{padding-left:0}
+.showContent .list-paddingleft-2{padding-left:20px}
+.showContent .list-paddingleft-3{padding-left:40px}
+.showContent ol,.showContent ul{margin:0;pading:0;}.showContent .list-paddingleft-1{padding-left:0}
+.showContent .list-paddingleft-2{padding-left:20px}
+.showContent .list-paddingleft-3{padding-left:40px}</style><link id="syntaxhighlighter_css" rel="stylesheet" type="text/css" href=""><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style1_32.css"></head>
+
+<body>
+
+<div id="home_top">
+<div class="top_nav" style="width:990px;">
+<div class="left" style="margin-top:10px; width:440px;"><a href="http://blog.51cto.com/" target="_blank"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/head_blog_sibebar_logo.gif" align="absmiddle" style="margin-top:-4px;"></a><a target="_blank" href="http://www.51cto.com/">51CTO首页</a><img height="25" align="absmiddle" width="16" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/top_bg_xian.gif" style="margin-top:-4px;"><a href="http://blog.51cto.com/" target="_blank">51CTO博客</a><img height="25" align="absmiddle" width="16" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/top_bg_xian.gif" style="margin-top:-4px;"><a href="http://home.51cto.com/?reback=http%253A%252F%252Fzhoufoxcn.blog.51cto.com%252F792419%252F595344%252F">我的博客</a><img height="25" align="absmiddle" width="16" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/top_bg_xian.gif" style="margin-top:-4px;">
+
+<a target="_blank" href="http://blog.51cto.com/search.php">搜索</a>
+<a href="javascript:void(0);" style="color: rgb(255, 0, 0); text-decoration: underline;" id="showMessagerDim">每日博报</a>
+</div>
+
+<div class="right" style="width:550px;">
+<div class="more"><img height="16" align="absmiddle" width="27" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/top_shequ.gif">社区：<a target="_blank" href="http://edu.51cto.com/">学院</a><a target="_blank" href="http://bbs.51cto.com/">论坛</a><a target="_blank" href="http://blog.51cto.com/">博客</a><a target="_blank" href="http://down.51cto.com/">下载</a><a href="javascript:viod(0);" onmouseout="popupClose()" onmouseover="show(3,this)">更多<img align="absmiddle" style="padding-left: 4px;" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/nav_ico1.gif"></a>            </div>            <span id="login_status"><div class="login" style="padding-top:8px; text-align:right;"><a href="http://edu.51cto.com/top" style="background:none"><img style="margin-top:-3px" id="dia" align="absmiddle" width="20" title="今天你领学分了吗？" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/dia.gif"></a><a href="http://home.51cto.com/?reback=http%253A%252F%252Fzhoufoxcn.blog.51cto.com%252F792419%252F595344%252F" target="_self">登录</a><a href="http://ucenter.51cto.com/reg_01.php?reback=http%253A%252F%252Fzhoufoxcn.blog.51cto.com%252F792419%252F595344%252F" target="_self">注册</a></div></span>                </div>    </div></div>
+
+
+
+<div class="subMenu3" id="s3" onmouseover="popupNoClose()" onmouseout="popupClose()">
+<ul>
+<li><a href="http://home.51cto.com/" target="_blank">家园</a></li>
+<li><a href="http://edu.51cto.com/" target="_blank">学院</a></li>
+<li><a href="http://blog.51cto.com/" target="_blank">博客</a></li>
+<li><a href="http://bbs.51cto.com/" target="_blank">论坛</a></li>
+<li><a href="http://down.51cto.com/" target="_blank">下载</a></li>
+
+<li><a href="http://selftest.51cto.com/" target="_blank">自测</a></li>
+<li><a href="http://doctor.51cto.com/" target="_blank">门诊</a></li>
+<li><a href="http://blog.51cto.com/newsletter/" target="_blank">周刊</a></li>
+<li><a href="http://book.51cto.com/" target="_blank">读书</a></li>
+<li><a href="http://g.51cto.com/" target="_blank">技术圈</a></li>
+</ul>
+</div>
+<!--简导航end-->
+
+
+
+<div class="headerBox">
+<div class="header">
+<div class="header_l">
+<div class="logo_blogname">
+
+
+<div class="blogLogo">
+<a href="http://blog.51cto.com/blogcommend/13" target="_blank"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/blogLogo02.png" width="161px;" height="70px;"></a>
+</div>
+
+
+<div class="blogName">
+<a href="http://zhoufoxcn.blog.51cto.com/"><h1>周公（周金桥）的专栏</h1></a>
+</div>
+</div><!--logo_blogname end-->
+<div class="blogLink">
+
+<a href="http://zhoufoxcn.blog.51cto.com/">http://zhoufoxcn.blog.51cto.com</a> <input id="txtUser" type="hidden" size="32" value="http://zhoufoxcn.blog.51cto.com">   <a href="javascript:void(0);" onclick="copy();">【复制】</a> <a href="http://zhoufoxcn.blog.51cto.com/rss.php?uid=792419" target="_blank"></a><a href="http://zhoufoxcn.blog.51cto.com/rss.php?uid=792419" target="_blank">【订阅】</a>
+
+</div>
+
+
+
+</div><!--header_l end-->
+<div class="header_r">
+<div class="blogInfo"><span><a href="http://zhoufoxcn.blog.51cto.com/792419/o" title="察看周金桥所有原创文章">原创</a>:202</span><span><a href="http://zhoufoxcn.blog.51cto.com/792419/t" title="察看周金桥所有翻译文章">翻译</a>:4</span><span><a href="http://zhoufoxcn.blog.51cto.com/792419/c" title="察看周金桥所有转载文章">转载</a>:31</span></div>
+<div class="blogNav"><a href="http://zhoufoxcn.blog.51cto.com/">博 客</a>|<a href="http://home.51cto.com/apps/photo/index.php?s=/Index/photos/uid/792419">图库</a>|<a href="http://zhoufoxcn.blog.51cto.com/addblog.php">写博文</a>|<a href="http://51ctoblog.blog.51cto.com/all/26414/4" target="_blank">帮 助</a></div>
+</div>
+</div>
+<!--header end-->
+</div><!--headerBox end-->
+<div class="mainNav">
+<span class="mainNavT"></span>
+<ul>
+<li><a href="http://zhoufoxcn.blog.51cto.com/">首页</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-3">C#基础</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-8">WinForm</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-1">asp.net</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-2">ASP.NET夜话</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-15">Silverlight</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-10">模式/分析/管理</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-11">数据库</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-12">程序人生</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-13">系统与工具</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-14">Java及PHP</a></li>|<li><a href="http://zhoufoxcn.blog.51cto.com/792419/d-16">文学娱乐</a></li>
+</ul>
+<span class="mainNavB"></span>
+</div>
+<!--mainNav end-->
+
+<script type="text/javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/jquery-1.7.1.min.js"></script>
+<!--[if IE 6]>
+  <script type="text/javascript" src="http://images.watchstor.com/newhomes/png.js"></script>
+  <script>
+    DD_belatedPNG.fix('img,input,ul,li, .get-box, div, .add, .sub, .ui-slider-handle, .footer-chopper');
+  </script>
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/fck_editorarea.css">
+<script type="text/javascript" charset="gbk" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/shCores.js"></script>
+<link rel="stylesheet" type="text/css" href="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/shCoreDefault.css">
+<script type="text/javascript" charset="gbk" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/uparse.js"></script>
+<script type="text/javascript">
+	uParse('.showContent');
+	$(function(){
+		//SyntaxHighlighter.config.clipboardSwf = 'http://bbs.51cto.com/plugins/syntaxhighlighter/scripts/clipboard.swf'; 
+		//为了在编辑器之外能展示高亮代码
+		SyntaxHighlighter.highlight();
+	}); 
+</script>
+<script type="text/javascript">
+/**
+ * 回复评论需要用的js
+ * 2012-5-14
+ * by:chengtao
+ */
+ jQuery(function(){
+	blogpost.init();//初始化博客回复功能
+ })
+ /**
+  * 处理博文评论功能优化
+  */
+ blogpost={
+	abstruct_list:null,
+	init:function(){
+		blogpost.bind();//绑定一些时间
+		this.abstruct_list=new Array();//初始化保存评论信息的数组
+	},
+	/**
+	 * 博客回复需要绑定的一些事件
+	 */
+	bind:function(){
+		/**
+		 * 点击回复的事件
+		 */
+		jQuery('.repost').live('click',function(){
+			blogpost.repost(jQuery(this).attr('user_name'),jQuery(this).attr('parentid'));
+			return false;
+		});
+		/**
+		 * 点击楼层进行翻页且找到锚点
+		 */
+		jQuery('.anchor_page').live('click',function(){
+			var parentid = $(this).attr('parentid');
+			var tid=$(this).attr('tid');
+			$.get('/comments.php?tid='+tid+'&parentid='+parentid,function(data){
+				$('#artcomment').html(data);
+				window.location.hash=''+parentid;
+			})
+			return false;
+		}),
+		jQuery('.anchor_page').live('mouseover',function(){
+			var parentid = $(this).attr('parentid');
+			if(!blogpost.abstruct_list[parentid]){
+				var this_t = $(this);
+				$.get('/comments.php?cid='+parentid,function(data,textStatus){
+					blogpost.abstruct_list[parentid]=data;
+					this_t.attr('title',this_t.text()+':'+ blogpost.abstruct_list[parentid]);
+				});
+			}else{
+				$(this).attr('title',$(this).text()+':'+blogpost.abstruct_list[parentid]);
+			}
+		})
+	},
+	/**
+	 * @param user_name 用户名
+	 * @param parentid  父评论id
+	 */
+	repost:function(user_name,parentid){
+		window.location.hash='comment';
+		jQuery('#parentid').val(parentid);
+		jQuery('#commentcontent').val('回复 '+user_name+":\n").focus();
+		if(!$.browser.mozilla){
+			var elem = jQuery('#commentcontent')[0];		
+			var caretPos = elem.value.length;
+			if (elem.createTextRange) {
+				var range = elem.createTextRange();
+				range.move('character', caretPos);
+				range.select();
+			}else{
+				elem.setSelectionRange(caretPos, caretPos);	
+			}
+		}
+	},
+	/**
+	 * 发送完毕之后清理表单数据 不是ajax可能用不到
+	 */
+	clean:function(){
+		
+	}
+ }
+</script>
+<script type="text/javascript">
+jQuery(function(){
+	var anchor = document.location.hash;
+	var comment_id=anchor.split('#')[1];
+	if(!isNaN(parseInt(comment_id))){//是整形
+		jQuery.get('/comments.php?tid=595344&parentid='+comment_id,function(data){
+			jQuery('#artcomment').html(data);
+			window.location.hash=''+comment_id;
+		})
+	}
+});
+</script>
+
+<link type="text/css" rel="stylesheet" href="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/expert_show_layout.css">
+<script type="text/javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/expert_show.js"></script>
+
+<script type="text/javascript">
+var is_login = false;
+var task_rb = 'http://home.51cto.com/index.php?reback=http%253A%252F%252Fzhoufoxcn.blog.51cto.com%252F792419%252F595344%252F';
+</script>
+
+
+
+
+<script type="text/javascript">
+jQuery(function() {
+	jQuery('#favourdiv').mouseover(function(){
+		if(jQuery(this).attr('className') == 'support01')
+		{
+			jQuery(this).attr('className', "support02");
+			jQuery(this).html('+1人');
+			jQuery(this).attr('title', "赞一个，我支持TA");
+		}
+		else if(jQuery(this).attr('className') == 'support03')
+		{
+			jQuery(this).attr('title', "你已经赞了这篇博文！");
+		}
+		
+	});
+	jQuery('#favourdiv').mouseout(function(){
+		if(jQuery(this).attr('className') == 'support02')
+		{
+			jQuery(this).attr('className', "support01");
+			jQuery(this).html("11人");
+		}
+	});
+	jQuery('.blog_match_yq').click(function(){
+		var wind_uid = '';
+		if(!wind_uid){
+			alert("请先登录！");
+			return false;
+		}
+		jQuery.ajax({
+			   type: "POST",
+			   url:"/contest2012/index.php?mod=sendmsg",
+			   dataType: "html",
+			   data: "vuid=" + 792419,
+			   success: function(data) {
+					if(data == 0)
+					{
+						alert("查无此人！");
+						return false;
+					}else if(data == 1){
+						alert("请先登录！");
+						return false;
+					}else if(data == 2){
+						alert("不能邀请自己！");
+						return false;
+					}else if(data == 22){  
+						alert("邀请信息已发出！");
+						return false;
+					}
+			   }
+		  });
+	});
+	jQuery('#favourdiv').click(function(){
+			jQuery.ajax({
+			   type: "POST",
+			   url:"/mod/favour.php",
+			   dataType: "html",
+			   data: "tid=" + 595344,
+			   success: function(data) {
+					if(data == 0)
+					{
+						alert("您还未登录或者已过期，请重新登录");
+						location.href = "http://home.51cto.com/index.php?reback=http%253A%252F%252Fzhoufoxcn.blog.51cto.com%252F792419%252F595344%252F";
+						return false;
+					}
+					else if(data == '-1')
+					{
+						alert("参数传递错误！");
+						return false;
+					}
+					else if(data == '-2')
+					{
+						alert("该博文已被删除或者不存在！");
+						return false;
+					}
+					else if(data == '-3')
+					{
+						alert("您已经赞过了！");
+						return false;
+					}
+					else if(data == '-4')
+					{
+						alert("赞操作失败！");
+						return false;
+					}
+					else
+					{  
+						//alert("操作成功，你已经赞了这篇博文！");
+						jQuery('#favourdiv').attr('className', "support03");
+
+						var num = 11 + 1 + "人";
+						jQuery('#favourdiv').html(num);
+						jQuery('#favourer').html(data);
+						return false;
+					}
+			   }
+		  });
+	});
+	//Jaydar http://blog.51cto.com/js/header.php?uid=blogdb[uid]&tid=tid
+	jQuery.post('/js/header.php',{uid:792419,tid:595344},function(data){
+		jQuery('#readNum').html(data[0]);
+		jQuery('#cmtNum').html(data[1]);
+	},'json');
+	
+
+})
+
+jQuery(function(){
+	jQuery('#darid').bind('click',function(){
+		if(confirm("你确定删除此篇文章？")){
+			jQuery.ajax({
+				'type':'post',
+				'url':'user_index.php?action=delarticle',
+				'data':{'job':'del', 'selid':'595344', 'mhash':''},
+				'dataType':'html',
+				'success':function(res){
+					if('ok' == res){
+						location.href="http://.blog.51cto.com";
+					}
+				
+				}
+			});
+		}
+	});
+});
+</script>
+
+
+
+
+<style type="text/css">
+.m_sharelinks{ 
+	line-height:30px; 
+	text-align:left; 
+	padding-left:20px; 
+	//background:url(http://img1.51cto.com/images/share/ico_lb.gif) no-repeat left center;
+	float:left; 
+	width:600px; 
+	height:30px;
+}
+.m_sharelinks a{ margin-left:10px;}
+.m_sharebtn{ height:50px; width:726px; margin:0 auto;}
+.m_sharebtn01{width:520px; float:left;}
+.weibo_51cto{ background:url(http://img1.51cto.com/images/share/ico_mweibo.gif) no-repeat center center; display:block; width:33px; height:33px; float:left; margin:3px 3px 0 0;cursor:pointer;}
+.shareMored {
+    line-height: 30px;
+	float:right; 
+	text-align:right; 
+	width:100px; 
+	height:30px;
+}
+
+.showContent {
+	margin:20px 15px 8px;
+}
+.userImage img {
+    text-align: center;
+	border:0;
+	padding:0;
+}
+.photo_links{ line-height:30px; padding-top:5px; font-size:13px;width:170px; margin:0 auto;}
+.photo_links_blue{ text-align:center;}
+.photo_links_blue a:link,.photo_links_blue a:visited,.photo_links_blue a:hover,.photo_links_blue a:active{ color:#015F91; text-decoration: underline;}
+.photo_links_red{ text-align:left;}
+.photo_links_red a:link,.photo_links_red a:visited,.photo_links_red a:hover,.photo_links_red a:active{ color:#fc4343; text-decoration:underline;}
+.photo_links_red02{ text-align:center;}
+
+.vlist{ margin:10px 10px; height:65px;}
+.vlist img{ float:left; margin-right:10px;}
+.vlist dl{ text-align:left;}
+.vlist dl dt{ height:40px;line-height: 20px; overflow:hidden; padding-top:5px;}
+.vlist dl dt,.vlist dl dt a{ color:#262626;}
+.vlist dl dd,.vlist dl dd a{ color:#777;}
+
+.video-icon{
+    position: relative;
+}
+.video-icon a.i_video {
+    background: url("http://www.51cto.com/images/homepage/Images/eduplay.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 25px;
+    left:31px;
+    position: absolute;
+    top:22px;
+    width: 25px;
+    z-index: 10;
+}
+
+.ipadFload{ position:fixed; width:136px; height:194px; background:url("http://bbs.51cto.com/images/IPad-bg.png") left top no-repeat #fff; font-family:"微软雅黑"; padding-left:18px;}
+.ipadClose{ text-align:right; font-size:14px; line-height:20px;}
+.ipadImg{ padding-top:38px;}
+.ipadImg img{ width:105px; height:105px;}
+.iPadair2{ font-size:12px;}
+.iPadair2 a{ color:#659b01; text-decoration:none; background:url("http://bbs.51cto.com/images/51CTO-IPAD-BOTTOM.png") right center no-repeat; display:block; line-height:30px;}
+
+</style>
+<script language="JavaScript" type="text/javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/group.js"></script>
+<div id="add_sys_type_div" style="width:600px;border:1px #58B0DD solid; background-color:#FFF; position:absolute;left:30%;top:300px;display:none;z-index:255"></div>
+<div id="add_sys_type_dvs" style="width:550px;border:1px #58B0DD solid; background-color:#FFF; position:absolute;left:30%;top:300px;display:none;z-index:255"></div>
+	
+
+
+
+<div class="blogMain">
+<div class="blogLeft" style="overflow: visible;">
+
+
+<div class="box moduleUser">
+<div class="title">
+<h2><strong>周金桥</strong> 的BLOG  </h2>
+<div class="floatimg" style="display:none"></div></div>
+<div class="modCon">
+
+<div class="blogLevel" uid="792419"><a href="http://blog.51cto.com/expert" target="_blank" style="display:block;width:46px;height:62px;text-indent:-999px;"><!--<img src="http://blog.51cto.com/image/skin/26.css/zj.png">--></a></div>
+
+<div class="userImage" style="margin: 10px auto 5px;text-align: center;width: 130px;border: 1px solid #D4D4D4;">
+	<table width="100%" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td valign="middle" align="center" height="130"><script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/userface.php"></script><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar.php" id="userface"></td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="photo_links">
+</div>
+
+
+<p class="tc"><a href="http://2010blog.51cto.com/" target="_blank"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/logo_ten.jpg" width="177" height="53" style="text-align:center; margin-left:auto; margin-right:auto"></a></p>
+
+
+
+
+
+
+
+
+<div class="crumbs">
+<a href="http://home.51cto.com/index.php?s=/space/792419#message" class="writeMessage" target="_blank">写留言</a><a href="http://edu.51cto.com/" class="inCircle" target="_blank">去学院学习</a><a href="http://home.51cto.com/index.php?s=/Notify/write/uid/792419" class="message" target="_blank">发消息</a>
+ <a href="http://zhoufoxcn.blog.51cto.com/" onclick="add_flink(792419);return false" class="joinLinks">加友情链接</a><a href="http://home.51cto.com/index.php?s=/space/792419" class="joinFriends" target="_blank">进家园 加好友</a>
+</div>
+
+<div style="width:239px;height:64px;display:none;">
+
+
+<div style="float:left;"><p style="padding:15px 0 0 28px; line-height:20px;">2012年度IT博客大赛<br><a target="_blank" href="http://blog.51cto.com/contest2012/#top10000" style="color:#F00; text-decoration:underline;">十大杰出IT博客诞生</a></p></div>
+<div style="float:right;"><a target="_blank" href="http://blog.51cto.com/contest2012/"><img width="57" height="27" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/blog_match_endlook.jpg" style="margin:23px 20px 0 0;"></a></div>
+<!-- <div style="float:left;"><p style="padding:15px 0 0 28px; line-height:20px;">星光评委正在评选<br><a target="_blank" href="http://blog.51cto.com/contest2012/index.php?mod=userlist_sec" style="color:#F00; text-decoration:underline;">2012年度IT博客大赛50强</a></p></div>
+<div style="float:right;"><img class="blog_match_yq" width="57" height="27" src="http://img1.51cto.com/images/blog_match_invite.jpg" style="margin:23px 20px 0 0;"></div> -->
+
+
+
+<div class="clear"></div>
+</div>
+
+
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div>
+
+
+<div class="infoList box">
+<div class="title">
+<h2>博客统计信息</h2>
+</div>
+<div class="modCon">
+<p>
+<span class="infoListHead"><a href="http://blog.51cto.com/expert" target="_blank" class="operlink"><b>51CTO专家博客</b></a> <a href="http://blog.51cto.com/blogcommend" target="_blank" class="operlink"><b>51CTO博客之星</b></a> <br></span>
+用户名：周金桥<br>
+文章数：239<br>
+评论数：847<br>
+访问量：1599686<br>
+<a href="http://home.51cto.com/index.php?s=/Account/credit" target="_blank">无忧币</a>：3831<br>
+<a href="http://51ctoblog.blog.51cto.com/26414/5591" target="_blank">博客积分</a>：6500<br>
+<a href="http://51ctoblog.blog.51cto.com/26414/5591" target="_blank">博客等级</a>：8<br>
+注册日期：2009-05-22<br>
+<script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/blogno1countdown.php"></script> 
+</p>
+</div>
+<span class="modBot"></span>
+</div>
+
+
+<div class="infoList box">
+	<div class="title">
+		<h2 class="fl">热门专题</h2>
+		<a target="_blank" class="fr" href="http://blog.51cto.com/zt">更多&gt;&gt;</a>
+	</div>
+	<div class="modCon" style="height: 88px;">
+
+	
+		<div class="vlist">
+		  <a href="http://blog.51cto.com/zt/659" target="_blank"><img width="63" height="63" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/wKiom1V-ga6x8kyzAAAfu1JlmVY564.jpg"></a>
+		<dl>
+		<dt>
+		  <a href="http://blog.51cto.com/zt/659" target="_blank" title="Android开发技巧实践详解">Android开发技巧实践详解</a></dt>
+		<dd>阅读量：9487</dd>
+		</dl>
+		</div>
+	
+		<div class="vlist">
+		  <a href="http://blog.51cto.com/zt/660" target="_blank"><img width="63" height="63" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/wKioL1V_9G_xrXgwAAAzd-ZYvUQ671.jpg"></a>
+		<dl>
+		<dt>
+		  <a href="http://blog.51cto.com/zt/660" target="_blank" title=" Linux Shell脚本教程"> Linux Shell脚本教程</a></dt>
+		<dd>阅读量：2508</dd>
+		</dl>
+		</div>
+	
+		<div class="vlist">
+		  <a href="http://blog.51cto.com/zt/661" target="_blank"><img width="63" height="63" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/wKioL1WA6qjzWDNeAAA2BMuC3zI735.jpg"></a>
+		<dl>
+		<dt>
+		  <a href="http://blog.51cto.com/zt/661" target="_blank" title=" Linux运维阶段学习"> Linux运维阶段学习</a></dt>
+		<dd>阅读量：435</dd>
+		</dl>
+		</div>
+	
+		<div class="vlist">
+		  <a href="http://blog.51cto.com/zt/662" target="_blank"><img width="63" height="63" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/wKioL1WCPGvDBUNnAAAsviNq220422.jpg"></a>
+		<dl>
+		<dt>
+		  <a href="http://blog.51cto.com/zt/662" target="_blank" title="PowerShell入门笔记">PowerShell入门笔记</a></dt>
+		<dd>阅读量：178</dd>
+		</dl>
+		</div>
+		
+		
+	</div>
+	<span class="modBot"></span>
+</div>
+
+
+<div class="hotArt box">
+<div class="title">
+<h2>热门文章</h2>
+</div>
+<div class="modCon">
+<ul>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/561934">在C#用HttpWebRequest中发送GET/H..</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/595344">HTML解析利器HtmlAgilityPack</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/429988">Log4Net使用详解（续）</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/166956">大型软件公司.net面试题！一定得..</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/517093">在.NET使用JSON作为数据交换格式</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/187031">C#多线程编程（1）：线程的启动</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/163944">.NET 产品版权保护方案 (.NET源码..</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/166441">asp.net夜话之十一：web.config详解</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/166418">Oracle创建自增字段方法-ORACLE S..</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/263696">多线程编程(3)：线程池ThreadPool</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/167094">用C#实现MD5算法</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/459684">ADO.NET与ORM的比较(5):MyBatis实..</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/419268">用好VS2010扩展管理器</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/528212">使用Memcached提高.NET应用程序的..</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/438277">Java中的BoneCP数据库连接池用法</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/1152188">赴北京美国大使馆L1签证面签记</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/279243">用Inno Setup来解决.NetFramework..</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/316807">ASP.NET4.0新特性</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/292670">System.Data.SQLite数据库介绍</a></li>
+<li><a href="http://zhoufoxcn.blog.51cto.com/792419/380423">C#的解题思路(1)：不重复随机数的..</a></li>
+
+</ul>
+</div>
+<span class="modBot"></span>
+</div>
+<div class="search box">
+<div class="title"><h2>搜索BLOG文章</h2></div>
+<div class="modCon">
+<form method="post" action="http://zhoufoxcn.blog.51cto.com/search.php?" tabindex="99">
+<input type="hidden" name="step" value="2">
+<input type="hidden" name="authorid" value="792419">
+<input type="hidden" name="sch_area" value="S">
+<input type="text" value="" name="keyword" class="searchInput">
+<input type="submit" value="搜 索" class="searchBtn">
+</form>
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div>
+
+
+<div class="box recentGuests">
+<div class="title">
+<h2>最近访客</h2>
+</div>
+<div class="modCon">
+<ul>
+
+<li><a href="http://2822479.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(1).php"></a>
+<p><a href="http://2822479.blog.51cto.com/">xurui..</a></p>
+
+</li><li><a href="http://5600130.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(2).php"></a>
+<p><a href="http://5600130.blog.51cto.com/">61743..</a></p>
+
+</li><li><a href="http://239493.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(3).php"></a>
+<p><a href="http://239493.blog.51cto.com/">qt033</a></p>
+
+</li><li><a href="http://2292813.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(4).php"></a>
+<p><a href="http://2292813.blog.51cto.com/">xujin..</a></p>
+
+</li><li><a href="http://10162102.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(5).php"></a>
+<p><a href="http://10162102.blog.51cto.com/">微哥</a></p>
+
+</li><li><a href="http://624099.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(6).php"></a>
+<p><a href="http://624099.blog.51cto.com/">ignat..</a></p>
+
+</li><li><a href="http://5834001.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(7).php"></a>
+<p><a href="http://5834001.blog.51cto.com/">tslih..</a></p>
+
+</li><li><a href="http://4521262.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(8).php"></a>
+<p><a href="http://4521262.blog.51cto.com/">blacktt</a></p>
+
+</li><li><a href="http://433795.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(9).php"></a>
+<p><a href="http://433795.blog.51cto.com/">wjh21</a></p>
+
+</li><li><a href="http://811532.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(10).php"></a>
+<p><a href="http://811532.blog.51cto.com/">andy1..</a></p>
+
+</li><li><a href="http://1331443.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(11).php"></a>
+<p><a href="http://1331443.blog.51cto.com/">chris..</a></p>
+
+</li><li><a href="http://8357177.blog.51cto.com/"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/avatar(12).php"></a>
+<p><a href="http://8357177.blog.51cto.com/">零的觉悟</a></p>
+
+</li></ul>
+<span class="clear"></span>
+</div>
+<span class="modBot"></span>
+</div>
+
+
+<div class="newComments box">
+<div class="title">
+<h2>最新评论 
+
+</h2>
+
+
+
+</div>
+<div class="modCon">
+<ul>
+
+<li><a href="http://1060803.blog.51cto.com/" class="operlink" target="_blank"><b>wycoo</b></a>：<a href="http://zhoufoxcn.blog.51cto.com/792419/832631" target="_blank">不错，学习了哦</a></li>
+
+<li><a href="http://zhuizhu779.blog.51cto.com/" class="operlink" target="_blank"><b>追逐779</b></a>：<a href="http://zhoufoxcn.blog.51cto.com/792419/517093" target="_blank">期待周公继续展开~~</a></li>
+
+<li><a href="http://zhuizhu779.blog.51cto.com/" class="operlink" target="_blank"><b>追逐779</b></a>：<a href="http://zhoufoxcn.blog.51cto.com/792419/166441" target="_blank">楼主威武，继续拜读~</a></li>
+
+<li><a href="http://zhuizhu779.blog.51cto.com/" class="operlink" target="_blank"><b>追逐779</b></a>：<a href="http://zhoufoxcn.blog.51cto.com/792419/429988" target="_blank">太详细了，谢谢周公，精神和物质上..</a></li>
+
+<li><a href="http://zhuizhu779.blog.51cto.com/" class="operlink" target="_blank"><b>追逐779</b></a>：<a href="http://zhoufoxcn.blog.51cto.com/792419/561934" target="_blank">周公太伟大了，很实用，解决了困惑..</a></li>
+
+<li><a href="http://9872481.blog.51cto.com/" class="operlink" target="_blank"><b>a74803</b></a>：<a href="http://zhoufoxcn.blog.51cto.com/792419/167031" target="_blank">insert语句中，value里面的字段要是..</a></li>
+
+<li><a href="http://7747275.blog.51cto.com/" class="operlink" target="_blank"><b>wk814007042</b></a>：<a href="http://zhoufoxcn.blog.51cto.com/792419/586823" target="_blank">周公是好人</a></li>
+
+<li><a href="http://1140782.blog.51cto.com/" class="operlink" target="_blank"><b>lkkmm</b></a>：<a href="http://zhoufoxcn.blog.51cto.com/792419/595344" target="_blank">博主您好，我现在遇到了一个很特别..</a></li>
+
+<li><a href="http://zhoufoxcn.blog.51cto.com/" class="operlink" target="_blank"><b>周金桥</b></a>：<a href="http://zhoufoxcn.blog.51cto.com/792419/162927" target="_blank">回复 wzhiq: 这个那个畜牧场没把..</a></li>
+
+<li><a href="http://zhoufoxcn.blog.51cto.com/" class="operlink" target="_blank"><b>周金桥</b></a>：<a href="http://zhoufoxcn.blog.51cto.com/792419/832631" target="_blank">回复 vsceo: 为什么sealed class..</a></li>
+
+
+</ul>
+</div>
+<span class="modBot"></span>
+</div>
+
+
+<div class="hotBlogArt box">
+<div class="title">
+  <h2 class="fl">51CTO推荐博文</h2>
+  <a href="http://blog.51cto.com/artcommend" class="fr">更多&gt;&gt;</a></div>
+<div class="modCon">
+<ul>
+<li><a href="http://laoxu.blog.51cto.com/4120547/1661208" title="mysql异或运算" target="_blank">mysql异或运算</a></li>
+<li><a href="http://aiilive.blog.51cto.com/1925756/1661831" title="记录：使用IDEA编辑Spring配置文件profile属性时产生的命名重复问题" target="_blank">记录：使用IDEA编辑Spring配置文..</a></li>
+<li><a href="http://zhouhongyu1989.blog.51cto.com/2931598/1423963" title="Asp.Net 自定义控件实现图片的上传，浏览，Delete功能" target="_blank">Asp.Net 自定义控件实现图片的上..</a></li>
+<li><a href="http://tiany.blog.51cto.com/513694/1660556" title="MySQL Study之--Mysql启动失败“mysql.host”" target="_blank">MySQL Study之--Mysql启动失败“m..</a></li>
+<li><a href="http://shineforever.blog.51cto.com/1429204/1660962" title="利用fabric自动化发布代码" target="_blank">利用fabric自动化发布代码</a></li>
+<li><a href="http://8159264.blog.51cto.com/8149264/1424092" title="边做移动测试边看“示波器”--ThreadingTest带给你不一样的测试体验" target="_blank">边做移动测试边看“示波器”--Thr..</a></li>
+<li><a href="http://51power.blog.51cto.com/3549599/1659758" title="解密Oracle备份工具-exp/imp" target="_blank">解密Oracle备份工具-exp/imp</a></li>
+<li><a href="http://lizhenliang.blog.51cto.com/7876557/1657465" title="运维角度浅谈MySQL数据库优化" target="_blank">运维角度浅谈MySQL数据库优化</a></li>
+<li><a href="http://tiany.blog.51cto.com/513694/1655762" title="Oracle Study之--AMD CPU安装Oracle 11gR2 RAC错误" target="_blank">Oracle Study之--AMD CPU安装Orac..</a></li>
+<li><a href="http://tianxingzhe.blog.51cto.com/3390077/1655385" title="svn利用钩子脚本功能实现代码同步到web目录" target="_blank">svn利用钩子脚本功能实现代码同步..</a></li>
+<li><a href="http://xiaominghimi.blog.51cto.com/2614927/1654509" title="【UNITY3D 游戏开发之八】Unity编译到iPhone运行 Collider 无法正常触发事件解决方案" target="_blank">【UNITY3D 游戏开发之八】Unity编..</a></li>
+
+</ul>
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div>
+
+
+<div class="friendLink box">
+<div class="title">
+  <h2>友情链接</h2>
+</div>
+<div class="modCon">
+<ul>
+
+<li><a href="http://edu.51cto.com/" title="IT精品课程" target="_blank">IT精品课程</a></li>
+
+<li><a href="http://read.goodapp.net/" title="周公在Linux平台上架设的网站" target="_blank">goodapp阅读网</a></li>
+
+<li><a href="http://terryli.blog.51cto.com/" title="李涛的技术专栏" target="_blank">李涛的技术专栏</a></li>
+
+<li><a href="http://www.codeproject.com/" title="一个.NET开源网站" target="_blank">Code Project</a></li>
+
+<li><a href="http://blog.csdn.net/zhoufoxcn" title="周公的CSDN博客" target="_blank">周公的CSDN博客</a></li>
+
+<li><a href="http://51ctoblog.blog.51cto.com/" title="51CTO博客开发" target="_blank">51CTO博客开发</a></li>
+
+</ul>
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div>
+
+
+
+</div>
+<!--left end-->
+
+<script type="text/javascript">
+    var favor_url = "http://zhoufoxcn.blog.51cto.com/792419/595344/";
+    var favor_title = "HTML解析利器HtmlAgilityPack";
+    var favor_fuid = "792419";
+</script>
+<script type="text/javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/favorbox.js"></script>
+
+
+<div class="blogRight" rel="792419######HtmlAgilityPack HTML .NET 休闲 C#" id="article_edu_void">
+<input type="hidden" value="8" id="edu_jia">
+			
+	<p style="clear:both;" class="edu_insert"><div class="box edu-col-a" style="display:none;"><div class="title">的视频课程</div><div class="vbox" style=""><div class="clear hr10"></div></div></div><div class="box edu-col-b" style=""><div class="title"><a target="_blank" href="http://zhoufoxcn.blog.51cto.com/null">相关视频课程</a></div><div class="vbox" style=""><div class="vlist video-icon" style="margin: 2px 8px;"><a href="http://edu.51cto.com/course/course_id-3863.html?edu_recommend_adid=91" target="_blank"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/wKiom1WA2auTvhBUAADBADE22LY562.jpg" height="63" width="86"></a><dl><dt> <a href="http://edu.51cto.com/course/course_id-3863.html?edu_recommend_adid=91" target="_blank" title="经典EJB3.0实战视频课程">经典EJB3.0实战视频课程(共27课时)</a></dt><dd>undefined人学习</dd></dl><a class="i_video" href="http://edu.51cto.com/course/course_id-3863.html?edu_recommend_adid=91" target="_blank"></a></div><div class="vlist video-icon" style="margin: 2px 8px;"><a href="http://edu.51cto.com/course/course_id-3891.html?edu_recommend_adid=91" target="_blank"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/09c6a6618db802fe6939824776ec871e9f84f7.jpg" height="63" width="86"></a><dl><dt> <a href="http://edu.51cto.com/course/course_id-3891.html?edu_recommend_adid=91" target="_blank" title="JavaSE之异常实战视频课程">JavaSE之异常实战视频课程(共9课时)</a></dt><dd>undefined人学习</dd></dl><a class="i_video" href="http://edu.51cto.com/course/course_id-3891.html?edu_recommend_adid=91" target="_blank"></a></div><div class="vlist video-icon" style="margin: 2px 8px;"><a href="http://edu.51cto.com/course/course_id-3679.html?edu_recommend_adid=91" target="_blank"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/wKioL1Va1kHzY6tfAAwbEJdPEGc538.jpg" height="63" width="86"></a><dl><dt> <a href="http://edu.51cto.com/course/course_id-3679.html?edu_recommend_adid=91" target="_blank" title="[黑色数据虚拟化系列]VMware VSAN实战视频课程">[黑色数据虚拟化系列]VMware VSAN实战视频课程(共10课时)</a></dt><dd>undefined人学习</dd></dl><a class="i_video" href="http://edu.51cto.com/course/course_id-3679.html?edu_recommend_adid=91" target="_blank"></a></div><div class="clear hr10"></div></div></div></p>
+	<style type="text/css">
+.vlist {
+    float: left;
+    padding: 2px 0 0 10px;
+    width: 218px;
+	
+}
+.vlist img {
+    float: left;
+    margin-right: 10px;
+}
+.vlist dl {
+    float: left;
+    text-align: left;
+    width: 122px;
+}
+.vlist dl dt {
+    height: 44px;
+    overflow: hidden;
+    padding-top: 5px;
+}
+.vlist dl dt, .vlist dl dt a {
+    color: #262626;
+}
+.vlist dl dd, .vlist dl dd a {
+    color: #777777;
+}
+.vbox_tit {
+    border-bottom: 1px solid #B3D0E6;
+    color: #666666;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left;
+}
+.video-icon {
+    position: relative;
+}
+.video-icon a.i_video {
+    background: url("http://www.51cto.com/images/homepage/Images/eduplay.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 25px;
+    left: 41px;
+    position: absolute;
+    top: 22px;
+    width: 25px;
+    z-index: 10;
+}
+.vbox2 .vlist1{margin:0;}
+.edu-col-a{ float:left;margin-right:6px;}
+.edu-col-b{ float:left;}
+	</style><!--modCon end-->
+	<div class="artShow box" style="margin-top:5px;">
+   	  <div class="share" id="share">
+
+    <div class="shareItem">
+		<div class="m_sharelinks"><a target="_blank" href="" style="color:red;"></a><a target="_blank" href="" style="color:blue;"></a><a target="_blank" href="" style="color:blue;"></a></div>
+		<p class="shareMored"><a href="http://zhoufoxcn.blog.51cto.com/all/792419">博主的更多文章&gt;&gt;</a></p>
+	</div>
+      </div>
+       <div class="modCon">
+   	  <div class="showBox" style="margin:0 0 10px;">
+      <div class="line_hd_r"></div>
+      <div class="art_tj">
+
+      <a href="http://blog.51cto.com/artcommend" target="_blank"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/tj.png"></a>
+
+      </div>
+
+ 
+    		<div class="showHead">
+    		  <div class="showTitleBOx" style="text-align:center">
+              <div class="showTitle">
+
+             <img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/artType01.jpg">
+
+
+    		    HTML解析利器HtmlAgilityPack
+                </div>
+  		    </div>
+   		    <span class="artTime">2011-06-24 01:56:40</span></div><!--showHead end-->
+    <div class="showTags">标签：<a href="http://blog.51cto.com/tag-HtmlAgilityPack.html" target="_blank" class="operlink">HtmlAgilityPack</a> <a href="http://blog.51cto.com/tag-HTML.html" target="_blank" class="operlink">HTML</a> <a href="http://blog.51cto.com/tag-.NET.html" target="_blank" class="operlink">.NET</a> <a href="http://blog.51cto.com/tag-%E4%BC%91%E9%97%B2.html" target="_blank" class="operlink">休闲</a> <a href="http://blog.51cto.com/tag-C#.html" target="_blank" class="operlink">C#</a>
+
+	</div>
+
+			<div class="CopyrightStatement lh22">
+            原创作品，允许转载，转载时请务必以超链接形式标明文章 <a href="http://zhoufoxcn.blog.51cto.com/792419/595344" target="_blank" style="text-decoration:underline">原始出处</a> 、作者信息和本声明。否则将追究法律责任。<a href="http://zhoufoxcn.blog.51cto.com/792419/595344">http://zhoufoxcn.blog.51cto.com/792419/595344</a>
+            </div>
+
+
+            <!--正文 begin-->
+    		<div class="showContent">
+    		  <p>&nbsp;在以前的项目中周公曾有解析HTML的情况，当时是采用正则表达式一步步将无关的HTML注释及JS代码部分删除掉，然后再用正则表达式找出需要提取的部分，可以说使用正则表达式来做是一个比较繁琐的过程，特别是对于正则表达式不是很熟悉或者要处理的HTML很复杂的情况下。前一阵子周公还是通过这个办法将<a href="http://wz.csdn.net/zhoufoxcn">http://wz.csdn.net/zhoufoxcn</a>上保存的网址导入到<a href="http://cang.baidu.com/">http://cang.baidu.com</a>，本来还想将周公博客上的文章好好整理一下，但是考虑到使用正则真的是很繁琐也很麻烦，所以就一直没有动手。<br>
+&nbsp;直到前两天在网上发现了一个.NET下的HTML解析类库HtmlAgilityPack。HtmlAgilityPack是一个支持用XPath来解析HTML的类库，在花了一点时间学习了解HtmlAgilityPack的API和XPath之后，周公就做了一个简单的工具完成了这个功能，目前在CSDN上周公博文的收集地址为：<a href="http://blog.csdn.net/zhoufoxcn/archive/2011/06/23/6564578.aspx">http://blog.csdn.net/zhoufoxcn/archive/2011/06/23/6564578.aspx</a>，在51CTO上周公博文的收集地址为<a href="http://zhoufoxcn.blog.51cto.com/792419/595327">http://zhoufoxcn.blog.51cto.com/792419/595327</a>。HtmlAgilityPack是一个开源的.NET类库，它的主页是<a href="http://htmlagilitypack.codeplex.com/">http://htmlagilitypack.codeplex.com/</a>，在这里可以下载到最新版的类库及API手册，此外还可以下载到一个用于调试的辅助工具。<br>
+&nbsp;<br>
+&nbsp;<strong>XPath简明介绍<br>
+</strong>&nbsp;XPath 使用路径表达式来选取 XML 文档中的节点或节点集。节点是通过沿着路径 (path) 或者步 (steps) 来选取的。<br>
+&nbsp;下面列出了最有用的路径表达式：<br>
+&nbsp;nodename:选取此节点的所有子节点。 <br>
+&nbsp;/:从根节点选取。 <br>
+&nbsp;//:从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置。 <br>
+&nbsp;.:选取当前节点。 <br>
+&nbsp;..:选取当前节点的父节点。<br>
+&nbsp;例如有下面一段XML:<br>
+&nbsp;</p>
+<pre><ol class="dp-xml"><li class="alt"><span><span class="tag">&lt;?</span><span class="tag-name">xml</span><span>&nbsp;</span><span class="attribute">version</span><span>=</span><span class="attribute-value">"1.0"</span><span>&nbsp;</span><span class="attribute">encoding</span><span>=</span><span class="attribute-value">"utf-8"</span><span class="tag">?&gt;</span><span>&nbsp;</span></span></li><li><span>&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Articles</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Article</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Title</span><span class="tag">&gt;</span><span>在ASP.NET中使用Highcharts&nbsp;js图表</span><span class="tag">&lt;/</span><span class="tag-name">title</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Url</span><span class="tag">&gt;</span><span>http://zhoufoxcn.blog.51cto.com/792419/537324</span><span class="tag">&lt;/</span><span class="tag-name">Url</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">CreateAt</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"en"</span><span class="tag">&gt;</span><span>2011-04-07</span><span class="tag">&lt;/</span><span class="tag-name">price</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="tag">&lt;/</span><span class="tag-name">Article</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li><span>&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Article</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Title</span><span>&nbsp;</span><span class="attribute">lang</span><span>=</span><span class="attribute-value">"eng"</span><span class="tag">&gt;</span><span>Log4Net使用详解（续）</span><span class="tag">&lt;/</span><span class="tag-name">title</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Url</span><span class="tag">&gt;</span><span>http://blog.csdn.net/zhoufoxcn/archive/2010/11/23/6029021.aspx</span><span class="tag">&lt;/</span><span class="tag-name">Url</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">CreateAt</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"zh-cn"</span><span class="tag">&gt;</span><span>2010年11月23日</span><span class="tag">&lt;/</span><span class="tag-name">price</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li><span>&nbsp;</span><span class="tag">&lt;/</span><span class="tag-name">Article</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Article</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Title</span><span class="tag">&gt;</span><span>J2ME开发的一般步骤</span><span class="tag">&lt;/</span><span class="tag-name">title</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Url</span><span class="tag">&gt;</span><span>http://blog.csdn.net/zhoufoxcn/archive/2011/06/12/6540223.aspx</span><span class="tag">&lt;/</span><span class="tag-name">Url</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">CreateAt</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"zh-cn"</span><span class="tag">&gt;</span><span>2011年06月12日</span><span class="tag">&lt;/</span><span class="tag-name">price</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="tag">&lt;/</span><span class="tag-name">Article</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li><span>&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Article</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Title</span><span>&nbsp;</span><span class="attribute">lang</span><span>=</span><span class="attribute-value">"eng"</span><span class="tag">&gt;</span><span>PowerDesign高级应用</span><span class="tag">&lt;/</span><span class="tag-name">title</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">Url</span><span class="tag">&gt;</span><span>http://zhoufoxcn.blog.51cto.com/792419/166415</span><span class="tag">&lt;/</span><span class="tag-name">Url</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;</span><span class="tag">&lt;</span><span class="tag-name">CreateAt</span><span>&nbsp;</span><span class="attribute">type</span><span>=</span><span class="attribute-value">"zh-cn"</span><span class="tag">&gt;</span><span>2007-09-08</span><span class="tag">&lt;/</span><span class="tag-name">price</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li><span>&nbsp;</span><span class="tag">&lt;/</span><span class="tag-name">Article</span><span class="tag">&gt;</span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="tag">&lt;/</span><span class="tag-name">Articles</span><span class="tag">&gt;</span><span>&nbsp;</span></li></ol></pre>
+<p><br>
+&nbsp;&nbsp;针对上面的XML文件，我们列出了带有谓语的一些路径表达式，以及表达式的结果：<br>
+&nbsp;/Articles/Article[1]：选取属于Articles子元素的第一个Article元素。 <br>
+&nbsp;/Articles/Article[last()]：选取属于Articles子元素的最后一个Article元素。 <br>
+&nbsp;/Articles/Article[last()-1]：选取属于Articles子元素的倒数第二个Article元素。 <br>
+&nbsp;/Articles/Article[position()&lt;3]：选取最前面的两个属于 bookstore 元素的子元素的Article元素。 <br>
+&nbsp;//title[@lang]：选取所有拥有名为lang的属性的title元素。 <br>
+&nbsp;//CreateAt[@type='zh-cn']：选取所有CreateAt元素，且这些元素拥有值为zh-cn的type属性。 <br>
+&nbsp;/Articles/Article[Order&gt;2]：选取Articles元素的所有Article元素，且其中的Order元素的值须大于2。 <br>
+&nbsp;/Articles/Article[Order&lt;3]/Title：选取Articles元素中的Article元素的所有Title元素，且其中的Order元素的值须小于3。<br>
+&nbsp;<br>
+&nbsp;<strong>HtmlAgilityPack API简明介绍<br>
+</strong>&nbsp;在HtmlAgilityPack中常用到的类有HtmlDocument、HtmlNodeCollection、<br>
+HtmlNode和HtmlWeb等。<br>
+&nbsp;其流程一般是先获取HTML，这个可以通过HtmlDocument的Load()或LoadHtml()来加载静态内容，或者也可以HtmlWeb的Get()或Load()方法来加载网络上的URL对应的HTML。<br>
+&nbsp;得到了HtmlDocument的实例之后，就可以用HtmlDocument的DocumentNode属性，这是整个HTML文档的根节点，它本身也是一个HtmlNode，然后就可以利用HtmlNode的SelectNodes()方法返回多个HtmlNode的集合对象HtmlNodeCollection，也可以利用HtmlNode的SelectSingleNode()方法返回单个HtmlNode。<br>
+&nbsp;<br>
+&nbsp;<strong>HtmlAgilityPack实战<br>
+</strong>&nbsp;下面是一个解析CSDN博客的代码实例：<br>
+&nbsp;</p>
+<pre><ol class="dp-c"><li class="alt"><span><span class="keyword">using</span><span>&nbsp;System; &nbsp;</span></span></li><li><span>&nbsp;</span><span class="keyword">using</span><span>&nbsp;System.Collections.Generic; &nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="keyword">using</span><span>&nbsp;System.Text; &nbsp;</span></li><li><span>&nbsp;</span><span class="keyword">using</span><span>&nbsp;HtmlAgilityPack; &nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="keyword">using</span><span>&nbsp;System.Text.RegularExpressions; &nbsp;</span></li><li><span>&nbsp; &nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="keyword">namespace</span><span>&nbsp;CrawlPageApplication &nbsp;</span></li><li><span>&nbsp;{ &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/** </span>&nbsp;</li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;作者：周公 </span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;日期：2011-06-23 </span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Blog:&nbsp;http://blog.csdn.net/zhoufoxcn&nbsp;or&nbsp;http://zhoufoxcn.blog.51cto.com </span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Weibo:&nbsp;http://weibo.com/zhoufoxcn </span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span><span>&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;CSDN_Parser &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">const</span><span>&nbsp;</span><span class="keyword">string</span><span>&nbsp;CategoryListXPath&nbsp;=&nbsp;</span><span class="string">"//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/dl[1]/dd[3]/div[1]/ul[1]/li"</span><span>; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">const</span><span>&nbsp;</span><span class="keyword">string</span><span>&nbsp;CategoryNameXPath&nbsp;=&nbsp;</span><span class="string">"//li[1]/a[2]"</span><span>; &nbsp;</span></li><li class="alt"><span>&nbsp; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">///&nbsp;&lt;summary&gt; </span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">///&nbsp;分析博客首页 </span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">///&nbsp;&lt;/summary&gt; </span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">///&nbsp;&lt;param&nbsp;name="url"&gt;&lt;/param&gt; </span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">///&nbsp;&lt;returns&gt;&lt;/returns&gt; </span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;List&lt;Category&gt;&nbsp;ParseIndexPage(</span><span class="keyword">string</span><span>&nbsp;url) &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uri&nbsp;uriCategory=</span><span class="keyword">null</span><span>; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Category&gt;&nbsp;list&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;List&lt;Category&gt;(40); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlDocument&nbsp;document&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;HtmlDocument(); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//注意，这里省略掉了使用本人其它类库中加载URL的类，而是直接加载本地的HTML文件 </span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//string&nbsp;html&nbsp;=&nbsp;HttpWebUtility.ReadFromUrl(url,&nbsp;Encoding.UTF8); </span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//document.LoadHtml(html); </span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.Load(</span><span class="string">"CSDN_index.html"</span><span>,&nbsp;Encoding.UTF8); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlNode&nbsp;rootNode&nbsp;=&nbsp;document.DocumentNode; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlNodeCollection&nbsp;categoryNodeList&nbsp;=&nbsp;rootNode.SelectNodes(CategoryListXPath); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlNode&nbsp;temp&nbsp;=&nbsp;</span><span class="keyword">null</span><span>; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category&nbsp;category&nbsp;=&nbsp;</span><span class="keyword">null</span><span>; &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">foreach</span><span>&nbsp;(HtmlNode&nbsp;categoryNode&nbsp;</span><span class="keyword">in</span><span>&nbsp;categoryNodeList) &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp&nbsp;=&nbsp;HtmlNode.CreateNode(categoryNode.OuterHtml); &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;category&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;Category(); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;category.Subject&nbsp;=&nbsp;temp.SelectSingleNode(CategoryNameXPath).InnerText; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uri.TryCreate(UriBase,&nbsp;temp.SelectSingleNode(CategoryNameXPath).Attributes[</span><span class="string">"href"</span><span>].Value,&nbsp;</span><span class="keyword">out</span><span>&nbsp;uriCategory); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;category.IndexUrl&nbsp;=&nbsp;uriCategory.ToString(); &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;category.PageUrlFormat=category.IndexUrl+</span><span class="string">"?PageNumber={0}"</span><span>; &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.Add(category); &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category.CategoryDetails.Add(category.IndexUrl,&nbsp;category); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span>&nbsp;list; &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;</span></li><li><span>&nbsp; &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;</span></li><li><span>&nbsp;}&nbsp;</span></li></ol></pre>
+<p><br>
+&nbsp;&nbsp;当然实现类似的解析51CTO的博客文章数据的代码如下：<br>
+&nbsp;</p>
+<pre><ol class="dp-c"><li class="alt"><span><span class="keyword">using</span><span>&nbsp;System; &nbsp;</span></span></li><li><span>&nbsp;</span><span class="keyword">using</span><span>&nbsp;System.Collections.Generic; &nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="keyword">using</span><span>&nbsp;System.Text; &nbsp;</span></li><li><span>&nbsp;</span><span class="keyword">using</span><span>&nbsp;HtmlAgilityPack; &nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="keyword">using</span><span>&nbsp;System.Text.RegularExpressions; &nbsp;</span></li><li><span>&nbsp; &nbsp;</span></li><li class="alt"><span>&nbsp;</span><span class="keyword">namespace</span><span>&nbsp;CrawlPageApplication &nbsp;</span></li><li><span>&nbsp;{ &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">/** </span>&nbsp;</li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;作者：周公 </span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;日期：2011-06-23 </span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Blog:&nbsp;http://blog.csdn.net/zhoufoxcn&nbsp;or&nbsp;http://zhoufoxcn.blog.51cto.com </span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Weibo:&nbsp;http://weibo.com/zhoufoxcn </span>&nbsp;</span></li><li><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span><span>&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;CTO_Parser &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;Encoding&nbsp;PageEncoding&nbsp;=&nbsp;Encoding.GetEncoding(</span><span class="string">"gb2312"</span><span>); &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">readonly</span><span>&nbsp;Uri&nbsp;UriBase&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;Uri(</span><span class="string">"http://zhoufoxcn.blog.51cto.com"</span><span>); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">string</span><span>&nbsp;CategoryListXPath&nbsp;=&nbsp;</span><span class="string">"/html[1]/body[1]/div[5]/div[1]/div[1]/div[2]/ul[1]/li"</span><span>; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">private</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">string</span><span>&nbsp;CategoryNameXPath&nbsp;=&nbsp;</span><span class="string">"/li[1]/a[1]"</span><span>; &nbsp;</span></li><li class="alt"><span>&nbsp; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">///&nbsp;&lt;summary&gt; </span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">///&nbsp;分析博客首页 </span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">///&nbsp;&lt;/summary&gt; </span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">///&nbsp;&lt;param&nbsp;name="url"&gt;&lt;/param&gt; </span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">///&nbsp;&lt;returns&gt;&lt;/returns&gt; </span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;List&lt;Category&gt;&nbsp;ParseIndexPage(</span><span class="keyword">string</span><span>&nbsp;url) &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uri&nbsp;uriCategory&nbsp;=&nbsp;</span><span class="keyword">null</span><span>; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;Category&gt;&nbsp;list&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;List&lt;Category&gt;(40); &nbsp;</span></li><li class="alt"><span>&nbsp; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlDocument&nbsp;document&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;HtmlDocument(); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//string&nbsp;html&nbsp;=&nbsp;HttpWebUtility.ReadFromUrl(url,&nbsp;PageEncoding); </span><span>&nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">//document.LoadHtml(html); </span><span>&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.Load(</span><span class="string">"51cto_index.html"</span><span>,&nbsp;PageEncoding); &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlNode&nbsp;rootNode&nbsp;=&nbsp;document.DocumentNode; &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlNodeCollection&nbsp;categoryNodeList&nbsp;=&nbsp;rootNode.SelectNodes(CategoryListXPath); &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HtmlNode&nbsp;temp&nbsp;=&nbsp;</span><span class="keyword">null</span><span>; &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category&nbsp;category&nbsp;=&nbsp;</span><span class="keyword">null</span><span>; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">foreach</span><span>&nbsp;(HtmlNode&nbsp;categoryNode&nbsp;</span><span class="keyword">in</span><span>&nbsp;categoryNodeList) &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp&nbsp;=&nbsp;HtmlNode.CreateNode(categoryNode.OuterHtml); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">if</span><span>&nbsp;(temp.SelectSingleNode(CategoryNameXPath).InnerText&nbsp;!=&nbsp;</span><span class="string">"全部文章"</span><span>) &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;category&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;Category(); &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;category.Subject&nbsp;=&nbsp;temp.SelectSingleNode(CategoryNameXPath).InnerText; &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uri.TryCreate(UriBase,&nbsp;temp.SelectSingleNode(CategoryNameXPath).Attributes[</span><span class="string">"href"</span><span>].Value,&nbsp;</span><span class="keyword">out</span><span>&nbsp;uriCategory); &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;category.IndexUrl&nbsp;=&nbsp;uriCategory.ToString(); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;category.PageUrlFormat&nbsp;=&nbsp;category.IndexUrl&nbsp;+&nbsp;</span><span class="string">"/page/{0}"</span><span>; &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.Add(category); &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category.CategoryDetails.Add(category.IndexUrl,&nbsp;category); &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">return</span><span>&nbsp;list; &nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;</span></li><li class="alt"><span>&nbsp;}&nbsp;</span></li></ol></pre>
+<p><br>
+&nbsp;&nbsp;在上面的代码中出现了一个Category类，该类的定义如下：<br>
+&nbsp;&nbsp;为了鼓励大家动手尝试以及在本项目中使用了周公的私家类库，所以不提供全部源代码下载，这里提供周公操作的最终软件界面：</p>
+<p><a target="_blank" href="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/015441962.jpg"><img onload="if(this.width&gt;650) this.width=650;" border="0" alt="" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/015441962.jpg" onabort="" onblur="" onchange="" onclick="" ondblclick="" onerror="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" onmouseup="" onreset="" onresize="" onselect="" onsubmit="" onunload="" width="650"></a></p>
+<p><a target="_blank" href="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/015501307.jpg"><img onload="if(this.width&gt;650) this.width=650;" border="0" alt="" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/015501307.jpg" onabort="" onblur="" onchange="" onclick="" ondblclick="" onerror="" onfocus="" onkeydown="" onkeypress="" onkeyup="" onmousedown="" onmousemove="" onmouseout="" onmouseover="" onmouseup="" onreset="" onresize="" onselect="" onsubmit="" onunload="" width="650"></a></p>
+<p><br>
+&nbsp;<br>
+&nbsp;总结：HtmlAgilityPack确实是一个功能强大、体积小的开源HTML解析类库，在本篇仅仅是介绍了其中几个类的用法，但光这些就足以供周公快速实现了许久没有实现的功能，如果让周公用正则表达式来实现类似的功能，时间肯定要比用这个长得多。<br>
+&nbsp;说明：周公最近也在琢磨一些关于微博的应用，如果有相同爱好者或者在使用微博的读者，请围观周公的微博，网址是：<a href="http://weibo.com/zhoufoxcn">http://weibo.com/zhoufoxcn</a>。<br>
+&nbsp;<br>
+&nbsp;2011-06-24<br>
+&nbsp;周公</p><p>本文出自 “<a href="http://zhoufoxcn.blog.51cto.com/">周公（周金桥）的专栏</a>” 博客，请务必保留此出处<a href="http://zhoufoxcn.blog.51cto.com/792419/595344">http://zhoufoxcn.blog.51cto.com/792419/595344</a></p>
+    		</div><!--正文 end-->
+<script type="text/javascript">
+	var kevent = 'onabort|onblur|onchange|onclick|ondblclick|onerror|onfocus|onkeydown|onkeypress|onkeyup|onload|onmousedown|onmousemove|onmouseout|onmouseover|onmouseup|onreset|onresize|onselect|onsubmit|onunload';
+	var aevent = kevent.split('|');
+
+	jQuery('.showContent img').each(function(){
+		var nimg = this;
+		jQuery.each(aevent, function(i, n){
+			if (n!='onload') {
+				jQuery(nimg).attr(n, '');
+			} else {
+				if (jQuery(nimg).attr(n) != 'if(this.width>650) this.width=650;') {
+					jQuery(nimg).attr(n, '');
+				}
+			}
+		});
+	});
+</script>
+<script type="text/javascript" charset="utf-8">
+var encodetitle = encodeURI('一篇很棒的博文分享给大家：《HTML解析利器HtmlAgilityPack》');
+
+function show51share(){
+
+	window.open('http://t.51cto.com/index.php?m=share&url=http://zhoufoxcn.blog.51cto.com/792419/595344/&type=l&count=&relateUid=&appkey=3843950324&title=' + encodetitle);
+}
+</script>		
+<div class="m_sharebtn clear">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	  <tbody><tr>
+		<td width="11%" height="43" align="center" valign="middle"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/ssk.png" alt="分享至"></td>
+		<td width="77%" align="left" valign="top">
+<!-- 			
+<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a><a href="#" class="bds_bdysc" data-cmd="bdysc" title="分享到百度云收藏"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></div>
+<script>
+var bds_config = {'wbUid':1706976420};
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false, 'bdPic':'http://blog.51cto.com/attachment/201305/173413310.jpg',"bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+ -->
+
+<div class="bdsharebuttonbox bdshare-button-style1-32" data-bd-bind="1434780757070"><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_more" data-cmd="more"></a><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_bdysc" data-cmd="bdysc" title="分享到百度云收藏"></a><a href="http://zhoufoxcn.blog.51cto.com/#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"2065779340"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"http://blog.51cto.com/img/blog_down0731.jpg","bdStyle":"1","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+	<!-- Baidu Button END --></td>
+		<td width="12%" align="right" valign="middle"><a href="javascript:favorBox('open');" title="一键收藏，随时查看，分享好友！"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/favorite_add_small.gif" border="0" alt="一键收藏，随时查看，分享好友！"></a></td>
+	  </tr>
+	</tbody></table>
+
+</div>			
+    		<div class="showBottom">
+            <!--<div class="reviews"><span class="fl" style="cursor:pointer;"><a onclick="openFavoulist();" id="favourer">yisuowushinian、a90120411、suxiaoqqwzz</a>
+
+            </span><div id="favourdiv" class="support01">11人</div>
+              <span class="fl">了这篇文章</span></div>-->
+              <table width="720" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td align="right"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/icon01.png" width="15" height="16"> <span style="cursor:pointer;"><a onclick="openFavoulist();" id="favourer">yisuowushinian、a90120411、suxiaoqqwzz</a></span></td>
+    <td width="70" align="left"><div style="line-height:28px;" id="favourdiv" class="support01">11人</div></td>
+    <td width="60" align="left">了这篇文章</td>
+  </tr>
+</tbody></table>
+
+
+
+
+            <div class="showType">类别：<a href="http://zhoufoxcn.blog.51cto.com/792419/d-3" class="operlink">C#基础</a>┆阅读(<span id="readNum">57461</span>)┆评论(<span id="cmtNum">20</span>)
+
+┆
+<a href="http://zhoufoxcn.blog.51cto.com/">返回博主首页</a>┆<a href="http://blog.51cto.com/">返回博客首页</a></div>
+            <div class="prevNext">
+
+			上一篇 <a href="http://zhoufoxcn.blog.51cto.com/792419/595327" class="operlink" title="周公51CTO博客有价值文章整理">周公51CTO博客有价值文章整理</a>
+
+
+			下一篇 <a href="http://zhoufoxcn.blog.51cto.com/792419/614794" class="operlink" title="用C#打造自己的实体转换器">用C#打造自己的实体转换器</a>
+
+
+            </div>
+
+            </div>
+
+	  </div><!--showBottom end-->
+      </div><!--modCon-->
+    <span class="modBot"></span>
+    </div><!--artShow end-->
+    <span class="blank"></span>
+	
+	<div class="relatedArt box">
+<a href="http://wot.51cto.com/2015mobile/" target="_blank"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/wKioL1VJvgyBaNdHAADPRRZNXvg232.jpg"></a>
+</div>
+	
+
+
+    <div class="relatedArt box">
+    <div class="title" name="zhuanti" id="zhuanti"><h2>相关文章</h2></div>
+    <div class="modCon">
+<ul>
+
+<li><a href="http://cnn237111.blog.51cto.com/2359144/541059" title="在C#中选择正确的集合进行编码" target="_blank">在C#中选择正确的集合进行编码</a></li>
+
+
+<li><a href="http://leoamin.blog.51cto.com/265832/88488" title=".net编程之路_基础篇_原创  第二天 " target="_blank">.net编程之路_基础篇_原创  第二天 </a></li>
+
+
+<li><a href="http://spider20030901.blog.51cto.com/2896761/545940" title="从.NET平台调用Win32 API " target="_blank">从.NET平台调用Win32 API </a></li>
+
+
+<li><a href="http://2678211.blog.51cto.com/2668211/528206" title="C#实现控件随窗体大小自动改变" target="_blank">C#实现控件随窗体大小自动改变</a></li>
+
+
+<li><a href="http://cnn237111.blog.51cto.com/2359144/541052" title="C#高效编程话题集1（每期10话题）" target="_blank">C#高效编程话题集1（每期10话题）</a></li>
+
+
+<li><a href="http://443065.blog.51cto.com/433065/92664" title="C#获取网卡，CPU,硬盘ID的方法 " target="_blank">C#获取网卡，CPU,硬盘ID的方法 </a></li>
+
+
+<li><a href="http://zhuxianzhong.blog.51cto.com/157061/59340" title="C#+ASP.NET 2.0定制复合组件之基础篇" target="_blank">C#+ASP.NET 2.0定制复合组件之基础篇</a></li>
+
+
+<li><a href="http://terryli.blog.51cto.com/704315/512668" title="C#的四个基本技巧" target="_blank">C#的四个基本技巧</a></li>
+
+
+<li><a href="http://jerrysun.blog.51cto.com/745955/203988" title="c#学习笔记 引子" target="_blank">c#学习笔记 引子</a></li>
+
+
+
+</ul>
+
+
+
+<span class="blank6"></span>
+</div><!--modCon end-->
+<span class="modBot"></span>
+</div><!--相关文章 end-->
+
+
+<div class="artComm box">
+    <div class="title"><a name="replay"></a><h2>文章评论</h2></div>
+    <div class="modCon" id="artcomment">
+		<div> <a href="" onclick="getcomment(595344,1);return false">&nbsp;&lt;&lt;&nbsp;</a>&nbsp;&nbsp;<b>1</b>&nbsp; <a href="" onclick="getcomment(595344,2);return false">&nbsp;2&nbsp;</a> <input type="text" size="2" id="com_top" name="com_top" style="height: 16px; border:1px solid #E5E5E5;" onkeydown="javascript: if(event.keyCode==13) getcomment(595344,this.value);"> <a href="" onclick="getcomment(595344,2);return false">&nbsp;&gt;&gt;&nbsp;</a>&nbsp;&nbsp;页数 ( 1/2 ) &nbsp;</div><a name="405104"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid0"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[1楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://zgjxfmc.blog.51cto.com/" class="operlink" ref="nofollow"><b>suxiaoqqwzz</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="suxiaoqqwzz" parentid="405104">回复</a></label></div></div><div align="right">2011-06-28 17:57:46</div><div class="commentcontent">HTML5与这个有啥关系？</div></div><br><a name="434085"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid1"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[2楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;[匿名]你好</label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="你好" parentid="434085">回复</a></label></div></div><div align="right">2011-10-24 23:44:37</div><div class="commentcontent">Uri.TryCreate(UriBase, temp.SelectSingleNode(CategoryNameXPath).Attributes["href"].Value, out uriCategory); 无法从string转换位Ssytem.UriKind，请问怎么解决？</div></div><br><a name="434322"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid2"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[3楼]<a href="http://zhoufoxcn.blog.51cto.com/">楼主</a>&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://zhoufoxcn.blog.51cto.com/" class="operlink" ref="nofollow"><b>周金桥</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="周金桥" parentid="434322">回复</a></label></div></div><div align="right">2011-10-26 10:36:16</div><div class="commentcontent">回复 你好:<a href="http://zhoufoxcn.blog.51cto.com/#" class="anchor_page" title="加载中....." style="cursor:pointer" tid="595344" parentid="434085">[2楼]</a><br>你Uri.TryCreate调用时参数传错了。</div></div><br><a name="434323"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid3"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[4楼]<a href="http://zhoufoxcn.blog.51cto.com/">楼主</a>&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://zhoufoxcn.blog.51cto.com/" class="operlink" ref="nofollow"><b>周金桥</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="周金桥" parentid="434323">回复</a></label></div></div><div align="right">2011-10-26 10:36:30</div><div class="commentcontent">回复 suxiaoqqwzz:<a href="http://zhoufoxcn.blog.51cto.com/#" class="anchor_page" title="加载中....." style="cursor:pointer" tid="595344" parentid="405104">[1楼]</a><br>没关系。</div></div><br><a name="484784"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid4"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[5楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;[匿名]ss</label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="ss" parentid="484784">回复</a></label></div></div><div align="right">2012-05-29 12:54:29</div><div class="commentcontent">HtmlWeb.Load()怎么改变 编码 gb2312</div></div><br><a name="485204"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid5"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[6楼]<a href="http://zhoufoxcn.blog.51cto.com/">楼主</a>&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://zhoufoxcn.blog.51cto.com/" class="operlink" ref="nofollow"><b>周金桥</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="周金桥" parentid="485204">回复</a></label></div></div><div align="right">2012-05-30 17:37:31</div><div class="commentcontent">回复 ss:<a href="http://zhoufoxcn.blog.51cto.com/#" class="anchor_page" title="加载中....." style="cursor:pointer" tid="595344" parentid="484784">[5楼]</a><br><br>代码中有示例，改变参数即可。</div></div><br><a name="487133"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid6"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[7楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://1910804.blog.51cto.com/" class="operlink" ref="nofollow"><b>4551471</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="4551471" parentid="487133">回复</a></label></div></div><div align="right">2012-06-05 23:03:13</div><div class="commentcontent">看到HtmlAgilityPack 进行采集的时候确实比正则强大简单 ， 看样子还得去学下Xpath</div></div><br><a name="526691"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid7"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[8楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;[匿名]51CTO游客</label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="51CTO游客" parentid="526691">回复</a></label></div></div><div align="right">2012-12-10 12:09:34</div><div class="commentcontent">回复 周金桥:<a href="http://zhoufoxcn.blog.51cto.com/#" class="anchor_page" title="加载中....." style="cursor:pointer" tid="595344" parentid="485204">[6楼]</a><br><br>您测试过吗？根本都没有指定编码的参数！</div></div><br><a name="526755"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid8"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[9楼]<a href="http://zhoufoxcn.blog.51cto.com/">楼主</a>&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://zhoufoxcn.blog.51cto.com/" class="operlink" ref="nofollow"><b>周金桥</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="周金桥" parentid="526755">回复</a></label></div></div><div align="right">2012-12-10 15:58:50</div><div class="commentcontent">回复 51CTO游客:<a href="http://zhoufoxcn.blog.51cto.com/#" class="anchor_page" title="加载中....." style="cursor:pointer" tid="595344" parentid="526691">[8楼]</a><br><br>您认真看过此文中的代码了吗？<br>HtmlDocument document = new HtmlDocument();  <br> &nbsp;  &nbsp;  &nbsp;  &nbsp;  //string html = HttpWebUtility.ReadFromUrl(url, PageEncoding);  <br> &nbsp;  &nbsp;  &nbsp;  &nbsp;  //document.LoadHtml(html);  <br> &nbsp;  &nbsp;  &nbsp;  &nbsp;  document.Load("51cto_index.html", PageEncoding);</div></div><br><a name="568104"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid9"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[10楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://liangxiao.blog.51cto.com/" class="operlink" ref="nofollow"><b>吴雨声</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="吴雨声" parentid="568104">回复</a></label></div></div><div align="right">2013-07-18 13:49:40</div><div class="commentcontent">这个现在用firebug就可以查看了吧？</div></div><br><a name="571757"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid10"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[11楼]<a href="http://zhoufoxcn.blog.51cto.com/">楼主</a>&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://zhoufoxcn.blog.51cto.com/" class="operlink" ref="nofollow"><b>周金桥</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="周金桥" parentid="571757">回复</a></label></div></div><div align="right">2013-07-23 16:53:03</div><div class="commentcontent">回复 吴雨声:<a href="http://zhoufoxcn.blog.51cto.com/#" class="anchor_page" title="加载中....." style="cursor:pointer" tid="595344" parentid="568104">[10楼]</a><br><br>可以的。</div></div><br><a name="574531"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid11"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[12楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://4956400.blog.51cto.com/" class="operlink" ref="nofollow"><b>keroroqingwa1</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="keroroqingwa1" parentid="574531">回复</a></label></div></div><div align="right">2013-08-02 16:29:04</div><div class="commentcontent">如果：<br>CategoryListXPath = "//html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/dl[1]/dd[3]/div[1]/ul[1]/li";<br>这样的节点有多个，第一个才是我想要的，其他都不要。<br>那应该怎么选择第一个而忽略其他.<br>就像这个网站的：<br>url: http://trip.elong.com/news/<br>XPath: /html/body/div/div/div[5]/div[3]/div/div/div/ul/li/a<br>我只要获取新闻的列表。</div></div><br><a name="574534"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid12"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[13楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://4956400.blog.51cto.com/" class="operlink" ref="nofollow"><b>keroroqingwa1</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="keroroqingwa1" parentid="574534">回复</a></label></div></div><div align="right">2013-08-02 16:40:29</div><div class="commentcontent">想起来了，原来可以这样：<br>//html/body/div/div/div[5]/div[3]/div[@class='leftbar']/div/div/ul/li/a<br>直接在节点的标签上添加属性...</div></div><br><a name="574535"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid13"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[14楼]&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://4956400.blog.51cto.com/" class="operlink" ref="nofollow"><b>keroroqingwa1</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="keroroqingwa1" parentid="574535">回复</a></label></div></div><div align="right">2013-08-02 16:55:14</div><div class="commentcontent">回复 keroroqingwa1:<a href="http://zhoufoxcn.blog.51cto.com/#" class="anchor_page" title="加载中....." style="cursor:pointer" tid="595344" parentid="574534">[13楼]</a><br><br>又有个新的疑问：<br>&lt;p class="article-summary"&gt;<br>2013-08-02 15:10<br>&lt;a target="_blank" href="http://travel.huanqiu.com/"&gt;环球网&lt;/a&gt;<br>&lt;/p&gt;<br>如果我只要获取时间，不要里面的&lt;a&gt;标签，请问应该怎么写？</div></div><br><a name="575029"></a><div class="itcomment" style="table-layout: fixed;word-wrap: break-word" id="itcommentid14"><div><div style="width:100%;border-bottom:1px solid #A0A0A0;height:20px"><label style="float:left">[15楼]<a href="http://zhoufoxcn.blog.51cto.com/">楼主</a>&nbsp;&nbsp;&nbsp;&nbsp;<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/reply.gif">&nbsp;&nbsp;<a target="_blank" href="http://zhoufoxcn.blog.51cto.com/" class="operlink" ref="nofollow"><b>周金桥</b></a></label><label style="float:right">&nbsp;<a href="http://zhoufoxcn.blog.51cto.com/#" class="repost operlink" user_name="周金桥" parentid="575029">回复</a></label></div></div><div align="right">2013-08-06 17:36:34</div><div class="commentcontent">回复 keroroqingwa1:<a href="http://zhoufoxcn.blog.51cto.com/#" class="anchor_page" title="加载中....." style="cursor:pointer" tid="595344" parentid="574535">[14楼]</a><br><br>你不会获取到&lt;p&gt;节点然后remove掉&lt;a&gt;节点？</div></div><br><div> <a href="" onclick="getcomment(595344,1);return false">&nbsp;&lt;&lt;&nbsp;</a>&nbsp;&nbsp;<b>1</b>&nbsp; <a href="" onclick="getcomment(595344,2);return false">&nbsp;2&nbsp;</a> <input type="text" size="2" style="height: 16px; border:1px solid #E5E5E5;" onkeydown="javascript: if(event.keyCode==13) getcomment(595344,this.value);"> <a href="" onclick="getcomment(595344,2);return false">&nbsp;&gt;&gt;&nbsp;</a>&nbsp;&nbsp;页数 ( 1/2 ) &nbsp;</div>
+    </div><!--modCon-->
+        <span class="modBot"></span>
+</div><!--commBox end-->
+<a href="" id="com_top_top"></a>
+<form action="http://zhoufoxcn.blog.51cto.com/comment.php?" method="post" name="form1" id="form1" onsubmit="return commentSubmit(this,&quot;&quot;);">
+<span class="blank1"></span>
+<div class="box writeComm" style="min-height:30px;">
+<a name="comment"></a>
+<input type="hidden" name="action" value="comment">
+<input id="commenttid" type="hidden" name="tid" value="595344">
+<input type="hidden" name="com_count_ajax" id="com_count_ajax" value="2">
+
+ <div class="title">
+	<h2 class="fl">发表评论&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+	<span class="fl" id="messageTj">
+<script type="text/javascript"><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://gg.51cto.com/www/delivery/ajs.php':'http://gg2.51cto.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=460");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><script type="text/javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/ajs.php"></script>
+</span>
+	<style type="text/css">
+		a.mred:link{ color:#ff0000; text-decoration:underline;}
+		a.mred:visited{color:#ff0000;}
+		a.mred:hover{color:#ff0000;}
+		a.mred:active{color:#ff0000;}
+	</style>
+</div>
+<div style="display:none" rel="51CTO电子期刊改版意见大征集，提你所需，建你所想！" id="ggBox">
+<script type="text/javascript"><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://gg.51cto.com/www/delivery/ajs.php':'http://gg2.51cto.com/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=460");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><script type="text/javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/ajs.php"></script>
+</div>
+<script>
+document.getElementById("messageTj").innerHTML = document.getElementById("ggBox").innerHTML;
+</script>
+ <div class="modCon">
+
+ <div class="commForm">
+<dl>
+<dt>昵&nbsp;&nbsp;称：</dt>
+<dd>
+
+<input type="text" id="commentusername" name="username" value="" class="commInput fl"><span><a href="http://home.51cto.com/index.php?reback=http%253A%252F%252Fzhoufoxcn.blog.51cto.com%252F792419%252F595344%252F" style="text-decoration:underline">登录</a>&nbsp;&nbsp;<a href="http://ucenter.51cto.com/reg_01.php?reback=http://blog.51cto.com" target="_blank" style="text-decoration: underline;">快速注册</a></span>
+
+
+
+</dd>
+</dl>
+
+
+
+<dl id="commentyanzheng">
+
+
+<dt>验证码：</dt>
+<dd><input class="code" type="text" value="" id="commentauthnum" name="authnum" onclick="displaysecunum();">
+
+  <img width="78" class="fl" height="29" id="secunum" onclick="refimg()" style="display:none;"><p class="fl"><span style="display:none;" id="spanfont">点击图片可刷新验证码</span><span style="display:inline;" id="clickfont">请点击后输入验证码</span><span class="pl5"><a href="http://51ctoblog.blog.51cto.com/26414/5591" target="_blank" style="text-decoration: underline;">博客过2级，无需填写验证码</a></span></p></dd>
+</dl>
+<dl>
+<dt>内&nbsp;&nbsp;容：</dt>
+<dd>
+<textarea class="writeCommCon f12" id="commentcontent" name="content"></textarea>
+</dd>
+</dl>
+</div>
+<div class="writeCommBot">
+  <input type="hidden" name="parentid" value="" id="parentid">
+  <input class="commBtn fl" name="submit" type="button" id="commentsubmit" value="" onclick="commentSubmitend2()">
+
+ <p class="fl" style="display:none;"><input class="fl" type="checkbox" name="favour" id="favour" checked="" value="1"><span class="fl">同时赞一个</span></p>
+
+</div>
+<span class="blank"></span>
+
+</div><!--modCon-->
+<span class="modBot"></span>
+</div>
+</form>
+<script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/count.js"></script><script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/count.php"></script>
+<div style="display:none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2283d46608159c3b39fc9f1178809c21' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/h.js" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=2283d46608159c3b39fc9f1178809c21" target="_blank"><img border="0" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/21.gif" width="20" height="20"></a>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57622524-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</div>
+<iframe id="iframe1" name="iframe1" width="0" height="0"></iframe>
+<!--发表评论 end-->
+</div>
+</div>
+<div id="f_close_box" style="width:150px; height:300px; position:fixed; top:42%;left:0; z-index:100; _position:absolute; _margin-top: 0; _top:expression(documentElement.scrollTop+(documentElement.clientHeight-this.offsetHeight)/2+50);">
+
+	<img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/wKioL1VHFCjRwiyNAAB-jIackwQ674.jpg" border="0" usemap="#Map1">
+    <map name="Map1" id="Map1">
+      <area shape="rect" coords="124,7,143,25" href="javascript:void(0);" onclick="document.getElementById(&#39;f_close_box&#39;).style.display=&#39;none&#39;;">
+    </map>
+    
+</div>
+<script language="javascript">
+	function refimg(){
+		var randval = Math.random();
+		document.getElementById("secunum").src="/seccode.php?rnum="+randval;
+	}
+	function displaysecunum()
+	{
+		var displaystr = document.getElementById("secunum").style.display;
+		if(displaystr == 'none')
+		{
+			refimg();
+			document.getElementById("clickfont").style.display = 'none';
+			document.getElementById("secunum").style.display = 'inline';
+			document.getElementById("spanfont").style.display = 'inline';
+		}
+	}
+
+	function showMsn(){
+		document.getElementById("c02").style.display = "none";
+		document.getElementById("c01").style.display = "block";
+		document.getElementById("share").style.height = "83px";
+		document.getElementById("share").style.background = "none";
+	}
+	function showBBS(){
+		document.getElementById("c01").style.display = "none";
+		document.getElementById("c02").style.display = "block";
+		document.getElementById("share").style.height = "83px";
+		document.getElementById("share").style.background = "none";
+	}
+
+	//资源页面，分享按钮
+	function copyShareUrl(title){
+
+		if (window.clipboardData){
+
+			if(document.getElementById("c01").style.display == 'block')
+			{
+				copy = "推荐：" + title + "http://zhoufoxcn.blog.51cto.com/792419/595344/";
+				var alertText = "复制成功，你可以粘贴到MSN或QQ中发给好友。";
+			}
+			else
+			{
+				copy = "[url=" + "http://zhoufoxcn.blog.51cto.com/792419/595344/" + "][u]" + title + "[/u][/url]";
+				var alertText = "复制成功，你可以粘贴到论坛分享给坛友。";
+			}
+			window.clipboardData.clearData();
+			window.clipboardData.setData("Text", copy);
+			alert(alertText);
+		}
+		else if (window.netscape){
+			alert("您使用的浏览器不支持此复制功能，请使用Ctrl+C或鼠标右键。");
+			if(document.getElementById("c01").style.display == 'block')
+			{
+				document.getElementById("shareTextQM").value = "推荐：" + title + "http://zhoufoxcn.blog.51cto.com/792419/595344/";
+				document.getElementById("shareTextQM").select();
+			}
+			else
+			{
+				document.getElementById("shareTextBBS").value = "[url=" + "http://zhoufoxcn.blog.51cto.com/792419/595344/" + "][u]" + title + "[/u][/url]";
+                document.getElementById("shareTextBBS").select();
+			}
+		}
+		return false;
+	}
+	function select_login(){
+		document.getElementById('fixed').style.display='';
+	}
+	function commentcheck()
+	{
+		if(document.form1.content.value == "")
+		{
+			alert("评论内容为空!");
+			document.form1.content.focus();
+			return false;
+		}
+	}
+	function changename(){
+
+	var memberid=0;
+	memberid="";
+
+	if(document.getElementById('commentniming').checked){
+		document.getElementById('commentusername').disabled=false;
+		document.getElementById('commentusername').value='';
+		document.getElementById("indexhidden").style.display="none";
+		document.getElementById("commentindex").value='';
+		document.getElementById("commentyanzheng").style.display="";
+	}else{
+		document.getElementById('commentusername').disabled=true;
+		document.getElementById('commentusername').value="";
+		document.getElementById("indexhidden").style.display="";
+		document.getElementById("commentindex").value="http://.blog.51cto.com";
+		if(memberid>8)
+		{
+			document.getElementById("commentyanzheng").style.display="none";
+		}
+	}
+	}
+	function openFavoulist()
+	{
+		window.open ('http://blog.51cto.com/mod/favourlist.php?tid=595344','newwindow','height=300,width=500,top=400,left=400,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no,z-look=yes');
+	}
+
+	var e_zti = document.getElementById('zti');//有专题锚点
+	var maodian = window.location.href;//锚点
+	if (e_zti) {
+		//e_zti.href= (/[#]+/.test(maodian)) ? maodian : maodian + "#zhuanti";
+	}
+</script>
+<script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/jquery-1.7.1.min.js"></script>
+<script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/jquery.cookie.js"></script>
+<script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/jquery.top.js"></script>
+<link href="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/blog_top.css" rel="stylesheet" type="text/css">
+<!-- <script src="http://blog.51cto.com/js/blog_top_list.php" type="text/javascript" language="javascript"></script> -->
+<script type="text/javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/edu_search.js"></script>
+<div id="message" class="blogpop" style="z-index: 100; width: 389px; height: 196px; position: absolute; bottom: 0px; right: 0px; overflow: hidden; top: 2936px; display: none; background-color: rgb(255, 255, 255);"><iframe style="width:800px;height:536px;top:0px;left:0px;position:absolute;visibility:inherit;z-index:-1;" frameborder="0"></iframe>
+<div style="height:36px;background:url(http://blog.51cto.com/image/blog_top/popbgx.jpg) repeat-x; position:relative;width:387px;border-right-color:#2668B7;border-right-width:2px;border-right-style:solid 2px #2668B7;"><span style="right:10px;padding:12px 0 0;position:absolute;top:0"><span style="margin-right:80px;color:#828282;width:190px;padding:10px 0 0 10px;font-size:14px">每日博报 精彩不止一点</span><img title="关闭" id="message_close" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/close.jpg" alt="关闭"></span><div style="width:387px;height:36px;left:0;overflow:hidden; text-indent:-999em;background:url(http://blog.51cto.com/image/blog_top/hdtit.jpg) no-repeat;border-right:solid 2px #2668B7;"><a style="display: block; height: 36px;width:138px;" target="_blank" href="http://blog.51cto.com/"></a>
+</div>
+<div style="clear:both;"></div>
+</div>
+	<div id="message_content" style="border-top:none;font-family:Microsoft YaHei;font-size:12px;width:389px;height:160pxpx;text-align:left;overflow:hidden;">
+	<script type="text/javascript"><!--//<![CDATA[
+	   var m3_u = (location.protocol=='https:'?'https://gg.51cto.com/www/delivery/ajs.php':'http://gg3.51cto.com/www/delivery/ajs.php');
+	   var m3_r = Math.floor(Math.random()*99999999999);
+	   if (!document.MAX_used) document.MAX_used = ',';
+	   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+	   document.write ("?zoneid=454");
+	   document.write ('&amp;cb=' + m3_r);
+	   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+	   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+	   document.write ("&amp;loc=" + escape(window.location));
+	   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+	   if (document.context) document.write ("&context=" + escape(document.context));
+	   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+	   document.write ("'><\/scr"+"ipt>");
+	//]]>--></script><script type="text/javascript" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/ajs(1).php"></script>
+	</div>
+</div>
+<style>
+.backToTop {
+    display: none;
+	WIDTH: 45px;
+	height:45px;
+	BOTTOM: 20px;
+     position: fixed;
+    _position: absolute;
+    right: 140px;
+    bottom: 10px;
+    _bottom: "auto";
+    cursor: pointer;
+    opacity: .6;
+    filter: Alpha(opacity=60);
+	text-indent:-9999px;
+}
+.tops { background:url(/images/tops.jpg) no-repeat center center; }
+</style>
+<script>
+(function() {
+	  $('#showMessagerDim').show();
+	   var _html = $("#addTop").html();
+	  if(get_cookie('blog_top')==''){
+//		 show_pop();
+	     jQuery.messager.showblogtop('', _html);
+	     $("#message").find("#adTop").show();
+	     var date=new Date();
+	     var test = date.getTime();
+	     document.cookie="blog_top=yes;domain=.blog.51cto.com;expires="+date.toGMTString()+";path=/;";
+	     }
+	    $("#showMessagerDim").click(function(){
+	    	jQuery.messager.showblogtop('', _html);
+			$("#message").find("#adTop").show();
+			//removeIframe();
+		});
+		
+		function get_cookie(Name) {
+		    var search = Name + "=";
+		    var returnvalue = "";
+		    if (document.cookie.length > 0) {
+		        offset = document.cookie.indexOf(search);
+		        if (offset != -1) {
+		            offset += search.length;
+
+		            end1 = document.cookie.indexOf(";", offset);
+
+		            if (end1 == -1)
+		            end1 = document.cookie.length;
+		            returnvalue=unescape(document.cookie.substring(offset, end1));
+		        }
+		    }
+		    return returnvalue;
+		}
+	})();
+
+</script>
+<script type="text/javascript">
+(function() {
+    var backToTopTxt = "返回顶部", backToTopEle = $('<div class="backToTop tops"></div>').appendTo($("body"))
+        .text(backToTopTxt).attr("title", backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 520);
+    }), backToTopFun = function() {
+        var st = $(document).scrollTop(), winh = $(window).height();
+        (st > 0)? backToTopEle.show(): backToTopEle.hide();    
+        //IE6下的定位
+        if (!window.XMLHttpRequest) {
+            backToTopEle.css("top", st + winh - 60);    
+        }
+    };
+    $(window).bind("scroll", backToTopFun);
+    $(function() { backToTopFun(); });
+})();
+</script><div class="backToTop tops" title="返回顶部" style="display: block;">返回顶部</div>
+
+
+
+
+
+
+<div class="clear"></div>
+<!-- <script>
+jQuery(function(){
+	var html= "<div id=\"sogou_se_tgbar\" style=\"text-align:center;margin:0px auto 2px auto;clear:both;background:url(http://home.51cto.com/public/images/notice/sogou_se_tgbar_bg_final1.gif) repeat-x;width:950px;color:#000;font-size:13px;height:36px;z-index:21474836471\"><div style=\"float:left;cursor:pointer;width:910px;text-align:center;border-left:solid #efbf00 1px;height:32px; line-height:32px;txt-align:center;\"><span style=\"\">	<a href=\"http://51ctoblog.blog.51cto.com/26414/1093282\">【新年祝福征集】51CTO社区年底嘉年华活动正在征集博主祝福语，祝福以红包的形式随机的赠送给访问51CTO的网友 点此送祝福>></a></span></div><div onclick=\"document.getElementById('sogou_se_tgbar').style.display = 'none';\" style=\"float:right;width:20px;cursor:pointer;height:28px;padding:4px 8px 0px 8px;border-right:solid #efbf00 1px\"><img style=\"border:none;margin:4px 0px 0px 0px;\" src=\"http://home.51cto.com/public/images/notice/sogou_se_tgbar_close_final1.gif\"></div></div>"
+	jQuery('body').prepend(html);
+})
+</script> -->
+
+<div id="footer">
+  <div id="innerFooter">
+	<center>
+		<small>
+			Copyright By 51CTO.COM 版权所有<br><br>
+			<a href="http://blog.51cto.com/" target="_blank"><img src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/copyright.jpg"></a>
+	  </small>
+	</center>
+  </div>
+</div>
+<script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/index.php" charset="utf-8"></script>
+<div style="display:none">
+<script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/count.js"></script><script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/count(1).php"></script>
+<div style="display:none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2283d46608159c3b39fc9f1178809c21' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/h.js" type="text/javascript"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57622524-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</div>
+<iframe frameborder="0" scrolling="no" width="0" height="0" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/pageview.htm"></iframe>
+</div>
+<div style="display:none;"><script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/stat.php" language="JavaScript"></script><script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=4274540" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/pic.gif"></a><div>
+<script src="./HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files/poptop.js"></script>
+
+
+
+</div></div></body></html>

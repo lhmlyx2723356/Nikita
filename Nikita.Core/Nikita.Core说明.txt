@@ -1,0 +1,12 @@
+﻿Nikita.Core
+该组件是用于基础的一些常用的类库集合（WinForm控件相关控件集合放置在Nikita.Core.WinForm）
+
+1，CodeTimer  简易方法性能测试类 http://www.cnblogs.com/jeffreyzhao/archive/2009/03/10/codetimer.html
+2，CodeTimerResult  简易方法性能测试结果类 
+3，ExcelHelper Excel导入导出类
+4，NPOIHelper   Excel导入导出类
+5，MD5Helper MD5加密解密类
+6，WebServiceHelper 动态调用Webservice类
+7，ConfigHelper  AppConfig文件读写帮助类
+8，DESEncryptHelper 加密解密类
+9，CommPortHelper  对串口进行操作的类，其中包括写和读操作

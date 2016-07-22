@@ -1,0 +1,1599 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Bike Racks</SubCategory>
+    <Product>Hitch rack - 4 bike</Product>
+    <Sales>243696.0000</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Bike Stand</SubCategory>
+    <Product>All-purpose bike stand</Product>
+    <Sales>39591.0000</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Bottles &amp; Cages</SubCategory>
+    <Product>Mountain bottle cage</Product>
+    <Sales>20229.7500</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Bottles &amp; Cages</SubCategory>
+    <Product>Road bottle cage</Product>
+    <Sales>15390.8800</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Bottles &amp; Cages</SubCategory>
+    <Product>water bottle 30 oz</Product>
+    <Sales>28875.1340</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Cleaners</SubCategory>
+    <Product>Bike wash - dissolver</Product>
+    <Sales>18862.1700</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Fenders</SubCategory>
+    <Product>Fender set - mountain</Product>
+    <Sales>46619.5800</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Helmet</SubCategory>
+    <Product>Sport-100 helmet, Black</Product>
+    <Sales>165337.0304</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Helmet</SubCategory>
+    <Product>Sport-100 helmet, Blue</Product>
+    <Sales>170038.1726</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Helmet</SubCategory>
+    <Product>Sport-100 helmet, Red</Product>
+    <Sales>161602.3125</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Hydration Pack</SubCategory>
+    <Product>Hydration pack -70oz</Product>
+    <Sales>107219.5020</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Locks</SubCategory>
+    <Product>Cable lock</Product>
+    <Sales>16305.0000</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Pumps</SubCategory>
+    <Product>Mini-pump</Product>
+    <Sales>13754.7192</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>HL Mountain Tire</Product>
+    <Sales>48860.0000</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>HL Road Tire</Product>
+    <Sales>27970.8000</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>LL Mountain Tire</Product>
+    <Sales>21541.3800</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>LL Road Tire</Product>
+    <Sales>22435.5600</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>ML Mountain Tire</Product>
+    <Sales>34818.3900</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>ML Road Tire</Product>
+    <Sales>23140.7400</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>Mountain Tire Tube</Product>
+    <Sales>15444.0500</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>Patch kit with 8 patches</Product>
+    <Sales>8233.4660</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>Road Tire Tube</Product>
+    <Sales>9480.2400</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>Touring Tire</Product>
+    <Sales>27105.6500</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Accessory</Category>
+    <SubCategory>Tires &amp; Tubes</SubCategory>
+    <Product>Touring Tire Tube</Product>
+    <Sales>7425.1200</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-100 Black, 38</Product>
+    <Sales>1703559.9524</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-100 Black, 42</Product>
+    <Sales>1583140.3092</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-100 Black, 44</Product>
+    <Sales>1704234.9504</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-100 Black, 48</Product>
+    <Sales>1550740.4052</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-100 Silver, 38</Product>
+    <Sales>1626827.2152</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-100 Silver, 42</Product>
+    <Sales>1491643.6128</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-100 Silver, 44</Product>
+    <Sales>1517891.5356</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-100 Silver, 48</Product>
+    <Sales>1270508.2632</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-200 Black, 38</Product>
+    <Sales>5040073.4193</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-200 Black, 42</Product>
+    <Sales>4554030.6024</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-200 Black, 46</Product>
+    <Sales>3701572.9644</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-200 Silver, 38</Product>
+    <Sales>4173701.7333</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-200 Silver, 42</Product>
+    <Sales>3884007.8964</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-200 Silver, 46</Product>
+    <Sales>3866883.0561</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-300 Black, 38</Product>
+    <Sales>531873.4752</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-300 Black, 40</Product>
+    <Sales>603412.0128</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-300 Black, 44</Product>
+    <Sales>580861.8216</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-300 Black, 48</Product>
+    <Sales>575418.6720</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-400-W Silver, 38</Product>
+    <Sales>267351.6056</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-400-W Silver, 40</Product>
+    <Sales>369416.7592</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-400-W Silver, 42</Product>
+    <Sales>241096.6068</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-400-W Silver, 46</Product>
+    <Sales>251900.2464</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-500 Black, 40</Product>
+    <Sales>116897.0352</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-500 Black, 42</Product>
+    <Sales>158260.2692</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-500 Black, 44</Product>
+    <Sales>144846.9176</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-500 Black, 48</Product>
+    <Sales>183035.0104</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-500 Black, 52</Product>
+    <Sales>111950.7268</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-500 Silver, 40</Product>
+    <Sales>190175.6340</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-500 Silver, 42</Product>
+    <Sales>192209.5980</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-500 Silver, 44</Product>
+    <Sales>161157.7476</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-500 Silver, 48</Product>
+    <Sales>193814.1696</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Mountain Bike</SubCategory>
+    <Product>Mountain-500 Silver, 52</Product>
+    <Sales>217091.7576</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-150 Red, 44</Product>
+    <Sales>1407405.1564</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-150 Red, 48</Product>
+    <Sales>1607788.2764</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-150 Red, 52</Product>
+    <Sales>1482548.8264</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-150 Red, 56</Product>
+    <Sales>2006264.4236</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-150 Red, 62</Product>
+    <Sales>1882456.2816</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-250 Black, 44</Product>
+    <Sales>2899268.6385</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-250 Black, 48</Product>
+    <Sales>2719612.6035</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-250 Black, 52</Product>
+    <Sales>2268057.0900</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-250 Black, 58</Product>
+    <Sales>1683063.2520</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-250 Red, 44</Product>
+    <Sales>1673010.6120</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-250 Red, 48</Product>
+    <Sales>1539310.5000</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-250 Red, 52</Product>
+    <Sales>1215126.8220</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-250 Red, 58</Product>
+    <Sales>1763693.8020</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-350-W Yellow, 40</Product>
+    <Sales>1926064.9968</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-350-W Yellow, 42</Product>
+    <Sales>1278906.3414</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-350-W Yellow, 44</Product>
+    <Sales>759321.9360</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-350-W Yellow, 48</Product>
+    <Sales>2114738.8076</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-450 Red, 44</Product>
+    <Sales>363214.4688</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-450 Red, 48</Product>
+    <Sales>163761.4368</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-450 Red, 52</Product>
+    <Sales>745324.4880</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-450 Red, 58</Product>
+    <Sales>610956.1296</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-450 Red, 60</Product>
+    <Sales>367413.4800</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-550-W Yellow, 38</Product>
+    <Sales>1416139.2900</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-550-W Yellow, 40</Product>
+    <Sales>1227972.2029</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-550-W Yellow, 42</Product>
+    <Sales>1051530.2433</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-550-W Yellow, 44</Product>
+    <Sales>798923.7763</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-550-W Yellow, 48</Product>
+    <Sales>1428298.2072</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Black, 44</Product>
+    <Sales>601936.9804</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Black, 48</Product>
+    <Sales>363912.4966</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Black, 52</Product>
+    <Sales>1258934.9352</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Black, 58</Product>
+    <Sales>1036108.2876</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Black, 60</Product>
+    <Sales>615172.8669</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Black, 62</Product>
+    <Sales>364891.2341</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Red, 44</Product>
+    <Sales>1249775.0709</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Red, 48</Product>
+    <Sales>1047591.3951</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Red, 52</Product>
+    <Sales>619139.2706</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Red, 58</Product>
+    <Sales>353545.7093</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Red, 60</Product>
+    <Sales>1238228.2056</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-650 Red, 62</Product>
+    <Sales>1049244.6225</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-750 Black, 44</Product>
+    <Sales>309479.0688</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-750 Black, 48</Product>
+    <Sales>659846.1804</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-750 Black, 52</Product>
+    <Sales>578566.8856</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Road Bike</SubCategory>
+    <Product>Road-750 Black, 58</Product>
+    <Sales>397303.0424</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-1000 Blue, 46</Product>
+    <Sales>1838117.9700</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-1000 Blue, 50</Product>
+    <Sales>1214159.1696</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-1000 Blue, 54</Product>
+    <Sales>815733.3912</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-1000 Blue, 60</Product>
+    <Sales>2020642.3692</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-1000 Yellow, 46</Product>
+    <Sales>1839929.8632</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-1000 Yellow, 50</Product>
+    <Sales>1219976.3004</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-1000 Yellow, 54</Product>
+    <Sales>786933.8256</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-1000 Yellow, 60</Product>
+    <Sales>2020880.7762</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-2000 Blue, 46</Product>
+    <Sales>503579.6220</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-2000 Blue, 50</Product>
+    <Sales>317707.5720</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-2000 Blue, 54</Product>
+    <Sales>913372.8240</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-2000 Blue, 60</Product>
+    <Sales>744800.2380</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-3000 Blue, 44</Product>
+    <Sales>167088.1380</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-3000 Blue, 50</Product>
+    <Sales>459484.9560</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-3000 Blue, 54</Product>
+    <Sales>378093.7020</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-3000 Blue, 58</Product>
+    <Sales>269473.0500</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-3000 Blue, 62</Product>
+    <Sales>163495.1640</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-3000 Yellow, 44</Product>
+    <Sales>472283.0700</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-3000 Yellow, 50</Product>
+    <Sales>378925.1340</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-3000 Yellow, 54</Product>
+    <Sales>252102.0600</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-3000 Yellow, 58</Product>
+    <Sales>166375.4820</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Bike</Category>
+    <SubCategory>Touring Bike</SubCategory>
+    <Product>Touring-3000 Yellow, 62</Product>
+    <Sales>461504.1480</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Bib-Short </SubCategory>
+    <Product>Men's bib-short, L</Product>
+    <Sales>37026.3855</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Bib-Short </SubCategory>
+    <Product>Men's bib-short, M</Product>
+    <Sales>96112.9196</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Bib-Short </SubCategory>
+    <Product>Men's bib-short, S</Product>
+    <Sales>51240.3060</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Cap</SubCategory>
+    <Product>AWC logo cap</Product>
+    <Sales>54973.0553</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Gloves</SubCategory>
+    <Product>Full-finger Gloves, L</Product>
+    <Sales>84778.8639</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Gloves</SubCategory>
+    <Product>Full-finger Gloves, M</Product>
+    <Sales>56149.2200</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Gloves</SubCategory>
+    <Product>Full-finger Gloves, S</Product>
+    <Sales>12346.7500</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Gloves</SubCategory>
+    <Product>Half-finger  Gloves, L</Product>
+    <Sales>23926.1327</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Gloves</SubCategory>
+    <Product>Half-finger  Gloves, M</Product>
+    <Sales>59217.9750</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Gloves</SubCategory>
+    <Product>Half-finger  Gloves, S</Product>
+    <Sales>38694.2260</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Jersey</SubCategory>
+    <Product>long-sleeve logo jersey, L</Product>
+    <Sales>219206.2323</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Jersey</SubCategory>
+    <Product>long-sleeve logo jersey, M</Product>
+    <Sales>124286.5538</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Jersey</SubCategory>
+    <Product>long-sleeve logo jersey, S</Product>
+    <Sales>21445.7100</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Jersey</SubCategory>
+    <Product>long-sleeve logo jersey, XL</Product>
+    <Sales>102086.9997</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Jersey</SubCategory>
+    <Product>Short-sleeve classic jersey, L</Product>
+    <Sales>107931.9489</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Jersey</SubCategory>
+    <Product>Short-sleeve classic jersey, M</Product>
+    <Sales>21973.9300</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Jersey</SubCategory>
+    <Product>Short-sleeve classic jersey, S</Product>
+    <Sales>76279.7715</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Jersey</SubCategory>
+    <Product>Short-sleeve classic jersey, XL</Product>
+    <Sales>143329.9525</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Shorts</SubCategory>
+    <Product>men's sports shorts, L</Product>
+    <Sales>17352.1075</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Shorts</SubCategory>
+    <Product>men's sports shorts, M</Product>
+    <Sales>50776.1359</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Shorts</SubCategory>
+    <Product>men's sports shorts, S</Product>
+    <Sales>22638.4263</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Shorts</SubCategory>
+    <Product>Women's  Mountain shorts, L</Product>
+    <Sales>158766.0159</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Shorts</SubCategory>
+    <Product>Women's  Mountain shorts, M</Product>
+    <Sales>60439.8645</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Shorts</SubCategory>
+    <Product>Women's  Mountain shorts, S</Product>
+    <Sales>157878.5427</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Socks</SubCategory>
+    <Product>Mountain Bike Socks, L</Product>
+    <Sales>555.7500</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Socks</SubCategory>
+    <Product>Mountain Bike Socks, M</Product>
+    <Sales>6901.5600</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Socks</SubCategory>
+    <Product>Racing Socks, L</Product>
+    <Sales>15379.8223</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Socks</SubCategory>
+    <Product>Racing Socks, M</Product>
+    <Sales>9977.5515</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Tights</SubCategory>
+    <Product>Women's tights, L</Product>
+    <Sales>104332.8371</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Tights</SubCategory>
+    <Product>Women's tights, M</Product>
+    <Sales>19204.9390</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Tights</SubCategory>
+    <Product>Women's tights, S</Product>
+    <Sales>102697.3052</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Vest</SubCategory>
+    <Product>Classic Vest, L</Product>
+    <Sales>12877.8000</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Vest</SubCategory>
+    <Product>Classic Vest, M</Product>
+    <Sales>98694.8750</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Clothing</Category>
+    <SubCategory>Vest</SubCategory>
+    <Product>Classic Vest, S</Product>
+    <Sales>182589.1700</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Bottom Bracket</SubCategory>
+    <Product>HL Bottom Bracket</Product>
+    <Sales>48817.1118</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Bottom Bracket</SubCategory>
+    <Product>LL Bottom Bracket</Product>
+    <Sales>15102.0828</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Brakes</SubCategory>
+    <Product>Front Brakes</Product>
+    <Sales>62181.0900</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Brakes</SubCategory>
+    <Product>Rear Brakes</Product>
+    <Sales>19387.2600</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Chain</SubCategory>
+    <Product>Chain</Product>
+    <Sales>11592.6624</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Crankset</SubCategory>
+    <Product>HL Crankset</Product>
+    <Sales>183711.5638</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Crankset</SubCategory>
+    <Product>LL Crankset</Product>
+    <Sales>55321.4676</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Crankset</SubCategory>
+    <Product>ML Crankset</Product>
+    <Sales>12906.5768</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Derailleur</SubCategory>
+    <Product>Front Derailleur</Product>
+    <Sales>55042.2138</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Derailleur</SubCategory>
+    <Product>Rear Derailleur</Product>
+    <Sales>31727.7812</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Fork</SubCategory>
+    <Product>HL Fork</Product>
+    <Sales>75401.2344</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Fork</SubCategory>
+    <Product>LL Fork</Product>
+    <Sales>20839.7320</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Handlebars  </SubCategory>
+    <Product>HL Mtn Handlebars</Product>
+    <Sales>42396.2660</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Handlebars  </SubCategory>
+    <Product>HL Road Handlebars</Product>
+    <Sales>53513.1495</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Handlebars  </SubCategory>
+    <Product>HL Touring Handlebars</Product>
+    <Sales>14907.5960</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Handlebars  </SubCategory>
+    <Product>LL Mtn Handlebars</Product>
+    <Sales>27251.6080</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Handlebars  </SubCategory>
+    <Product>LL Road Handlebars</Product>
+    <Sales>6675.8203</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Handlebars  </SubCategory>
+    <Product>LL Touring Handlebars</Product>
+    <Sales>1909.9696</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Handlebars  </SubCategory>
+    <Product>ML Mtn Handlebars</Product>
+    <Sales>63940.8645</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Headset</SubCategory>
+    <Product>HL Headset</Product>
+    <Sales>23536.5510</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Headset</SubCategory>
+    <Product>LL Headset</Product>
+    <Sales>2404.2600</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Headset</SubCategory>
+    <Product>ML Headset</Product>
+    <Sales>49882.7414</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>HL Mtn Frame - Black, 38</Product>
+    <Sales>618872.0965</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>HL Mtn Frame - Black, 42</Product>
+    <Sales>1111961.2564</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>HL Mtn Frame - Black, 44</Product>
+    <Sales>16977.9680</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>HL Mtn Frame - Black, 48</Product>
+    <Sales>130830.2240</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>HL Mtn Frame - Silver, 38</Product>
+    <Sales>1148547.7984</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>HL Mtn Frame - Silver, 42</Product>
+    <Sales>332844.6076</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>HL Mtn Frame - Silver, 46</Product>
+    <Sales>616119.7677</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>HL Mtn Frame - Silver, 48</Product>
+    <Sales>174683.2900</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>LL Mtn Frame - Black, 40</Product>
+    <Sales>1478.7568</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>LL Mtn Frame - Black, 42</Product>
+    <Sales>78189.2658</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>LL Mtn Frame - Black, 44</Product>
+    <Sales>115527.8750</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>LL Mtn Frame - Black, 48</Product>
+    <Sales>71350.0156</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>LL Mtn Frame - Black, 52</Product>
+    <Sales>2772.6690</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>LL Mtn Frame - Silver, 40</Product>
+    <Sales>86365.4740</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>LL Mtn Frame - Silver, 42</Product>
+    <Sales>124663.2860</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>LL Mtn Frame - Silver, 44</Product>
+    <Sales>72492.2870</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>LL Mtn Frame - Silver, 48</Product>
+    <Sales>8597.4680</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>LL Mtn Frame - Silver, 52</Product>
+    <Sales>83043.7250</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>ML Mtn Frame - Black, 38</Product>
+    <Sales>132654.3536</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>ML Mtn Frame - Black, 40</Product>
+    <Sales>17549.6032</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>ML Mtn Frame - Black, 44</Product>
+    <Sales>159753.0056</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>ML Mtn Frame - Black, 48</Product>
+    <Sales>247501.0216</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>ML Mtn Frame-W - Silver, 38</Product>
+    <Sales>1885.9862</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>ML Mtn Frame-W - Silver, 40</Product>
+    <Sales>242214.5134</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>ML Mtn Frame-W - Silver, 42</Product>
+    <Sales>168930.4782</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Mountain Frame</SubCategory>
+    <Product>ML Mtn Frame-W - Silver, 46</Product>
+    <Sales>50652.2008</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Pedals</SubCategory>
+    <Product>HL Mountain Pedal</Product>
+    <Sales>47047.0910</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Pedals</SubCategory>
+    <Product>HL Road Pedal</Product>
+    <Sales>40514.4376</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Pedals</SubCategory>
+    <Product>LL Mountain Pedal</Product>
+    <Sales>13453.2074</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Pedals</SubCategory>
+    <Product>LL Road Pedal</Product>
+    <Sales>26007.5368</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Pedals</SubCategory>
+    <Product>ML Mountain Pedal</Product>
+    <Sales>15851.5770</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Pedals</SubCategory>
+    <Product>ML Road Pedal</Product>
+    <Sales>30370.7026</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Pedals</SubCategory>
+    <Product>Touring Pedal</Product>
+    <Sales>8810.0922</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>HL Road Frame - Black, 44</Product>
+    <Sales>462244.3659</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>HL Road Frame - Black, 48</Product>
+    <Sales>110842.3468</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>HL Road Frame - Red, 44</Product>
+    <Sales>487295.6922</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>HL Road Frame - Red, 48</Product>
+    <Sales>110842.3468</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>HL Road Frame - Red, 62</Product>
+    <Sales>485959.6340</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>LL Road Frame - Black, 44</Product>
+    <Sales>55703.1079</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>LL Road Frame - Black, 52</Product>
+    <Sales>370066.2513</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>LL Road Frame - Black, 58</Product>
+    <Sales>219038.8942</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>LL Road Frame - Black, 60</Product>
+    <Sales>30641.7861</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>LL Road Frame - Red, 44</Product>
+    <Sales>240423.1477</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>LL Road Frame - Red, 48</Product>
+    <Sales>162838.0217</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>LL Road Frame - Red, 52</Product>
+    <Sales>24795.4801</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>LL Road Frame - Red, 60</Product>
+    <Sales>241534.7475</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>LL Road Frame - Red, 62</Product>
+    <Sales>169258.0774</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>ML Road Frame - Red, 48</Product>
+    <Sales>110043.5500</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>ML Road Frame - Red, 52</Product>
+    <Sales>39615.6780</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>ML Road Frame-W - Yellow, 38</Product>
+    <Sales>373947.9590</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>ML Road Frame-W - Yellow, 40</Product>
+    <Sales>84073.2638</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>ML Road Frame-W - Yellow, 44</Product>
+    <Sales>599757.3047</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Road Frame</SubCategory>
+    <Product>ML Road Frame-W - Yellow, 48</Product>
+    <Sales>371346.9297</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Saddle</SubCategory>
+    <Product>HL Mtn Seat/Saddle</Product>
+    <Sales>20216.9184</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Saddle</SubCategory>
+    <Product>HL Road Seat/Saddle</Product>
+    <Sales>5219.7824</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Saddle</SubCategory>
+    <Product>HL Touring Seat/Saddle</Product>
+    <Sales>16594.2336</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Saddle</SubCategory>
+    <Product>LL Mtn Seat/Saddle</Product>
+    <Sales>6963.8736</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Saddle</SubCategory>
+    <Product>LL Road Seat/Saddle</Product>
+    <Sales>200.6880</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Saddle</SubCategory>
+    <Product>LL Touring Seat/Saddle</Product>
+    <Sales>1826.2608</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Saddle</SubCategory>
+    <Product>ML Mtn Seat/Saddle</Product>
+    <Sales>15466.5624</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Saddle</SubCategory>
+    <Product>ML Touring Seat/Saddle</Product>
+    <Sales>2432.9424</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>HL Touring Frame - Blue, 46</Product>
+    <Sales>84689.8476</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>HL Touring Frame - Blue, 50</Product>
+    <Sales>92118.7816</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>HL Touring Frame - Blue, 54</Product>
+    <Sales>402648.2228</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>HL Touring Frame - Blue, 60</Product>
+    <Sales>275613.4514</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>HL Touring Frame - Yellow, 46</Product>
+    <Sales>64631.7258</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>HL Touring Frame - Yellow, 50</Product>
+    <Sales>61660.1522</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>HL Touring Frame - Yellow, 54</Product>
+    <Sales>401162.4360</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>HL Touring Frame - Yellow, 60</Product>
+    <Sales>287499.7458</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>LL Touring Frame - Blue, 44</Product>
+    <Sales>6168.2700</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>LL Touring Frame - Blue, 50</Product>
+    <Sales>77966.9328</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>LL Touring Frame - Blue, 54</Product>
+    <Sales>52060.1988</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>LL Touring Frame - Blue, 58</Product>
+    <Sales>986.9232</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>LL Touring Frame - Blue, 62</Product>
+    <Sales>3700.9620</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>LL Touring Frame - Yellow, 44</Product>
+    <Sales>72538.8552</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>LL Touring Frame - Yellow, 50</Product>
+    <Sales>56254.6224</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>LL Touring Frame - Yellow, 58</Product>
+    <Sales>8882.3088</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Touring Frame</SubCategory>
+    <Product>LL Touring Frame - Yellow, 62</Product>
+    <Sales>85862.3184</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>HL Mtn Front Wheel</Product>
+    <Sales>49319.3202</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>HL Mtn Rear Wheel</Product>
+    <Sales>205818.2350</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>HL Road Front Wheel</Product>
+    <Sales>138486.5748</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>HL Road Rear Wheel</Product>
+    <Sales>24837.0936</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>LL Mtn Front Wheel</Product>
+    <Sales>27734.9521</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>LL Mtn Rear Wheel</Product>
+    <Sales>22206.5046</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>LL Road Rear Wheel</Product>
+    <Sales>72302.7508</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>ML Mtn Front Wheel</Product>
+    <Sales>41144.4810</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>ML Mtn Rear Wheel</Product>
+    <Sales>148634.3835</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>ML Road Front Wheel</Product>
+    <Sales>97784.2068</Sales>
+  </ProductSales>
+  <ProductSales>
+    <Category>Component</Category>
+    <SubCategory>Wheel</SubCategory>
+    <Product>ML Road Rear Wheel</Product>
+    <Sales>13042.2336</Sales>
+  </ProductSales>
+</DocumentElement>

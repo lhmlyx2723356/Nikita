@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="H.M.WcfDataLayer.ImageService" CodeBehind="ImageService.svc.cs" %>

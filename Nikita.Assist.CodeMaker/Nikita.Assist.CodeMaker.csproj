@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{903E0BCE-72F0-434C-A75D-52EC931FC5C3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nikita.Assist.CodeMaker</RootNamespace>
+    <AssemblyName>Nikita.Assist.CodeMaker</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Nikita发布\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.TextEditor, Version=2.0.0.922, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nikita.DLL\MySql.Data.6.9.6\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Nikita.WinForm.ExtendControl">
+      <HintPath>..\Nikita.WinForm.ExtendControl\obj\Debug\Nikita.WinForm.ExtendControl.dll</HintPath>
+    </Reference>
+    <Reference Include="NVelocity, Version=1.1.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\NVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nikita.DLL\SQLite.1.0.95.0\lib\net40\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeMakerDemoForm\DemoClass\Bse_User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\Bse_UserDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\Bse_UserDALExtend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\OrderDetail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\OrderDetailDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\OrderMaster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\OrderMasterDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\Sys_Roles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\Sys_RolesDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\Sys_RolesDALExtend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\TreeListDemo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\DemoClass\TreeListDemoDAL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\GlobalHelpDemoForm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmMasterDetailDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmMasterDetailDemo.Designer.cs">
+      <DependentUpon>FrmMasterDetailDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmMasterDetailDemoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmMasterDetailDemoDialog.Designer.cs">
+      <DependentUpon>FrmMasterDetailDemoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmNestQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmNestQuery.designer.cs">
+      <DependentUpon>FrmNestQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmOrderMasterMasterDetailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmOrderMasterMasterDetailDialog.designer.cs">
+      <DependentUpon>FrmOrderMasterMasterDetailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmOrderMasterMasterDetailQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmOrderMasterMasterDetailQuery.Designer.cs">
+      <DependentUpon>FrmOrderMasterMasterDetailQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmSelectColumns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmSelectColumns.Designer.cs">
+      <DependentUpon>FrmSelectColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmSimpleQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmSimpleQuery.Designer.cs">
+      <DependentUpon>FrmSimpleQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmSys_RolesSimpleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmSys_RolesSimpleDialog.Designer.cs">
+      <DependentUpon>FrmSys_RolesSimpleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmSys_RolesSimpleQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmSys_RolesSimpleQuery.Designer.cs">
+      <DependentUpon>FrmSys_RolesSimpleQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTestNestQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTestNestQuery.designer.cs">
+      <DependentUpon>FrmTestNestQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTreeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTreeList.Designer.cs">
+      <DependentUpon>FrmTreeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemo.Designer.cs">
+      <DependentUpon>FrmTreeListDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemoDialog.Designer.cs">
+      <DependentUpon>FrmTreeListDemoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemoTreeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemoTreeDialog.designer.cs">
+      <DependentUpon>FrmTreeListDemoTreeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemoTreeQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemoTreeQuery.designer.cs">
+      <DependentUpon>FrmTreeListDemoTreeQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMaker\MakerParameter\ParentChildEditDialogParameter.cs" />
+    <Compile Include="Forms\FrmWinFormGen2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmWinFormGen2.Designer.cs">
+      <DependentUpon>FrmWinFormGen2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\ClassTemplate\TemplateWinFormParentChildQuery.cs" />
+    <Compile Include="Template\ClassTemplate\TemplateWinFromParentChildEditWithDialog.cs" />
+    <Compile Include="Utility\BindRule.cs" />
+    <Compile Include="Utility\BindSourceHelper.cs" />
+    <Compile Include="Utility\BseUIManager.cs" />
+    <Compile Include="Template\ClassTemplate\CodeMakeBulider.cs" />
+    <Compile Include="Template\ClassTemplate\CodeMakeDirector.cs" />
+    <Compile Include="CodeMaker\CodeMakerHelper.cs" />
+    <Compile Include="CodeMaker\MakerParameter\BaseParameter.cs" />
+    <Compile Include="CodeMaker\MakerParameter\BasicParameter.cs" />
+    <Compile Include="CodeMaker\GenDalAccess.cs" />
+    <Compile Include="CodeMaker\GenDalMSSQL.cs" />
+    <Compile Include="CodeMaker\GenDalMySQL.cs" />
+    <Compile Include="CodeMaker\GenDalSQLite.cs" />
+    <Compile Include="CodeMaker\GenModelAccess.cs" />
+    <Compile Include="CodeMaker\GenModelMSSQL.cs" />
+    <Compile Include="CodeMaker\GenModelMySQL.cs" />
+    <Compile Include="CodeMaker\GenModelSQLite.cs" />
+    <Compile Include="CodeMaker\MakerManager\DalMakerManager.cs" />
+    <Compile Include="CodeMaker\MakerParameter\TreeEditDialogParameter.cs" />
+    <Compile Include="CodeMaker\MakerParameter\EditDialogParameter.cs" />
+    <Compile Include="CodeMaker\MakerParameter\NestQueryParameter.cs" />
+    <Compile Include="CodeMaker\MakerParameter\SimpleQueryParameter.cs" />
+    <Compile Include="CodeMaker\NVelocityHelper.cs" />
+    <Compile Include="CodeMaker\MakerManager\ParameterManager.cs" />
+    <Compile Include="CodeMaker\Tools.cs" />
+    <Compile Include="ControlHelper\ControlBase.cs" />
+    <Compile Include="ControlHelper\CS\WinFrom\CtlCheckBox.cs" />
+    <Compile Include="ControlHelper\CS\WinFrom\CtlComboBox.cs" />
+    <Compile Include="ControlHelper\CS\WinFrom\CtlLabel.cs" />
+    <Compile Include="ControlHelper\CS\WinFrom\CtlRadioButton.cs" />
+    <Compile Include="ControlHelper\CS\WinFrom\CtlTextBox.cs" />
+    <Compile Include="ControlHelper\GenControlHelper.cs" />
+    <Compile Include="DataAccessHelper\Bse_ControlType.cs" />
+    <Compile Include="DataAccessHelper\Bse_ControlTypeDAL.cs" />
+    <Compile Include="DataAccessHelper\Bse_ControlTypeDALExtend.cs" />
+    <Compile Include="DataAccessHelper\Bse_UI.cs" />
+    <Compile Include="DataAccessHelper\Bse_UIDAL.cs" />
+    <Compile Include="DataAccessHelper\Bse_UIDALExtend.cs" />
+    <Compile Include="Utility\EntityOperateManager.cs" />
+    <Compile Include="Utility\FileHelper.cs" />
+    <Compile Include="Forms\FrmNestQueryPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmNestQueryPreview.designer.cs">
+      <DependentUpon>FrmNestQueryPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmNestQuerySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmNestQuerySetting.Designer.cs">
+      <DependentUpon>FrmNestQuerySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\IProperty.cs" />
+    <Compile Include="Utility\PropertyHelper.cs" />
+    <Compile Include="Utility\PropertyManager.cs" />
+    <Compile Include="Utility\SearchConditionHelper.cs" />
+    <Compile Include="Template\ClassTemplate\TemplateWinFormNestQuery.cs" />
+    <Compile Include="Template\ClassTemplate\TemplateWinFormTreeQuery.cs" />
+    <Compile Include="Template\ClassTemplate\TemplateWinFromTreeEditWithDialog.cs" />
+    <Compile Include="Template\ClassTemplate\TemplateWinFromEditWithDialog.cs" />
+    <Compile Include="Utility\EnumHelper.cs" />
+    <Compile Include="DataAccessHelper\Set.cs" />
+    <Compile Include="DataAccessHelper\SetDAL.cs" />
+    <Compile Include="DataAccessHelper\SetOrd.cs" />
+    <Compile Include="DataAccessHelper\SetOrdDAL.cs" />
+    <Compile Include="Forms\FrmModelCreater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmModelCreater.designer.cs">
+      <DependentUpon>FrmModelCreater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSetInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSetInfo.designer.cs">
+      <DependentUpon>FrmSetInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSetInfoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSetInfoEdit.designer.cs">
+      <DependentUpon>FrmSetInfoEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSetOrdEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSetOrdEdit.designer.cs">
+      <DependentUpon>FrmSetOrdEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTableList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTableList.Designer.cs">
+      <DependentUpon>FrmTableList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAboutCodeMaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAboutCodeMaker.Designer.cs">
+      <DependentUpon>FrmAboutCodeMaker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPreviewCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPreviewCode.Designer.cs">
+      <DependentUpon>FrmPreviewCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmControlSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmControlSetting.Designer.cs">
+      <DependentUpon>FrmControlSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmWinFormGen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmWinFormGen.Designer.cs">
+      <DependentUpon>FrmWinFormGen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalHelp.cs" />
+    <Compile Include="Interface\IDalMaker.cs" />
+    <Compile Include="Interface\IModelMaker.cs" />
+    <Compile Include="CodeMaker\MakerManager\ModelMakerManager.cs" />
+    <Compile Include="CodeMaker\DbSchema.cs" />
+    <Compile Include="Forms\FrmCodeMakerMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCodeMakerMain.Designer.cs">
+      <DependentUpon>FrmCodeMakerMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Template\ClassTemplate\TemplateWinFormSimpleQuery.cs" />
+    <Compile Include="Utility\ConfigHelper.cs" />
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmMasterDetailDemo.resx">
+      <DependentUpon>FrmMasterDetailDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmMasterDetailDemoDialog.resx">
+      <DependentUpon>FrmMasterDetailDemoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmNestQuery.resx">
+      <DependentUpon>FrmNestQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmSelectColumns.resx">
+      <DependentUpon>FrmSelectColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmSimpleQuery.resx">
+      <DependentUpon>FrmSimpleQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmSys_RolesSimpleDialog.resx">
+      <DependentUpon>FrmSys_RolesSimpleDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmSys_RolesSimpleQuery.resx">
+      <DependentUpon>FrmSys_RolesSimpleQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmTreeList.resx">
+      <DependentUpon>FrmTreeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemo.resx">
+      <DependentUpon>FrmTreeListDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemoDialog.resx">
+      <DependentUpon>FrmTreeListDemoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMakerDemoForm\WinFrom\FrmTreeListDemoTreeDialog.resx">
+      <DependentUpon>FrmTreeListDemoTreeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmModelCreater.resx">
+      <DependentUpon>FrmModelCreater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCodeMakerMain.resx">
+      <DependentUpon>FrmCodeMakerMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmNestQueryPreview.resx">
+      <DependentUpon>FrmNestQueryPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSetInfo.resx">
+      <DependentUpon>FrmSetInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSetInfoEdit.resx">
+      <DependentUpon>FrmSetInfoEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSetOrdEdit.resx">
+      <DependentUpon>FrmSetOrdEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTableList.resx">
+      <DependentUpon>FrmTableList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAboutCodeMaker.resx">
+      <DependentUpon>FrmAboutCodeMaker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPreviewCode.resx">
+      <DependentUpon>FrmPreviewCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmControlSetting.resx">
+      <DependentUpon>FrmControlSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmWinFormGen2.resx">
+      <DependentUpon>FrmWinFormGen2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmWinFormGen.resx">
+      <DependentUpon>FrmWinFormGen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmNestQuerySetting.resx">
+      <DependentUpon>FrmNestQuerySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="dll\ICSharpCode.TextEditor V3.0\TSQL-Mode.xshd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll\ICSharpCode.TextEditor V3.0\SyntaxModes.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="dll\ICSharpCode.TextEditor V3.0\官方原版\ICSharpCode.TextEditor.dll" />
+    <Content Include="dll\ICSharpCode.TextEditor V3.0\支持T-SQL版本\ICSharpCode.TextEditor.dll" />
+    <Content Include="dll\NVelocity.dll" />
+    <Content Include="Proc\存储过程.txt" />
+    <Content Include="Template\TxtTemplate\AccessDALTemp.txt" />
+    <Content Include="Template\TxtTemplate\AccessDALTempExtend.txt" />
+    <Content Include="Template\TxtTemplate\AccessDALTempWcf.txt" />
+    <Content Include="Template\TxtTemplate\AccessHelperTemp.txt" />
+    <Content Include="Template\TxtTemplate\DBTemp.html" />
+    <Content Include="Template\TxtTemplate\MSSQLDALTemp.txt" />
+    <Content Include="Template\TxtTemplate\MSSQLDALTempExtend.txt" />
+    <Content Include="Template\TxtTemplate\MSSQLDALTempWcf.txt" />
+    <Content Include="Template\TxtTemplate\MSSQLHelperTemp.txt" />
+    <Content Include="Template\TxtTemplate\MySQLDALTemp.txt" />
+    <Content Include="Template\TxtTemplate\MySQLDALTempExtend.txt" />
+    <Content Include="Template\TxtTemplate\MySQLDALTempWcf.txt" />
+    <Content Include="Template\TxtTemplate\MySQLHelperTemp.txt" />
+    <Content Include="Template\TxtTemplate\SQLiteDALTemp.txt" />
+    <Content Include="Template\TxtTemplate\SQLiteDALTempExtend.txt" />
+    <Content Include="Template\TxtTemplate\SQLiteDALTempWcf.txt" />
+    <Content Include="Template\TxtTemplate\SQLiteHelperTemp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseSchemaReader\Nikita.Base.DbSchemaReader.csproj">
+      <Project>{a0a8fdd0-2399-462c-80a1-8c3fec7e4d7b}</Project>
+      <Name>Nikita.Base.DbSchemaReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Literacy2.0\blqw.Literacy\Nikita.Base.Literacy.csproj">
+      <Project>{d0c3b619-180a-407b-be4a-9c1864b2a06d}</Project>
+      <Name>Nikita.Base.Literacy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
+      <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
+      <Name>Nikita.Base.Define</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Core\Nikita.Core.csproj">
+      <Project>{a939c25e-8300-48ca-ad10-48755c95fed8}</Project>
+      <Name>Nikita.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.DataAccess4DBHelper\Nikita.DataAccess4DBHelper.csproj">
+      <Project>{1d3d3ba5-fa80-4e3a-8c8d-4f189652d69f}</Project>
+      <Name>Nikita.DataAccess4DBHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

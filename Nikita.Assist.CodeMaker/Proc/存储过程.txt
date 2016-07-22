@@ -1,0 +1,27 @@
+﻿ -- =============================================
+-- Author:        卢华明
+-- Create date: 2011-10-26 
+-- Description:    分页，用到了ROW_NUMBER()
+-- =============================================
+create PROCEDURE [dbo].[proc_SplitPage]
+@tblName   varchar(255),       -- 表名
+@strFields varchar(1000) = '*', -- 需要返回的列，默认*
+@strOrder varchar(255)='',      -- 排序的字段名，必填
+@strOrderType varchar(10)='ASC', -- 排序的方式,默认ASC
+@PageSize   int = 10,          -- 页尺寸,默认10
+@PageIndex int = 1,           -- 页码,默认1
+@strWhere varchar(1500) = '' -- 查询条件 (注意: 不要加 where)
+AS
+
+declare @strSQL   varchar(5000)
+
+if @strWhere !=''
+set @strWhere=' where '+@strWhere
+
+set @strSQL=
+'SELECT * FROM ('+
+    'SELECT ROW_NUMBER() OVER (ORDER BY '+@strOrder+' '+@strOrderType+') AS pos,'+@strFields+' '+
+    'FROM '+@tblName+' '+@strWhere+
+') AS sp WHERE pos BETWEEN '+str((@PageIndex-1)*@PageSize+1)+' AND '+str(@PageIndex*@PageSize)
+
+exec (@strSQL)

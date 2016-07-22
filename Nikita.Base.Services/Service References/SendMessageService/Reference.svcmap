@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0f60fc73-ed77-4bcf-b6a9-c0ff81fda06e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1408/SendMessageService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SendMessageService.xsd" MetadataType="Schema" ID="06d7713a-6daa-44fe-972b-d00111a1d0df" SourceId="1" SourceUrl="http://localhost:1408/SendMessageService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SendMessageService1.xsd" MetadataType="Schema" ID="62e28512-3ee8-4ce9-8ed8-f90cd61de33b" SourceId="1" SourceUrl="http://localhost:1408/SendMessageService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SendMessageService2.xsd" MetadataType="Schema" ID="9b01478d-c61c-428e-b504-18b6f1392e06" SourceId="1" SourceUrl="http://localhost:1408/SendMessageService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SendMessageService3.xsd" MetadataType="Schema" ID="e0f88019-cfc6-49a9-ac9b-705d99139602" SourceId="1" SourceUrl="http://localhost:1408/SendMessageService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SendMessageService.disco" MetadataType="Disco" ID="46ce534e-78bf-403a-9a95-8c51cf1789f9" SourceId="1" SourceUrl="http://localhost:1408/SendMessageService.svc?disco" />
+    <MetadataFile FileName="SendMessageService.wsdl" MetadataType="Wsdl" ID="5c6408a3-ed28-4910-bb8d-b26a2f2ec72e" SourceId="1" SourceUrl="http://localhost:1408/SendMessageService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

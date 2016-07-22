@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<appsetting>
+  <!-- 当前系统名称（更新完成之后重启的程序名称） -->
+  <SystemName>Nikita.Permission</SystemName>
+</appsetting>

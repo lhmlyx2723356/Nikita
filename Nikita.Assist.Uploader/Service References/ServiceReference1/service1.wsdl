@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IService1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/H.M.WcfDataLayer" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import />
+      <xsd:import namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_DataRequest_By_DataTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataTable" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataSet" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataSet_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataSet_New" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataSet_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataSet_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataTable_New_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataTable_New" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataTable_New_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataTable_NewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataSet_More_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataSet_More" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataSet_More_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataSet_MoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataTable_More_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataTable_More" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DataRequest_By_DataTable_More_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataRequest_By_DataTable_MoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="FileUploadMessage">
+    <wsdl:part name="parameters" element="tns:FileUploadMessage" />
+  </wsdl:message>
+  <wsdl:message name="FileUploadMessage_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+    <wsdl:part name="SavePath" element="tns:SavePath" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileResponse">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileResponse_Headers">
+    <wsdl:part name="Flag" element="tns:Flag" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DownloadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DownloadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="DataRequest_By_DataTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataTable" message="tns:IService1_DataRequest_By_DataTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataTableResponse" message="tns:IService1_DataRequest_By_DataTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataRequest_By_DataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataSet" message="tns:IService1_DataRequest_By_DataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataSetResponse" message="tns:IService1_DataRequest_By_DataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataRequest_By_DataSet_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataSet_New" message="tns:IService1_DataRequest_By_DataSet_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataSet_NewResponse" message="tns:IService1_DataRequest_By_DataSet_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataRequest_By_DataTable_New">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataTable_New" message="tns:IService1_DataRequest_By_DataTable_New_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataTable_NewResponse" message="tns:IService1_DataRequest_By_DataTable_New_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataRequest_By_DataSet_More">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataSet_More" message="tns:IService1_DataRequest_By_DataSet_More_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataSet_MoreResponse" message="tns:IService1_DataRequest_By_DataSet_More_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataRequest_By_DataTable_More">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataTable_More" message="tns:IService1_DataRequest_By_DataTable_More_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DataRequest_By_DataTable_MoreResponse" message="tns:IService1_DataRequest_By_DataTable_More_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input wsaw:Action="UploadFile" name="FileUploadMessage" message="tns:FileUploadMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadFileResponse" name="UploadFileResponse" message="tns:UploadFileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input wsaw:Action="DownloadFile" message="tns:IService1_DownloadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DownloadFileResponse" message="tns:IService1_DownloadFile_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IService1" type="tns:IService1">
+    <wsp:PolicyReference URI="#NetTcpBinding_IService1_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="DataRequest_By_DataTable">
+      <soap12:operation soapAction="http://tempuri.org/IService1/DataRequest_By_DataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataRequest_By_DataSet">
+      <soap12:operation soapAction="http://tempuri.org/IService1/DataRequest_By_DataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataRequest_By_DataSet_New">
+      <soap12:operation soapAction="http://tempuri.org/IService1/DataRequest_By_DataSet_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataRequest_By_DataTable_New">
+      <soap12:operation soapAction="http://tempuri.org/IService1/DataRequest_By_DataTable_New" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataRequest_By_DataSet_More">
+      <soap12:operation soapAction="http://tempuri.org/IService1/DataRequest_By_DataSet_More" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataRequest_By_DataTable_More">
+      <soap12:operation soapAction="http://tempuri.org/IService1/DataRequest_By_DataTable_More" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap12:operation soapAction="UploadFile" style="document" />
+      <wsdl:input name="FileUploadMessage">
+        <soap12:header message="tns:FileUploadMessage_Headers" part="FileName" use="literal" />
+        <soap12:header message="tns:FileUploadMessage_Headers" part="SavePath" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UploadFileResponse">
+        <soap12:header message="tns:UploadFileResponse_Headers" part="Flag" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap12:operation soapAction="DownloadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="NetTcpBinding_IService1" binding="tns:NetTcpBinding_IService1">
+      <soap12:address location="net.tcp://localhost:13125/Binding/Service1" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:13125/Binding/Service1</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

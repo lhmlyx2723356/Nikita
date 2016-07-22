@@ -1,0 +1,2 @@
+SharpZipLib是一个开源的解压压缩组件，编译非常慢，不建议加载项目
+官网：http://www.icsharpcode.net/OpenSource/SharpZipLib

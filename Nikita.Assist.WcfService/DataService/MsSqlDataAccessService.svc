@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="H.M.WcfDataLayer.MsSqlDataAccessService" CodeBehind="MsSqlDataAccessService.svc.cs" %>
