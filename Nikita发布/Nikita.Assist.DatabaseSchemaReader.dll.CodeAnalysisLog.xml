@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="d:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="D:\GitHub\学习使用\Nikita发布\Nikita.Assist.DatabaseSchemaReader.dll">
+   <Modules>
+    <Module Name="nikita.assist.databaseschemareader.dll">
+     <Namespaces>
+      <Namespace Name="Nikita.Assist.DatabaseSchemaReader">
+       <Types>
+        <Type Name="SchemaExtendedReader" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#CommandForTable(System.String,System.Data.Common.DbConnection,System.String,System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader" File="SchemaExtendedReader.cs" Line="224">传递给 'SchemaExtendedReader.CommandForTable(string, DbConnection, string, string)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'sqlCommand'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Nikita.Assist.DatabaseSchemaReader.CodeGen">
+       <Types>
+        <Type Name="NameFixer" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ToCamelCase(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="NonBreaking">
+             <Issue Certainty="33" Level="CriticalError" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\CodeGen" File="NameFixer.cs" Line="51">'NameFixer.ToCamelCase(string)' 调入具有 LinkDemand 的 'CodeDomProvider.IsValidIdentifier(string)'。通过此调用，'CodeDomProvider.IsValidIdentifier(string)' 被间接公开给用户代码。检查以下可能公开避开安全保护的方法的调用堆栈: &#xD;&#xA;   -&gt;'NameFixer.ToCamelCase(string)'&#xD;&#xA;   -&gt;'NameFixer.ToCamelCase(string)'</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Nikita.Assist.DatabaseSchemaReader.Procedures">
+       <Types>
+        <Type Name="ResultSetReader" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ExecuteProcedure(Nikita.Assist.DatabaseSchemaReader.DataSchema.DatabaseStoredProcedure)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\Procedures" File="ResultSetReader.cs" Line="79">传递给 'ResultSetReader.ExecuteProcedure(DatabaseStoredProcedure)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'procedure.Package', 'procedure.Name', 'procedure.Name'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Nikita.Assist.DatabaseSchemaReader.ProviderSchemaReaders">
+       <Types>
+        <Type Name="MySqlSchemaReader" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#FindKeys(System.String,System.String,System.Data.Common.DbConnection)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\ProviderSchemaReaders" File="MySqlSchemaReader.cs" Line="48">传递给 'MySqlSchemaReader.FindKeys(string, string, DbConnection)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'this.FixDevartParameters(sqlCommand)'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="OracleSchemaReader" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#CommandForTable(System.String,System.Data.Common.DbConnection,System.String,System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\ProviderSchemaReaders" File="OracleSchemaReader.cs" Line="389">传递给 'OracleSchemaReader.CommandForTable(string, DbConnection, string, string)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'sqlCommand'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#FindKeys(System.String,System.String,System.Data.Common.DbConnection)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\ProviderSchemaReaders" File="OracleSchemaReader.cs" Line="171">传递给 'OracleSchemaReader.FindKeys(string, string, DbConnection)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'sqlCommand'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PostgreSqlSchemaReader" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#FindKeys(System.String,System.String,System.Data.Common.DbConnection)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\ProviderSchemaReaders" File="PostgreSqlSchemaReader.cs" Line="70">传递给 'PostgreSqlSchemaReader.FindKeys(string, string, DbConnection)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'sqlCommand'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SqlServerCeSchemaReader" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#FindKeys(System.String,System.String,System.Data.Common.DbConnection)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\ProviderSchemaReaders" File="SqlServerCeSchemaReader.cs" Line="37">传递给 'SqlServerCeSchemaReader.FindKeys(string, string, DbConnection)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'sqlCommand'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SqlServerSchemaReader" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#FindKeys(System.String,System.String,System.Data.Common.DbConnection)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\ProviderSchemaReaders" File="SqlServerSchemaReader.cs" Line="98">传递给 'SqlServerSchemaReader.FindKeys(string, string, DbConnection)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'sqlCommand'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SybaseAsaSchemaReader" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#SybaseCommandForTable(System.Data.Common.DbConnection,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\ProviderSchemaReaders" File="SybaseAsaSchemaReader.cs" Line="121">传递给 'SybaseAsaSchemaReader.SybaseCommandForTable(DbConnection, string, string, string)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'sql'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SybaseAseSchemaReader" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#SybaseCommandForTable(System.Data.Common.DbConnection,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\ProviderSchemaReaders" File="SybaseAseSchemaReader.cs" Line="48">传递给 'SybaseAseSchemaReader.SybaseCommandForTable(DbConnection, string, string, string)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'sql'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SybaseUltraLiteSchemaReader" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#SybaseCommandForTable(System.Data.Common.DbConnection,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\ProviderSchemaReaders" File="SybaseUltraLiteSchemaReader.cs" Line="154">传递给 'SybaseUltraLiteSchemaReader.SybaseCommandForTable(DbConnection, string, string)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'sql'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SybaseCommandForTable(System.Data.Common.DbConnection,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2016-06-23 14:46:31Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="D:\GitHub\学习使用\Nikita-2015\DatabaseSchemaReader\ProviderSchemaReaders" File="SybaseUltraLiteSchemaReader.cs" Line="168">传递给 'SybaseUltraLiteSchemaReader.SybaseCommandForTable(DbConnection, string, string, string)' 中的 'DbCommand.CommandText.set(string)' 的查询字符串可能包含以下变量 'sql'。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122">
+   <Name>不要使用链接请求间接公开方法</Name>
+   <Description>不要使用不执行安全性检查的方法来包装受 LinkDemand 保护的方法。LinkDemand 检查直接调用方的权限而不是调用堆栈中所有调用方的权限。在这种情况下，将检查包装器方法的权限。如果包装器方法本身不检查调用堆栈中位置较高的调用方的权限，则尽管恶意代码没有足够的权限，但它仍可能能够执行被包装的函数。</Description>
+   <Resolution Name="Default">{0} 调入具有 LinkDemand 的 {1}。通过此调用，{1} 被间接公开给用户代码。检查以下可能公开避开安全保护的方法的调用堆栈: {2}</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182303.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="33">CriticalError</MessageLevel>
+   <File Name="securityrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="检查 SQL 查询是否存在安全漏洞" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>检查 SQL 查询是否存在安全漏洞</Name>
+   <Description>通过用户输入生成的 SQL 命令字符串容易受到 SQL 注入式攻击。Microsoft SQL Server 和其他数据库服务器支持存储过程和参数化 SQL 查询，这将降低受到注入式攻击的风险。</Description>
+   <Resolution Name="WithNonLiterals">传递给 {1} 中的 {0} 的查询字符串可能包含以下变量 {2}。如果其中的任意变量可能来自用户输入，请考虑使用存储过程或参数化 SQL 查询，而不是通过字符串串联来生成查询。</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">类别</String>
+  <String Key="Certainty">确定性</String>
+  <String Key="CollapseAll">全部折叠</String>
+  <String Key="CheckId">检查 ID</String>
+  <String Key="Error">错误</String>
+  <String Key="Errors">错误</String>
+  <String Key="ExpandAll">全部展开</String>
+  <String Key="Help">帮助</String>
+  <String Key="Line">行</String>
+  <String Key="Messages">消息</String>
+  <String Key="LocationNotStoredInPdb">[位置未存储在 Pdb 中]</String>
+  <String Key="Project">项目</String>
+  <String Key="Resolution">解析</String>
+  <String Key="Rule">规则</String>
+  <String Key="RuleFile">规则文件</String>
+  <String Key="RuleDescription">规则说明</String>
+  <String Key="Source">源</String>
+  <String Key="Status">状态</String>
+  <String Key="Target">目标</String>
+  <String Key="Warning">警告</String>
+  <String Key="Warnings">警告</String>
+  <String Key="ReportTitle">代码分析报告</String>
+ </Localized>
+</FxCopReport>

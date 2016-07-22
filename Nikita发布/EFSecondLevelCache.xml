@@ -1,0 +1,671 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EFSecondLevelCache</name>
+    </assembly>
+    <members>
+        <member name="T:EFSecondLevelCache.FastReflectionUtils">
+            <summary>
+            Fast reflection, using compiled property getters.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.FastReflectionUtils.GetPropertyGetterDelegate(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Gets a compiled property getter delegate for the underlying type.
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EFSecondLevelCache.FastReflectionUtils.GetPropertyGetterDelegateFromCache(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Gets a compiled property getter delegate for the underlying type.
+            </summary>
+            <param name="type"></param>
+            <param name="propertyName"></param>
+            <param name="bindingFlags"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EFSecondLevelCache.LinqToObjectsCacheKeyProvider">
+            <summary>
+            A custom cache key provider for normal LINQ to objects queries, results of a Mocking process.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.Contracts.IEFCacheKeyProvider">
+            <summary>
+            CacheKeyProvider Contract.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.Contracts.IEFCacheKeyProvider.GetEFCacheKey``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression,System.String,System.String)">
+            <summary>
+            Gets an EF query and returns its hash to store in the cache.
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="query">The EF query.</param>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <param name="keyHashPrefix">Its default value is EF_.</param>
+            <param name="saltKey">If you think the computed hash of the query is not enough, set this value.</param>
+            <returns>Information of the computed key of the input LINQ query.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.LinqToObjectsCacheKeyProvider.#ctor(EFSecondLevelCache.Contracts.IEFCacheKeyHashProvider)">
+            <summary>
+            A custom cache key provider for normal LINQ to objects queries.
+            </summary>
+            <param name="cacheKeyHashProvider">Provides the custom hashing algorithm.</param>
+        </member>
+        <member name="M:EFSecondLevelCache.LinqToObjectsCacheKeyProvider.GetEFCacheKey``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression,System.String,System.String)">
+            <summary>
+            Gets a LINQ to objects query and returns its hashed key to store in the cache.
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="query">The input query.</param>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <param name="keyHashPrefix">Its default value is EF_.</param>
+            <param name="saltKey">If you think the computed hash of the query is not enough, set this value.</param>
+            <returns>Information of the computed key of the input LINQ query.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.LinqToObjectsCacheKeyProvider.GetDebugView(System.Linq.Expressions.Expression)">
+            <summary>
+            Gets the string representation of an Expression.
+            </summary>
+            <param name="expression">the input expression</param>
+            <returns>The string representation of the Expression</returns>
+        </member>
+        <member name="T:EFSecondLevelCache.ObjectQueryExtensions">
+            <summary>
+            Extension methods for ObjectQuery.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.ObjectQueryExtensions.GetObjectQuery``1(System.Linq.IQueryable{``0})">
+            <summary>
+            Converts the query into an ObjectQuery.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <param name="query">The query to convert.</param>
+            <returns>The converted ObjectQuery</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.ObjectQueryExtensions.GetObjectQuery``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression)">
+            <summary>
+            Creates an ObjectQuery from an expression.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <param name="query">The input query.</param>
+            <param name="expression">The input expression.</param>
+            <returns>An ObjectQuery created from the expression.</returns>
+        </member>
+        <member name="T:EFSecondLevelCache.EFAsyncEnumerator`1">
+            <summary>
+            Asynchronous version of the IEnumerator of T interface that allows elements to be retrieved asynchronously.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:EFSecondLevelCache.EFAsyncEnumerator`1.#ctor(System.Collections.Generic.IEnumerator{`0})">
+            <summary>
+            Asynchronous version of the IEnumerator of T interface that allows elements to be retrieved asynchronously.
+            </summary>
+            <param name="inner">The inner IEnumerator</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFAsyncEnumerator`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.EFAsyncEnumerator`1.MoveNextAsync(System.Threading.CancellationToken)">
+            <summary>
+            Advances the enumerator to the next element in the sequence, returning the result asynchronously.
+            </summary>
+            <param name="cancellationToken">A System.Threading.CancellationToken to observe while waiting for the task to complete.</param>
+            <returns>A task that represents the asynchronous operation.  The task result contains true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the sequence.</returns>
+        </member>
+        <member name="P:EFSecondLevelCache.EFAsyncEnumerator`1.Current">
+            <summary>
+            Gets the current element in the iteration.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.EFAsyncEnumerator`1.System#Data#Entity#Infrastructure#IDbAsyncEnumerator#Current">
+            <summary>
+            Gets the current element in the iteration.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.XxHashUnsafe">
+            <summary>
+            xxHash is an extremely fast non-cryptographic Hash algorithm, working at speeds close to RAM limits.
+            http://code.google.com/p/xxhash/
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.XxHashUnsafe.ComputeHash(System.String)">
+            <summary>
+            Computes the xxHash of the input string. xxHash is an extremely fast non-cryptographic Hash algorithm.
+            </summary>
+            <param name="data">the input string</param>
+            <returns>xxHash</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.XxHashUnsafe.ComputeHash(System.Byte[])">
+            <summary>
+            Computes the xxHash of the input byte array. xxHash is an extremely fast non-cryptographic Hash algorithm.
+            </summary>
+            <param name="data">the input byte array</param>
+            <returns>xxHash</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.XxHashUnsafe.ComputeHash(System.Byte[],System.Int32,System.UInt32,System.UInt32)">
+            <summary>
+            Computes the xxHash of the input byte array. xxHash is an extremely fast non-cryptographic Hash algorithm.
+            </summary>
+            <param name="data">the input byte array</param>
+            <param name="offset">start offset</param>
+            <param name="len">length</param>
+            <param name="seed">initial seed</param>
+            <returns>xxHash</returns>
+        </member>
+        <member name="T:EFSecondLevelCache.DynamicEqualityComparer`1">
+            <summary>
+            Defines methods to support the comparison of objects for equality.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:EFSecondLevelCache.DynamicEqualityComparer`1.#ctor(System.Func{`0,`0,System.Boolean})">
+            <summary>
+            Defines methods to support the comparison of objects for equality.
+            </summary>
+            <param name="func">The comparison algorithm.</param>
+        </member>
+        <member name="M:EFSecondLevelCache.DynamicEqualityComparer`1.Equals(`0,`0)">
+            <summary>
+            Determines whether the specified objects are equal.
+            </summary>
+            <param name="x">The first object of type T to compare.</param>
+            <param name="y">The second object of type T to compare.</param>
+            <returns>true if the specified objects are equal; otherwise, false.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.DynamicEqualityComparer`1.GetHashCode(`0)">
+            <summary>
+            Returns a hash code for the specified object.
+            </summary>
+            <param name="obj">The System.Object for which a hash code is to be returned.</param>
+            <returns>A hash code for the specified object.</returns>
+        </member>
+        <member name="T:EFSecondLevelCache.EFCommandTreeCollector">
+            <summary>
+            Receives notifications when Entity Framework creates a DbCommandTree.
+            It collects only DbQueryCommandTrees.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCommandTreeCollector.#ctor(System.Data.Entity.Core.Objects.ObjectContext)">
+            <summary>
+            Receives notifications when Entity Framework creates a DbCommandTree.
+            </summary>
+            <param name="objectContext">The associated objectContext of the collected DbQueryCommandTree.</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCommandTreeCollector.TreeCreated(System.Data.Entity.Infrastructure.Interception.DbCommandTreeInterceptionContext)">
+            <summary>
+            This method is called after a new DbCommandTree has been created.
+            It collects only DbQueryCommandTrees.
+            </summary>
+            <param name="interceptionContext">Represents contextual information associated with calls into IDbCommandTreeInterceptor implementations.</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCommandTreeCollector.Dispose">
+            <summary>
+            Removes the registered IDbInterceptor so that it will no longer receive notifications.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.EFCommandTreeCollector.DbQueryCommandTree">
+            <summary>
+            The associated DbQueryCommandTree of the given ObjectContext.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.EFCommandTreeVisitor">
+            <summary>
+            Determines the cache dependencies of a given query.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCommandTreeVisitor.#ctor(System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace)">
+            <summary>
+            Determines the cache dependencies of a given query.
+            </summary>
+            <param name="metadata">Runtime Metadata Workspace</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCommandTreeVisitor.Visit(System.Data.Entity.Core.Common.CommandTrees.DbScanExpression)">
+            <summary>
+            Implements the visitor pattern for the command tree.
+            </summary>
+            <param name="expression">Represents a scan of all elements of a given entity set.</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCommandTreeVisitor.isEntityFrameworkInternalTable(System.Data.Entity.Core.Metadata.Edm.EntitySetBase)">
+            <summary>
+            Finds if the table is an entity framework specific table.
+            </summary>
+            <param name="setBase">The set base</param>
+            <returns>True if it's an EF internal table</returns>
+        </member>
+        <member name="P:EFSecondLevelCache.EFCommandTreeVisitor.EntityClrTypes">
+            <summary>
+            Returns the cache dependencies of a given query.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.Contracts.EFCacheDebugInfo">
+            <summary>
+            Stores the debug information of the caching process.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.Contracts.EFCacheDebugInfo.EFCacheKey">
+            <summary>
+            Stores information of the computed key of the input LINQ query.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.Contracts.EFCacheDebugInfo.IsCacheHit">
+            <summary>
+            Determines this query is using the 2nd level cache or not.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.Contracts.EFCacheKey">
+            <summary>
+            Stores information of the computed key of the input LINQ query.
+            </summary>
+        </member>
+        <member name="F:EFSecondLevelCache.Contracts.EFCacheKey.KeyHashPrefix">
+            <summary>
+            Its default value is EF_.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.Contracts.EFCacheKey.#ctor">
+            <summary>
+            Stores information of the computed key of the input LINQ query.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.Contracts.EFCacheKey.Key">
+            <summary>
+            The computed key of the input LINQ query.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.Contracts.EFCacheKey.KeyHash">
+            <summary>
+            Hash of the input LINQ query's computed key.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.Contracts.EFCacheKey.CacheDependencies">
+            <summary>
+            Determines which entities are used in this LINQ query.
+            This array will be used to invalidate the related cache of all related queries automatically.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.Contracts.EFCachePolicy">
+            <summary>
+            EFCachePolicy determines the AbsoluteExpiration time and Priority of the cache.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.Contracts.EFCachePolicy.#ctor">
+            <summary>
+            EFCachePolicy determines the AbsoluteExpiration time and Priority of the cache.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.Contracts.EFCachePolicy.AbsoluteExpiration">
+            <summary>
+            Its deafult value is 20 minutes later.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.Contracts.EFCachePolicy.KeyHashPrefix">
+            <summary>
+            Its deafult value is EF_.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.Contracts.EFCachePolicy.SaltKey">
+            <summary>
+            If you think the computed hash of the query is not enough, set this value.
+            Its deafult value is string.Empty.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.Contracts.EFCachePolicy.Priority">
+            <summary>
+            Its deafult value is CacheItemPriority.Normal.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.EFCachedQueryable`1">
+            <summary>
+            Provides functionality to evaluate queries against a specific data source.
+            </summary>
+            <typeparam name="TType">Type of the entity.</typeparam>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryable`1.#ctor(System.Linq.IQueryable{`0},EFSecondLevelCache.Contracts.EFCachePolicy,EFSecondLevelCache.Contracts.EFCacheDebugInfo,EFSecondLevelCache.Contracts.IEFCacheKeyProvider,EFSecondLevelCache.Contracts.IEFCacheServiceProvider)">
+            <summary>
+            Provides functionality to evaluate queries against a specific data source.
+            </summary>
+            <param name="query">The input EF query.</param>
+            <param name="efCache">EFCachePolicy determines the AbsoluteExpiration time and Priority of the cache.</param>
+            <param name="debugInfo">Stores the debug information of the caching process.</param>
+            <param name="cacheKeyProvider">Gets an EF query and returns its hash to store in the cache.</param>
+            <param name="cacheServiceProvider">Cache Service Provider.</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryable`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>A collections that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryable`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>A collections that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryable`1.GetAsyncEnumerator">
+            <summary>
+            Returns an IDbAsyncEnumerator of TType which when enumerated will execute the query against the database.
+            </summary>
+            <returns>An enumerator for the query</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryable`1.System#Data#Entity#Infrastructure#IDbAsyncEnumerable#GetAsyncEnumerator">
+            <summary>
+            Returns an IDbAsyncEnumerator which when enumerated will execute the query against the database.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.EFCachedQueryable`1.ElementType">
+            <summary>
+            Gets the type of the element(s) that are returned when the expression tree associated with this instance of System.Linq.IQueryable is executed.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.EFCachedQueryable`1.Expression">
+            <summary>
+            Gets the expression tree that is associated with the instance of System.Linq.IQueryable.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.EFCachedQueryable`1.Provider">
+            <summary>
+            Gets the query provider that is associated with this data source.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.EFCacheKeyHashProvider">
+            <summary>
+            Computes the unique hash of the input, using the xxHash algorithm.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.Contracts.IEFCacheKeyHashProvider">
+            <summary>
+            The CacheKey Hash Provider Contract.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.Contracts.IEFCacheKeyHashProvider.ComputeHash(System.String)">
+            <summary>
+            Computes the unique hash of the input.
+            </summary>
+            <param name="data">the input data to hash</param>
+            <returns>Hashed data</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCacheKeyHashProvider.ComputeHash(System.String)">
+            <summary>
+            Computes the unique hash of the input.
+            </summary>
+            <param name="data">the input data to hash</param>
+            <returns>Hashed data using the xxHash algorithm</returns>
+        </member>
+        <member name="T:EFSecondLevelCache.EFCacheKeyProvider">
+            <summary>
+            A custom cache key provider for EF queries.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCacheKeyProvider.#ctor(EFSecondLevelCache.Contracts.IEFCacheKeyHashProvider)">
+            <summary>
+            A custom cache key provider for EF queries.
+            </summary>
+            <param name="cacheKeyHashProvider">Provides the custom hashing algorithm.</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCacheKeyProvider.GetEFCacheKey``1(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression,System.String,System.String)">
+            <summary>
+            Gets an EF query and returns its hashed key to store in the cache.
+            </summary>
+            <typeparam name="T">Type of the entity</typeparam>
+            <param name="query">The EF query.</param>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <param name="keyHashPrefix">Its default value is EF_.</param>
+            <param name="saltKey">If you think the computed hash of the query is not enough, set this value.</param>
+            <returns>Information of the computed key of the input LINQ query.</returns>
+        </member>
+        <member name="T:EFSecondLevelCache.EFCacheServiceProvider">
+            <summary>
+            Using HttpRuntime.Cache as a cache service. It works with both desktop and web applications.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.Contracts.IEFCacheServiceProvider">
+            <summary>
+            Cache Service Provider Contract.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.Contracts.IEFCacheServiceProvider.ClearAllCachedEntries(System.String)">
+            <summary>
+            Removes the cached entries added by this library.
+            </summary>
+            <param name="keyHashPrefix">Its default value is EF_.</param>
+        </member>
+        <member name="M:EFSecondLevelCache.Contracts.IEFCacheServiceProvider.GetAllEFCachedKeys(System.String)">
+            <summary>
+            Gets all of the cached keys, added by this library.
+            </summary>
+            <param name="keyHashPrefix">Its default value is EF_.</param>
+            <returns>list of the keys</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.Contracts.IEFCacheServiceProvider.GetValue(System.String)">
+            <summary>
+            Gets a cached entry by key.
+            </summary>
+            <param name="cacheKey">key to find</param>
+            <returns>cached value</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.Contracts.IEFCacheServiceProvider.InsertValue(System.String,System.Object,System.String[],System.DateTime,System.Web.Caching.CacheItemPriority)">
+            <summary>
+            Adds a new item to the cache.
+            </summary>
+            <param name="cacheKey">key</param>
+            <param name="value">value</param>
+            <param name="rootCacheKeys">cache dependencies</param>
+            <param name="absoluteExpiration">absolute expiration time</param>
+            <param name="priority">its default value is CacheItemPriority.Normal</param>
+        </member>
+        <member name="M:EFSecondLevelCache.Contracts.IEFCacheServiceProvider.InvalidateCacheDependencies(System.String[])">
+            <summary>
+            Invalidates all of the cache entries which are dependent on any of the specified root keys.
+            </summary>
+            <param name="rootCacheKeys">cache dependencies</param>
+        </member>
+        <member name="M:EFSecondLevelCache.Contracts.IEFCacheServiceProvider.StoreRootCacheKeys(System.String[])">
+            <summary>
+            The name of the cache keys used to clear the cache. All cached items depend on these keys.
+            </summary>
+            <param name="rootCacheKeys">cache dependencies</param>
+        </member>
+        <member name="P:EFSecondLevelCache.Contracts.IEFCacheServiceProvider.AllCachedKeys">
+            <summary>
+            Returns list of the cached keys.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCacheServiceProvider.ClearAllCachedEntries(System.String)">
+            <summary>
+            Removes the cached entries added by this library.
+            </summary>
+            <param name="keyHashPrefix">Its default value is EF_.</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCacheServiceProvider.GetAllEFCachedKeys(System.String)">
+            <summary>
+            Gets all of the cached keys, added by this library.
+            </summary>
+            <param name="keyHashPrefix">Its default value is EF_.</param>
+            <returns>list of the keys</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCacheServiceProvider.GetValue(System.String)">
+            <summary>
+            Gets a cached entry by key.
+            </summary>
+            <param name="cacheKey">key to find</param>
+            <returns>cached value</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCacheServiceProvider.InsertValue(System.String,System.Object,System.String[],System.DateTime,System.Web.Caching.CacheItemPriority)">
+            <summary>
+            Adds a new item to the cache.
+            </summary>
+            <param name="cacheKey">key</param>
+            <param name="value">value</param>
+            <param name="rootCacheKeys">cache dependencies</param>
+            <param name="absoluteExpiration">absolute expiration time</param>
+            <param name="priority">its default value is CacheItemPriority.Normal</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCacheServiceProvider.InvalidateCacheDependencies(System.String[])">
+            <summary>
+            Invalidates all of the cache entries which are dependent on any of the specified root keys.
+            </summary>
+            <param name="rootCacheKeys">cache dependencies</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCacheServiceProvider.StoreRootCacheKeys(System.String[])">
+            <summary>
+            The name of the cache keys used to clear the cache. All cached items depend on these keys.
+            </summary>
+        </member>
+        <member name="P:EFSecondLevelCache.EFCacheServiceProvider.AllCachedKeys">
+            <summary>
+            Returns list of the cached keys.
+            </summary>
+        </member>
+        <member name="T:EFSecondLevelCache.EFCachedQueryProvider`1">
+            <summary>
+            Defines methods to create and execute queries that are described by an System.Linq.IQueryable object.
+            </summary>
+            <typeparam name="TType">Type of the entity.</typeparam>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryProvider`1.#ctor(System.Linq.IQueryable{`0},EFSecondLevelCache.Contracts.EFCachePolicy,EFSecondLevelCache.Contracts.EFCacheDebugInfo,EFSecondLevelCache.Contracts.IEFCacheKeyProvider,EFSecondLevelCache.Contracts.IEFCacheServiceProvider)">
+            <summary>
+            Defines methods to create and execute queries that are described by an System.Linq.IQueryable object.
+            </summary>
+            <param name="query">The input EF query.</param>
+            <param name="efCachePolicy">Determines the AbsoluteExpiration time and Priority of the cache.</param>
+            <param name="debugInfo">Stores the debug information of the caching process.</param>
+            <param name="cacheKeyProvider">Gets an EF query and returns its hash to store in the cache.</param>
+            <param name="cacheServiceProvider">The Cache Service Provider.</param>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryProvider`1.CreateQuery``1(System.Linq.Expressions.Expression)">
+            <summary>
+            Constructs an System.Linq.IQueryable of T object that can evaluate the query represented by a specified expression tree.
+            </summary>
+            <typeparam name="TElement">The type of the elements that is returned.</typeparam>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <returns>An System.Linq.IQueryable of T that can evaluate the query represented by the specified expression tree.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryProvider`1.CreateQuery(System.Linq.Expressions.Expression)">
+            <summary>
+            Constructs an System.Linq.IQueryable object that can evaluate the query represented by a specified expression tree.
+            </summary>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <returns>An System.Linq.IQueryable that can evaluate the query represented by the specified expression tree.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryProvider`1.Execute``1(System.Linq.Expressions.Expression)">
+            <summary>
+            Executes the strongly-typed query represented by a specified expression tree.
+            </summary>
+            <typeparam name="TResult">The type of the value that results from executing the query.</typeparam>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <returns>The value that results from executing the specified query.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryProvider`1.Execute(System.Linq.Expressions.Expression)">
+            <summary>
+            Executes the query represented by a specified expression tree.
+            </summary>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <returns>The value that results from executing the specified query.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryProvider`1.Materialize(System.Linq.Expressions.Expression,System.Func{System.Object})">
+            <summary>
+            Executes the query represented by a specified expression tree to cache its results.
+            </summary>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <param name="materializer">How to run the query.</param>
+            <returns>The value that results from executing the specified query.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryProvider`1.ExecuteAsync``1(System.Linq.Expressions.Expression,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously executes the strongly-typed query represented by a specified expression tree.
+            </summary>
+            <typeparam name="TResult">The type of the value that results from executing the query.</typeparam>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <param name="cancellationToken">A CancellationToken to observe while waiting for the task to complete.</param>
+            <returns>A task that represents the asynchronous operation.  The task result contains the value that results from executing the specified query.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryProvider`1.ExecuteAsync(System.Linq.Expressions.Expression,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously executes the query represented by a specified expression tree.
+            </summary>
+            <param name="expression">An expression tree that represents a LINQ query.</param>
+            <param name="cancellationToken">A CancellationToken to observe while waiting for the task to complete.</param>
+            <returns>A task that represents the asynchronous operation.  The task result contains the value that results from executing the specified query.</returns>
+        </member>
+        <member name="T:EFSecondLevelCache.EnumerableExtentions">
+            <summary>
+            Enumerable Extentions.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.EnumerableExtentions.Contains``1(System.Collections.Generic.IEnumerable{``0},``0,System.Func{``0,``0,System.Boolean})">
+            <summary>
+            Determines whether a sequence contains a specified element by using the DynamicEqualityComparer of T.
+            </summary>
+            <typeparam name="T"> The type of the elements of source.</typeparam>
+            <param name="source">A sequence in which to locate a value.</param>
+            <param name="value">The value to locate in the sequence.</param>
+            <param name="func">The comparison algorithm.</param>
+            <returns>true if the source sequence contains an element that has the specified value; otherwise, false.</returns>
+        </member>
+        <member name="T:EFSecondLevelCache.EFCachedQueryExtension">
+            <summary>
+            Returns a new cached query.
+            </summary>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryExtension.Cacheable``1(System.Linq.IQueryable{``0},EFSecondLevelCache.Contracts.EFCachePolicy,EFSecondLevelCache.Contracts.EFCacheDebugInfo,EFSecondLevelCache.Contracts.IEFCacheKeyProvider,EFSecondLevelCache.Contracts.IEFCacheServiceProvider)">
+            <summary>
+            Returns a new query where the entities returned will be cached in the IEFCacheServiceProvider.
+            </summary>
+            <typeparam name="TType">Entity type.</typeparam>
+            <param name="query">The input EF query.</param>
+            <param name="efCachePolicy">Determines the AbsoluteExpiration time and Priority of the cache.</param>
+            <param name="debugInfo">Stores the debug information of the caching process.</param>
+            <param name="cacheKeyProvider">Gets an EF query and returns its hash to store in the cache.</param>
+            <param name="cacheServiceProvider">Cache Service Provider.</param>
+            <returns></returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryExtension.Cacheable``1(System.Linq.IQueryable{``0},EFSecondLevelCache.Contracts.EFCachePolicy,EFSecondLevelCache.Contracts.EFCacheDebugInfo)">
+             <summary>
+            Returns a new query where the entities returned will be cached in the IEFCacheServiceProvider.
+             </summary>
+             <typeparam name="TType">Entity type.</typeparam>
+             <param name="query">The input EF query.</param>
+             <param name="efCachePolicy">Determines the AbsoluteExpiration time and Priority of the cache.</param>
+            <param name="debugInfo">Stores the debug information of the caching process.</param>
+            <returns>Provides functionality to evaluate queries against a specific data source.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryExtension.Cacheable``1(System.Linq.IQueryable{``0})">
+            <summary>
+            Returns a new query where the entities returned will be cached in the IEFCacheServiceProvider.
+            </summary>
+            <typeparam name="TType">Entity type.</typeparam>
+            <param name="query">The input EF query.</param>
+            <returns>Provides functionality to evaluate queries against a specific data source.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryExtension.Cacheable``1(System.Linq.IQueryable{``0},EFSecondLevelCache.Contracts.EFCacheDebugInfo)">
+             <summary>
+            Returns a new query where the entities returned will be cached in the IEFCacheServiceProvider.
+             </summary>
+             <typeparam name="TType">Entity type.</typeparam>
+             <param name="query">The input EF query.</param>
+            <param name="debugInfo">Stores the debug information of the caching process.</param>
+            <returns>Provides functionality to evaluate queries against a specific data source.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryExtension.Cacheable``1(System.Linq.IQueryable{``0},EFSecondLevelCache.Contracts.EFCachePolicy)">
+             <summary>
+            Returns a new query where the entities returned will be cached in the IEFCacheServiceProvider.
+             </summary>
+             <typeparam name="TType">Entity type.</typeparam>
+             <param name="query">The input EF query.</param>
+             <param name="efCachePolicy">Determines the AbsoluteExpiration time and Priority of the cache.</param>
+            <returns>Provides functionality to evaluate queries against a specific data source.</returns>
+        </member>
+        <member name="M:EFSecondLevelCache.EFCachedQueryExtension.toAsNoTrackingQuery``1(System.Linq.IQueryable{``0})">
+            <summary>
+            Returns a new query where the entities returned will not be cached in the DbContext.
+            </summary>
+        </member>
+    </members>
+</doc>

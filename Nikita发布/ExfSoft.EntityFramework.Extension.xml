@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExfSoft.EntityFramework.Extension</name>
+    </assembly>
+    <members>
+        <member name="T:ExfSoft.EntityFramework.Extension.DefaultExtension">
+            <summary>
+            默认扩展
+            </summary>
+        </member>
+        <member name="M:ExfSoft.EntityFramework.Extension.DefaultExtension.ToFirst``2(System.Linq.IQueryable{``0},System.Func{``0,``1})">
+            <summary>
+            返回第一项内容，并重建类型
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="source">源</param>
+            <param name="selector">选择器</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExfSoft.EntityFramework.Extension.DefaultExtension.ToFirstAsync``2(System.Linq.IQueryable{``0},System.Func{``0,``1})">
+            <summary>
+            返回第一项内容，并重建类型(异步）
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="source">源</param>
+            <param name="selector">选择器</param>
+            <returns></returns>
+        </member>
+        <member name="T:ExfSoft.EntityFramework.Extension.PagerExtension">
+            <summary>
+            分页扩展
+            </summary>
+        </member>
+        <member name="M:ExfSoft.EntityFramework.Extension.PagerExtension.ToPager``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            输出分页信息
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="source">源</param>
+            <param name="PageSize">每页显示条数</param>
+            <param name="PageIndex">当前页索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExfSoft.EntityFramework.Extension.PagerExtension.ToPager``2(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Func{``0,``1})">
+            <summary>
+            输出分页信息
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="source">源</param>
+            <param name="PageSize">每页显示条数</param>
+            <param name="PageIndex">当前页索引</param>
+            <param name="selector">选择器</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExfSoft.EntityFramework.Extension.PagerExtension.ToPagerAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            输出分页信息（异步）
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="source">源</param>
+            <param name="PageSize">每页显示条数</param>
+            <param name="PageIndex">当前页索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExfSoft.EntityFramework.Extension.PagerExtension.ToPagerAsync``2(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Func{``0,``1})">
+            <summary>
+            输出分页信息（异步）
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="source">源</param>
+            <param name="PageSize">每页显示条数</param>
+            <param name="PageIndex">当前页索引</param>
+            <param name="selector">选择器</param>
+            <returns></returns>
+        </member>
+        <member name="T:ExfSoft.EntityFramework.Extension.PagerResultModel`1">
+            <summary>
+            分页查询输出Model
+            </summary>
+        </member>
+        <member name="P:ExfSoft.EntityFramework.Extension.PagerResultModel`1.List">
+            <summary>
+            集体
+            </summary>
+        </member>
+        <member name="P:ExfSoft.EntityFramework.Extension.PagerResultModel`1.Count">
+            <summary>
+            总条数
+            </summary>
+        </member>
+    </members>
+</doc>

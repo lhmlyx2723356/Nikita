@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>演示模板</title>
+</head>
+<body>
+welcome:$!{welcome}<br />
+webroot:$!{WebRoot}<br />
+
+#foreach($Row in $dtTest.Rows)
+##只支持变量属性忽略大小写，如$Row.col1与$Row.Col1一致
+	第一列:$Row.col1   --- $Row.Col1 ---第二列: $Row.Col2
+#between 
+,<br /> 
+#end 
+
+</body>
+</html>

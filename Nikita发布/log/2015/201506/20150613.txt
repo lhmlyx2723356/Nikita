@@ -1,0 +1,50 @@
+
+ 
+记录时间：2015-06-13 23:19:43,406 
+线程ID:[27748] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidCastException: 无法将类型为“Nikita.Core.Sample.FrmPrintLable”的对象强制转换为类型“WeifenLuo.WinFormsUI.Docking.DockContent”。
+   在 Nikita.Core.Sample.FrmMainDemo.GetForm(Form parentForm, String name) 位置 D:\GitHub\学习使用\Nikita.Core.Sample.Json.Net\Nikita.Core.Sample\FrmMainDemo.cs:行号 34
+   在 Nikita.Core.Sample.FrmMainDemo.item_Click(Object sender, EventArgs e) 位置 D:\GitHub\学习使用\Nikita.Core.Sample.Json.Net\Nikita.Core.Sample\FrmMainDemo.cs:行号 114
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+ 
+记录时间：2015-06-13 23:22:30,251 
+线程ID:[18060] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 Nikita.Core.Sample.FrmPrintLable.button2_Click(Object sender, EventArgs e) 位置 D:\GitHub\学习使用\Nikita.Core.Sample.Json.Net\Nikita.Core.Sample\FrmPrintLable.cs:行号 36
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   在 System.Windows.Forms.Button.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)

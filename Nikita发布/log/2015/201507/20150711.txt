@@ -1,0 +1,81 @@
+
+ 
+记录时间：2015-07-11 22:15:39,419 
+线程ID:[18456] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.ComponentModel.Win32Exception (0x80004005): 操作成功完成。
+   在 System.Windows.Forms.RibbonHelpers.GlobalHook.InstallHook()
+   在 System.Windows.Forms.RibbonHelpers.GlobalHook..ctor(HookTypes hookType)
+   在 System.Windows.Forms.Ribbon.SetUpHooks()
+   在 System.Windows.Forms.Ribbon.OnParentChanged(EventArgs e)
+   在 System.Windows.Forms.Control.AssignParent(Control value)
+   在 System.Windows.Forms.Control.ControlCollection.Add(Control value)
+   在 System.Windows.Forms.Form.ControlCollection.Add(Control value)
+   在 Nikita.Core.Sample.FrmRabbionTest.InitializeComponent() 位置 d:\GitHub\学习使用\Nikita-2013\Nikita.Core.Sample\Rabbion\FrmRabbionTest.Designer.cs:行号 245
+   在 Nikita.Core.Sample.FrmRabbionTest..ctor() 位置 d:\GitHub\学习使用\Nikita-2013\Nikita.Core.Sample\Rabbion\FrmRabbionTest.cs:行号 17
+   在 Nikita.Core.Sample.Program.Main() 位置 d:\GitHub\学习使用\Nikita-2013\Nikita.Core.Sample\Program.cs:行号 20
+   在 System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)
+   在 System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
+   在 Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+
+ 
+记录时间：2015-07-11 22:16:06,247 
+线程ID:[19136] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.ComponentModel.Win32Exception (0x80004005): 操作成功完成。
+   在 System.Windows.Forms.RibbonHelpers.GlobalHook.InstallHook()
+   在 System.Windows.Forms.RibbonHelpers.GlobalHook..ctor(HookTypes hookType)
+   在 System.Windows.Forms.Ribbon.SetUpHooks()
+   在 System.Windows.Forms.Ribbon.OnParentChanged(EventArgs e)
+   在 System.Windows.Forms.Control.AssignParent(Control value)
+   在 System.Windows.Forms.Control.ControlCollection.Add(Control value)
+   在 System.Windows.Forms.Form.ControlCollection.Add(Control value)
+   在 Nikita.Core.Sample.FrmRabbionTest.InitializeComponent() 位置 d:\GitHub\学习使用\Nikita-2013\Nikita.Core.Sample\Rabbion\FrmRabbionTest.Designer.cs:行号 245
+   在 Nikita.Core.Sample.FrmRabbionTest..ctor() 位置 d:\GitHub\学习使用\Nikita-2013\Nikita.Core.Sample\Rabbion\FrmRabbionTest.cs:行号 16
+   在 Nikita.Core.Sample.Program.Main() 位置 d:\GitHub\学习使用\Nikita-2013\Nikita.Core.Sample\Program.cs:行号 20
+   在 System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)
+   在 System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
+   在 Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()
+
+ 
+记录时间：2015-07-11 22:21:49,011 
+线程ID:[19852] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.ComponentModel.Win32Exception (0x80004005): 操作成功完成。
+   在 System.Windows.Forms.RibbonHelpers.GlobalHook.InstallHook()
+   在 System.Windows.Forms.RibbonHelpers.GlobalHook..ctor(HookTypes hookType)
+   在 System.Windows.Forms.Ribbon.SetUpHooks()
+   在 System.Windows.Forms.Ribbon.OnParentChanged(EventArgs e)
+   在 System.Windows.Forms.Control.AssignParent(Control value)
+   在 System.Windows.Forms.Control.ControlCollection.Add(Control value)
+   在 System.Windows.Forms.Form.ControlCollection.Add(Control value)
+   在 Nikita.Core.Sample.FrmRabbionTest.InitializeComponent() 位置 d:\GitHub\学习使用\Nikita-2013\Nikita.Core.Sample\Rabbion\FrmRabbionTest.Designer.cs:行号 245
+   在 Nikita.Core.Sample.FrmRabbionTest..ctor() 位置 d:\GitHub\学习使用\Nikita-2013\Nikita.Core.Sample\Rabbion\FrmRabbionTest.cs:行号 16
+   在 Nikita.Core.Sample.Program.Main() 位置 d:\GitHub\学习使用\Nikita-2013\Nikita.Core.Sample\Program.cs:行号 20
+   在 System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)
+   在 System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
+   在 Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
+   在 System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+   在 System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   在 System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   在 System.Threading.ThreadHelper.ThreadStart()

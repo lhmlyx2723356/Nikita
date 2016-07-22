@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<appsetting> 
+  <defaultpath>D:\WorkSpace\lhm\H.M.Framework\H.M.Frame\bin\Debug</defaultpath>
+  <defaultfilename> H.M.Frame</defaultfilename>
+</appsetting>

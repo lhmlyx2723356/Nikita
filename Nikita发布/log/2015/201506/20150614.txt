@@ -1,0 +1,182 @@
+
+ 
+记录时间：2015-06-14 11:40:03,829 
+线程ID:[27008] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidCastException: 无法将类型为“Nikita.Core.Sample.FrmExcelImport”的对象强制转换为类型“WeifenLuo.WinFormsUI.Docking.DockContent”。
+   在 Nikita.Core.Sample.FrmMainDemo.GetForm(Form parentForm, String name) 位置 D:\GitHub\学习使用\Nikita.Core.Sample.Json.Net\Nikita.Core.Sample\FrmMainDemo.cs:行号 34
+   在 Nikita.Core.Sample.FrmMainDemo.item_Click(Object sender, EventArgs e) 位置 D:\GitHub\学习使用\Nikita.Core.Sample.Json.Net\Nikita.Core.Sample\FrmMainDemo.cs:行号 114
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+ 
+记录时间：2015-06-14 11:40:37,022 
+线程ID:[24420] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.ArgumentException: 列“intColumn0”不属于表 dtSupport。
+   在 System.Data.DataRow.GetDataColumn(String columnName)
+   在 System.Data.DataRow.set_Item(String columnName, Object value)
+   在 NiKita.Core.Sample.Support.DataTableSupport.InitDataTable(Int32 intColumn, Int32 intRow) 位置 D:\GitHub\学习使用\Nikita.Core.Sample.Json.Net\NiKita.Core.Sample.Support\DataTableSupport.cs:行号 30
+   在 Nikita.Core.Sample.FrmExcelImport.FrmExcelImport_Load(Object sender, EventArgs e) 位置 D:\GitHub\学习使用\Nikita.Core.Sample.Json.Net\Nikita.Core.Sample\Excel导入导出\FrmExcelImport.cs:行号 33
+   在 System.Windows.Forms.Form.OnLoad(EventArgs e)
+   在 System.Windows.Forms.Form.OnCreateControl()
+   在 System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   在 System.Windows.Forms.Control.CreateControl()
+   在 System.Windows.Forms.Control.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ContainerControl.WndProc(Message& m)
+   在 System.Windows.Forms.Form.WmShowWindow(Message& m)
+   在 System.Windows.Forms.Form.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+ 
+记录时间：2015-06-14 12:58:02,897 
+线程ID:[21092] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidCastException: Unable to cast object of type 'Nikita.Core.Sample.TestFormForScreenshots' to type 'WeifenLuo.WinFormsUI.Docking.DockContent'.
+   at Nikita.Core.Sample.FrmMainDemo.GetForm(Form parentForm, String name) in D:\GitHub\学习使用\Nikita.Core.Sample.Json.Net\Nikita.Core.Sample\FrmMainDemo.cs:line 34
+   at Nikita.Core.Sample.FrmMainDemo.item_Click(Object sender, EventArgs e) in D:\GitHub\学习使用\Nikita.Core.Sample.Json.Net\Nikita.Core.Sample\FrmMainDemo.cs:line 114
+   at System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   at System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   at System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   at System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   at System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+ 
+记录时间：2015-06-14 20:45:27,663 
+线程ID:[41700] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.InvalidCastException: 无法将类型为“Nikita.Core.Sample.FrmHtmlAgilityPackTest”的对象强制转换为类型“WeifenLuo.WinFormsUI.Docking.DockContent”。
+   在 Nikita.Core.Sample.FrmMainDemo.GetForm(Form parentForm, String name) 位置 D:\GitHub\学习使用\Nikita\Nikita.Core.Sample\FrmMainDemo.cs:行号 34
+   在 Nikita.Core.Sample.FrmMainDemo.item_Click(Object sender, EventArgs e) 位置 D:\GitHub\学习使用\Nikita\Nikita.Core.Sample\FrmMainDemo.cs:行号 114
+   在 System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   在 System.Windows.Forms.ToolStripMenuItem.OnClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   在 System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   在 System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   在 System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.ToolStripDropDown.OnMouseUp(MouseEventArgs mea)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   在 System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+ 
+记录时间：2015-06-14 20:46:57,319 
+线程ID:[41716] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.ArgumentException: 路径中具有非法字符。
+   在 System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   在 System.IO.Path.GetFileName(String path)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding)
+   在 HtmlAgilityPack.HtmlDocument.Load(String path, Encoding encoding)
+   在 Nikita.Core.Sample.FrmHtmlAgilityPackTest.button1_Click(Object sender, EventArgs e) 位置 D:\GitHub\学习使用\Nikita\Nikita.Core.Sample\FrmHtmlAgilityPackTest.cs:行号 26
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   在 System.Windows.Forms.Button.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+ 
+记录时间：2015-06-14 20:47:41,754 
+线程ID:[41716] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.ArgumentException: 路径中具有非法字符。
+   在 System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   在 System.IO.Path.GetFileName(String path)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding)
+   在 HtmlAgilityPack.HtmlDocument.Load(String path, Encoding encoding)
+   在 Nikita.Core.Sample.FrmHtmlAgilityPackTest.button1_Click(Object sender, EventArgs e) 位置 D:\GitHub\学习使用\Nikita\Nikita.Core.Sample\FrmHtmlAgilityPackTest.cs:行号 26
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   在 System.Windows.Forms.Button.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+ 
+记录时间：2015-06-14 20:49:11,875 
+线程ID:[40048] 
+日志级别：  ERROR 
+出错类：logger property: [(null)] - 
+错误描述：Error
+ 
+System.ArgumentException: 路径中具有非法字符。
+   在 System.IO.Path.CheckInvalidPathChars(String path, Boolean checkAdditional)
+   在 System.IO.Path.GetFileName(String path)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding)
+   在 HtmlAgilityPack.HtmlDocument.Load(String path, Encoding encoding)
+   在 Nikita.Core.Sample.FrmHtmlAgilityPackTest.button1_Click(Object sender, EventArgs e) 位置 D:\GitHub\学习使用\Nikita\Nikita.Core.Sample\FrmHtmlAgilityPackTest.cs:行号 26
+   在 System.Windows.Forms.Control.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnClick(EventArgs e)
+   在 System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   在 System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   在 System.Windows.Forms.Control.WndProc(Message& m)
+   在 System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   在 System.Windows.Forms.Button.WndProc(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   在 System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   在 System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
