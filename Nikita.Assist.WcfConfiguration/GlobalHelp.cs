@@ -7,6 +7,6 @@ namespace Nikita.Assist.WcfConfiguration
 {
   public   class GlobalHelp
     {
-      public static readonly string WcfConfigDbConnstr = @"server=UKYNDA-001;uid=sa;pwd=12345678;database=WcfConfig"; 
+      public static readonly string WcfConfigDbConnstr = @"server=LENOVO-PC;uid=sa;pwd=12345678;database=WcfConfig"; 
     }
 }
