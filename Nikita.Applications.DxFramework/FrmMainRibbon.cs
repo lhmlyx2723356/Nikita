@@ -13,6 +13,9 @@ using DevExpress.XtraBars;
 using System.IO;
 using Nikita.Core;
 using Nikita.Core4Dx;
+using Nikita.Core.NPOIs;
+using Nikita.Core.Images;
+using Nikita.Core.XML;
 
 namespace Nikita.Applications.DxFramework
 {

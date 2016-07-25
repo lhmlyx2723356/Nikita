@@ -133,6 +133,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Nikita.WinForm.ExtendControl\Nikita.WinForm.ExtendControl.csproj">
+      <Project>{db3e8dd9-36c0-4163-b01f-04f09c23738a}</Project>
+      <Name>Nikita.WinForm.ExtendControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WaitWindow\WaitWindow.csproj">
       <Project>{9da0e57e-16c2-4f74-9669-24ff0cddc268}</Project>
       <Name>WaitWindow</Name>

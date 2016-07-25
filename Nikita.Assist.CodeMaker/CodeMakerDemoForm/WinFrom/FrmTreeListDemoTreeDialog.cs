@@ -11,10 +11,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Nikita.Base.Literacy;
+using Nikita.Core.Literacy;
 using Nikita.Core;
 using Nikita.Assist.CodeMaker.DAL;
-using Nikita.Assist.CodeMaker.Model;
+using Nikita.Assist.CodeMaker.Model; 
+using Nikita.Core.WinForm;
 namespace Nikita.Assist.CodeMaker
 {
     /// <summary>说明:FrmTreeListDemoTreeDialog

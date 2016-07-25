@@ -300,7 +300,6 @@
     <None Include="CacheContext.edmx.diagram">
       <DependentUpon>CacheContext.edmx</DependentUpon>
     </None>
-    <None Include="packages.config" />
     <EntityDeploy Include="Permission.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Permission.Designer.cs</LastGenOutput>

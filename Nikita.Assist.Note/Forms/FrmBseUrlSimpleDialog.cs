@@ -11,7 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Nikita.Base.Define;
-using Nikita.Core; 
+using Nikita.Core;
+using Nikita.Core.WinForm;
 using Nikita.Base.IDAL;
 using Nikita.Assist.Note.Model;
 

@@ -11,6 +11,7 @@ using Nikita.Assist.CodeMaker.DAL;
 using Nikita.Assist.CodeMaker.Model;
 using Nikita.Base.Define;
 using Nikita.Core;
+using Nikita.Core.WinForm;
 
 namespace Nikita.Assist.CodeMaker
 {

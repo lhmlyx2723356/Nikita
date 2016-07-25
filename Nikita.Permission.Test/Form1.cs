@@ -63,7 +63,7 @@ namespace Nikita.Permission.Test
 
             var channel = factory.CreateChannel();
 
-            var result = channel.GetPermission("lhm", "1", 1);
+            var result = channel.GetPermission("lhm", "1", 1,false);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace Nikita.Permission.Test
               ChannelFactory<IPermissionService> factory = new ChannelFactory<IPermissionService>(new NetTcpBinding(), "net.tcp://localhost:13125/PermissionService/PermissionService");
               factory.Open();
               var channel = factory.CreateChannel();
-              channel.GetPermission("lhm", "1", 1);
+              channel.GetPermission("lhm", "1", 1,false);
               stopwatch.Stop();
               factory.Close();
               int threadID = Thread.CurrentThread.ManagedThreadId;

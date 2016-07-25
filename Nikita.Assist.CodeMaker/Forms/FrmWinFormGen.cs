@@ -11,6 +11,7 @@ using Nikita.Base.DbSchemaReader.DataSchema;
 using Nikita.Assist.CodeMaker.Template.ClassTemplate;
 using Nikita.Base.Define;
 using Nikita.Core;
+using Nikita.Core.WinForm;
 using Nikita.WinForm.ExtendControl;
 
 namespace Nikita.Assist.CodeMaker

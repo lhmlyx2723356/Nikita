@@ -5,7 +5,6 @@
 using Nikita.Assist.CodeMaker.DAL;
 using Nikita.Assist.CodeMaker.Model;
 using Nikita.Core;
-using Nikita.WinForm.ExtendControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +15,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Nikita.Base.Define;
+using Nikita.Core.NPOIs;
+using Nikita.Core.WinForm;
 namespace Nikita.Assist.CodeMaker
 {
     /// <summary>说明:FrmSys_RolesSimpleQuery

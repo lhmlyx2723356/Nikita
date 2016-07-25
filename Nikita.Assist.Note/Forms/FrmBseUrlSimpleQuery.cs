@@ -5,6 +5,7 @@
 
 using Nikita.Assist.Note.Model;
 using Nikita.Core;
+using Nikita.Core.WinForm;
 using Nikita.WinForm.ExtendControl;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ using System.Text;
 using System.Windows.Forms;
 using Nikita.Base.Define;
 using Nikita.Base.IDAL;
+using Nikita.Core.NPOIs;
 
 namespace Nikita.Assist.Note
 {

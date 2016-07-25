@@ -32,108 +32,101 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.BonusSkins.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.BonusSkins.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.BonusSkins.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Charts.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.Charts.v13.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Charts.v13.2.Core">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Charts.v13.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.Data.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.Data.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Data.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.DemoReports.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=4c3bc44151be4b47, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.DemoReports.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.DemoReports.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.DemoReports.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Office.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.Office.v13.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Office.v13.2.Core">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Office.v13.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.PivotGrid.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.PivotGrid.v13.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Pdf.v13.2.Core">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Pdf.v13.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.Printing.v13.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Pdf.v13.2.Drawing">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Pdf.v13.2.Drawing.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.RichEdit.v13.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.PivotGrid.v13.2.Core">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.PivotGrid.v13.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Sparkline.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.Sparkline.v13.2.Core.dll</HintPath>
+    <Reference Include="DevExpress.Printing.v13.2.Core">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Printing.v13.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Tutorials.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.Tutorials.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.RichEdit.v13.2.Core">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.RichEdit.v13.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.Utils.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.Sparkline.v13.2.Core">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Sparkline.v13.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Utils.v13.2.UI, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.Utils.v13.2.UI.dll</HintPath>
+    <Reference Include="DevExpress.Spreadsheet.v13.2.Core">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Spreadsheet.v13.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraBars.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.Tutorials.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Tutorials.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraCharts.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.Utils.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Utils.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v13.2.Wizard, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraCharts.v13.2.Wizard.dll</HintPath>
+    <Reference Include="DevExpress.Utils.v13.2.UI">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.Utils.v13.2.UI.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraEditors.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraBars.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraBars.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraGrid.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraCharts.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraLayout.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraCharts.v13.2.Wizard">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraCharts.v13.2.Wizard.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraNavBar.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraNavBar.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraEditors.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraEditors.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraPivotGrid.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraPivotGrid.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraGrid.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraGrid.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraPrinting.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraLayout.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraLayout.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraReports.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraNavBar.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraNavBar.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraReports.v13.2.Extensions, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraReports.v13.2.Extensions.dll</HintPath>
+    <Reference Include="DevExpress.XtraPdfViewer.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraPdfViewer.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraRichEdit.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraPivotGrid.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraPivotGrid.v13.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Nikita.DLL\Devexpress.DLL\DevExpress.XtraTreeList.v13.2.dll</HintPath>
+    <Reference Include="DevExpress.XtraPrinting.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraPrinting.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraReports.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v13.2.Extensions">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraReports.v13.2.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraRichEdit.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpreadsheet.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraSpreadsheet.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v13.2">
+      <HintPath>..\..\Nikita发布\RunDll\Devexpress\DevExpress.XtraTreeList.v13.2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Nikita发布\RunDll\SQLite\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -192,7 +185,9 @@
     <Compile Include="frmMainTree.designer.cs">
       <DependentUpon>FrmMainTree.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmWaitForm.cs" />
+    <Compile Include="FrmWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmWaitForm.designer.cs">
       <DependentUpon>FrmWaitForm.cs</DependentUpon>
     </Compile>

@@ -4,8 +4,8 @@ using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using System.Xml.Linq;
-
+using System.Xml.Linq; 
+using Nikita.WinForm.ExtendControl;
 namespace Nikita.Assist.AutoUpdater
 {
     public partial class FrmAutoUpdate : Form
@@ -59,7 +59,7 @@ namespace Nikita.Assist.AutoUpdater
 
         private void frmAutoUpdate_Load(object sender, EventArgs e)
         {
-            var result = WaitWindow.WaitWindow.Show(WorkerMethod, "正在更新");
+            var result = WaitWindow.Show(WorkerMethod, "正在更新");
             _blnFlag = bool.Parse(result.ToString());
             if (!_blnFlag)
             {
@@ -94,7 +94,7 @@ namespace Nikita.Assist.AutoUpdater
             return _blnFlag;
         }
 
-        private void WorkerMethod(object sender, WaitWindow.WaitWindowEventArgs e)
+        private void WorkerMethod(object sender, WaitWindowEventArgs e)
         { 
             bool flag = IsUpdate();
             if (e.Arguments.Count > 0)

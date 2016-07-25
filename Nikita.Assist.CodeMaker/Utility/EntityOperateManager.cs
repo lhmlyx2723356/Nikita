@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Nikita.Base.Literacy;
+using Nikita.Core.Literacy;
 using Nikita.Core;
+using Nikita.Core.WinForm;
 
 namespace Nikita.Assist.CodeMaker
 {

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Config>
-  <dbtype>Sqlite</dbtype>
-  <connstr>Data Source=D:\GitHub\学习使用\Nikita-2013\Nikita.Assist.DBManager\bin\Debug\Database\CodeMakerDB.db</connstr>
-  <genway>1</genway>
-  <namespace>Nikita.Assist.CodeMaker</namespace>
-  <front></front>
-  <output>D:\WorkSpace\gencode</output>
-</Config>

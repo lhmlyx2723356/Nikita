@@ -11,6 +11,9 @@ using System.IO;
 using DevExpress.XtraTreeList.Nodes;
 using Nikita.Core;
 using Nikita.Core4Dx;
+using Nikita.Core.XML;
+using Nikita.Core.Images;
+
 
 namespace Nikita.Applications.DxFramework
 {

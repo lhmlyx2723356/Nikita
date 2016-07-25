@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using NiKita.Core.Sample.Support;
 using Nikita.WinForm.ExtendControl;
+using Nikita.Core.NPOIs;
 
 namespace Nikita.Core.Sample
 {

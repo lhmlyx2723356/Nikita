@@ -10,8 +10,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Nikita.Base.Literacy;
-using Nikita.Core;
+using Nikita.Core.Literacy;
+using Nikita.Core.WinForm;
 using Nikita.Assist.CodeMaker.DAL;
 using Nikita.Assist.CodeMaker.Model;
 namespace Nikita.Assist.CodeMaker

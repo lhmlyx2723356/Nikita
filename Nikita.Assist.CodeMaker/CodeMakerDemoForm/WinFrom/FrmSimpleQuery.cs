@@ -19,6 +19,8 @@ using System.Windows.Forms;
 using Nikita.DataAccess4DBHelper;
 using DbHelper = Nikita.DataAccess4DBHelper.DbHelper;
 using Nikita.Base.Define;
+using Nikita.Core.NPOIs;
+using Nikita.Core.WinForm;
 
 namespace Nikita.Assist.CodeMaker.CodeMakerDemoForm.WinFrom
 {

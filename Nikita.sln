@@ -5,22 +5,6 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NiKita.Core.Sample.Support", "NiKita.Core.Sample.Support\NiKita.Core.Sample.Support.csproj", "{75AAF98A-15D3-4835-A418-64B7D2318626}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.DLL", "Nikita.DLL", "{15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}"
-	ProjectSection(SolutionItems) = preProject
-		Dll文件说明.txt = Dll文件说明.txt
-		..\..\..\WorkSpace\lhm\NeedToLearn\print\免费DataGridView打印控件5.7版\打印控件\NET4.0下专用打印控件\DotNetPrint.dll = ..\..\..\WorkSpace\lhm\NeedToLearn\print\免费DataGridView打印控件5.7版\打印控件\NET4.0下专用打印控件\DotNetPrint.dll
-		C:\Users\Ukynda\Desktop\SqlMigrator-master\SqlMigratorCore\bin\Debug\FluentMigrator.dll = C:\Users\Ukynda\Desktop\SqlMigrator-master\SqlMigratorCore\bin\Debug\FluentMigrator.dll
-		..\HtmlAgilityPack\下载文件\HtmlAgilityPack.1.4.6\Net40\HtmlAgilityPack.dll = ..\HtmlAgilityPack\下载文件\HtmlAgilityPack.1.4.6\Net40\HtmlAgilityPack.dll
-		Nikita.Assist.AutoUpdater\bin\Debug\ICSharpCode.SharpZipLib.dll = Nikita.Assist.AutoUpdater\bin\Debug\ICSharpCode.SharpZipLib.dll
-		..\..\..\DevelopTools\代码生成器\第三方类库\MySql.Data.dll = ..\..\..\DevelopTools\代码生成器\第三方类库\MySql.Data.dll
-		Newtonsoft.Json\bin\Debug\Net40\Newtonsoft.Json.dll = Newtonsoft.Json\bin\Debug\Net40\Newtonsoft.Json.dll
-		..\..\..\WorkSpace\lhm\NeedToLearn\print\免费DataGridView打印控件5.7版\打印控件\NET4.0下专用打印控件\NPOI.dll = ..\..\..\WorkSpace\lhm\NeedToLearn\print\免费DataGridView打印控件5.7版\打印控件\NET4.0下专用打印控件\NPOI.dll
-		..\..\..\WorkSpace\project\TZYM\ProjectEmpty\DAL\dll\System.Data.SQLite.dll = ..\..\..\WorkSpace\project\TZYM\ProjectEmpty\DAL\dll\System.Data.SQLite.dll
-		DLL\UtilityLibrary.dll = DLL\UtilityLibrary.dll
-		WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll = WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
-		..\..\..\WorkSpace\lhm\NeedToLearn\print\免费DataGridView打印控件5.7版\打印控件\NET4.0下专用打印控件\zxing.dll = ..\..\..\WorkSpace\lhm\NeedToLearn\print\免费DataGridView打印控件5.7版\打印控件\NET4.0下专用打印控件\zxing.dll
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Core.Sample", "Nikita.Core.Sample\Nikita.Core.Sample.csproj", "{874CBB9D-85D2-49BA-8C39-9E685BDD37DE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.CodeTimer", "Nikita.Assist.CodeTimer\Nikita.Assist.CodeTimer.csproj", "{DF8D4107-2004-419A-86E9-5615A3A9FE17}"
@@ -48,33 +32,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.WinForm.ExtControl",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.WinForm.ExtendControl4DX", "Nikita.WinForm.Devexpress.ExtendControl\Nikita.WinForm.ExtendControl4DX.csproj", "{382F7CDF-D671-40DB-B7CF-9C8E8CCE8EF2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Devexpress.DLL", "Devexpress.DLL", "{97D02225-B8AE-4859-94FD-077714B1CF73}"
-	ProjectSection(SolutionItems) = preProject
-		DLL\Devexpress.DLL\DevExpress.BonusSkins.v13.2.dll = DLL\Devexpress.DLL\DevExpress.BonusSkins.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.Charts.v13.2.Core.dll = DLL\Devexpress.DLL\DevExpress.Charts.v13.2.Core.dll
-		DLL\Devexpress.DLL\DevExpress.Data.v13.2.dll = DLL\Devexpress.DLL\DevExpress.Data.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.DemoReports.v13.2.dll = DLL\Devexpress.DLL\DevExpress.DemoReports.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.Office.v13.2.Core.dll = DLL\Devexpress.DLL\DevExpress.Office.v13.2.Core.dll
-		DLL\Devexpress.DLL\DevExpress.PivotGrid.v13.2.Core.dll = DLL\Devexpress.DLL\DevExpress.PivotGrid.v13.2.Core.dll
-		DLL\Devexpress.DLL\DevExpress.Printing.v13.2.Core.dll = DLL\Devexpress.DLL\DevExpress.Printing.v13.2.Core.dll
-		DLL\Devexpress.DLL\DevExpress.RichEdit.v13.2.Core.dll = DLL\Devexpress.DLL\DevExpress.RichEdit.v13.2.Core.dll
-		DLL\Devexpress.DLL\DevExpress.Sparkline.v13.2.Core.dll = DLL\Devexpress.DLL\DevExpress.Sparkline.v13.2.Core.dll
-		DLL\Devexpress.DLL\DevExpress.Tutorials.v13.2.dll = DLL\Devexpress.DLL\DevExpress.Tutorials.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.Utils.v13.2.dll = DLL\Devexpress.DLL\DevExpress.Utils.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.Utils.v13.2.UI.dll = DLL\Devexpress.DLL\DevExpress.Utils.v13.2.UI.dll
-		DLL\Devexpress.DLL\DevExpress.XtraBars.v13.2.dll = DLL\Devexpress.DLL\DevExpress.XtraBars.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.XtraCharts.v13.2.dll = DLL\Devexpress.DLL\DevExpress.XtraCharts.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.XtraCharts.v13.2.Wizard.dll = DLL\Devexpress.DLL\DevExpress.XtraCharts.v13.2.Wizard.dll
-		DLL\Devexpress.DLL\DevExpress.XtraEditors.v13.2.dll = DLL\Devexpress.DLL\DevExpress.XtraEditors.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.XtraNavBar.v13.2.dll = DLL\Devexpress.DLL\DevExpress.XtraNavBar.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.XtraPivotGrid.v13.2.dll = DLL\Devexpress.DLL\DevExpress.XtraPivotGrid.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.XtraPrinting.v13.2.dll = DLL\Devexpress.DLL\DevExpress.XtraPrinting.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.XtraReports.v13.2.dll = DLL\Devexpress.DLL\DevExpress.XtraReports.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.XtraReports.v13.2.Extensions.dll = DLL\Devexpress.DLL\DevExpress.XtraReports.v13.2.Extensions.dll
-		DLL\Devexpress.DLL\DevExpress.XtraRichEdit.v13.2.dll = DLL\Devexpress.DLL\DevExpress.XtraRichEdit.v13.2.dll
-		DLL\Devexpress.DLL\DevExpress.XtraTreeList.v13.2.dll = DLL\Devexpress.DLL\DevExpress.XtraTreeList.v13.2.dll
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.AutoUpdater", "Nikita.Assist.AutoUpdater\Nikita.Assist.AutoUpdater.csproj", "{4DDC4E84-5128-4604-BD94-37CACA27E828}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Core", "Nikita.Core\Nikita.Core.csproj", "{A939C25E-8300-48CA-AD10-48755C95FED8}"
@@ -87,15 +44,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.WcfHost", "Ni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.Uploader", "Nikita.Assist.Uploader\Nikita.Assist.Uploader.csproj", "{800EB505-55A2-4D6C-BBBC-410E4B638ECD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NPOI4.0", "NPOI4.0", "{72566625-2460-4113-95C0-E7CB531F5837}"
-	ProjectSection(SolutionItems) = preProject
-		DLL\NPOI4.0\ICSharpCode.SharpZipLib.dll = DLL\NPOI4.0\ICSharpCode.SharpZipLib.dll
-		DLL\NPOI4.0\NPOI.dll = DLL\NPOI4.0\NPOI.dll
-		DLL\NPOI4.0\NPOI.OOXML.dll = DLL\NPOI4.0\NPOI.OOXML.dll
-		DLL\NPOI4.0\NPOI.OpenXml4Net.dll = DLL\NPOI4.0\NPOI.OpenXml4Net.dll
-		DLL\NPOI4.0\NPOI.OpenXmlFormats.dll = DLL\NPOI4.0\NPOI.OpenXmlFormats.dll
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Core.Sample.DAL", "Nikita.Core.Sample.DAL\Nikita.Core.Sample.DAL.csproj", "{EBDC899F-B10C-4159-AD92-4837BCBE3194}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Core.Sample.Model", "Nikita.Core.Sample.Model\Nikita.Core.Sample.Model.csproj", "{20B5CE52-9B44-433E-9A9D-F77E67F44B04}"
@@ -106,14 +54,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.WebService", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.Report.Platform", "Nikita.Report.Platform", "{7486F726-1396-46A8-B5F9-22CA42E454AC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReportViewer", "ReportViewer", "{15423A4D-799B-4992-8E28-12EEDDBA5F9A}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\WorkSpace\project\Repair\Repair\dll\Microsoft.ReportViewer.Common.dll = ..\..\..\WorkSpace\project\Repair\Repair\dll\Microsoft.ReportViewer.Common.dll
-		..\..\..\WorkSpace\project\Repair\Repair\dll\Microsoft.ReportViewer.DataVisualization.dll = ..\..\..\WorkSpace\project\Repair\Repair\dll\Microsoft.ReportViewer.DataVisualization.dll
-		..\..\..\WorkSpace\project\Repair\Repair\dll\Microsoft.ReportViewer.ProcessingObjectModel.dll = ..\..\..\WorkSpace\project\Repair\Repair\dll\Microsoft.ReportViewer.ProcessingObjectModel.dll
-		..\..\..\WorkSpace\project\Repair\Repair\dll\Microsoft.ReportViewer.WinForms.dll = ..\..\..\WorkSpace\project\Repair\Repair\dll\Microsoft.ReportViewer.WinForms.dll
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Report.WinForm", "Nikita.Report.WinForm\Nikita.Report.WinForm.csproj", "{21CCE3A7-385E-4CD0-B25F-C36DD09AA96C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Report.WinForm2Dx", "Nikita.Report.WinForm2Dx\Nikita.Report.WinForm2Dx.csproj", "{A5AC469E-2C49-4D40-9348-673D1656341A}"
@@ -121,14 +61,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.NoSQL", "Nikita.NoSQL", "{F6925E72-CF1F-47E9-A58D-26FB13386A01}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.NoSQL.MongoDBCore", "Nikita.MongoDB\Nikita.NoSQL.MongoDBCore.csproj", "{ED174B2A-4FAB-4B6C-B536-1EE23DBE567E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MongoDBDriver-2.0.1", "MongoDBDriver-2.0.1", "{E6669831-9454-4C9B-B711-DFBBCF82C5F8}"
-	ProjectSection(SolutionItems) = preProject
-		DLL\MongoDBDriver-2.0.1\MongoDB.Bson.dll = DLL\MongoDBDriver-2.0.1\MongoDB.Bson.dll
-		DLL\MongoDBDriver-2.0.1\MongoDB.Driver.Core.dll = DLL\MongoDBDriver-2.0.1\MongoDB.Driver.Core.dll
-		DLL\MongoDBDriver-2.0.1\MongoDB.Driver.dll = DLL\MongoDBDriver-2.0.1\MongoDB.Driver.dll
-		DLL\MongoDBDriver-2.0.1\MongoDB.Driver.Legacy.dll = DLL\MongoDBDriver-2.0.1\MongoDB.Driver.Legacy.dll
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.Application.Framework", "Nikita.Application.Framework", "{0F1D8D18-6012-46EA-9874-08B87960DF47}"
 EndProject
@@ -138,35 +70,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.DataAccess.EF.Test",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.DataAccess4EF", "Nikita.DataAccess4EF\Nikita.DataAccess4EF.csproj", "{3B266466-5923-4A18-9460-09BE4C302BC8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinqExtend", "LinqExtend", "{AEE293A1-6096-4FB7-9F39-7720B197F063}"
-	ProjectSection(SolutionItems) = preProject
-		DLL\LinqExtend\LinqKit.dll = DLL\LinqExtend\LinqKit.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFramework6", "EntityFramework6", "{04C00B62-3B43-4D14-B5F5-48E7095F7DE5}"
-	ProjectSection(SolutionItems) = preProject
-		DLL\EntityFramework6.1.0\EntityFramework.BulkInsert\ef6\lib\Net45\EntityFramework.BulkInsert.dll = DLL\EntityFramework6.1.0\EntityFramework.BulkInsert\ef6\lib\Net45\EntityFramework.BulkInsert.dll
-		DLL\EntityFramework6.1.0\EntityFramework.dll = DLL\EntityFramework6.1.0\EntityFramework.dll
-		Nikita.DataAccess4EF\bin\Debug\EntityFramework.Extended.dll = Nikita.DataAccess4EF\bin\Debug\EntityFramework.Extended.dll
-		Nikita.DataAccess.EF.Test\bin\Debug\EntityFramework.MappingAPI.dll = Nikita.DataAccess.EF.Test\bin\Debug\EntityFramework.MappingAPI.dll
-		DLL\EntityFramework6.1.0\EntityFramework.SqlServer.dll = DLL\EntityFramework6.1.0\EntityFramework.SqlServer.dll
-		Nikita.DataAccess.EF.Test\bin\Debug\ExfSoft.EntityFramework.Extension.dll = Nikita.DataAccess.EF.Test\bin\Debug\ExfSoft.EntityFramework.Extension.dll
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.DataAccess4DBHelper", "Nikita.DataAccess4DBHelper\Nikita.DataAccess4DBHelper.csproj", "{1D3D3BA5-FA80-4E3A-8C8D-4F189652D69F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MySql", "MySql", "{5F1361BB-1136-44AF-BF1C-B681075E1047}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\WorkSpace\project\UsTeam\EmptyProject1.0\UsTeamProjectMySql1.0\UsTeamProject.DAL\bin\Debug\MySql.Data.dll = ..\..\..\WorkSpace\project\UsTeam\EmptyProject1.0\UsTeamProjectMySql1.0\UsTeamProject.DAL\bin\Debug\MySql.Data.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "跟踪SQL所需类库", "跟踪SQL所需类库", "{62318B91-F221-413C-AFC9-BA5C7D86195F}"
-	ProjectSection(SolutionItems) = preProject
-		Nikita.DataAccess.EF.Test\bin\Debug\DNTProfiler.Common.dll = Nikita.DataAccess.EF.Test\bin\Debug\DNTProfiler.Common.dll
-		Nikita.DataAccess.EF.Test\bin\Debug\DNTProfiler.EntityFramework.Core.dll = Nikita.DataAccess.EF.Test\bin\Debug\DNTProfiler.EntityFramework.Core.dll
-		Nikita.DataAccess.EF.Test\bin\Debug\Newtonsoft.Json.dll = Nikita.DataAccess.EF.Test\bin\Debug\Newtonsoft.Json.dll
-		Nikita.DataAccess.EF.Test\bin\Debug\System.Windows.Interactivity.dll = Nikita.DataAccess.EF.Test\bin\Debug\System.Windows.Interactivity.dll
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.Application4WinForm", "Nikita.Application4WinForm", "{686C7042-1CFA-4851-9B72-751499C21D48}"
 EndProject
@@ -178,27 +82,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewellerySimpleSystem.EFDat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.Application", "Nikita.Application", "{597EDB04-55DC-4ABD-BC05-4C613A26EC4A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EFSQLIte", "EFSQLIte", "{65122E55-4BEF-4C2D-B3B9-027E2AB20D22}"
-	ProjectSection(SolutionItems) = preProject
-		JewellerySimpleSystem.EFDataSQLite\bin\Debug\System.Data.SQLite.dll = JewellerySimpleSystem.EFDataSQLite\bin\Debug\System.Data.SQLite.dll
-		JewellerySimpleSystem.EFDataSQLite\bin\Debug\System.Data.SQLite.EF6.dll = JewellerySimpleSystem.EFDataSQLite\bin\Debug\System.Data.SQLite.EF6.dll
-		JewellerySimpleSystem.EFDataSQLite\bin\Debug\System.Data.SQLite.Linq.dll = JewellerySimpleSystem.EFDataSQLite\bin\Debug\System.Data.SQLite.Linq.dll
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.Assist.IconLibaray", "Nikita.Assist.IconLibaray", "{2C8581DA-1434-4F8A-AA2F-ABD1F8881E6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.IconLibrary.WinForm", "Nikita.Assist.IconLibrary.WinForm\Nikita.Assist.IconLibrary.WinForm.csproj", "{C9DD6EE9-A1D9-4F02-9D21-CF3339DE45E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.IconLibarary.Web", "Nikita.Assist.IconLibarary.Web\Nikita.Assist.IconLibarary.Web.csproj", "{F2A69A13-321E-4116-AD34-8AC3E20ABEA2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IconLibrary", "IconLibrary", "{84C185E2-C2C1-4A99-A8DC-EC5BD84720B7}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\Ukynda\Desktop\新建文件夹 (2)\Z.IconLibrary.FarmFresh.dll = C:\Users\Ukynda\Desktop\新建文件夹 (2)\Z.IconLibrary.FarmFresh.dll
-		C:\Users\Ukynda\Desktop\新建文件夹 (2)\Z.IconLibrary.FarmFresh16.dll = C:\Users\Ukynda\Desktop\新建文件夹 (2)\Z.IconLibrary.FarmFresh16.dll
-		C:\Users\Ukynda\Desktop\新建文件夹 (2)\Z.IconLibrary.FarmFresh32.dll = C:\Users\Ukynda\Desktop\新建文件夹 (2)\Z.IconLibrary.FarmFresh32.dll
-		C:\Users\Ukynda\Desktop\新建文件夹 (2)\Z.IconLibrary.Fugue.dll = C:\Users\Ukynda\Desktop\新建文件夹 (2)\Z.IconLibrary.Fugue.dll
-		C:\Users\Ukynda\Desktop\新建文件夹 (2)\Z.IconLibrary.Silk.dll = C:\Users\Ukynda\Desktop\新建文件夹 (2)\Z.IconLibrary.Silk.dll
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.Encryption", "Nikita.Assist.Encryption\Nikita.Assist.Encryption.csproj", "{BA13EDB0-C46A-48A0-A997-292F6F6B5CD3}"
 EndProject
@@ -208,26 +96,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewellerySimpleSystem.EFDat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.EmailSend", "Nikita.Assist.EmailSend\Nikita.Assist.EmailSend.csproj", "{102E802E-84AF-40EC-B9FD-6A639B75572F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Applications.MvcFramework", "Nikita.Applications.MvcFramework\Nikita.Applications.MvcFramework.csproj", "{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Applications.WinFramework", "Nikita.Applications.WinFramework\Nikita.Applications.WinFramework.csproj", "{451C1346-8FA5-42FC-B778-C9394229632A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Applications.WebFormFramework", "Nikita.Applications.WebFormFramework\Nikita.Applications.WebFormFramework.csproj", "{19E51103-FCD0-40E8-98AE-9E6A1B551859}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Applications.DxFramework", "Nikita.Applications.DxFramework\Nikita.Applications.DxFramework.csproj", "{EE200D14-9715-4CC2-8E83-87DCF9B857D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Core4Dx", "Nikita.Core4Dx\Nikita.Core4Dx.csproj", "{EB1CF6C0-823A-4085-9C12-E5A7E174C8D7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "通用查询", "通用查询", "{5B44FAD5-FAF6-49D2-B961-62D3A303B8F7}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\Ukynda\Desktop\xant77-Xant.Querier-master\Xant.Querier\Xant.Querier\bin\Debug\Xant.Querier.dll = C:\Users\Ukynda\Desktop\xant77-Xant.Querier-master\Xant.Querier\Xant.Querier\bin\Debug\Xant.Querier.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.EFModel", "Nikita.EFModel", "{BA7BDE45-821C-41D4-8285-F94B73D0CBA8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Model4SqlServer", "Nikita.Model4SqlServer\Nikita.Model4SqlServer.csproj", "{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Model4SQLite", "Nikita.Model4SQLite\Nikita.Model4SQLite.csproj", "{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Permission", "Nikita.Permission\Nikita.Permission.csproj", "{D57B5C06-49BC-4B6D-A456-668450C468A0}"
 EndProject
@@ -238,29 +111,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.Logger", "Nikita.Assist.Logger\Nikita.Assist.Logger.csproj", "{E14D5BC7-BD4D-45AD-B091-1795A2EBEBE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.FileLoader", "Nikita.Assist.FileLoader\Nikita.Assist.FileLoader.csproj", "{BF00D6D0-2640-448C-8D1F-ADF29A1B4010}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SpireOfficeFree", "SpireOfficeFree", "{206D3846-6144-406D-9C52-A48D855D28B2}"
-	ProjectSection(SolutionItems) = preProject
-		Nikita.DLL\SpireOfficeFree\NET4.0\Spire.Doc.dll = Nikita.DLL\SpireOfficeFree\NET4.0\Spire.Doc.dll
-		Nikita.DLL\SpireOfficeFree\NET4.0\Spire.DocViewer.Forms.dll = Nikita.DLL\SpireOfficeFree\NET4.0\Spire.DocViewer.Forms.dll
-		Nikita.DLL\SpireOfficeFree\NET4.0\Spire.License.dll = Nikita.DLL\SpireOfficeFree\NET4.0\Spire.License.dll
-		Nikita.DLL\SpireOfficeFree\NET4.0\Spire.Pdf.dll = Nikita.DLL\SpireOfficeFree\NET4.0\Spire.Pdf.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Word", "Word", "{7C4F4244-89DC-4591-9429-B9AC5E935D81}"
-	ProjectSection(SolutionItems) = preProject
-		Nikita.DLL\SpireOfficeFree\NET4.0\Spire.Doc.dll = Nikita.DLL\SpireOfficeFree\NET4.0\Spire.Doc.dll
-		Nikita.DLL\SpireOfficeFree\NET4.0\Spire.DocViewer.Forms.dll = Nikita.DLL\SpireOfficeFree\NET4.0\Spire.DocViewer.Forms.dll
-		Nikita.DLL\SpireOfficeFree\NET4.0\Spire.License.dll = Nikita.DLL\SpireOfficeFree\NET4.0\Spire.License.dll
-		Nikita.DLL\SpireOfficeFree\NET4.0\Spire.Pdf.dll = Nikita.DLL\SpireOfficeFree\NET4.0\Spire.Pdf.dll
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PDF", "PDF", "{7120129F-5435-4F64-A9D6-0273147932F6}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Program Files (x86)\e-iceblue\Spire.PdfViewer-FE\Bin\NET4.0\Spire.License.dll = ..\..\..\Program Files (x86)\e-iceblue\Spire.PdfViewer-FE\Bin\NET4.0\Spire.License.dll
-		..\..\..\Program Files (x86)\e-iceblue\Spire.PdfViewer-FE\Bin\NET4.0\Spire.Pdf.dll = ..\..\..\Program Files (x86)\e-iceblue\Spire.PdfViewer-FE\Bin\NET4.0\Spire.Pdf.dll
-		..\..\..\Program Files (x86)\e-iceblue\Spire.PdfViewer-FE\Bin\NET4.0\Spire.PdfViewer.Forms.dll = ..\..\..\Program Files (x86)\e-iceblue\Spire.PdfViewer-FE\Bin\NET4.0\Spire.PdfViewer.Forms.dll
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.DBManager", "Nikita.Assist.DBManager\Nikita.Assist.DBManager.csproj", "{A134FF16-99A0-4356-8902-7ACAD9F9D310}"
 EndProject
@@ -275,34 +125,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Permission.Test", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.WcfConfiguration", "Nikita.Assist.WcfConfiguration\Nikita.Assist.WcfConfiguration.csproj", "{F6BDABB5-5281-47EF-9AF9-A64F65747932}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CastleNVelocity-1.1.1", "CastleNVelocity-1.1.1", "{F82370CA-5AB2-4D94-A9D9-DD8DDD7528BA}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\ASL - Apache Software Foundation License.txt = C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\ASL - Apache Software Foundation License.txt
-		C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\Changes.txt = C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\Changes.txt
-		C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\Committers.txt = C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\Committers.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net3.5", "Net3.5", "{E7833C44-631D-4D88-A35A-FEF8150135D7}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net35\NVelocity.dll = C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net35\NVelocity.dll
-		C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net35\NVelocity.pdb = C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net35\NVelocity.pdb
-		C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net35\NVelocity.xml = C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net35\NVelocity.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net4.0", "Net4.0", "{3F77A66C-91D0-454D-BFCE-31778BB4BBFE}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net40\NVelocity.dll = C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net40\NVelocity.dll
-		C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net40\NVelocity.pdb = C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net40\NVelocity.pdb
-		C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net40\NVelocity.xml = C:\Users\Ukynda\Desktop\CastleNVelocity-1.1.1\net40\NVelocity.xml
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.CodeMaker", "Nikita.Assist.CodeMaker\Nikita.Assist.CodeMaker.csproj", "{903E0BCE-72F0-434C-A75D-52EC931FC5C3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.Document", "Nikita.Document", "{85280261-228C-4411-84C9-8BD5C3B54560}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\Ukynda\Desktop\VS插件.txt = C:\Users\Ukynda\Desktop\VS插件.txt
-		备注.txt = 备注.txt
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.DbSchemaReader", "DatabaseSchemaReader\Nikita.Base.DbSchemaReader.csproj", "{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}"
 EndProject
@@ -322,14 +145,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.Define", "Nikit
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.Base", "Nikita.Base", "{FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReportViewDLL", "ReportViewDLL", "{B0D63020-1D18-432A-955D-BBC7A8E2648E}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\学习资源\新建文件夹\RDLC本地报表打印必须的DLL\Microsoft.ReportViewer.Common.dll = ..\..\..\学习资源\新建文件夹\RDLC本地报表打印必须的DLL\Microsoft.ReportViewer.Common.dll
-		..\..\..\学习资源\新建文件夹\RDLC本地报表打印必须的DLL\Microsoft.ReportViewer.DataVisualization.dll = ..\..\..\学习资源\新建文件夹\RDLC本地报表打印必须的DLL\Microsoft.ReportViewer.DataVisualization.dll
-		..\..\..\学习资源\新建文件夹\RDLC本地报表打印必须的DLL\Microsoft.ReportViewer.ProcessingObjectModel.dll = ..\..\..\学习资源\新建文件夹\RDLC本地报表打印必须的DLL\Microsoft.ReportViewer.ProcessingObjectModel.dll
-		..\..\..\学习资源\新建文件夹\RDLC本地报表打印必须的DLL\Microsoft.ReportViewer.WinForms.dll = ..\..\..\学习资源\新建文件夹\RDLC本地报表打印必须的DLL\Microsoft.ReportViewer.WinForms.dll
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.Note", "Nikita.Assist.Note\Nikita.Assist.Note.csproj", "{5873257C-DBFC-42A0-8268-434AC23FAC54}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.IDAL", "Nikita.Base.BasicDAL\Nikita.Base.IDAL.csproj", "{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}"
@@ -342,31 +157,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.Note.Model", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.CacheStore", "Nikita.Base.CacheStore\Nikita.Base.CacheStore.csproj", "{71BE6F6D-4843-4652-84AD-10646648CAC7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autofac3.5.2", "Autofac3.5.2", "{0AB48C9C-3CDA-4464-A1D7-8A7C88840AAA}"
-	ProjectSection(SolutionItems) = preProject
-		Nikita.Base.Autofac\DLL\Autofac3.5.2\Autofac.dll = Nikita.Base.Autofac\DLL\Autofac3.5.2\Autofac.dll
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.Services", "Nikita.Base.Services\Nikita.Base.Services.csproj", "{978A6591-BBE0-4475-8318-416EA7A07D65}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helios4.0", "Helios4.0", "{77A54449-DB3E-432C-8B6F-FE15F07A171C}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\迅雷下载\HeliosChat\HeliosChat.Common\bin\Debug\Helios.NET40.dll = ..\..\..\迅雷下载\HeliosChat\HeliosChat.Common\bin\Debug\Helios.NET40.dll
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.HeliosServer", "Nikita.Base.HeliosServer\Nikita.Base.HeliosServer.csproj", "{1C017585-DE6B-481F-86FE-B285DB9A30CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.HeliosCommon", "Nikita.Base.Helios.Common\Nikita.Base.HeliosCommon.csproj", "{0753C8E7-EF9E-482A-A384-F96F93DD8526}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.Aop", "Nikita.Base.Aop\Nikita.Base.Aop.csproj", "{7E18FBF1-0B47-46EC-8B90-382CDD60366F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aop", "Aop", "{ABF70E84-A9FF-4FDF-9BA6-49EF3DF286CD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Castle.Core3.3.0", "Castle.Core3.3.0", "{4292384A-9469-4FDD-90F8-F81A574F2191}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\迅雷下载\PostSharpExample\Aop4CastleWindsor\bin\Debug\Castle.Core.dll = ..\..\..\迅雷下载\PostSharpExample\Aop4CastleWindsor\bin\Debug\Castle.Core.dll
-		..\..\..\迅雷下载\PostSharpExample\Aop4CastleWindsor\bin\Debug\Castle.Core.xml = ..\..\..\迅雷下载\PostSharpExample\Aop4CastleWindsor\bin\Debug\Castle.Core.xml
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BugClose", "BugClose", "{E8D94CA7-C91E-4BF0-A0C9-E72A3C9FFB0A}"
 EndProject
@@ -830,19 +627,6 @@ Global
 		{102E802E-84AF-40EC-B9FD-6A639B75572F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{102E802E-84AF-40EC-B9FD-6A639B75572F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{102E802E-84AF-40EC-B9FD-6A639B75572F}.Release|x86.ActiveCfg = Release|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Net4|Any CPU.ActiveCfg = Release|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Net4|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Net4|x86.ActiveCfg = Release|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A}.Release|x86.ActiveCfg = Release|Any CPU
 		{451C1346-8FA5-42FC-B778-C9394229632A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{451C1346-8FA5-42FC-B778-C9394229632A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451C1346-8FA5-42FC-B778-C9394229632A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -856,19 +640,6 @@ Global
 		{451C1346-8FA5-42FC-B778-C9394229632A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{451C1346-8FA5-42FC-B778-C9394229632A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{451C1346-8FA5-42FC-B778-C9394229632A}.Release|x86.ActiveCfg = Release|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Net4|Any CPU.ActiveCfg = Release|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Net4|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Net4|x86.ActiveCfg = Release|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859}.Release|x86.ActiveCfg = Release|Any CPU
 		{EE200D14-9715-4CC2-8E83-87DCF9B857D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE200D14-9715-4CC2-8E83-87DCF9B857D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE200D14-9715-4CC2-8E83-87DCF9B857D7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -897,32 +668,6 @@ Global
 		{EB1CF6C0-823A-4085-9C12-E5A7E174C8D7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{EB1CF6C0-823A-4085-9C12-E5A7E174C8D7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{EB1CF6C0-823A-4085-9C12-E5A7E174C8D7}.Release|x86.ActiveCfg = Release|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Net4|Any CPU.ActiveCfg = Release|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Net4|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Net4|x86.ActiveCfg = Release|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Release|Any CPU.Build.0 = Release|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94}.Release|x86.ActiveCfg = Release|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Net4|Any CPU.ActiveCfg = Release|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Net4|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Net4|x86.ActiveCfg = Release|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561}.Release|x86.ActiveCfg = Release|Any CPU
 		{D57B5C06-49BC-4B6D-A456-668450C468A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D57B5C06-49BC-4B6D-A456-668450C468A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D57B5C06-49BC-4B6D-A456-668450C468A0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -1377,68 +1122,45 @@ Global
 		{D63F9786-B608-4085-AF08-D909448B0426} = {008816EA-3719-46EF-B295-D8479B538C2D}
 		{DB3E8DD9-36C0-4163-B01F-04F09C23738A} = {96E00720-94BA-49A6-9314-DBD4BD0AF091}
 		{382F7CDF-D671-40DB-B7CF-9C8E8CCE8EF2} = {96E00720-94BA-49A6-9314-DBD4BD0AF091}
-		{97D02225-B8AE-4859-94FD-077714B1CF73} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
 		{4DDC4E84-5128-4604-BD94-37CACA27E828} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{A939C25E-8300-48CA-AD10-48755C95FED8} = {841F6D51-DDCE-4D33-A56F-2C8F101D83F0}
 		{D82032C5-712D-4AB4-BD6F-092E1B23B201} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{6DCD9C76-706D-4BFE-A1D6-5A2B5C8566E2} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{800EB505-55A2-4D6C-BBBC-410E4B638ECD} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
-		{72566625-2460-4113-95C0-E7CB531F5837} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
 		{EBDC899F-B10C-4159-AD92-4837BCBE3194} = {E95B606E-C053-4135-9460-EC9FDD67F65B}
 		{20B5CE52-9B44-433E-9A9D-F77E67F44B04} = {E95B606E-C053-4135-9460-EC9FDD67F65B}
 		{C92C15B8-CE9F-4A20-B94D-F91F73F01E09} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{F76FF5E0-B9C7-4643-B831-2F79C2A04F97} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
-		{15423A4D-799B-4992-8E28-12EEDDBA5F9A} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
 		{21CCE3A7-385E-4CD0-B25F-C36DD09AA96C} = {7486F726-1396-46A8-B5F9-22CA42E454AC}
 		{A5AC469E-2C49-4D40-9348-673D1656341A} = {7486F726-1396-46A8-B5F9-22CA42E454AC}
 		{ED174B2A-4FAB-4B6C-B536-1EE23DBE567E} = {F6925E72-CF1F-47E9-A58D-26FB13386A01}
-		{E6669831-9454-4C9B-B711-DFBBCF82C5F8} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
 		{32E199F7-8644-46C7-AC67-5C698189C267} = {A3203EE2-8D2E-42FA-98A8-708620F27370}
 		{3B266466-5923-4A18-9460-09BE4C302BC8} = {A3203EE2-8D2E-42FA-98A8-708620F27370}
-		{AEE293A1-6096-4FB7-9F39-7720B197F063} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
-		{04C00B62-3B43-4D14-B5F5-48E7095F7DE5} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
 		{1D3D3BA5-FA80-4E3A-8C8D-4F189652D69F} = {A3203EE2-8D2E-42FA-98A8-708620F27370}
-		{5F1361BB-1136-44AF-BF1C-B681075E1047} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
-		{62318B91-F221-413C-AFC9-BA5C7D86195F} = {04C00B62-3B43-4D14-B5F5-48E7095F7DE5}
 		{686C7042-1CFA-4851-9B72-751499C21D48} = {597EDB04-55DC-4ABD-BC05-4C613A26EC4A}
 		{0B115A2A-4E76-4AA4-84A0-96027A12222B} = {686C7042-1CFA-4851-9B72-751499C21D48}
 		{61289DD6-D872-455A-8E1A-2860765BF456} = {0B115A2A-4E76-4AA4-84A0-96027A12222B}
 		{91681F90-73A2-4D41-92AB-9CCFA205BAA8} = {0B115A2A-4E76-4AA4-84A0-96027A12222B}
-		{65122E55-4BEF-4C2D-B3B9-027E2AB20D22} = {04C00B62-3B43-4D14-B5F5-48E7095F7DE5}
 		{2C8581DA-1434-4F8A-AA2F-ABD1F8881E6B} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{C9DD6EE9-A1D9-4F02-9D21-CF3339DE45E6} = {2C8581DA-1434-4F8A-AA2F-ABD1F8881E6B}
 		{F2A69A13-321E-4116-AD34-8AC3E20ABEA2} = {2C8581DA-1434-4F8A-AA2F-ABD1F8881E6B}
-		{84C185E2-C2C1-4A99-A8DC-EC5BD84720B7} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
 		{BA13EDB0-C46A-48A0-A997-292F6F6B5CD3} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{48F675C9-B9A7-4A7B-BEBE-8335CD879A91} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{30893B85-AC6E-4C0F-A73D-DD6E4648BB8F} = {0B115A2A-4E76-4AA4-84A0-96027A12222B}
 		{102E802E-84AF-40EC-B9FD-6A639B75572F} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
-		{6D9E181C-AE15-4B0A-A2D1-3AF0B9D5017A} = {0F1D8D18-6012-46EA-9874-08B87960DF47}
 		{451C1346-8FA5-42FC-B778-C9394229632A} = {0F1D8D18-6012-46EA-9874-08B87960DF47}
-		{19E51103-FCD0-40E8-98AE-9E6A1B551859} = {0F1D8D18-6012-46EA-9874-08B87960DF47}
 		{EE200D14-9715-4CC2-8E83-87DCF9B857D7} = {0F1D8D18-6012-46EA-9874-08B87960DF47}
 		{EB1CF6C0-823A-4085-9C12-E5A7E174C8D7} = {841F6D51-DDCE-4D33-A56F-2C8F101D83F0}
-		{5B44FAD5-FAF6-49D2-B961-62D3A303B8F7} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
-		{BA7BDE45-821C-41D4-8285-F94B73D0CBA8} = {A3203EE2-8D2E-42FA-98A8-708620F27370}
-		{61CACE8B-41E8-4A88-A22A-9E324BFB3A94} = {BA7BDE45-821C-41D4-8285-F94B73D0CBA8}
-		{78AD0FBB-B73E-4C85-8012-BFAB1B12F561} = {BA7BDE45-821C-41D4-8285-F94B73D0CBA8}
 		{D57B5C06-49BC-4B6D-A456-668450C468A0} = {0EA6706A-DF10-4C63-8281-B45235E60C0C}
 		{ABF7C7AC-4248-4464-9FFD-AE5EF7BEADCA} = {0EA6706A-DF10-4C63-8281-B45235E60C0C}
 		{92D67EC7-DDD3-4B3D-B322-7731935448DF} = {0EA6706A-DF10-4C63-8281-B45235E60C0C}
 		{E14D5BC7-BD4D-45AD-B091-1795A2EBEBE7} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{BF00D6D0-2640-448C-8D1F-ADF29A1B4010} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
-		{206D3846-6144-406D-9C52-A48D855D28B2} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
-		{7C4F4244-89DC-4591-9429-B9AC5E935D81} = {206D3846-6144-406D-9C52-A48D855D28B2}
-		{7120129F-5435-4F64-A9D6-0273147932F6} = {206D3846-6144-406D-9C52-A48D855D28B2}
 		{A134FF16-99A0-4356-8902-7ACAD9F9D310} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{CD72A805-D663-460B-9376-B1232C7BDEC1} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{731F6A23-4F2D-419A-BB90-62F16271A94A} = {0EA6706A-DF10-4C63-8281-B45235E60C0C}
 		{F6BDABB5-5281-47EF-9AF9-A64F65747932} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
-		{F82370CA-5AB2-4D94-A9D9-DD8DDD7528BA} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
-		{E7833C44-631D-4D88-A35A-FEF8150135D7} = {F82370CA-5AB2-4D94-A9D9-DD8DDD7528BA}
-		{3F77A66C-91D0-454D-BFCE-31778BB4BBFE} = {F82370CA-5AB2-4D94-A9D9-DD8DDD7528BA}
 		{903E0BCE-72F0-434C-A75D-52EC931FC5C3} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
-		{85280261-228C-4411-84C9-8BD5C3B54560} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
 		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
 		{95CBE26E-27D2-40C1-8BB1-8AD5EDA941E6} = {841F6D51-DDCE-4D33-A56F-2C8F101D83F0}
 		{84782502-FD35-4EE7-A931-431C3E7CA99A} = {597EDB04-55DC-4ABD-BC05-4C613A26EC4A}
@@ -1447,21 +1169,16 @@ Global
 		{8CCBE846-DF17-4B14-88C5-563F6DEBDDAC} = {E8D94CA7-C91E-4BF0-A0C9-E72A3C9FFB0A}
 		{F0D06987-D107-4D60-9653-9869B6F5639E} = {E8D94CA7-C91E-4BF0-A0C9-E72A3C9FFB0A}
 		{61337224-A7D7-4F94-A660-1A56308F6680} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
-		{B0D63020-1D18-432A-955D-BBC7A8E2648E} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
 		{5873257C-DBFC-42A0-8268-434AC23FAC54} = {1053D1D8-D64C-4982-9E30-9B4D0DDB8CBE}
 		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
 		{0D6F4EC0-50AB-4F4C-9986-1E465C7A7F50} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
 		{68758E7A-0615-4320-963C-DDA9B1095611} = {1053D1D8-D64C-4982-9E30-9B4D0DDB8CBE}
 		{5F281113-D9BA-44F7-B386-BF0D98DC9033} = {1053D1D8-D64C-4982-9E30-9B4D0DDB8CBE}
 		{71BE6F6D-4843-4652-84AD-10646648CAC7} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
-		{0AB48C9C-3CDA-4464-A1D7-8A7C88840AAA} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
 		{978A6591-BBE0-4475-8318-416EA7A07D65} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
-		{77A54449-DB3E-432C-8B6F-FE15F07A171C} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
 		{1C017585-DE6B-481F-86FE-B285DB9A30CB} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
 		{0753C8E7-EF9E-482A-A384-F96F93DD8526} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
 		{7E18FBF1-0B47-46EC-8B90-382CDD60366F} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
-		{ABF70E84-A9FF-4FDF-9BA6-49EF3DF286CD} = {15A55A54-1C42-41E3-A7CE-DFC27B0AB62B}
-		{4292384A-9469-4FDD-90F8-F81A574F2191} = {ABF70E84-A9FF-4FDF-9BA6-49EF3DF286CD}
 		{E8D94CA7-C91E-4BF0-A0C9-E72A3C9FFB0A} = {84782502-FD35-4EE7-A931-431C3E7CA99A}
 		{0EA6706A-DF10-4C63-8281-B45235E60C0C} = {84782502-FD35-4EE7-A931-431C3E7CA99A}
 		{57732843-C0ED-4DAD-8C47-EB70C1A9A76B} = {597EDB04-55DC-4ABD-BC05-4C613A26EC4A}

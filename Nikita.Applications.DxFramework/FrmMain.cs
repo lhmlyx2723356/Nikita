@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using Nikita.Core;
 using Nikita.Core4Dx;
+using Nikita.Core.XML;
+using Nikita.Core.Images;
 
 namespace Nikita.Applications.DxFramework
 {

@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Nikita.Core.Sample.DAL;
 using Nikita.Core;
 using Nikita.WinForm.ExtendControl;
+using Nikita.Core.WinForm;
 
 namespace Nikita.Core.Sample
 {

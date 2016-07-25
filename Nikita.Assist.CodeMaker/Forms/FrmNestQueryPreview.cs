@@ -13,7 +13,7 @@ using Nikita.WinForm.ExtendControl;
 using System.Reflection;
 using Nikita.Assist.CodeMaker.CodeMakerDemoForm;
 using Nikita.Base.Define;
-using Nikita.Core;
+using Nikita.Core.WinForm;
 using Nikita.DataAccess4DBHelper;
 
 namespace Nikita.Assist.CodeMaker

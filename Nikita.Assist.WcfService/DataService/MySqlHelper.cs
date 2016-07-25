@@ -822,7 +822,7 @@ namespace Nikita.Assist.WcfService
                         NumberOfLinesToSkip = 0,
                         TableName = table.TableName,
                     };
-                    bulk.Columns.AddRange(table.Columns.Cast<DataColumn>().Select(colum => colum.ColumnName).ToList());
+                    bulk.Columns.AddRange(table.Columns.Cast<DataColumn>().Select(colum => colum.ColumnName).ToArray());
                     insertCount = bulk.Load();
                     tran.Commit();
                 }

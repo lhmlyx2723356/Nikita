@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using Nikita.Base.Literacy;
+using Nikita.Core.Literacy;
 
 namespace Nikita.Assist.CodeMaker
 {
