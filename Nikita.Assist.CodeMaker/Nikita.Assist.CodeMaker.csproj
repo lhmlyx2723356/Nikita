@@ -481,6 +481,10 @@
       <Project>{a0a8fdd0-2399-462c-80a1-8c3fec7e4d7b}</Project>
       <Name>Nikita.Base.DbSchemaReader</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
+      <Project>{a59d284c-0dbb-4ffb-972a-70bb761a7e76}</Project>
+      <Name>Nikita.Base.ConnectionManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
       <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
       <Name>Nikita.Base.Define</Name>

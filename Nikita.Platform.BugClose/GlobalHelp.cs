@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Nikita.Base.Define; 
-using Autofac; 
+using Nikita.Base.Define;
+using Autofac;
 using Nikita.Core.Autofac;
+using Nikita.Base.ConnectionManager;
+
 namespace Nikita.Platform.BugClose
 {
     public class GlobalHelp
     {
-        public static string Conn = "server= UKYNDA-001 ;uid=sa;pwd=12345678;database=BugClose";
+        public static string Conn = ConfigConnection.BugCloseConnection;
         private static Dictionary<string, object> m_dicResolve = new Dictionary<string, object>();
 
         public static Autofac.IContainer Container

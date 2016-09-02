@@ -181,6 +181,10 @@
       <Project>{71be6f6d-4843-4652-84ad-10646648cac7}</Project>
       <Name>Nikita.Base.CacheStore</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
+      <Project>{A59D284C-0DBB-4FFB-972A-70BB761A7E76}</Project>
+      <Name>Nikita.Base.ConnectionManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
       <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
       <Name>Nikita.Base.Define</Name>

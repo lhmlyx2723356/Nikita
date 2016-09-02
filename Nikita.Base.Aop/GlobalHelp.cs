@@ -6,13 +6,14 @@ using System.Text;
 using Nikita.Base.Define; 
 using Nikita.DataAccess4DBHelper;
 using System.Windows.Forms;
+using Nikita.Base.ConnectionManager;
 
 
 namespace Nikita.Base.Aop
 {
     public class GlobalHelp
-    { 
-        internal readonly static string CacheStoreConn = "Data Source=" + System.Windows.Forms.Application.StartupPath + "\\Database\\CacheStore.db ; Pooling=true;FailIfMissing=false";
+    {
+        internal static readonly string CacheStoreConn = SQLiteConfigConnection.CacheStoreDBConnection;
         private static readonly object SyncObject = new object();
         //private static readonly Dictionary<string, object> m_dicResolve = new Dictionary<string, object>();  
         private static IDbHelper _dbHelperSqlite;

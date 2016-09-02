@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Nikita.Base.ConfigManager")]
+[assembly: AssemblyTitle("Nikita.Base.ConnectionManager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Nikita.Base.ConfigManager")]
+[assembly: AssemblyProduct("Nikita.Base.ConnectionManager")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("0d6f4ec0-50ab-4f4c-9986-1e465c7a7f50")]
+[assembly: Guid("a59d284c-0dbb-4ffb-972a-70bb761a7e76")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

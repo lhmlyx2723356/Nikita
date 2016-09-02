@@ -4,14 +4,15 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Nikita.Base.Define; 
-using Nikita.Base.Autofac; 
+using Nikita.Base.Autofac;
+using Nikita.Base.ConnectionManager;
 
 
 namespace Nikita.Assist.Note
 {
     public class GlobalHelp
     {
-        public static string Conn = "server= UKYNDA-001 ;uid=sa;pwd=12345678;database=Note"; 
+        public static string Conn = ConfigConnection.NotePadConnection; 
         private static readonly object SyncObject = new object(); 
         private static Dictionary<string, object> m_dicResolve = new Dictionary<string, object>();
 

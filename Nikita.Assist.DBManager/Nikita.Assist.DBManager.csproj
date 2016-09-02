@@ -2527,6 +2527,10 @@
       <Project>{903e0bce-72f0-434c-a75d-52ec931fc5c3}</Project>
       <Name>Nikita.Assist.CodeMaker</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
+      <Project>{a59d284c-0dbb-4ffb-972a-70bb761a7e76}</Project>
+      <Name>Nikita.Base.ConnectionManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nikita.DataAccess4DBHelper\Nikita.DataAccess4DBHelper.csproj">
       <Project>{1d3d3ba5-fa80-4e3a-8c8d-4f189652d69f}</Project>
       <Name>Nikita.DataAccess4DBHelper</Name>
@@ -2536,7 +2540,9 @@
       <Name>Nikita.WinForm.ExtendControl</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

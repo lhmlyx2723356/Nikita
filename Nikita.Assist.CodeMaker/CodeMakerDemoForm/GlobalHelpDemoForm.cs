@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Nikita.Base.ConnectionManager;
 using Nikita.DataAccess4DBHelper;
 using  Nikita.Base.Define;
+ 
 
 namespace Nikita.Assist.CodeMaker.CodeMakerDemoForm
 {
     public class GlobalHelpDemoForm
     {
-        public static string DemoConn = "server= UKYNDA-001 ;uid=sa;pwd=12345678;database=CodeMgr";
-        public static string DemoConn1 = "server= UKYNDA-001 ;uid=sa;pwd=12345678;database=BPM";
+        public static string DemoConn = ConfigConnection.CodeMgrDemoConnection;
+        public static string DemoConn1 = ConfigConnection.BPMDemoConnection; 
         public static SqlType SqlType = SqlType.SqlServer;
 
         private static readonly object SyncObject = new object();

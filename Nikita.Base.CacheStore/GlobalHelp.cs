@@ -7,6 +7,7 @@ using Nikita.Base.Define;
 using Autofac;
 using Nikita.DataAccess4DBHelper;
 using System.Windows.Forms;
+using Nikita.Base.ConnectionManager;
 using Nikita.Core.Autofac;
 
 
@@ -14,8 +15,8 @@ namespace Nikita.Base.CacheStore
 {
     public class GlobalHelp
     {
-        internal readonly static string Conn = "server= UKYNDA-001 ;uid=sa;pwd=12345678;database=CacheStore";
-        internal readonly static string CacheStoreConn = "Data Source=" + System.Windows.Forms.Application.StartupPath + "\\Database\\CacheStore.db ; Pooling=true;FailIfMissing=false";
+        internal readonly static string Conn =ConfigConnection.CacheStoreConnection;
+        internal readonly static string CacheStoreConn = SQLiteConfigConnection.CacheStoreDBConnection;
         private static readonly object SyncObject = new object();
         private static readonly Dictionary<string, object> m_dicResolve = new Dictionary<string, object>(); 
         private static IDbHelper _dbHelper;

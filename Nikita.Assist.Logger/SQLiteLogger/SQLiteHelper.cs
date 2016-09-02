@@ -11,6 +11,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Web;
 using System.Windows.Forms;
+using Nikita.Base.ConnectionManager;
 
 
 namespace Nikita.Assist.Logger.DAL
@@ -24,8 +25,7 @@ namespace Nikita.Assist.Logger.DAL
 
         public SQLiteHelper()
         {
-            string path = Application.StartupPath; 
-            string connStr ="Data Source="+path + "\\LogLocalDB.db ; Pooling=true;FailIfMissing=false" ;
+            string connStr = SQLiteConfigConnection.LogLocalDBConnection;
             conn = new SQLiteConnection(connStr);
         }
 

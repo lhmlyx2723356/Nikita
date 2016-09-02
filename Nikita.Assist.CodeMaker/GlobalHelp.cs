@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using Nikita.Assist.CodeMaker.DAL;
+using Nikita.Base.ConnectionManager;
 using Nikita.DataAccess4DBHelper;
 using Nikita.WinForm.ExtendControl; 
 
@@ -10,7 +11,7 @@ namespace Nikita.Assist.CodeMaker
 {
     public static class GlobalHelp
     {
-        public static string CodeMakerSettingConn = "Data Source=" + Application.StartupPath + "\\Database\\CodeMakerDB.db";
+        public static string CodeMakerSettingConn = SQLiteConfigConnection.CodeMakerDBConnection;
 
         public static DockPanel DockPanel
         {

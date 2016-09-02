@@ -68,6 +68,10 @@
       <Project>{fc9e5c67-4c86-4cd0-be8c-5091820bb805}</Project>
       <Name>Nikita.Base.IDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
+      <Project>{a59d284c-0dbb-4ffb-972a-70bb761a7e76}</Project>
+      <Name>Nikita.Base.ConnectionManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
       <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
       <Name>Nikita.Base.Define</Name>

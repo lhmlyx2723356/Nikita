@@ -108,7 +108,6 @@
     <EmbeddedResource Include="FrmLoggerInit.resx">
       <DependentUpon>FrmLoggerInit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -133,7 +132,12 @@
     <Content Include="dll\System.Data.SQLite.dll" />
     <Content Include="Image\Dictionary.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
+      <Project>{a59d284c-0dbb-4ffb-972a-70bb761a7e76}</Project>
+      <Name>Nikita.Base.ConnectionManager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

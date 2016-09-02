@@ -6,12 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Nikita.Base.ConnectionManager;
 
 namespace Nikita.Assist.IDBuilder
 {
     public partial class FrmIDBuilder : Form
     {
-        private readonly string strConn = "Data Source=UKYNDA-001\\SQLSERVER2008;Initial Catalog=IDBuilder;Persist Security Info=True;User ID=sa;Password=12345678";
+        private readonly string strConn = ConfigConnection.IDBuilderConnection;
 
         public FrmIDBuilder()
         {

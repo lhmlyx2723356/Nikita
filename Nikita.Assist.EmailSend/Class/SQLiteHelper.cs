@@ -10,6 +10,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Web;
 using System.Windows.Forms;
+using Nikita.Base.ConnectionManager;
 
 namespace FrmEmailSend.DAL
 {
@@ -21,8 +22,7 @@ namespace FrmEmailSend.DAL
 
         public SQLiteHelper()
         {
-            string strApplicationStart = Application.StartupPath;
-            string connStr = "Data Source=" + strApplicationStart + "\\EmailLocalDB.db";
+            string connStr = SQLiteConfigConnection.EmailLocalDBConnection;
             _conn = new SQLiteConnection(connStr);
         }
 

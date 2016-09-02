@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Nikita.Base.ConnectionManager;
 using Nikita.WinForm.ExtendControl;
 
 namespace Nikita.Assist.DBManager
@@ -10,16 +11,16 @@ namespace Nikita.Assist.DBManager
     {
         public static string DefauleDatabase { get; set; }
 
-        public static string ConfigConn = "server= UKYNDA-001 ;uid=sa;pwd=12345678;database=CodeMgr";
+        public static string ConfigConn = ConfigConnection.CodeMgrDemoConnection;
 
-        public static string DatabaseManagerDB = "Data Source=" + Application.StartupPath + "\\Database\\" + ConfigHelper.GetConfig("Source") + " ; Pooling=true;FailIfMissing=false";
+        public static string DatabaseManagerDB = SQLiteConfigConnection.DatabaseManagerDBConnection;
+
+
+        public static string SynchronizationDB = SQLiteConfigConnection.SynchronizationDBConnection;
+
+        public static string TestConn = ConfigConnection.TestConnection;
 
         public static SqlTasks sqlTasks;
-
-        public static string SynchronizationDB = "Data Source=" + Application.StartupPath + "\\Database\\" + ConfigHelper.GetConfig("SynchronizationSource") + " ; Pooling=true;FailIfMissing=false";
-
-        public static string TestConn = "server= UKYNDA-001 ;uid=sa;pwd=12345678;database=master";
-
         /// <summary>
         /// Dic<服务器名称，Dic<数据库名称，结构>>
         /// </summary>
