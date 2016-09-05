@@ -154,6 +154,9 @@
     <EmbeddedResource Include="Forms\FrmBseProjectModuleMasterDetailDialog.resx">
       <DependentUpon>FrmBseProjectModuleMasterDetailDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBseProjectModuleMasterDetailQuery.resx">
+      <DependentUpon>FrmBseProjectModuleMasterDetailQuery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmBseProjectSimpleDialog.resx">
       <DependentUpon>FrmBseProjectSimpleDialog.cs</DependentUpon>
     </EmbeddedResource>

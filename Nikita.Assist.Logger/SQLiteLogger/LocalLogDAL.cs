@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using Nikita.Base.Define;
+using Nikita.DataAccess4DBHelper;
 
 namespace Nikita.Assist.Logger.DAL
 {
@@ -29,7 +31,7 @@ namespace Nikita.Assist.Logger.DAL
             strSql.Append("Date, Level, Logger, Message )");
             strSql.Append(" values (");
             strSql.Append("@Date, @Level, @Logger, @Message )");
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
 
             h.CreateCommand(strSql.ToString());
             if (model.Date == null)
@@ -87,7 +89,7 @@ if (model.Message == null)
             strSql.Append("update LocalLog set ");
             strSql.Append("Date=@Date, Level=@Level, Logger=@Logger, Message=@Message  ");
             strSql.Append(" where id=@id ");
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
                         if (model.Date == null)
             {
@@ -134,7 +136,7 @@ if (model.Message == null)
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from LocalLog ");
             strSql.Append(" where id=@id ");
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             h.AddParameter("@id", id);
             return h.ExecuteNonQuery();
@@ -151,7 +153,7 @@ if (model.Message == null)
             {
                 strSql.Append(" where " + cond);
             }
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             return h.ExecuteNonQuery();
         }
@@ -164,7 +166,7 @@ if (model.Message == null)
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select * from LocalLog ");
             strSql.Append(" where id=@id ");
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             h.AddParameter("@id", id);
             Nikita.Assist.Logger.Model.LocalLog model = null;
@@ -191,7 +193,7 @@ if (model.Message == null)
                 strSql.Append(" where " + cond);
             }
             strSql.Append(" limit 1");
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             Nikita.Assist.Logger.Model.LocalLog model = null;
             using (IDataReader dataReader = h.ExecuteReader())
@@ -217,7 +219,7 @@ if (model.Message == null)
             {
                 strSql.Append(" where " + strWhere);
             }
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             DataTable dt = h.ExecuteQuery();
             DataSet ds = new DataSet();
@@ -236,24 +238,14 @@ if (model.Message == null)
             {
                 strSql.Append(" where " + strWhere);
             }
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             DataTable dt = h.ExecuteQuery();
             DataSet ds = new DataSet();
             ds.Tables.Add(dt);
             return ds;
         }
-        /// <summary>分页获取数据列表
-        /// 
-        /// </summary>
-        public DataSet GetList(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
-        {
-            SQLiteHelper h = new SQLiteHelper();
-            DataTable dt = h.FengYe("LocalLog", fileds, order, ordertype, strWhere, PageSize, PageIndex);
-            DataSet ds = new DataSet();
-            ds.Tables.Add(dt);
-            return ds;
-        }
+  
 
         /// <summary>获得数据列表（比DataSet效率高，推荐使用）
         /// 
@@ -268,7 +260,7 @@ if (model.Message == null)
                 strSql.Append(" where " + strWhere);
             }
             List<Nikita.Assist.Logger.Model.LocalLog> list = new List<Nikita.Assist.Logger.Model.LocalLog>();
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             using (IDataReader dataReader = h.ExecuteReader())
             {
@@ -281,23 +273,7 @@ if (model.Message == null)
             return list;
         }
 
-        /// <summary>分页获取数据列表
-        /// 
-        /// </summary>
-        public List<Nikita.Assist.Logger.Model.LocalLog> GetListArray(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
-        {
-            SQLiteHelper h = new SQLiteHelper();
-            DataTable dt = h.FengYe("LocalLog", fileds, order, ordertype, strWhere, PageSize, PageIndex);
-            List<Nikita.Assist.Logger.Model.LocalLog> list = new List<Nikita.Assist.Logger.Model.LocalLog>();
-            foreach (DataRow row in dt.Rows)
-            {
-                list.Add(new Model.LocalLog()
-                {
-                    id = int.Parse(row["id"].ToString()),Date = DateTime.Parse(row["Date"].ToString()),Level = row["Level"].ToString(),Logger = row["Logger"].ToString(),Message = row["Message"].ToString(),
-                });
-            }
-            return list;
-        }
+ 
 
         /// <summary>对象实体绑定数据
         /// 
@@ -335,7 +311,7 @@ if (model.Message == null)
             {
                 sql += " where " + cond;
             }
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(sql);
             return int.Parse(h.ExecuteScalar());
         }

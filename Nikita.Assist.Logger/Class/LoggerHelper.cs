@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Nikita.Base.Define;
+using Nikita.DataAccess4DBHelper;
 
 namespace Nikita.Assist.Logger
 {
@@ -49,25 +51,19 @@ namespace Nikita.Assist.Logger
         /// <param name="strDBType">数据库类型</param>
         /// <param name="strConn">数据库连接字符串</param>
         /// <returns>数据库帮助类</returns>
-        public static IDBHelper GetDBHelper(string strDBType, string strConn)
-        {
-            if (strDBType == string.Empty)
+        public static IDbHelper GetDBHelper(SqlType strDBType, string strConn)
+        { 
+            IDbHelper dbHelper = null;
+            switch (strDBType)
             {
-                return null;
-            }
-            IDBHelper dbHelper = null;
-            switch (strDBType.ToLower())
-            {
-                case "sqlserver":
+                case SqlType.SqlServer:
                     dbHelper = new MSSQLHelper(strConn);
                     break;
-                case "mysql":
+                case SqlType.MySql:
                     dbHelper = new MySQLHelper(strConn);
                     break;
-                case "oracle":
-                    break;
-                default:
-                    break;
+                case SqlType.Oracle:
+                    break; 
             }
             return dbHelper;
         }

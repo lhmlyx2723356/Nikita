@@ -77,11 +77,10 @@
     <Compile Include="FrmLoggerInit.Designer.cs">
       <DependentUpon>FrmLoggerInit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interface\IDBHelper.cs" />
+    <Compile Include="GlobalHelp.cs" />
     <Compile Include="Interface\ILog.cs" />
     <Compile Include="Class\INIOperationHelper.cs" />
     <Compile Include="Class\LoggerHelper.cs" />
-    <Compile Include="MySqlLogger\MySQLHelper.cs" />
     <Compile Include="MySqlLogger\Mysqllog.cs" />
     <Compile Include="MySqlLogger\MysqllogDAL.cs" />
     <Compile Include="MySqlLogger\MysqllogDALExtend.cs" />
@@ -91,10 +90,8 @@
     <Compile Include="SQLiteLogger\LocalLog.cs" />
     <Compile Include="SQLiteLogger\LocalLogDAL.cs" />
     <Compile Include="SQLiteLogger\LocalLogDALExtend.cs" />
-    <Compile Include="SQLiteLogger\SQLiteHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlserverLogger\MSSQLHelper.cs" />
     <Compile Include="SqlserverLogger\SqlserverLog.cs" />
     <Compile Include="SqlserverLogger\SqlserverLogDAL.cs" />
     <Compile Include="SqlserverLogger\SqlserverLogDALExtend.cs" />
@@ -136,6 +133,14 @@
     <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
       <Project>{a59d284c-0dbb-4ffb-972a-70bb761a7e76}</Project>
       <Name>Nikita.Base.ConnectionManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
+      <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
+      <Name>Nikita.Base.Define</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.DataAccess4DBHelper\Nikita.DataAccess4DBHelper.csproj">
+      <Project>{1d3d3ba5-fa80-4e3a-8c8d-4f189652d69f}</Project>
+      <Name>Nikita.DataAccess4DBHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

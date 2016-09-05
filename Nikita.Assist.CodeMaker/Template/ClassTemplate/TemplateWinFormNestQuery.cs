@@ -15,16 +15,15 @@ namespace Nikita.Assist.CodeMaker.Template.ClassTemplate
         public static int LocationX = 15;
         public static int CtlSpace = 11;
         public static int LocationY = 15;
-        public static int HighSeed = 33;
-
+        public static int HighSeed = 33; 
         public static int SumWidthEdit = 1000;
         public static int BeginWidthEdit = 15;
         public static int LocationXEdit = 15;
         public static int LocationYEdit = 15;
-        public static int HighSeedEdit = 25;
-
+        public static int HighSeedEdit = 25; 
         public static int QueryHeight = 1;
         public static int EditHeight = 1;
+
         public override  string GenWinFormCS(BasicParameter parameter,
         BaseParameter baseParameter )
         {
@@ -50,6 +49,11 @@ namespace Nikita.Assist.CodeMaker.Template.ClassTemplate
             sb.AppendLine("using Nikita.WinForm.ExtendControl;");
             sb.AppendLine("using System.Reflection;");
             sb.AppendLine("using Nikita.Core;");
+            sb.AppendLine("using Nikita.Core.WinForm;");
+            sb.AppendLine("using Nikita.Core.NPOIs;");
+            sb.AppendLine("using Nikita.Core.Images;");
+            sb.AppendLine("using Nikita.Core.Autofac;");
+            sb.AppendLine("using Nikita.Core.XML;");
             sb.AppendLine("using Nikita.DataAccess4DBHelper;");
             sb.AppendLine("using Nikita.Base.Define;"); 
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Nikita.Base.ConnectionManager;
+using Nikita.Base.Define;
 
 namespace Nikita.Assist.IDBuilder
 {
@@ -26,8 +27,8 @@ namespace Nikita.Assist.IDBuilder
         private void FrmIDBuilder_Load(object sender, EventArgs e)
         {
             IDBuilderHelper helper = new IDBuilderHelper();
-          dataGridView1.DataSource=      helper.GetInfo(Nikita.Assist.IDBuilder.IDBuilderHelper.SqlType.SqlServer, strConn, "Bse_TableKey");
-        dataGridView2.DataSource=    helper.GetInfo(Nikita.Assist.IDBuilder.IDBuilderHelper.SqlType.SqlServer,strConn, "Bse_Series_Number");
+            dataGridView1.DataSource = helper.GetInfo( SqlType.SqlServer, strConn, "Bse_TableKey");
+            dataGridView2.DataSource = helper.GetInfo( SqlType.SqlServer, strConn, "Bse_Series_Number");
         }
     }
 }

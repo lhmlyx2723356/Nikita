@@ -51,6 +51,11 @@ namespace Nikita.Assist.CodeMaker.Template.ClassTemplate
             sb.AppendLine("using System.Windows.Forms;"); 
             sb.AppendLine("using Nikita.Base.Define;");
             sb.AppendLine("using Nikita.Core;");
+            sb.AppendLine("using Nikita.Core.WinForm;");
+            sb.AppendLine("using Nikita.Core.NPOIs;");
+            sb.AppendLine("using Nikita.Core.Images;");
+            sb.AppendLine("using Nikita.Core.Autofac;");
+            sb.AppendLine("using Nikita.Core.XML;");
             sb.AppendLine("using " + parameter.NameSpace + ".DAL;");
             sb.AppendLine("using " + parameter.NameSpace + ".Model;");
             sb.AppendLine("using Nikita.Base.IDAL;");

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using Nikita.Base.Define;
+using Nikita.DataAccess4DBHelper;
 
 namespace Nikita.Assist.Logger.DAL
 {
@@ -29,7 +31,7 @@ namespace Nikita.Assist.Logger.DAL
             strSql.Append("Date, Level, Logger, Message  )");
             strSql.Append(" values (");
             strSql.Append("@Date, @Level, @Logger, @Message  )");
-            MySQLHelper h = new MySQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.MySql, GlobalHelp.Connection);
 
             h.CreateCommand(strSql.ToString());
                         if (model.Date == null)
@@ -86,7 +88,7 @@ namespace Nikita.Assist.Logger.DAL
             strSql.Append("update mysqllog set ");
             strSql.Append("Date=@Date, Level=@Level, Logger=@Logger, Message=@Message  ");
             strSql.Append(" where id=@id ");
-            MySQLHelper h = new MySQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.MySql, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
                         if (model.Date == null)
             {
@@ -133,7 +135,7 @@ namespace Nikita.Assist.Logger.DAL
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from mysqllog ");
             strSql.Append(" where id=@id ");
-            MySQLHelper h = new MySQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.MySql, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             h.AddParameter("@id", id);
             return h.ExecuteNonQuery();
@@ -150,7 +152,7 @@ namespace Nikita.Assist.Logger.DAL
             {
                 strSql.Append(" where " + cond);
             }
-            MySQLHelper h = new MySQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.MySql, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             return h.ExecuteNonQuery();
         }
@@ -163,7 +165,7 @@ namespace Nikita.Assist.Logger.DAL
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select * from mysqllog ");
             strSql.Append(" where id=@id ");
-            MySQLHelper h = new MySQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.MySql, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             h.AddParameter("@id", id);
             Nikita.Assist.Logger.Model.Mysqllog model = null;
@@ -190,7 +192,7 @@ namespace Nikita.Assist.Logger.DAL
                 strSql.Append(" where " + cond);
             }
 			strSql.Append(" limit 1 ");
-            MySQLHelper h = new MySQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.MySql, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             Nikita.Assist.Logger.Model.Mysqllog model = null;
             using (IDataReader dataReader = h.ExecuteReader())
@@ -216,7 +218,7 @@ namespace Nikita.Assist.Logger.DAL
             {
                 strSql.Append(" where " + strWhere);
             }
-            MySQLHelper h = new MySQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.MySql, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             DataTable dt = h.ExecuteQuery();
             DataSet ds = new DataSet();
@@ -235,7 +237,7 @@ namespace Nikita.Assist.Logger.DAL
             {
                 strSql.Append(" where " + strWhere);
             }
-            MySQLHelper h = new MySQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.MySql, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             DataTable dt = h.ExecuteQuery();
             DataSet ds = new DataSet();
@@ -243,17 +245,7 @@ namespace Nikita.Assist.Logger.DAL
             return ds;
         }
 
-        /// <summary>分页获取数据列表
-        /// 
-        /// </summary>
-        public DataSet GetList(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
-        {
-            MySQLHelper h = new MySQLHelper();
-            DataTable dt = h.FengYe("mysqllog", fileds, order, ordertype, strWhere, PageSize, PageIndex);
-            DataSet ds = new DataSet();
-            ds.Tables.Add(dt);
-            return ds;
-        }
+   
 
         /// <summary>获得数据列表（比DataSet效率高，推荐使用）
         /// 
@@ -268,7 +260,7 @@ namespace Nikita.Assist.Logger.DAL
                 strSql.Append(" where " + strWhere);
             }
             List<Nikita.Assist.Logger.Model.Mysqllog> list = new List<Nikita.Assist.Logger.Model.Mysqllog>();
-            MySQLHelper h = new MySQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.MySql, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             using (IDataReader dataReader = h.ExecuteReader())
             {
@@ -281,23 +273,7 @@ namespace Nikita.Assist.Logger.DAL
             return list;
         }
 
-        /// <summary>分页获取数据列表
-        /// 
-        /// </summary>
-        public List<Nikita.Assist.Logger.Model.Mysqllog> GetListArray(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
-        {
-            MySQLHelper h = new MySQLHelper();
-            DataTable dt = h.FengYe("mysqllog", fileds, order, ordertype, strWhere, PageSize, PageIndex);
-            List<Nikita.Assist.Logger.Model.Mysqllog> list = new List<Nikita.Assist.Logger.Model.Mysqllog>();
-            foreach (DataRow row in dt.Rows)
-            {
-                list.Add(new Model.Mysqllog()
-                {
-                    id = int.Parse(row["id"].ToString()),Date = DateTime.Parse(row["Date"].ToString()),Level = row["Level"].ToString(),Logger = row["Logger"].ToString(),Message = row["Message"].ToString(),
-                });
-            }
-            return list;
-        }
+  
 
         /// <summary>对象实体绑定数据
         /// 
@@ -335,7 +311,7 @@ namespace Nikita.Assist.Logger.DAL
             {
                 sql += " where " + cond;
             }
-            MySQLHelper h = new MySQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.MySql, GlobalHelp.Connection);
             h.CreateCommand(sql);
             return int.Parse(h.ExecuteScalar());
         }

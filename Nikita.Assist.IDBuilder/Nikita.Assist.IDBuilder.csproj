@@ -55,9 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessHelper\MSSQLHelper.cs" />
-    <Compile Include="DataAccessHelper\MySQLHelper.cs" />
-    <Compile Include="DataAccessHelper\SQLiteHelper.cs" />
     <Compile Include="FrmIDBuilder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,7 +63,6 @@
     </Compile>
     <Compile Include="IDBuilderHelper.cs" />
     <Compile Include="Interface\IIDBuilder.cs" />
-    <Compile Include="Interface\IDBHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmIDBuilder.resx">
@@ -100,6 +96,14 @@
     <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
       <Project>{a59d284c-0dbb-4ffb-972a-70bb761a7e76}</Project>
       <Name>Nikita.Base.ConnectionManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
+      <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
+      <Name>Nikita.Base.Define</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.DataAccess4DBHelper\Nikita.DataAccess4DBHelper.csproj">
+      <Project>{1d3d3ba5-fa80-4e3a-8c8d-4f189652d69f}</Project>
+      <Name>Nikita.DataAccess4DBHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

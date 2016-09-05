@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using Nikita.Base.Define;
+using Nikita.DataAccess4DBHelper;
 
 namespace Nikita.Assist.Logger.DAL
 {
@@ -24,7 +26,7 @@ namespace Nikita.Assist.Logger.DAL
             strSql.Append("IP, User, Pwd, CreateDate, Remark  )");
             strSql.Append(" values (");
             strSql.Append("@IP, @User, @Pwd, @CreateDate, @Remark  )");
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
 
             h.CreateCommand(strSql.ToString());
             if (model.IP == null)
@@ -90,7 +92,7 @@ if (model.Remark == null)
             strSql.Append("update DbConnect set ");
             strSql.Append("IP=@IP, User=@User, Pwd=@Pwd, CreateDate=@CreateDate, Remark=@Remark   ");
             strSql.Append(" where id=@id ");
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
                         if (model.IP == null)
             {
@@ -146,7 +148,7 @@ if (model.Remark == null)
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from DbConnect ");
             strSql.Append(" where id=@id ");
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             h.AddParameter("@id", id);
             return h.ExecuteNonQuery();
@@ -163,7 +165,7 @@ if (model.Remark == null)
             {
                 strSql.Append(" where " + cond);
             }
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             return h.ExecuteNonQuery();
         }
@@ -176,7 +178,7 @@ if (model.Remark == null)
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select * from DbConnect ");
             strSql.Append(" where id=@id ");
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             h.AddParameter("@id", id);
             Nikita.Assist.Logger.Model.DbConnect model = null;
@@ -203,7 +205,7 @@ if (model.Remark == null)
                 strSql.Append(" where " + cond);
             }
             strSql.Append(" limit 1");
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             Nikita.Assist.Logger.Model.DbConnect model = null;
             using (IDataReader dataReader = h.ExecuteReader())
@@ -229,7 +231,7 @@ if (model.Remark == null)
             {
                 strSql.Append(" where " + strWhere);
             }
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             DataTable dt = h.ExecuteQuery();
             DataSet ds = new DataSet();
@@ -248,24 +250,14 @@ if (model.Remark == null)
             {
                 strSql.Append(" where " + strWhere);
             }
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             DataTable dt = h.ExecuteQuery();
             DataSet ds = new DataSet();
             ds.Tables.Add(dt);
             return ds;
         }
-        /// <summary>分页获取数据列表
-        /// 
-        /// </summary>
-        public DataSet GetList(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
-        {
-            SQLiteHelper h = new SQLiteHelper();
-            DataTable dt = h.FengYe("DbConnect", fileds, order, ordertype, strWhere, PageSize, PageIndex);
-            DataSet ds = new DataSet();
-            ds.Tables.Add(dt);
-            return ds;
-        }
+ 
 
         /// <summary>获得数据列表（比DataSet效率高，推荐使用）
         /// 
@@ -280,7 +272,7 @@ if (model.Remark == null)
                 strSql.Append(" where " + strWhere);
             }
             List<Nikita.Assist.Logger.Model.DbConnect> list = new List<Nikita.Assist.Logger.Model.DbConnect>();
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             using (IDataReader dataReader = h.ExecuteReader())
             {
@@ -293,23 +285,7 @@ if (model.Remark == null)
             return list;
         }
 
-        /// <summary>分页获取数据列表
-        /// 
-        /// </summary>
-        public List<Nikita.Assist.Logger.Model.DbConnect> GetListArray(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
-        {
-            SQLiteHelper h = new SQLiteHelper();
-            DataTable dt = h.FengYe("DbConnect", fileds, order, ordertype, strWhere, PageSize, PageIndex);
-            List<Nikita.Assist.Logger.Model.DbConnect> list = new List<Nikita.Assist.Logger.Model.DbConnect>();
-            foreach (DataRow row in dt.Rows)
-            {
-                list.Add(new Model.DbConnect()
-                {
-                    id = int.Parse(row["id"].ToString()),IP = row["IP"].ToString(),User = row["User"].ToString(),Pwd = row["Pwd"].ToString(),CreateDate = row["CreateDate"].ToString(),Remark = row["Remark"].ToString() 
-                });
-            }
-            return list;
-        }
+ 
 
         /// <summary>对象实体绑定数据
         /// 
@@ -344,7 +320,7 @@ if (model.Remark == null)
             {
                 sql += " where " + cond;
             }
-            SQLiteHelper h = new SQLiteHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SQLite, GlobalHelp.Connection);
             h.CreateCommand(sql);
             return int.Parse(h.ExecuteScalar());
         }

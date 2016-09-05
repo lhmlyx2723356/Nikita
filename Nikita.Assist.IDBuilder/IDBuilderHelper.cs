@@ -1,41 +1,21 @@
-﻿using Nikita.Assist.IDBuilder.DAL;
+﻿ 
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using Nikita.Base.Define;
+using Nikita.DataAccess4DBHelper;
 
 namespace Nikita.Assist.IDBuilder
 {
     public class IDBuilderHelper : IIDBuilder
-    {
-        public static IDBHelper dbHelper;
-
-        public enum SqlType
-        {
-            /// <summary>
-            /// Microsoft SQL Server (2005, 2008, 2008 R2) including Express versions
-            /// </summary>
-            SqlServer,
-
-            ///// <summary>
-            ///// Oracle platforms (Oracle 9- 11, including XE)
-            ///// </summary>
-            //Oracle,
-            /// <summary>
-            /// MySQL (v5 onwards as we assume support for stored procedures)
-            /// </summary>
-            MySql,
-
-            /// <summary>
-            /// SQLite  
-            /// </summary>
-            SQLite
-        }
+    { 
+ 
 
         public DataTable GetInfo(SqlType dbType, string strConn, string strTableName)
         {
-            IDBHelper dbHelper = GetDBHelper(dbType, strConn);
+            IDbHelper dbHelper = DbHelper.GetDbHelper(dbType, strConn);
             dbHelper.CreateCommand("select * from  " + strTableName + "");
             return dbHelper.ExecuteQuery();
         }
@@ -50,7 +30,7 @@ namespace Nikita.Assist.IDBuilder
         public long GetNewID(SqlType dbType, string strTableName, string strConn)
         {
             long lngNewId = 0;
-            IDBHelper dbHelper = GetDBHelper(dbType, strConn);
+            IDbHelper dbHelper = DbHelper.GetDbHelper(dbType, strConn);
             if (dbType == SqlType.MySql || dbType == SqlType.SqlServer)
             {
                 dbHelper.CreateStoredCommand("Get_TableKey");
@@ -78,7 +58,7 @@ namespace Nikita.Assist.IDBuilder
         /// <returns>单据流水号</returns>
         public string GetSeriesNumber(SqlType dbType, string strType, string strTableName, string strTableField, string strPreficLength, bool blnDt, int intFyId, string strConn)
         {
-            IDBHelper dbHelper = GetDBHelper(dbType, strConn);
+            IDbHelper dbHelper = DbHelper.GetDbHelper(dbType, strConn);
             string strSeriesNumber = string.Empty;
             if (dbType == SqlType.MySql || dbType == SqlType.SqlServer)
             {
@@ -97,30 +77,6 @@ namespace Nikita.Assist.IDBuilder
             }
             return strSeriesNumber;
         }
-
-        private static IDBHelper GetDBHelper(SqlType dbType, string strConn)
-        {
-            if (dbHelper == null)
-            {
-                switch (dbType)
-                {
-                    case SqlType.SqlServer:
-                        dbHelper = new MSSQLHelper(strConn);
-                        break;
-
-                    case SqlType.MySql:
-                        dbHelper = new MySQLHelper(strConn);
-                        break;
-
-                    case SqlType.SQLite:
-                        dbHelper = new SQLiteHelper(strConn);
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-            return dbHelper;
-        }
+         
     }
 }

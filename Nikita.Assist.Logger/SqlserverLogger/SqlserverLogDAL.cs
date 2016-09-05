@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.ComponentModel;
+using Nikita.Base.Define;
+using Nikita.DataAccess4DBHelper;
+
 namespace Nikita.Assist.Logger.DAL
 {
     /// <summary>SqlserverLog表数据访问类
@@ -35,7 +38,7 @@ namespace Nikita.Assist.Logger.DAL
             strSql.Append(" values (");
             strSql.Append("@Date, @Level, @Logger, @Message  )");
             strSql.Append(";select @@IDENTITY");
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             if (model.Date == null)
             {
@@ -89,7 +92,7 @@ namespace Nikita.Assist.Logger.DAL
             strSql.Append("update SqlserverLog set ");
             strSql.Append("Date=@Date, Level=@Level, Logger=@Logger, Message=@Message  ");
             strSql.Append(" where id=@id ");
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             if (model.id == null)
             {
@@ -143,7 +146,7 @@ namespace Nikita.Assist.Logger.DAL
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from SqlserverLog ");
             strSql.Append(" where id=@id ");
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             h.AddParameter("@id", id);
             return h.ExecuteNonQuery();
@@ -160,7 +163,7 @@ namespace Nikita.Assist.Logger.DAL
             {
                 strSql.Append(" where " + cond);
             }
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             return h.ExecuteNonQuery();
         }
@@ -173,7 +176,7 @@ namespace Nikita.Assist.Logger.DAL
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select * from SqlserverLog ");
             strSql.Append(" where id=@id ");
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             h.AddParameter("@id", id);
             Nikita.Assist.Logger.Model.SqlserverLog model = null;
@@ -198,8 +201,8 @@ namespace Nikita.Assist.Logger.DAL
             if (!string.IsNullOrEmpty(cond))
             {
                 strSql.Append(" where " + cond);
-            }
-            MSSQLHelper h = new MSSQLHelper();
+            } 
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             Nikita.Assist.Logger.Model.SqlserverLog model = null;
             using (IDataReader dataReader = h.ExecuteReader())
@@ -225,7 +228,7 @@ namespace Nikita.Assist.Logger.DAL
             {
                 strSql.Append(" where " + strWhere);
             }
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             DataTable dt = h.ExecuteQuery();
             DataSet ds = new DataSet();
@@ -246,7 +249,7 @@ namespace Nikita.Assist.Logger.DAL
             {
                 strSql.Append(" where " + strWhere);
             }
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             DataTable dt = h.ExecuteQuery();
             DataSet ds = new DataSet();
@@ -260,7 +263,7 @@ namespace Nikita.Assist.Logger.DAL
         /// </summary>
         public DataSet GetList(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
         {
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateStoredCommand("[proc_SplitPage]");
             h.AddParameter("@tblName", "SqlserverLog");
             h.AddParameter("@strFields", fileds);
@@ -288,7 +291,7 @@ namespace Nikita.Assist.Logger.DAL
                 strSql.Append(" where " + strWhere);
             }
             List<Nikita.Assist.Logger.Model.SqlserverLog> list = new List<Nikita.Assist.Logger.Model.SqlserverLog>();
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateCommand(strSql.ToString());
             using (IDataReader dataReader = h.ExecuteReader())
             {
@@ -306,7 +309,7 @@ namespace Nikita.Assist.Logger.DAL
         /// </summary>
         public List<Nikita.Assist.Logger.Model.SqlserverLog> GetListArray(string fileds, string order, string ordertype, int PageSize, int PageIndex, string strWhere)
         {
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateStoredCommand("[proc_SplitPage]");
             h.AddParameter("@tblName", "SqlserverLog");
             h.AddParameter("@strFields", fileds);
@@ -367,7 +370,7 @@ namespace Nikita.Assist.Logger.DAL
             {
                 sql += " where " + cond;
             }
-            MSSQLHelper h = new MSSQLHelper();
+            IDbHelper h = DbHelper.GetDbHelper(SqlType.SqlServer, GlobalHelp.Connection);
             h.CreateCommand(sql);
             return int.Parse(h.ExecuteScalar());
         }

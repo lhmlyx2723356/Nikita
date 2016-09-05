@@ -8,16 +8,19 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Nikita.Assist.Logger.DAL;
 using Nikita.Assist.Logger.Model;
+using Nikita.Base.Define;
+using Nikita.DataAccess4DBHelper;
+
 namespace Nikita.Assist.Logger
 {
     public partial class FrmDbLogin : Form
     {
-        private string strTxt;
-        public FrmDbLogin(string strTxt)
+        private SqlType sqlType;
+        public FrmDbLogin(SqlType sqlType)
         {
             InitializeComponent();
-            this.strTxt = strTxt;
-            this.Text = strTxt + "连接管理";
+            this.sqlType = sqlType;
+            this.Text = sqlType + "连接管理";
         }
         DbConnectDAL dal = new DbConnectDAL();
         DataTable dt;
@@ -36,13 +39,13 @@ namespace Nikita.Assist.Logger
         private void frmDictionaryLogin_Load(object sender, EventArgs e)
         {
             dt = new DataTable();
-            if (this.strTxt == "mysql")
+            if (sqlType==SqlType.MySql)
             {
                 label2.Text = "端口号:";
                 cboLogin.Items.Clear();
                 cboLogin.Text = "3306";
             }
-            else if (this.strTxt == "sqlserver")
+            else if (sqlType==SqlType.SqlServer)
             {
                 cboLogin.SelectedIndex = 0;
             }
@@ -62,7 +65,7 @@ namespace Nikita.Assist.Logger
         }
         private void BindComboBox()
         {
-            dt = dal.GetList("Remark='" + this.strTxt.ToLower() + "'").Tables[0];
+            dt = dal.GetList("Remark='" + this.sqlType.ToString().ToLower() + "'").Tables[0];
             if (dt.Rows.Count > 0)
             {
                 cboServer.DisplayMember = "IP";
@@ -81,7 +84,7 @@ namespace Nikita.Assist.Logger
         {
             if (!CheckInput())
                 return;
-            bool flag = TestConn(this.strTxt);
+            bool flag = TestConn(sqlType);
             if (flag)
             {
                 if (chkRem.Checked)
@@ -96,10 +99,10 @@ namespace Nikita.Assist.Logger
                     model.IP = cboServer.Text.Trim();
                     model.Pwd = DESEncryptHelper.Encrypt(txtPassword.Text.Trim(), "test332211");
                     model.User = cboUser.Text.Trim();
-                    model.Remark = this.strTxt;
+                    model.Remark = sqlType.ToString().ToLower();
                     dal.Add(model);
                 }
-                strConn = DESEncryptHelper.Encrypt(BuildConn(this.strTxt),"test332211");
+                strConn = DESEncryptHelper.Encrypt(BuildConn(sqlType),"test332211");
                 DBName = txtDB.Text.Trim();
                 MessageBox.Show("连接成功");
                 this.DialogResult = DialogResult.OK;
@@ -146,11 +149,11 @@ namespace Nikita.Assist.Logger
             return falg;
         }
 
-        private bool TestConn(string strType)
+        private bool TestConn(SqlType strType)
         {
             bool blnIsConnect = false;
             string strConn = BuildConn(strType);
-            IDBHelper dbHelper = LoggerHelper.GetDBHelper(strType,strConn);
+            IDbHelper dbHelper = LoggerHelper.GetDBHelper(strType,strConn);
             if (dbHelper != null)
             {
                 blnIsConnect = dbHelper.TestConn();
@@ -158,18 +161,18 @@ namespace Nikita.Assist.Logger
             return blnIsConnect;
         }
 
-        private string BuildConn(string strType)
+        private string BuildConn(SqlType sqlType)
         {
             string strConn = string.Empty;
-            switch (strType.ToLower())
+            switch (sqlType)
             {
-                case "mysql":
+                case SqlType.MySql:
                     strConn = " server=" + cboServer.Text.Trim() + ";Port=" + cboLogin.Text.Trim() + ";database=" + txtDB.Text.Trim() + ";uid=" + cboUser.Text.Trim() + ";pwd=" + txtPassword.Text.Trim() + ";charset=utf8";
                     break;
-                case "sqlserver":
+                case SqlType.SqlServer:
                     strConn = "server=" + cboServer.Text.Trim() + ";uid=" + cboUser.Text.Trim() + ";pwd=" + txtPassword.Text.Trim() + ";database=" + txtDB.Text.Trim() + "";
                     break;
-                case "oracle":
+                case SqlType.Oracle:
                     break;
             }
             return strConn;

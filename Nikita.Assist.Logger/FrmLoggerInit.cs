@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Nikita.Base.Define;
+using Nikita.DataAccess4DBHelper;
 
 namespace Nikita.Assist.Logger
 {
@@ -37,7 +39,21 @@ namespace Nikita.Assist.Logger
                 MessageBox.Show("请选择初始化日志类型");
                 return;
             }
-            FrmDbLogin login = new FrmDbLogin(cboLogType.Text);
+            SqlType sqlType = SqlType.SQLite;
+            if (cboLogType.Text == "sqlite")
+            {
+                sqlType = SqlType.SQLite;
+            }
+            else if (cboLogType.Text == "sqlserver")
+            {
+                sqlType = SqlType.SqlServer;
+            }
+            else if (cboLogType.Text == "mysql")
+            {
+
+                sqlType = SqlType.MySql;
+            }
+            FrmDbLogin login = new FrmDbLogin(sqlType);
             if (login.ShowDialog() == DialogResult.OK)
             {
                 txtConnection.Text = login.strConn;
@@ -61,11 +77,26 @@ namespace Nikita.Assist.Logger
         {
             bool flag = true;
             string strConn = DESEncryptHelper.Decrypt(txtConnection.Text.Trim(), "test332211");
-            IDBHelper dbHelper = LoggerHelper.GetDBHelper(this.cboLogType.Text, strConn);
+            SqlType sqlType=SqlType.SQLite;
+            if (cboLogType.Text == "sqlite")
+            {
+                sqlType = SqlType.SQLite;
+            }
+            else if (cboLogType.Text == "sqlserver")
+            {
+                sqlType = SqlType.SqlServer;
+            }
+            else if (cboLogType.Text == "mysql")
+            {
+
+                sqlType = SqlType.MySql;
+            } 
+
+            IDbHelper dbHelper = LoggerHelper.GetDBHelper(sqlType, strConn);
             if (dbHelper != null)
             {
                 dbHelper.CreateCommand(strExistsTbSql);
-                int intResult = dbHelper.ExecuteQuery().Rows.Count; 
+                int intResult = dbHelper.ExecuteQuery().Rows.Count;
                 if (intResult > 0)
                 {
                     if (MessageBox.Show("已经存在日志记录表" + strTbName + ",是否删除重新建立？", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -97,7 +128,7 @@ namespace Nikita.Assist.Logger
         /// </summary>
         /// <param name="dbHelper">dbHelper</param>
         /// <returns></returns>
-        private bool DoCreateTable(IDBHelper dbHelper)
+        private bool DoCreateTable(IDbHelper dbHelper)
         {
             bool flag = true;
             try
