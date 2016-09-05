@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ConnHelper.cs" />
     <Compile Include="EntityFrameworkHelper.cs" />
     <Compile Include="IBseDbHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
