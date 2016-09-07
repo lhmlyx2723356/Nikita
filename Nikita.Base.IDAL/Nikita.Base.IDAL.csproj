@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{978A6591-BBE0-4475-8318-416EA7A07D65}</ProjectGuid>
+    <ProjectGuid>{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nikita.Base.Services</RootNamespace>
-    <AssemblyName>Nikita.Base.Services</AssemblyName>
+    <RootNamespace>Nikita.Base.IDAL</RootNamespace>
+    <AssemblyName>Nikita.Base.IDAL</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,10 +16,11 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Nikita发布\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,7 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,61 +42,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindClass.cs" />
+    <Compile Include="BindSourceHelper.cs" />
+    <Compile Include="IBseDAL.cs" />
+    <Compile Include="IDependency.cs" />
+    <Compile Include="Interface\IProperty.cs" />
+    <Compile Include="Manager\EntityOperateManager.cs" />
+    <Compile Include="Manager\PropertyManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SendService.cs" />
-    <Compile Include="Service References\SendMessageService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="WcfServices\PermissionService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nikita.Assist.WcfService\Nikita.Assist.WcfService.csproj">
-      <Project>{d82032c5-712d-4ab4-bd6f-092e1b23b201}</Project>
-      <Name>Nikita.Assist.WcfService</Name>
+    <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
+      <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
+      <Name>Nikita.Base.Define</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nikita.Core\Nikita.Core.csproj">
       <Project>{a939c25e-8300-48ca-ad10-48755c95fed8}</Project>
       <Name>Nikita.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nikita.DataAccess4DBHelper\Nikita.DataAccess4DBHelper.csproj">
+      <Project>{1D3D3BA5-FA80-4E3A-8C8D-4F189652D69F}</Project>
+      <Name>Nikita.DataAccess4DBHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\SendMessageService\SendMessageService.wsdl" />
-    <None Include="Service References\SendMessageService\SendMessageService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SendMessageService\SendMessageService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SendMessageService\SendMessageService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SendMessageService\SendMessageService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\SendMessageService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SendMessageService\SendMessageService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SendMessageService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SendMessageService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SendMessageService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

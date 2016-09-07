@@ -2519,10 +2519,6 @@
     <Content Include="SQL\计算数据库中各个表的数据量和每行记录所占用空间.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DatabaseSchemaReader\Nikita.Base.DbSchemaReader.csproj">
-      <Project>{a0a8fdd0-2399-462c-80a1-8c3fec7e4d7b}</Project>
-      <Name>Nikita.Base.DbSchemaReader</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Nikita.Assist.CodeMaker\Nikita.Assist.CodeMaker.csproj">
       <Project>{903e0bce-72f0-434c-a75d-52ec931fc5c3}</Project>
       <Name>Nikita.Assist.CodeMaker</Name>
@@ -2530,6 +2526,10 @@
     <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
       <Project>{a59d284c-0dbb-4ffb-972a-70bb761a7e76}</Project>
       <Name>Nikita.Base.ConnectionManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.DbSchemaReader\Nikita.Base.DbSchemaReader.csproj">
+      <Project>{a0a8fdd0-2399-462c-80a1-8c3fec7e4d7b}</Project>
+      <Name>Nikita.Base.DbSchemaReader</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nikita.DataAccess4DBHelper\Nikita.DataAccess4DBHelper.csproj">
       <Project>{1d3d3ba5-fa80-4e3a-8c8d-4f189652d69f}</Project>

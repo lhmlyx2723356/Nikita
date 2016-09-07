@@ -106,9 +106,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.DBManager", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.IDBuilder", "Nikita.Assist.IDBuilder\Nikita.Assist.IDBuilder.csproj", "{CD72A805-D663-460B-9376-B1232C7BDEC1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.Database", "Nikita.Database", "{1F51103A-102F-4CC7-839E-E2163BE09BA7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.Document", "Nikita.Document", "{1F51103A-102F-4CC7-839E-E2163BE09BA7}"
 	ProjectSection(SolutionItems) = preProject
-		数据库说明.txt = 数据库说明.txt
+		Nikita.Document\Document\Dll文件说明.txt = Nikita.Document\Document\Dll文件说明.txt
+		Nikita.Document\Document\DockControl说明.txt = Nikita.Document\Document\DockControl说明.txt
+		Nikita.Document\Document\FastReflection说明.txt = Nikita.Document\Document\FastReflection说明.txt
+		Nikita.Document\Document\HtmlAgilityPack.fx.4.0说明.txt = Nikita.Document\Document\HtmlAgilityPack.fx.4.0说明.txt
+		Nikita.Document\Document\Json.Net说明.txt = Nikita.Document\Document\Json.Net说明.txt
+		Nikita.Document\Document\Log4Net说明.txt = Nikita.Document\Document\Log4Net说明.txt
+		Nikita.Document\Document\MongoDBTool说明.txt = Nikita.Document\Document\MongoDBTool说明.txt
+		Nikita.Document\Document\Nikita.Core说明.txt = Nikita.Document\Document\Nikita.Core说明.txt
+		Nikita.Document\Document\NPOI说明.txt = Nikita.Document\Document\NPOI说明.txt
+		Nikita.Document\Document\ObjectListView说明.txt = Nikita.Document\Document\ObjectListView说明.txt
+		Nikita.Document\Document\QuarzNet说明.txt = Nikita.Document\Document\QuarzNet说明.txt
+		Nikita.Document\Document\SharpZipLib说明.txt = Nikita.Document\Document\SharpZipLib说明.txt
+		Nikita.Document\Document\ZetaHtmlEditControl说明.txt = Nikita.Document\Document\ZetaHtmlEditControl说明.txt
+		Nikita.Document\Document\备注.txt = Nikita.Document\Document\备注.txt
+		Nikita.Document\Document\数据库说明.txt = Nikita.Document\Document\数据库说明.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Permission.Test", "Nikita.Permission.Test\Nikita.Permission.Test.csproj", "{731F6A23-4F2D-419A-BB90-62F16271A94A}"
@@ -116,8 +130,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.WcfConfiguration", "Nikita.Assist.WcfConfiguration\Nikita.Assist.WcfConfiguration.csproj", "{F6BDABB5-5281-47EF-9AF9-A64F65747932}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.CodeMaker", "Nikita.Assist.CodeMaker\Nikita.Assist.CodeMaker.csproj", "{903E0BCE-72F0-434C-A75D-52EC931FC5C3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.DbSchemaReader", "DatabaseSchemaReader\Nikita.Base.DbSchemaReader.csproj", "{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Core.ExtensionMethods", "Nikita.Core.ExtensionMethods\Nikita.Core.ExtensionMethods.csproj", "{95CBE26E-27D2-40C1-8BB1-8AD5EDA941E6}"
 EndProject
@@ -136,8 +148,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nikita.Base", "Nikita.Base", "{FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.Note", "Nikita.Assist.Note\Nikita.Assist.Note.csproj", "{5873257C-DBFC-42A0-8268-434AC23FAC54}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.IDAL", "Nikita.Base.BasicDAL\Nikita.Base.IDAL.csproj", "{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Assist.Note.DAL", "Nikita.Assist.Note.DAL\Nikita.Assist.Note.DAL.csproj", "{68758E7A-0615-4320-963C-DDA9B1095611}"
 EndProject
@@ -166,6 +176,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreSample", "CoreSample", "{E95B606E-C053-4135-9460-EC9FDD67F65B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.ConnectionManager", "Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj", "{A59D284C-0DBB-4FFB-972A-70BB761A7E76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.DbSchemaReader", "Nikita.Base.DbSchemaReader\Nikita.Base.DbSchemaReader.csproj", "{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.Base.IDAL", "Nikita.Base.IDAL\Nikita.Base.IDAL.csproj", "{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -763,21 +777,6 @@ Global
 		{903E0BCE-72F0-434C-A75D-52EC931FC5C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{903E0BCE-72F0-434C-A75D-52EC931FC5C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{903E0BCE-72F0-434C-A75D-52EC931FC5C3}.Release|x86.ActiveCfg = Release|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|Any CPU.ActiveCfg = Net4|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|Any CPU.Build.0 = Net4|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|Mixed Platforms.ActiveCfg = Net4|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|Mixed Platforms.Build.0 = Net4|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|x86.ActiveCfg = Net4|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|x86.ActiveCfg = Release|Any CPU
 		{95CBE26E-27D2-40C1-8BB1-8AD5EDA941E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{95CBE26E-27D2-40C1-8BB1-8AD5EDA941E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95CBE26E-27D2-40C1-8BB1-8AD5EDA941E6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -895,24 +894,6 @@ Global
 		{5873257C-DBFC-42A0-8268-434AC23FAC54}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{5873257C-DBFC-42A0-8268-434AC23FAC54}.Release|x86.ActiveCfg = Release|Any CPU
 		{5873257C-DBFC-42A0-8268-434AC23FAC54}.Release|x86.Build.0 = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|x86.Build.0 = Debug|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|Any CPU.ActiveCfg = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|Any CPU.Build.0 = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|Mixed Platforms.Build.0 = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|x86.ActiveCfg = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|x86.Build.0 = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|x86.ActiveCfg = Release|Any CPU
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|x86.Build.0 = Release|Any CPU
 		{68758E7A-0615-4320-963C-DDA9B1095611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{68758E7A-0615-4320-963C-DDA9B1095611}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68758E7A-0615-4320-963C-DDA9B1095611}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -1057,6 +1038,42 @@ Global
 		{A59D284C-0DBB-4FFB-972A-70BB761A7E76}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A59D284C-0DBB-4FFB-972A-70BB761A7E76}.Release|x86.ActiveCfg = Release|Any CPU
 		{A59D284C-0DBB-4FFB-972A-70BB761A7E76}.Release|x86.Build.0 = Release|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Debug|x86.Build.0 = Debug|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|Any CPU.ActiveCfg = Net4|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|Any CPU.Build.0 = Net4|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|Mixed Platforms.ActiveCfg = Net4|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|Mixed Platforms.Build.0 = Net4|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|x86.ActiveCfg = Net4|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Net4|x86.Build.0 = Net4|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|x86.ActiveCfg = Release|Any CPU
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B}.Release|x86.Build.0 = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Debug|x86.Build.0 = Debug|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|Any CPU.ActiveCfg = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|Any CPU.Build.0 = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|Mixed Platforms.Build.0 = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|x86.ActiveCfg = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Net4|x86.Build.0 = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|x86.ActiveCfg = Release|Any CPU
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1107,7 +1124,6 @@ Global
 		{731F6A23-4F2D-419A-BB90-62F16271A94A} = {0EA6706A-DF10-4C63-8281-B45235E60C0C}
 		{F6BDABB5-5281-47EF-9AF9-A64F65747932} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
 		{903E0BCE-72F0-434C-A75D-52EC931FC5C3} = {D165A15E-FFD8-4BDF-8235-B35A3062F581}
-		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
 		{95CBE26E-27D2-40C1-8BB1-8AD5EDA941E6} = {841F6D51-DDCE-4D33-A56F-2C8F101D83F0}
 		{84782502-FD35-4EE7-A931-431C3E7CA99A} = {597EDB04-55DC-4ABD-BC05-4C613A26EC4A}
 		{17AE4FC6-71E3-4386-BD21-76BFF2CDA232} = {E8D94CA7-C91E-4BF0-A0C9-E72A3C9FFB0A}
@@ -1116,7 +1132,6 @@ Global
 		{F0D06987-D107-4D60-9653-9869B6F5639E} = {E8D94CA7-C91E-4BF0-A0C9-E72A3C9FFB0A}
 		{61337224-A7D7-4F94-A660-1A56308F6680} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
 		{5873257C-DBFC-42A0-8268-434AC23FAC54} = {1053D1D8-D64C-4982-9E30-9B4D0DDB8CBE}
-		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
 		{68758E7A-0615-4320-963C-DDA9B1095611} = {1053D1D8-D64C-4982-9E30-9B4D0DDB8CBE}
 		{5F281113-D9BA-44F7-B386-BF0D98DC9033} = {1053D1D8-D64C-4982-9E30-9B4D0DDB8CBE}
 		{71BE6F6D-4843-4652-84AD-10646648CAC7} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
@@ -1131,6 +1146,8 @@ Global
 		{F428A2D6-CB22-4D16-B844-60D3F88341A3} = {597EDB04-55DC-4ABD-BC05-4C613A26EC4A}
 		{E95B606E-C053-4135-9460-EC9FDD67F65B} = {F428A2D6-CB22-4D16-B844-60D3F88341A3}
 		{A59D284C-0DBB-4FFB-972A-70BB761A7E76} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
+		{A0A8FDD0-2399-462C-80A1-8C3FEC7E4D7B} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
+		{FC9E5C67-4C86-4CD0-BE8C-5091820BB805} = {FBDBAA8E-B224-47EE-AAFE-0DD2FCF2BA62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .

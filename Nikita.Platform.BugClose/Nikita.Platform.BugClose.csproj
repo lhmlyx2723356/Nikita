@@ -176,10 +176,6 @@
     <None Include="Document\BugClose.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nikita.Base.BasicDAL\Nikita.Base.IDAL.csproj">
-      <Project>{fc9e5c67-4c86-4cd0-be8c-5091820bb805}</Project>
-      <Name>Nikita.Base.IDAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Nikita.Base.CacheStore\Nikita.Base.CacheStore.csproj">
       <Project>{71be6f6d-4843-4652-84ad-10646648cac7}</Project>
       <Name>Nikita.Base.CacheStore</Name>
@@ -191,6 +187,10 @@
     <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
       <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
       <Name>Nikita.Base.Define</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Base.IDAL\Nikita.Base.IDAL.csproj">
+      <Project>{fc9e5c67-4c86-4cd0-be8c-5091820bb805}</Project>
+      <Name>Nikita.Base.IDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nikita.Base.Services\Nikita.Base.Services.csproj">
       <Project>{978a6591-bbe0-4475-8318-416ea7a07d65}</Project>
