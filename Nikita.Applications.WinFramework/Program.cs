@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
+using Autofac;
+using Nikita.Core.Autofac;
 
 namespace Nikita.Applications.WinFramework
 {
     internal static class Program
-    {
-    
-
+    { 
         /// <summary>
         /// 绑定程序中的异常处理
         /// </summary>
@@ -50,7 +51,13 @@ namespace Nikita.Applications.WinFramework
         {
             BindExceptionHandler();//绑定程序中的异常处理
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(false); 
+            ////var basetype = typeof(BseUrlDAL);
+            //var builder = new ContainerBuilder();
+            ////var assembly = Assembly.GetAssembly(basetype);
+            //var assembly = Assembly.LoadFile(Application.StartupPath + "\\Nikita.Assist.Note.DAL.dll");
+            //builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces();
+            //GlobalHelp.Container = builder.Build();
             FrmLogin login = new FrmLogin();
             if (login.ShowDialog() == DialogResult.OK)
             {

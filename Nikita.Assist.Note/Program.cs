@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -9,7 +10,7 @@ using Autofac;
 using Nikita.Assist.Note;
 
 using Nikita.Assist.Note.Model;
-using Nikita.Base.Autofac;
+using Nikita.Core.Autofac;
 
 namespace Nikita.Assist.Note
 {
@@ -64,7 +65,7 @@ namespace Nikita.Assist.Note
             //var basetype = typeof(BseUrlDAL);
             var builder = new ContainerBuilder();
             //var assembly = Assembly.GetAssembly(basetype);
-            var assembly = Assembly.LoadFile(Application.StartupPath + "\\Nikita.Assist.Note.DAL.dll");
+            var assembly = Assembly.LoadFile(Path.Combine(Application.StartupPath, "Nikita.Assist.Note.DAL.dll"));
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces();
             GlobalHelp.Container = builder.Build();
             Application.Run(new FrmBseUrlSimpleQuery());

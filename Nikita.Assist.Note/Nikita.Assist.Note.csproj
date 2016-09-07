@@ -72,10 +72,6 @@
       <Project>{5f281113-d9ba-44f7-b386-bf0d98dc9033}</Project>
       <Name>Nikita.Assist.Note.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nikita.Base.Autofac\Nikita.Base.Autofac.csproj">
-      <Project>{bdd942ed-c3a1-442d-b204-53ed80790d31}</Project>
-      <Name>Nikita.Base.Autofac</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Nikita.Base.BasicDAL\Nikita.Base.IDAL.csproj">
       <Project>{fc9e5c67-4c86-4cd0-be8c-5091820bb805}</Project>
       <Name>Nikita.Base.IDAL</Name>

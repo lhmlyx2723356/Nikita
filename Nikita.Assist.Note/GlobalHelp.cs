@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Nikita.Base.Define; 
-using Nikita.Base.Autofac;
+using Nikita.Core.Autofac;
 using Nikita.Base.ConnectionManager;
 
 
