@@ -1,3 +1,5 @@
+using WeifenLuo.WinFormsUI.Docking;
+
 namespace Nikita.Platform.BugClose
 {
     partial class FrmBugCloseMenu
@@ -63,13 +65,13 @@ namespace Nikita.Platform.BugClose
             // 
             this.ClientSize = new System.Drawing.Size(154, 350);
             this.Controls.Add(this.OutLookBarMenu);
-            this.DockAreas = ((Nikita.WinForm.ExtendControl.DockAreas)((((Nikita.WinForm.ExtendControl.DockAreas.DockLeft | Nikita.WinForm.ExtendControl.DockAreas.DockRight) 
-            | Nikita.WinForm.ExtendControl.DockAreas.DockTop) 
-            | Nikita.WinForm.ExtendControl.DockAreas.DockBottom)));
+            this.DockAreas = ((DockAreas)((((DockAreas.DockLeft | DockAreas.DockRight) 
+            | DockAreas.DockTop) 
+            | DockAreas.DockBottom)));
             this.Font = new System.Drawing.Font("Î¢ÈíÑÅºÚ", 9F);
             this.HideOnClose = true;
             this.Name = "FrmBugCloseMenu";
-            this.ShowHint = Nikita.WinForm.ExtendControl.DockState.DockLeft;
+            this.ShowHint = DockState.DockLeft;
             this.ShowIcon = false;
             this.TabText = "²Ëµ¥";
             this.Text = "²Ëµ¥";

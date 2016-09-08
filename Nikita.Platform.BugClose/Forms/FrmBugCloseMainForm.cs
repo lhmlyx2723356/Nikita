@@ -9,13 +9,13 @@ using System.Linq;
 using Nikita.WinForm.ExtendControl;
 using Nikita.WinForm.ExtendControl.WinControls;
 using Nikita.Base.CacheStore;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Platform.BugClose
 {
     public sealed partial class FrmBugCloseMainForm : Form
     {
-        private readonly FrmBugCloseMenu m_bugCloseMenu;
-        private readonly ToolStripRenderer m_custom = new VS2012ToolStripRenderer();
+        private readonly FrmBugCloseMenu m_bugCloseMenu; 
         private readonly ToolStripRenderer m_system = new ToolStripProfessionalRenderer();
 
         public FrmBugCloseMainForm()
@@ -24,9 +24,7 @@ namespace Nikita.Platform.BugClose
             m_bugCloseMenu = new FrmBugCloseMenu { RightToLeftLayout = RightToLeftLayout };
             OutlookBar outLookBarMenu = m_bugCloseMenu.OutlookBarMenu;
             outLookBarMenu.ItemClicked += OnOutlookBarItemClicked;
-            m_bugCloseMenu.Show(dockPanel);
-            vS2012ToolStripExtender1.DefaultRenderer = m_system;
-            vS2012ToolStripExtender1.VS2012Renderer = m_custom;
+            m_bugCloseMenu.Show(dockPanel); 
         }
 
         #region Methods
@@ -52,12 +50,7 @@ namespace Nikita.Platform.BugClose
                 }
             }
         }
-
-        private void EnableVS2012Renderer(bool enable)
-        {
-            vS2012ToolStripExtender1.SetEnableVS2012Style(this.mainMenu, enable);
-            //vS2012ToolStripExtender1.SetEnableVS2012Style(this.toolBar, enable);
-        }
+         
 
         private IDockContent FindDocument(string text)
         {
@@ -66,31 +59,7 @@ namespace Nikita.Platform.BugClose
                 return (from form in MdiChildren where form.Text == text select form as IDockContent).FirstOrDefault();
             }
             return dockPanel.Documents.FirstOrDefault(content => content.DockHandler.TabText == text);
-        }
-        private void SetSchema(object sender, EventArgs e)
-        {
-            CloseAllContents();
-
-            if (sender == menuItemSchemaVS2005)
-            {
-                dockPanel.Theme = vS2005Theme1;
-                EnableVS2012Renderer(false);
-            }
-            else if (sender == menuItemSchemaVS2003)
-            {
-                dockPanel.Theme = vS2003Theme1;
-                EnableVS2012Renderer(false);
-            }
-            else if (sender == menuItemSchemaVS2012Light)
-            {
-                dockPanel.Theme = vS2012LightTheme1;
-                EnableVS2012Renderer(true);
-            }
-
-            menuItemSchemaVS2005.Checked = (sender == menuItemSchemaVS2005);
-            menuItemSchemaVS2003.Checked = (sender == menuItemSchemaVS2003);
-            menuItemSchemaVS2012Light.Checked = (sender == menuItemSchemaVS2012Light);
-        }
+        } 
         #endregion
 
         private void OpenForm(DockContent itemDockContent)
@@ -197,5 +166,79 @@ namespace Nikita.Platform.BugClose
             Close();
         }
         #endregion
+         
+        private void EnableVSRenderer(VSToolStripExtender.VsVersion version)
+        {
+            vS2012ToolStripExtender1.SetStyle(this.mainMenu, version);
+            //vS2012ToolStripExtender1.SetStyle(this.toolBar, version);
+        }
+
+        private void SetSchema(object sender, System.EventArgs e)
+        {
+            //// Persist settings when rebuilding UI
+            //string configFile = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "DockPanel.temp.config");
+
+            //dockPanel.SaveAsXml(configFile);
+            //CloseAllContents();
+
+            //if (sender == this.menuItemSchemaVS2005)
+            //{
+            //    this.dockPanel.Theme = this.vS2005Theme1;
+            //    this.EnableVSRenderer(VSToolStripExtender.VsVersion.Vs2005);
+            //}
+            //else if (sender == this.menuItemSchemaVS2003)
+            //{
+            //    this.dockPanel.Theme = this.vS2003Theme1;
+            //    this.EnableVSRenderer(VSToolStripExtender.VsVersion.Vs2003);
+            //}
+              if (sender == this.menuItemSchemaVS2012Light)
+            {
+                this.dockPanel.Theme = this.vS2012LightTheme1;
+                this.EnableVSRenderer(VSToolStripExtender.VsVersion.Vs2012);
+            }
+            else if (sender == this.menuItemSchemaVS2012Blue)
+            {
+                this.dockPanel.Theme = this.vS2012BlueTheme1;
+                this.EnableVSRenderer(VSToolStripExtender.VsVersion.Vs2012);
+            }
+            else if (sender == this.menuItemSchemaVS2012Dark)
+            {
+                this.dockPanel.Theme = this.vS2012DarkTheme1;
+                this.EnableVSRenderer(VSToolStripExtender.VsVersion.Vs2012);
+            }
+            //else if (sender == this.menuItemSchemaVS2013Blue)
+            //{
+            //    this.dockPanel.Theme = this.vS2013BlueTheme1;
+            //    this.EnableVSRenderer(VSToolStripExtender.VsVersion.Vs2013);
+            //}
+            //else if (sender == this.menuItemSchemaVS2013Light)
+            //{
+            //    this.dockPanel.Theme = this.vS2013LightTheme1;
+            //    this.EnableVSRenderer(VSToolStripExtender.VsVersion.Vs2013);
+            //}
+            //else if (sender == this.menuItemSchemaVS2013Dark)
+            //{
+            //    this.dockPanel.Theme = this.vS2013DarkTheme1;
+            //    this.EnableVSRenderer(VSToolStripExtender.VsVersion.Vs2013);
+            //}
+            //menuItemSchemaVS2005.Checked = (sender == menuItemSchemaVS2005);
+            //menuItemSchemaVS2003.Checked = (sender == menuItemSchemaVS2003);
+            menuItemSchemaVS2012Light.Checked = (sender == menuItemSchemaVS2012Light);
+            menuItemSchemaVS2012Blue.Checked = (sender == menuItemSchemaVS2012Blue);
+            menuItemSchemaVS2012Dark.Checked = (sender == menuItemSchemaVS2012Dark);
+            //menuItemSchemaVS2013Light.Checked = (sender == menuItemSchemaVS2013Light);
+            //menuItemSchemaVS2013Blue.Checked = (sender == menuItemSchemaVS2013Blue);
+            //menuItemSchemaVS2013Dark.Checked = (sender == menuItemSchemaVS2013Dark);
+            //topBar.Visible = (menuItemSchemaVS2012Blue.Checked || menuItemSchemaVS2012Dark.Checked
+            //    || menuItemSchemaVS2012Light.Checked || menuItemSchemaVS2013Light.Checked
+            //    || menuItemSchemaVS2013Blue.Checked || menuItemSchemaVS2013Dark.Checked);
+            //bottomBar.Visible = menuItemSchemaVS2013Light.Checked || menuItemSchemaVS2013Blue.Checked || menuItemSchemaVS2013Dark.Checked;
+            //topBar.BackColor = dockPanel.Theme.Skin.ColorPalette.MainWindowActive.Background;
+            //bottomBar.BackColor = dockPanel.Theme.Skin.ColorPalette.MainWindowActive.Background;
+            statusBar.BackColor = dockPanel.Theme.Skin.ColorPalette.MainWindowStatusBarDefault.Background;
+
+            //if (File.Exists(configFile))
+            //    dockPanel.LoadFromXml(configFile, m_deserializeDockContent);
+        }
     }
 }

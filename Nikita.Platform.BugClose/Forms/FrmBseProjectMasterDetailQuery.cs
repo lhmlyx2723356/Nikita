@@ -17,6 +17,7 @@ using System.Text;
 using System.Windows.Forms;
 using Nikita.Base.Define;
 using Nikita.Base.IDAL;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Platform.BugClose
 {

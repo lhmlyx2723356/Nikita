@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Nikita.WinForm.ExtendControl;
-using Nikita.WinForm.ExtendControl.WinControls;
+using Nikita.WinForm.ExtendControl.WinControls; 
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Platform.BugClose
 {
