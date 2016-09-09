@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Nikita.Core.Sample.DAL;
 using Nikita.WinForm.ExtendControl;
 using System.Diagnostics;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Core.Sample
 {

@@ -1,3 +1,5 @@
+using WeifenLuo.WinFormsUI.Docking;
+
 namespace Nikita.Applications.WinFramework
 {
     partial class FrmLeft
@@ -33,14 +35,14 @@ namespace Nikita.Applications.WinFramework
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.ClientSize = new System.Drawing.Size(208, 350);
-            this.DockAreas = ((Nikita.WinForm.ExtendControl.DockAreas)((((Nikita.WinForm.ExtendControl.DockAreas.DockLeft | Nikita.WinForm.ExtendControl.DockAreas.DockRight) 
-            | Nikita.WinForm.ExtendControl.DockAreas.DockTop) 
-            | Nikita.WinForm.ExtendControl.DockAreas.DockBottom)));
+            this.DockAreas = ((DockAreas)((((DockAreas.DockLeft | DockAreas.DockRight) 
+            | DockAreas.DockTop) 
+            | DockAreas.DockBottom)));
             this.Font = new System.Drawing.Font("Î¢ÈíÑÅºÚ", 9F);
             this.HideOnClose = true;
             this.Name = "FrmLeft";
             this.Padding = new System.Windows.Forms.Padding(0, 24, 0, 1);
-            this.ShowHint = Nikita.WinForm.ExtendControl.DockState.DockLeft;
+            this.ShowHint = DockState.DockLeft;
             this.ShowIcon = false;
             this.TabText = "²Ëµ¥";
             this.Text = "²Ëµ¥";

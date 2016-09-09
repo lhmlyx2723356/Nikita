@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Quartz;
 using Quartz.Impl;
 using Nikita.WinForm.ExtendControl;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Core.Sample
 {

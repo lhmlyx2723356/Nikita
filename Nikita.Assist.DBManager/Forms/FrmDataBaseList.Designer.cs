@@ -1,3 +1,5 @@
+using WeifenLuo.WinFormsUI.Docking;
+
 namespace Nikita.Assist.DBManager
 {
     partial class FrmDataBaseList
@@ -58,15 +60,15 @@ namespace Nikita.Assist.DBManager
             // 
             this.ClientSize = new System.Drawing.Size(196, 322);
             this.Controls.Add(this.tvwDataBase);
-            this.DockAreas = ((Nikita.WinForm.ExtendControl.DockAreas)((((Nikita.WinForm.ExtendControl.DockAreas.DockLeft | Nikita.WinForm.ExtendControl.DockAreas.DockRight) 
-            | Nikita.WinForm.ExtendControl.DockAreas.DockTop) 
-            | Nikita.WinForm.ExtendControl.DockAreas.DockBottom)));
+            this.DockAreas = ((DockAreas)((((DockAreas.DockLeft | DockAreas.DockRight) 
+            | DockAreas.DockTop) 
+            | DockAreas.DockBottom)));
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.HideOnClose = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDataBaseList";
             this.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.ShowHint = Nikita.WinForm.ExtendControl.DockState.DockLeft;
+            this.ShowHint = DockState.DockLeft;
             this.TabText = "对象资源管理器";
             this.Text = "对象资源管理器";
             this.ResumeLayout(false);

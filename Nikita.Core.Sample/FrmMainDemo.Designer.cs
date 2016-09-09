@@ -1,4 +1,6 @@
-﻿namespace Nikita.Core.Sample
+﻿using WeifenLuo.WinFormsUI.Docking;
+
+namespace Nikita.Core.Sample
 {
     partial class FrmMainDemo
     {
@@ -28,23 +30,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Nikita.WinForm.ExtendControl.DockPanelSkin dockPanelSkin1 = new Nikita.WinForm.ExtendControl.DockPanelSkin();
-            Nikita.WinForm.ExtendControl.AutoHideStripSkin autoHideStripSkin1 = new Nikita.WinForm.ExtendControl.AutoHideStripSkin();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient1 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient1 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPaneStripSkin dockPaneStripSkin1 = new Nikita.WinForm.ExtendControl.DockPaneStripSkin();
-            Nikita.WinForm.ExtendControl.DockPaneStripGradient dockPaneStripGradient1 = new Nikita.WinForm.ExtendControl.DockPaneStripGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient2 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient2 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient3 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new Nikita.WinForm.ExtendControl.DockPaneStripToolWindowGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient4 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient5 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient3 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient6 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient7 = new Nikita.WinForm.ExtendControl.TabGradient();
+            DockPanelSkin dockPanelSkin1 = new DockPanelSkin();
+            AutoHideStripSkin autoHideStripSkin1 = new AutoHideStripSkin();
+            DockPanelGradient dockPanelGradient1 = new DockPanelGradient();
+            TabGradient tabGradient1 = new TabGradient();
+            DockPaneStripSkin dockPaneStripSkin1 = new DockPaneStripSkin();
+            DockPaneStripGradient dockPaneStripGradient1 = new DockPaneStripGradient();
+            TabGradient tabGradient2 = new TabGradient();
+            DockPanelGradient dockPanelGradient2 = new DockPanelGradient();
+            TabGradient tabGradient3 = new TabGradient();
+            DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new DockPaneStripToolWindowGradient();
+            TabGradient tabGradient4 = new TabGradient();
+            TabGradient tabGradient5 = new TabGradient();
+            DockPanelGradient dockPanelGradient3 = new DockPanelGradient();
+            TabGradient tabGradient6 = new TabGradient();
+            TabGradient tabGradient7 = new TabGradient();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.dockPanel1 = new Nikita.WinForm.ExtendControl.DockPanel();
+            this.dockPanel1 = new DockPanel();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -106,8 +108,7 @@
             tabGradient7.TextColor = System.Drawing.SystemColors.ControlDarkDark;
             dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
             dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
-            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
-            this.dockPanel1.Skin = dockPanelSkin1;
+            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1; 
             this.dockPanel1.TabIndex = 13;
             // 
             // FrmMainDemo
@@ -134,7 +135,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip;
-        private Nikita.WinForm.ExtendControl.DockPanel dockPanel1;
+        private DockPanel dockPanel1;
 
     }
 }

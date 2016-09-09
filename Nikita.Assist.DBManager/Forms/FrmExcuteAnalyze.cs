@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Nikita.WinForm.ExtendControl;
 using Nikita.WinForm.ExtendControl.Document;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Assist.DBManager
 {

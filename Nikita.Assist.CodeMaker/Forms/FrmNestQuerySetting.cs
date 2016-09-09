@@ -14,6 +14,7 @@ using Nikita.DataAccess4DBHelper;
 using Nikita.WinForm.ExtendControl;
 using DbHelper = Nikita.DataAccess4DBHelper.DbHelper;
 using Nikita.Base.Define;
+using WeifenLuo.WinFormsUI.Docking;
 
 
 namespace Nikita.Assist.CodeMaker

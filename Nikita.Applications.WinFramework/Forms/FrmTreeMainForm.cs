@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Linq;
 using Nikita.WinForm.ExtendControl;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Applications.WinFramework
 {
@@ -19,13 +20,13 @@ namespace Nikita.Applications.WinFramework
 
             m_solutionExplorer = new FrmLeft { RightToLeftLayout = RightToLeftLayout };
             m_solutionExplorer.Show(dockPanel);
-            vS2012ToolStripExtender1.DefaultRenderer = _system;
-            vS2012ToolStripExtender1.VS2012Renderer = _custom;
+            //vS2012ToolStripExtender1.DefaultRenderer = _system;
+            //vS2012ToolStripExtender1.VS2012Renderer = _custom;
         }
 
         #region Methods
 
-        private readonly ToolStripRenderer _custom = new VS2012ToolStripRenderer();
+        //private readonly ToolStripRenderer _custom = new VS2012ToolStripRenderer();
 
         private readonly ToolStripRenderer _system = new ToolStripProfessionalRenderer();
 
@@ -53,7 +54,7 @@ namespace Nikita.Applications.WinFramework
 
         private void EnableVS2012Renderer(bool enable)
         {
-            vS2012ToolStripExtender1.SetEnableVS2012Style(this.mainMenu, enable);
+            //vS2012ToolStripExtender1.SetEnableVS2012Style(this.mainMenu, enable);
             //vS2012ToolStripExtender1.SetEnableVS2012Style(this.toolBar, enable);
         }
 
@@ -69,21 +70,21 @@ namespace Nikita.Applications.WinFramework
         {
             CloseAllContents();
 
-            if (sender == menuItemSchemaVS2005)
-            {
-                dockPanel.Theme = vS2005Theme1;
-                EnableVS2012Renderer(false);
-            }
-            else if (sender == menuItemSchemaVS2003)
-            {
-                dockPanel.Theme = vS2003Theme1;
-                EnableVS2012Renderer(false);
-            }
-            else if (sender == menuItemSchemaVS2012Light)
-            {
-                dockPanel.Theme = vS2012LightTheme1;
-                EnableVS2012Renderer(true);
-            }
+            //if (sender == menuItemSchemaVS2005)
+            //{
+            //    dockPanel.Theme = vS2005Theme1;
+            //    EnableVS2012Renderer(false);
+            //}
+            //else if (sender == menuItemSchemaVS2003)
+            //{
+            //    dockPanel.Theme = vS2003Theme1;
+            //    EnableVS2012Renderer(false);
+            //}
+            //else if (sender == menuItemSchemaVS2012Light)
+            //{
+            //    dockPanel.Theme = vS2012LightTheme1;
+            //    EnableVS2012Renderer(true);
+            //}
 
             menuItemSchemaVS2005.Checked = (sender == menuItemSchemaVS2005);
             menuItemSchemaVS2003.Checked = (sender == menuItemSchemaVS2003);

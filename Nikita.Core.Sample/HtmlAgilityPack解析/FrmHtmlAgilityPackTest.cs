@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using Nikita.WinForm.ExtendControl;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Core.Sample
 {

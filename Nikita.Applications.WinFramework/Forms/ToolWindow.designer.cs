@@ -1,3 +1,5 @@
+using WeifenLuo.WinFormsUI.Docking;
+
 namespace Nikita.Applications.WinFramework
 {
     partial class ToolWindow
@@ -36,10 +38,10 @@ namespace Nikita.Applications.WinFramework
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 246);
-            this.DockAreas = ((Nikita.WinForm.ExtendControl.DockAreas)(((((Nikita.WinForm.ExtendControl.DockAreas.Float | Nikita.WinForm.ExtendControl.DockAreas.DockLeft) 
-            | Nikita.WinForm.ExtendControl.DockAreas.DockRight) 
-            | Nikita.WinForm.ExtendControl.DockAreas.DockTop) 
-            | Nikita.WinForm.ExtendControl.DockAreas.DockBottom)));
+            this.DockAreas = ((DockAreas)(((((DockAreas.Float | DockAreas.DockLeft) 
+            | DockAreas.DockRight) 
+            | DockAreas.DockTop) 
+            | DockAreas.DockBottom)));
             this.Font = new System.Drawing.Font("ËÎÌו", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "ToolWindow";
             this.TabText = "ToolWindow";

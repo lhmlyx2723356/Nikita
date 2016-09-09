@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using Nikita.Base.ConnectionManager;
 using Nikita.WinForm.ExtendControl;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Assist.DBManager
 {

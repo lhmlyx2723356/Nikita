@@ -1,4 +1,6 @@
-﻿namespace Nikita.Assist.DBManager
+﻿using WeifenLuo.WinFormsUI.Docking;
+
+namespace Nikita.Assist.DBManager
 {
     partial class FrmDataBaseMain
     {
@@ -30,21 +32,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDataBaseMain));
-            Nikita.WinForm.ExtendControl.DockPanelSkin dockPanelSkin2 = new Nikita.WinForm.ExtendControl.DockPanelSkin();
-            Nikita.WinForm.ExtendControl.AutoHideStripSkin autoHideStripSkin2 = new Nikita.WinForm.ExtendControl.AutoHideStripSkin();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient4 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient8 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPaneStripSkin dockPaneStripSkin2 = new Nikita.WinForm.ExtendControl.DockPaneStripSkin();
-            Nikita.WinForm.ExtendControl.DockPaneStripGradient dockPaneStripGradient2 = new Nikita.WinForm.ExtendControl.DockPaneStripGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient9 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient5 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient10 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient2 = new Nikita.WinForm.ExtendControl.DockPaneStripToolWindowGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient11 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient12 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient6 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient13 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient14 = new Nikita.WinForm.ExtendControl.TabGradient();
+            DockPanelSkin dockPanelSkin2 = new DockPanelSkin();
+            AutoHideStripSkin autoHideStripSkin2 = new AutoHideStripSkin();
+            DockPanelGradient dockPanelGradient4 = new DockPanelGradient();
+            TabGradient tabGradient8 = new TabGradient();
+            DockPaneStripSkin dockPaneStripSkin2 = new DockPaneStripSkin();
+            DockPaneStripGradient dockPaneStripGradient2 = new DockPaneStripGradient();
+            TabGradient tabGradient9 = new TabGradient();
+            DockPanelGradient dockPanelGradient5 = new DockPanelGradient();
+            TabGradient tabGradient10 = new TabGradient();
+            DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient2 = new DockPaneStripToolWindowGradient();
+            TabGradient tabGradient11 = new TabGradient();
+            TabGradient tabGradient12 = new TabGradient();
+            DockPanelGradient dockPanelGradient6 = new DockPanelGradient();
+            TabGradient tabGradient13 = new TabGradient();
+            TabGradient tabGradient14 = new TabGradient();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.文件FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmdLinkDB = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,7 +90,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.cmdProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.lblMemory = new System.Windows.Forms.ToolStripStatusLabel();
-            this.dockPanel = new Nikita.WinForm.ExtendControl.DockPanel();
+            this.dockPanel = new DockPanel();
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip.SuspendLayout();
@@ -555,8 +557,7 @@
             tabGradient14.TextColor = System.Drawing.SystemColors.ControlDarkDark;
             dockPaneStripToolWindowGradient2.InactiveTabGradient = tabGradient14;
             dockPaneStripSkin2.ToolWindowGradient = dockPaneStripToolWindowGradient2;
-            dockPanelSkin2.DockPaneStripSkin = dockPaneStripSkin2;
-            this.dockPanel.Skin = dockPanelSkin2;
+            dockPanelSkin2.DockPaneStripSkin = dockPaneStripSkin2; 
             this.dockPanel.TabIndex = 30;
             // 
             // contextMenu
@@ -616,7 +617,7 @@
         private System.Windows.Forms.ToolStripButton cmdView;
         private System.Windows.Forms.ToolStripButton cmdProc;
         private System.Windows.Forms.ToolStripButton cmdFunction;
-        private Nikita.WinForm.ExtendControl.DockPanel dockPanel;
+        private DockPanel dockPanel;
         private System.Windows.Forms.ToolStripButton cmdNewQuery;
         private System.Windows.Forms.ToolStripProgressBar cmdProgressBar;
         private System.Windows.Forms.ContextMenuStrip contextMenu;

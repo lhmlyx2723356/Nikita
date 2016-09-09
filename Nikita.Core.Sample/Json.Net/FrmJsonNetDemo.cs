@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Nikita.WinForm.ExtendControl;
 using Nikita.Core.Sample.Json.Net;
 using Nikita.WinForm.ExtendControl;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Core.Sample
 {

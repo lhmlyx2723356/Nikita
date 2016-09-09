@@ -13,6 +13,7 @@ using Nikita.Base.Define;
 using Nikita.Core;
 using Nikita.Core.WinForm;
 using Nikita.WinForm.ExtendControl;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Assist.CodeMaker
 {

@@ -7,6 +7,7 @@ using Nikita.Core.Sample.DAL;
 using Nikita.Core;
 using Nikita.WinForm.ExtendControl;
 using Nikita.Core.WinForm;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Core.Sample
 {

@@ -1,4 +1,5 @@
 using Nikita.WinForm.ExtendControl;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Applications.WinFramework
 {
@@ -30,21 +31,21 @@ namespace Nikita.Applications.WinFramework
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Nikita.WinForm.ExtendControl.DockPanelSkin dockPanelSkin1 = new Nikita.WinForm.ExtendControl.DockPanelSkin();
-            Nikita.WinForm.ExtendControl.AutoHideStripSkin autoHideStripSkin1 = new Nikita.WinForm.ExtendControl.AutoHideStripSkin();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient1 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient1 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPaneStripSkin dockPaneStripSkin1 = new Nikita.WinForm.ExtendControl.DockPaneStripSkin();
-            Nikita.WinForm.ExtendControl.DockPaneStripGradient dockPaneStripGradient1 = new Nikita.WinForm.ExtendControl.DockPaneStripGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient2 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient2 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient3 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new Nikita.WinForm.ExtendControl.DockPaneStripToolWindowGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient4 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient5 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient3 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient6 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient7 = new Nikita.WinForm.ExtendControl.TabGradient();
+            DockPanelSkin dockPanelSkin1 = new DockPanelSkin();
+           AutoHideStripSkin autoHideStripSkin1 = new AutoHideStripSkin();
+            DockPanelGradient dockPanelGradient1 = new DockPanelGradient();
+            TabGradient tabGradient1 = new TabGradient();
+            DockPaneStripSkin dockPaneStripSkin1 = new DockPaneStripSkin();
+            DockPaneStripGradient dockPaneStripGradient1 = new DockPaneStripGradient();
+            TabGradient tabGradient2 = new TabGradient();
+            DockPanelGradient dockPanelGradient2 = new DockPanelGradient();
+            TabGradient tabGradient3 = new TabGradient();
+            DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new DockPaneStripToolWindowGradient();
+            TabGradient tabGradient4 = new TabGradient();
+            TabGradient tabGradient5 = new TabGradient();
+            DockPanelGradient dockPanelGradient3 = new DockPanelGradient();
+            TabGradient tabGradient6 = new TabGradient();
+            TabGradient tabGradient7 = new TabGradient();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.menuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemClose = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,11 +60,7 @@ namespace Nikita.Applications.WinFramework
             this.menuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
-            this.dockPanel = new Nikita.WinForm.ExtendControl.DockPanel();
-            this.vS2005Theme1 = new Nikita.WinForm.ExtendControl.VS2005Theme();
-            this.vS2003Theme1 = new Nikita.WinForm.ExtendControl.VS2003Theme();
-            this.vS2012LightTheme1 = new Nikita.WinForm.ExtendControl.VS2012LightTheme();
-            this.vS2012ToolStripExtender1 = new Nikita.WinForm.ExtendControl.VS2012ToolStripExtender(this.components);
+            this.dockPanel = new DockPanel(); 
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -237,14 +234,8 @@ namespace Nikita.Applications.WinFramework
             tabGradient7.TextColor = System.Drawing.SystemColors.ControlDarkDark;
             dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
             dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
-            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
-            this.dockPanel.Skin = dockPanelSkin1;
-            this.dockPanel.TabIndex = 0;
-            // 
-            // vS2012ToolStripExtender1
-            // 
-            this.vS2012ToolStripExtender1.DefaultRenderer = null;
-            this.vS2012ToolStripExtender1.VS2012Renderer = null;
+            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1; 
+            this.dockPanel.TabIndex = 0; 
             // 
             // FrmTreeMainForm
             // 
@@ -268,7 +259,7 @@ namespace Nikita.Applications.WinFramework
         }
         #endregion
 
-        private Nikita.WinForm.ExtendControl.DockPanel dockPanel;
+        private  DockPanel dockPanel;
         private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStripMenuItem menuItemFile;
         private System.Windows.Forms.ToolStripMenuItem menuItemClose;
@@ -282,10 +273,6 @@ namespace Nikita.Applications.WinFramework
         private System.Windows.Forms.ToolStripMenuItem menuItemHelp;
         private System.Windows.Forms.ToolStripMenuItem menuItemAbout;
         private System.Windows.Forms.StatusStrip statusBar;
-        private System.Windows.Forms.ToolStripMenuItem menuItemSchemaVS2012Light;
-        private Nikita.WinForm.ExtendControl.VS2012LightTheme vS2012LightTheme1;
-        private Nikita.WinForm.ExtendControl.VS2003Theme vS2003Theme1;
-        private Nikita.WinForm.ExtendControl.VS2005Theme vS2005Theme1;
-        private VS2012ToolStripExtender vS2012ToolStripExtender1;
+        private System.Windows.Forms.ToolStripMenuItem menuItemSchemaVS2012Light; 
     }
 }

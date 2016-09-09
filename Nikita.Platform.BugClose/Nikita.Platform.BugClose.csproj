@@ -70,9 +70,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DockContextEx.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\FrmBseDictionaryTreeDialog.cs">
       <SubType>Form</SubType>
     </Compile>

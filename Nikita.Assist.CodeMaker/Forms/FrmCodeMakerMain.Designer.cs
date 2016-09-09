@@ -1,4 +1,6 @@
 ﻿using Nikita.WinForm.ExtendControl;
+using WeifenLuo.WinFormsUI.Docking;
+
 namespace Nikita.Assist.CodeMaker
 {
     partial class FrmCodeMakerMain
@@ -30,21 +32,21 @@ namespace Nikita.Assist.CodeMaker
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Nikita.WinForm.ExtendControl.DockPanelSkin dockPanelSkin1 = new Nikita.WinForm.ExtendControl.DockPanelSkin();
-            Nikita.WinForm.ExtendControl.AutoHideStripSkin autoHideStripSkin1 = new Nikita.WinForm.ExtendControl.AutoHideStripSkin();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient1 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient1 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPaneStripSkin dockPaneStripSkin1 = new Nikita.WinForm.ExtendControl.DockPaneStripSkin();
-            Nikita.WinForm.ExtendControl.DockPaneStripGradient dockPaneStripGradient1 = new Nikita.WinForm.ExtendControl.DockPaneStripGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient2 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient2 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient3 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new Nikita.WinForm.ExtendControl.DockPaneStripToolWindowGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient4 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient5 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.DockPanelGradient dockPanelGradient3 = new Nikita.WinForm.ExtendControl.DockPanelGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient6 = new Nikita.WinForm.ExtendControl.TabGradient();
-            Nikita.WinForm.ExtendControl.TabGradient tabGradient7 = new Nikita.WinForm.ExtendControl.TabGradient();
+            DockPanelSkin dockPanelSkin1 = new DockPanelSkin();
+            AutoHideStripSkin autoHideStripSkin1 = new AutoHideStripSkin();
+            DockPanelGradient dockPanelGradient1 = new DockPanelGradient();
+            TabGradient tabGradient1 = new TabGradient();
+            DockPaneStripSkin dockPaneStripSkin1 = new DockPaneStripSkin();
+            DockPaneStripGradient dockPaneStripGradient1 = new DockPaneStripGradient();
+            TabGradient tabGradient2 = new TabGradient();
+            DockPanelGradient dockPanelGradient2 = new DockPanelGradient();
+            TabGradient tabGradient3 = new TabGradient();
+            DockPaneStripToolWindowGradient dockPaneStripToolWindowGradient1 = new DockPaneStripToolWindowGradient();
+            TabGradient tabGradient4 = new TabGradient();
+            TabGradient tabGradient5 = new TabGradient();
+            DockPanelGradient dockPanelGradient3 = new DockPanelGradient();
+            TabGradient tabGradient6 = new TabGradient();
+            TabGradient tabGradient7 = new TabGradient();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCodeMakerMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +56,7 @@ namespace Nikita.Assist.CodeMaker
             this.实体批量生成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dockPanel = new Nikita.WinForm.ExtendControl.DockPanel();
+            this.dockPanel = new DockPanel();
             this.imgList = new System.Windows.Forms.ImageList(this.components);
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolBar = new System.Windows.Forms.ToolStrip();
@@ -179,8 +181,7 @@ namespace Nikita.Assist.CodeMaker
             tabGradient7.TextColor = System.Drawing.SystemColors.ControlDarkDark;
             dockPaneStripToolWindowGradient1.InactiveTabGradient = tabGradient7;
             dockPaneStripSkin1.ToolWindowGradient = dockPaneStripToolWindowGradient1;
-            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
-            this.dockPanel.Skin = dockPanelSkin1;
+            dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1; 
             this.dockPanel.TabIndex = 2;
             // 
             // imgList

@@ -341,6 +341,26 @@
       <Project>{A939C25E-8300-48CA-AD10-48755C95FED8}</Project>
       <Name>Nikita.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2003.csproj">
+      <Project>{719f0f69-66da-438d-b5bb-2d883ef4ace2}</Project>
+      <Name>ThemeVS2003</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2005Multithreading.csproj">
+      <Project>{01b09009-bd30-47f2-b318-4b583d606c61}</Project>
+      <Name>ThemeVS2005Multithreading</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2012.csproj">
+      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
+      <Name>ThemeVS2012</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2013.csproj">
+      <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
+      <Name>ThemeVS2013</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\WinFormsUI.csproj">
+      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nikita.WinForm.ExtendControl\Nikita.WinForm.ExtendControl.csproj">
       <Project>{db3e8dd9-36c0-4163-b01f-04f09c23738a}</Project>
       <Name>Nikita.WinForm.ExtendControl</Name>

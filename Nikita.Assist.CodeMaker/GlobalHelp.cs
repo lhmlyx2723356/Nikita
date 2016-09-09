@@ -5,7 +5,8 @@ using System.Windows.Forms;
 using Nikita.Assist.CodeMaker.DAL;
 using Nikita.Base.ConnectionManager;
 using Nikita.DataAccess4DBHelper;
-using Nikita.WinForm.ExtendControl; 
+using Nikita.WinForm.ExtendControl;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Assist.CodeMaker
 {
