@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
+using Nikita.Base.Define;
+using Nikita.DataAccess.Expression2Sql.Mapper;
+using Nikita.DataAccess4DBHelper;
 
 namespace Nikita.DataAccess.Expression2Sql
 {
@@ -14,6 +18,28 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             this._sqlBuilder = new SqlBuilder(dbSqlParser);
         }
+
+        //public ExpressionToSql(DbContext dbContext)
+        //{
+        //    IDbSqlParser dbSqlParser = null;
+        //    switch (dbContext.SqlType)
+        //    {
+        //        case SqlType.SqlServer:
+        //            dbSqlParser = new SQLServerSqlParser();
+        //            break;
+        //        case SqlType.Oracle:
+        //            dbSqlParser = new OracleSqlParser();
+        //            break;
+        //        case SqlType.MySql:
+        //            dbSqlParser = new MySQLSqlParser();
+        //            break;
+        //        case SqlType.SQLite:
+        //            dbSqlParser = new SQLiteSqlParser();
+        //            break;
+        //    }
+        //    this._sqlBuilder = new SqlBuilder(dbSqlParser);
+        //    dbHelper = DbHelper.GetDbHelper(dbContext.SqlType, dbContext.ConnectionString);
+        //}
 
         public Dictionary<string, object> DbParams
         {
@@ -362,6 +388,6 @@ namespace Nikita.DataAccess.Expression2Sql
             }
 
             return this;
-        }
+        } 
     }
 }

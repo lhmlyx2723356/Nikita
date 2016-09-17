@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Nikita.Core;
-using Nikita.DataAccess.Expression2Sql;
-using Nikita.Base.Define;
-using Nikita.DataAccess4DBHelper;
-using Nikita.Core.Literacy;
-using System.Data.Common;
 using System.Data;
+using Nikita.DataAccess.Expression2Sql.Mapper;
+using Nikita.DataAccess4DBHelper;
+using Nikita.Base.Define;
 
-namespace Nikita.DataAccess.ORM
+namespace Nikita.DataAccess.Expression2Sql
 {
-    public class DbContext
+    public class DbContext 
     {
-        public SqlType SqlType { get; set; }
+        public Base.Define.SqlType SqlType { get; set; }
 
         public string ConnectionString { get; set; }
 
@@ -23,7 +18,7 @@ namespace Nikita.DataAccess.ORM
         public IExpressionToSql ExpressionToSql { get; private set; }
 
 
-        public DbContext(SqlType SqlType, string strConnectionString)
+        public DbContext(  SqlType SqlType, string strConnectionString)
         {
             this.SqlType = SqlType;
             this.ConnectionString = strConnectionString;
@@ -47,8 +42,8 @@ namespace Nikita.DataAccess.ORM
                 case SqlType.Accesss:
                     throw new Exception("暂不支持此类型数据库");
             }
-            dbHelper = DbHelper.GetDbHelper(this.SqlType, this.ConnectionString);
         }
+
 
         public List<T> ToList<T>(ExpressionToSql<T> expresstionTosql)
         {
@@ -59,7 +54,9 @@ namespace Nikita.DataAccess.ORM
                 {
                     dbHelper.AddParameter(item.Key, item.Value);
                 }
-                return Convert2.ToList<T>((DbDataReader)dbHelper.ExecuteReader());
+
+                return MappingUntilTool.DataReaderToList<T>(typeof(T), dbHelper.ExecuteReader(), "*");
+
             }
             return null;
         }
@@ -73,7 +70,7 @@ namespace Nikita.DataAccess.ORM
                 {
                     dbHelper.AddParameter(item.Key, item.Value);
                 }
-                return Convert2.ToInt64(dbHelper.ExecuteScalar());
+                return long.Parse(dbHelper.ExecuteScalar());
             }
             return 0;
         }
@@ -87,7 +84,7 @@ namespace Nikita.DataAccess.ORM
                 {
                     dbHelper.AddParameter(item.Key, item.Value);
                 }
-                return Convert2.ToBoolean(dbHelper.ExecuteNonQuery());
+                return dbHelper.ExecuteNonQuery();
             }
             return false;
         }

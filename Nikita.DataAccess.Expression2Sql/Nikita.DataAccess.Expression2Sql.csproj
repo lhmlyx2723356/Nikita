@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseExpression2Sql.cs" />
+    <Compile Include="DbContext.cs" />
     <Compile Include="DbSqlParser\MySQLSqlParser.cs" />
     <Compile Include="DbSqlParser\OracleSqlParser.cs" />
     <Compile Include="DbSqlParser\SQLiteSqlParser.cs" />
@@ -57,6 +58,11 @@
     <Compile Include="ExpressionToSql.cs" />
     <Compile Include="IDbSqlParser.cs" />
     <Compile Include="IExpression2Sql.cs" />
+    <Compile Include="Mapper\CacheManager.cs" />
+    <Compile Include="Mapper\DataReaderEntityBuilder.cs" />
+    <Compile Include="Mapper\DataRecordExtensions.cs" />
+    <Compile Include="Mapper\IStorageObject.cs" />
+    <Compile Include="Mapper\MappingUntilTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlBuilder.cs" />
     <Compile Include="StaticClass\ExpressionToSqlMySQL.cs" />
@@ -71,6 +77,16 @@
     <Compile Include="Test\Models\Student.cs" />
     <Compile Include="Test\Models\User.cs" />
     <Compile Include="Test\Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
+      <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
+      <Name>Nikita.Base.Define</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.DataAccess4DBHelper\Nikita.DataAccess4DBHelper.csproj">
+      <Project>{1d3d3ba5-fa80-4e3a-8c8d-4f189652d69f}</Project>
+      <Name>Nikita.DataAccess4DBHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
