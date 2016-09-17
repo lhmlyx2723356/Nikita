@@ -14,6 +14,10 @@ namespace Expression2SqlTest
         private static void Main(string[] args)
         {
             Console.Title = "Expression2SqlTest";
+            IExpressionToSql ExpressionToSqlSQLServer = new ExpressionToSqlSQLServer();
+            IExpressionToSql ExpressionToSqlMySQL = new ExpressionToSqlMySQL();
+            IExpressionToSql ExpressionToSqlSQLite = new ExpressionToSqlSQLite();
+            IExpressionToSql ExpressionToSqlOracle = new ExpressionToSqlOracle();
 
             ExpressionToSql<UserInfo> userInfoSql = new ExpressionToSql<UserInfo>(new MySQLSqlParser());
             Printf(
