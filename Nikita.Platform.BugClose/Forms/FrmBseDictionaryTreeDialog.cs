@@ -1,19 +1,13 @@
-/// <summary>说明:FrmBseDictionaryTreeDialog文件
-/// 作者:卢华明
-/// 创建时间:2016-05-22 23:28:06
-/// </summary>
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms; 
-using Nikita.Core.WinForm; 
-using Nikita.Platform.BugClose.Model;
 using Nikita.Base.IDAL;
+using Nikita.Core.WinForm;
+using Nikita.Platform.BugClose.Model;
+
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
+
 namespace Nikita.Platform.BugClose
 {
     /// <summary>说明:FrmBseDictionaryTreeDialog
@@ -25,39 +19,48 @@ namespace Nikita.Platform.BugClose
     public partial class FrmBseDictionaryTreeDialog : Form
     {
         #region 常量、变量
+
         /// <summary>DataGridView下拉框绑定数据源
-        /// 
+        ///
         /// </summary>
         private DataSet m_dsGridSource;
+
         /// <summary>操作类
-        /// 
+        ///
         /// </summary>
         private IBseDAL<BseDictionary> m_BseDictionaryDAL;
+
         /// <summary>索引号
-        /// 
+        ///
         /// </summary>
         private string m_strIndex;
+
         /// <summary>当前对象
-        /// 
+        ///
         /// </summary>
         private BseDictionary m_BseDictionary;
+
         /// <summary>当前对象集合
-        /// 
+        ///
         /// </summary>
         private List<BseDictionary> m_lstBseDictionary;
+
         /// <summary>返回对象集合
-        /// 
+        ///
         /// </summary>
         public List<BseDictionary> ListBseDictionary { get; private set; }
+
         /// <summary>父级ID
-        /// 
+        ///
         /// </summary>
         private int m_intParentId;
-        #endregion
+
+        #endregion 常量、变量
 
         #region 构造函数
+
         /// <summary>构造函数
-        /// 
+        ///
         /// </summary>
         /// <param name=model" BseDictionary">对象</param>
         /// <param name="lstBseDictionary">对象集合</param>
@@ -78,9 +81,11 @@ namespace Nikita.Platform.BugClose
                 this.dataNavigator.CurrentIndex = int.Parse(m_strIndex);
             }
         }
-        #endregion
+
+        #endregion 构造函数
 
         #region 基础事件
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             string strReturnMsg = CheckInput();
@@ -125,10 +130,12 @@ namespace Nikita.Platform.BugClose
                 }
             }
         }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             ControlManager.ClearAll(this.tabPage);
         }
+
         private void dataNavigator_PositionChanged(object sender, EventArgs e)
         {
             if (dataNavigator.ListInfo == null)
@@ -138,30 +145,35 @@ namespace Nikita.Platform.BugClose
             m_BseDictionary = m_lstBseDictionary[this.dataNavigator.CurrentIndex];
             DisplayData(m_BseDictionary);
         }
-        #endregion
+
+        #endregion 基础事件
 
         #region 基本方法
+
         /// <summary>初始化绑定
-        /// 
+        ///
         /// </summary>
         private void DoInitData()
         {
         }
+
         /// <summary>实体对象值显示至控件
-        /// 
+        ///
         /// </summary>
         /// <param name="model">model</param>
         private void DisplayData(BseDictionary model)
         {
             EntityOperateManager.BindAll(this.tabPage, model);
         }
+
         /// <summary>检查输入合法性
-        /// 
+        ///
         /// </summary>
         private string CheckInput()
         {
             return string.Empty;
         }
-        #endregion
+
+        #endregion 基本方法
     }
 }

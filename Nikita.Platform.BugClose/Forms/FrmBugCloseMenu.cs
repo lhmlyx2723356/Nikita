@@ -1,18 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+using Nikita.WinForm.ExtendControl.WinControls;
 using System.Windows.Forms;
-using Nikita.WinForm.ExtendControl;
-using Nikita.WinForm.ExtendControl.WinControls; 
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Platform.BugClose
 {
     public partial class FrmBugCloseMenu : DockContentEx
-    { 
+    {
         public OutlookBar OutlookBarMenu
         {
             get
@@ -22,8 +15,8 @@ namespace Nikita.Platform.BugClose
         }
 
         public FrmBugCloseMenu()
-        { 
-            InitializeComponent(); 
+        {
+            InitializeComponent();
             OutlookBarBand outlookMenu = new OutlookBarBand("基础设置")
             {
                 SmallImageList = imageList1,
@@ -52,21 +45,18 @@ namespace Nikita.Platform.BugClose
                 LargeImageList = imageList1
             };
 
-
             outlookMenu3.Items.Add(new OutlookBarItem("基础表设置", 1));
             outlookMenu3.Items.Add(new OutlookBarItem("缓存设置", 2));
-            
+
             OutLookBarMenu.Bands.Add(outlookMenu);
             OutLookBarMenu.Bands.Add(outlookMenu2);
             OutLookBarMenu.Bands.Add(outlookMenu3);
         }
 
-        void OnOutlookBarItemClicked(OutlookBarBand band, OutlookBarItem item)
+        private void OnOutlookBarItemClicked(OutlookBarBand band, OutlookBarItem item)
         {
             string message = "Item : " + item.Text + " was clicked...";
             MessageBox.Show(message);
         }
-
-         
     }
 }

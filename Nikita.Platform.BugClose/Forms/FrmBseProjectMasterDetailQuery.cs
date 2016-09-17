@@ -1,22 +1,15 @@
-/// <summary>说明:FrmBseProjectMasterDetailQuery文件
-/// 作者:卢华明
-/// 创建时间:2016/6/4 18:09:29
-/// </summary> 
-using Nikita.Platform.BugClose.Model;
+using Nikita.Base.Define;
+using Nikita.Base.IDAL;
 using Nikita.Core;
+
+using Nikita.Platform.BugClose.Model;
 using Nikita.WinForm.ExtendControl;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Nikita.Base.Define;
-using Nikita.Base.IDAL;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Platform.BugClose
@@ -30,33 +23,41 @@ namespace Nikita.Platform.BugClose
     public partial class FrmBseProjectMasterDetailQuery : DockContentEx
     {
         #region 常量、变量
+
         /// <summary>主表操作类
-        /// 
+        ///
         /// </summary>
-        private IBseDAL<BseProject > m_BseProjectDAL;
+        private IBseDAL<BseProject> m_BseProjectDAL;
+
         /// <summary>子表操作类
-        /// 
+        ///
         /// </summary>
-        private IBseDAL<BseProjectVersion>  m_BseProjectVersionDAL;
+        private IBseDAL<BseProjectVersion> m_BseProjectVersionDAL;
+
         /// <summary>主表绑定集合
-        /// 
+        ///
         /// </summary>
         private List<BseProject> m_lstBseProject;
+
         /// <summary>子表绑定集合
-        /// 
+        ///
         /// </summary>
         private List<BseProjectVersion> m_lstBseProjectVersion;
+
         /// <summary>Master列表下拉框绑定数据源
-        /// 
+        ///
         /// </summary>
         private DataSet m_dsMasterGridSource;
+
         /// <summary>Detail列表下拉框绑定数据源
-        /// 
+        ///
         /// </summary>
         private DataSet m_dsDetailGridSource;
-        #endregion
+
+        #endregion 常量、变量
 
         #region 构造函数
+
         /// <summary>构造函数
         ///
         /// </summary>
@@ -64,13 +65,15 @@ namespace Nikita.Platform.BugClose
         {
             InitializeComponent();
             cboFilterType.SelectedIndex = 2;
-            m_BseProjectDAL =GlobalHelp.GetResolve<IBseDAL<BseProject>>()  ;
-            m_BseProjectVersionDAL = GlobalHelp.GetResolve <IBseDAL<BseProjectVersion>>();
+            m_BseProjectDAL = GlobalHelp.GetResolve<IBseDAL<BseProject>>();
+            m_BseProjectVersionDAL = GlobalHelp.GetResolve<IBseDAL<BseProjectVersion>>();
             m_lstBseProject = new List<BseProject>();
             DoInitData();
             DoInitMasterGridSource();
             DoInitDetailGridSource();
+
             #region 主表列表绑定字段
+
             this.gridmrzProjectID.AspectGetter = x => ((BseProject)x).ProjectID;
             this.gridmrzCategory.AspectGetter = delegate (object x) { return GetMasterCategory(((BseProject)x).Category); };
             this.gridmrzName.AspectGetter = x => ((BseProject)x).Name;
@@ -84,8 +87,11 @@ namespace Nikita.Platform.BugClose
             this.gridmrzCreateUser.AspectGetter = x => ((BseProject)x).CreateUser;
             this.gridmrzEditDate.AspectGetter = x => ((BseProject)x).EditDate;
             this.gridmrzEditUser.AspectGetter = x => ((BseProject)x).EditUser;
-            #endregion
+
+            #endregion 主表列表绑定字段
+
             #region 明细表列表绑定字段
+
             this.gridDetailmrzVersionID.AspectGetter = x => ((BseProjectVersion)x).VersionID;
             this.gridDetailmrzProjectID.AspectGetter = delegate (object x) { return GetDetailProjectID(((BseProjectVersion)x).ProjectID); };
             this.gridDetailmrzName.AspectGetter = x => ((BseProjectVersion)x).Name;
@@ -98,11 +104,14 @@ namespace Nikita.Platform.BugClose
             this.gridDetailmrzCreateUser.AspectGetter = x => ((BseProjectVersion)x).CreateUser;
             this.gridDetailmrzEditDate.AspectGetter = x => ((BseProjectVersion)x).EditDate;
             this.gridDetailmrzEditUser.AspectGetter = x => ((BseProjectVersion)x).EditUser;
-            #endregion
+
+            #endregion 明细表列表绑定字段
         }
-        #endregion
+
+        #endregion 构造函数
 
         #region 基础事件
+
         /// <summary>查询
         ///
         /// </summary>
@@ -112,8 +121,9 @@ namespace Nikita.Platform.BugClose
         {
             DoQueryData();
         }
+
         /// <summary>执行命令
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -127,15 +137,19 @@ namespace Nikita.Platform.BugClose
                     case "cmdRefres":
                         DoQueryData();
                         break;
+
                     case "cmdNew":
                         DoNew();
                         break;
+
                     case "cmdEdit":
                         DoEdit();
                         break;
+
                     case "cmdDelete":
                         DoDeleteOrCancel(EntityOperationType.删除);
                         break;
+
                     case "cmdCancel":
                         DoDeleteOrCancel(EntityOperationType.作废);
                         break;
@@ -152,8 +166,9 @@ namespace Nikita.Platform.BugClose
         {
             DoQueryData();
         }
+
         /// <summary>主表选中事件
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -171,8 +186,9 @@ namespace Nikita.Platform.BugClose
                 objListViewDetail.Refresh();
             }
         }
+
         /// <summary>通用查询
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -180,8 +196,9 @@ namespace Nikita.Platform.BugClose
         {
             this.objListViewMaster.TimedFilter(txtFilter.Text);
         }
+
         /// <summary>双击修改
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -193,9 +210,11 @@ namespace Nikita.Platform.BugClose
             }
             Command_Click(cmdEdit, null);
         }
-        #endregion
+
+        #endregion 基础事件
 
         #region 基础方法
+
         /// <summary>执行查询
         ///
         /// </summary>
@@ -219,6 +238,7 @@ namespace Nikita.Platform.BugClose
                 btnQuery.Enabled = true;
             }
         }
+
         /// <summary>根据查询条件构造查询语句
         ///
         /// </summary>
@@ -228,10 +248,10 @@ namespace Nikita.Platform.BugClose
             SearchCondition condition = new SearchCondition();
             condition.AddCondition("Name", this.txtQueryName.Text, SqlOperator.Like);
             return condition.BuildConditionSql().Replace("Where", "");
-
         }
+
         /// <summary>删除/作废
-        /// 
+        ///
         /// </summary>
         /// <param name="operationType">操作类型</param>
         private void DoDeleteOrCancel(EntityOperationType operationType)
@@ -265,6 +285,7 @@ namespace Nikita.Platform.BugClose
                 MessageBox.Show(string.Format("{0}失败", operationType));
             }
         }
+
         /// <summary>编辑
         ///
         /// </summary>
@@ -297,6 +318,7 @@ namespace Nikita.Platform.BugClose
                 }
             }
         }
+
         /// <summary>新增
         ///
         /// </summary>
@@ -321,7 +343,7 @@ namespace Nikita.Platform.BugClose
         }
 
         /// <summary>检查选择
-        /// 
+        ///
         /// </summary>
         /// <param name="operationType">操作说明</param>
         /// <returns>返回提示信息</returns>
@@ -334,12 +356,14 @@ namespace Nikita.Platform.BugClose
             }
             return strMsg;
         }
+
         /// <summary>初始化绑定下拉框等
         ///
         /// </summary>
         private void DoInitData()
         {
         }
+
         /// <summary>初始主表数据源
         ///
         /// </summary>
@@ -353,7 +377,9 @@ namespace Nikita.Platform.BugClose
             };
             m_dsMasterGridSource = BindSourceHelper.GetBindSourceDataSet(bindClass, GlobalHelp.Conn);
         }
-        #endregion
+
+        #endregion 基础方法
+
         /// <summary>初始化明细数据源
         ///
         /// </summary>
@@ -367,21 +393,28 @@ namespace Nikita.Platform.BugClose
             };
             m_dsDetailGridSource = BindSourceHelper.GetBindSourceDataSet(bindClass, GlobalHelp.Conn);
         }
+
         #region 主表绑定方法
+
         private string GetMasterCategory(object objCategory)
         {
             return m_dsMasterGridSource.Tables["gridmrzCategory"].Select("Value = '" + objCategory + "'")[0]["Name"].ToString();
         }
+
         private string GetMasterOnLevel(object objOnLevel)
         {
             return m_dsMasterGridSource.Tables["gridmrzOnLevel"].Select("Value = '" + objOnLevel + "'")[0]["Name"].ToString();
         }
-        #endregion
+
+        #endregion 主表绑定方法
+
         #region 明细绑定方法
+
         private string GetDetailProjectID(object objProjectID)
         {
             return m_dsDetailGridSource.Tables["gridDetailmrzProjectID"].Select("ProjectID = '" + objProjectID + "'")[0]["Name"].ToString();
         }
-        #endregion 
+
+        #endregion 明细绑定方法
     }
 }

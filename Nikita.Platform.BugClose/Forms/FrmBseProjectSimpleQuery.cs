@@ -1,23 +1,17 @@
-/// <summary>说明:FrmBseProjectSimpleQuery文件
-/// 作者:卢华明
-/// 创建时间:2016-05-28 17:29:10
-/// </summary> 
-using Nikita.Platform.BugClose.Model;
+using Nikita.Base.Define;
+using Nikita.Base.IDAL;
 using Nikita.Core;
-using Nikita.Core.WinForm;
 using Nikita.Core.NPOIs;
+using Nikita.Core.WinForm;
+
+using Nikita.Platform.BugClose.Model;
 using Nikita.WinForm.ExtendControl;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms; 
-using Nikita.Base.Define;
-using Nikita.Base.IDAL;
+using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Platform.BugClose
@@ -31,21 +25,26 @@ namespace Nikita.Platform.BugClose
     public partial class FrmBseProjectSimpleQuery : DockContentEx
     {
         #region 常量、变量
+
         /// <summary>DataGridView下拉框绑定数据源
-        /// 
+        ///
         /// </summary>
         private DataSet m_dsGridSource;
+
         /// <summary>操作类
-        /// 
+        ///
         /// </summary>
         private IBseDAL<BseProject> m_BseProjectDAL;
+
         /// <summary>结果集合
-        /// 
+        ///
         /// </summary>
         private List<BseProject> m_lstBseProject;
-        #endregion
+
+        #endregion 常量、变量
 
         #region 构造函数
+
         /// <summary>构造函数
         ///
         /// </summary>
@@ -62,9 +61,11 @@ namespace Nikita.Platform.BugClose
             toolTip.Draw += this.toolTip_Draw;
             DoInitData();
         }
-        #endregion
+
+        #endregion 构造函数
 
         #region 基础事件
+
         /// <summary>查询
         ///
         /// </summary>
@@ -74,8 +75,9 @@ namespace Nikita.Platform.BugClose
         {
             DoQueryData();
         }
+
         /// <summary>执行命令
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -92,21 +94,27 @@ namespace Nikita.Platform.BugClose
                     case "cmdLast":
                         DoGo(cmdItem.Name.Trim());
                         break;
+
                     case "cmdImportExcel":
                         DoImportExcel();
                         break;
+
                     case "cmdRefresh":
                         DoQueryData();
                         break;
+
                     case "cmdNew":
                         DoNew();
                         break;
+
                     case "cmdEdit":
                         DoEdit();
                         break;
+
                     case "cmdDelete":
                         DoDeleteOrCancel("删除 ");
                         break;
+
                     case "cmdCancel":
                         DoDeleteOrCancel("作废 ");
                         break;
@@ -128,6 +136,7 @@ namespace Nikita.Platform.BugClose
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), dataGridView.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + 4);
             }
         }
+
         private void grdData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             if (m_dsGridSource == null)
@@ -144,7 +153,6 @@ namespace Nikita.Platform.BugClose
             ComboBoxHelper.BindDataGridViewComboBoxCell(gridcboOnLevelCell, m_dsGridSource.Tables["gridcboOnLevel"], "Name", "Value");
             DataGridViewComboBoxCell gridcboCategoryCell = this.grdData.Rows[e.RowIndex].Cells[gridcboCategory.Name] as DataGridViewComboBoxCell;
             ComboBoxHelper.BindDataGridViewComboBoxCell(gridcboCategoryCell, m_dsGridSource.Tables["gridcboCategory"], "Name", "Value");
-
         }
 
         private void grdData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -161,6 +169,7 @@ namespace Nikita.Platform.BugClose
         {
             DoQueryData();
         }
+
         private void grdData_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
@@ -175,19 +184,23 @@ namespace Nikita.Platform.BugClose
                 this.toolTip.Show(strCellToolTipText, this.grdData);
             }
         }
+
         private void grdData_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             this.toolTip.Hide(this.grdData);
         }
+
         private void toolTip_Draw(object sender, DrawToolTipEventArgs e)
         {
             e.Graphics.FillRectangle(Brushes.AliceBlue, e.Bounds);
             e.Graphics.DrawRectangle(Pens.Blue, new Rectangle(0, 0, e.Bounds.Width - 1, e.Bounds.Height - 1));
             e.Graphics.DrawString(this.toolTip.ToolTipTitle + e.ToolTipText, e.Font, Brushes.Blue, e.Bounds);
         }
-        #endregion
+
+        #endregion 基础事件
 
         #region 基础方法
+
         /// <summary>上一条、下一条、第一条、最后一条记录
         ///
         /// </summary>
@@ -204,6 +217,7 @@ namespace Nikita.Platform.BugClose
                         grdData.FirstDisplayedScrollingRowIndex = 0;
                     }
                     break;
+
                 case "cmdPre":
                     if (grdData.SelectedRows.Count > 0)
                     {
@@ -216,6 +230,7 @@ namespace Nikita.Platform.BugClose
                         }
                     }
                     break;
+
                 case "cmdNext":
                     if (grdData.SelectedRows.Count > 0)
                     {
@@ -228,6 +243,7 @@ namespace Nikita.Platform.BugClose
                         }
                     }
                     break;
+
                 case "cmdLast":
                     if (grdData.Rows.Count > 0)
                     {
@@ -238,6 +254,7 @@ namespace Nikita.Platform.BugClose
                     break;
             }
         }
+
         /// <summary>导出Excel
         ///
         /// </summary>
@@ -263,13 +280,14 @@ namespace Nikita.Platform.BugClose
         private void DoInitData()
         {
         }
+
         /// <summary>执行查询
         ///
         /// </summary>
         private void DoQueryData()
         {
             try
-            {  
+            {
                 btnQuery.Enabled = false;
                 string strWhere = GetSearchSql();
                 m_lstBseProject = m_BseProjectDAL.GetListArray("*", "ProjectID", "ASC", Pager.PageSize, Pager.PageIndex, strWhere);
@@ -286,6 +304,7 @@ namespace Nikita.Platform.BugClose
                 btnQuery.Enabled = true;
             }
         }
+
         /// <summary>根据查询条件构造查询语句
         ///
         /// </summary>
@@ -295,10 +314,10 @@ namespace Nikita.Platform.BugClose
             SearchCondition condition = new SearchCondition();
             condition.AddCondition("Name", this.txtQueryName.Text, SqlOperator.Like);
             return condition.BuildConditionSql().Replace("Where", "");
-
         }
+
         /// <summary>删除/作废
-        /// 
+        ///
         /// </summary>
         /// <param name="strOperation">操作类型</param>
         private void DoDeleteOrCancel(string strOperation)
@@ -321,6 +340,7 @@ namespace Nikita.Platform.BugClose
                 MessageBox.Show(string.Format("{0}失败", strOperation));
             }
         }
+
         /// <summary>编辑
         ///
         /// </summary>
@@ -350,6 +370,7 @@ namespace Nikita.Platform.BugClose
                 }
             }
         }
+
         /// <summary>新增
         ///
         /// </summary>
@@ -366,7 +387,7 @@ namespace Nikita.Platform.BugClose
         }
 
         /// <summary>检查选择
-        /// 
+        ///
         /// </summary>
         /// <param name="strOperation">操作说明</param>
         /// <returns>返回提示信息</returns>
@@ -379,6 +400,7 @@ namespace Nikita.Platform.BugClose
             }
             return strMsg;
         }
-        #endregion
+
+        #endregion 基础方法
     }
 }

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Nikita.Base.Define;
-using Autofac;
+﻿using Nikita.Base.ConnectionManager;
 using Nikita.Core.Autofac;
-using Nikita.Base.ConnectionManager;
+using System.Collections.Generic;
 
 namespace Nikita.Platform.BugClose
 {
@@ -19,7 +14,6 @@ namespace Nikita.Platform.BugClose
             get;
             set;
         }
-         
 
         public static T GetResolve<T>()
         {
@@ -32,7 +26,5 @@ namespace Nikita.Platform.BugClose
             m_dicResolve.Add(typeof(T).FullName, it);
             return it;
         }
-
-
     }
 }

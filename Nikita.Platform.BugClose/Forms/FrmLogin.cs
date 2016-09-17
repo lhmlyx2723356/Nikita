@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
+﻿using Nikita.Base.Services;
+using System;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.ServiceModel;
-using System.Text;
 using System.Windows.Forms;
-using Nikita.Base.IDAL; 
-using Nikita.Base.Services;
-
 
 namespace Nikita.Platform.BugClose
 {
-    public partial class FrmLogin : Form 
+    public partial class FrmLogin : Form
     {
         public FrmLogin()
         {
@@ -30,7 +20,7 @@ namespace Nikita.Platform.BugClose
         }
 
         private void btnOK_Click(object sender, EventArgs e)
-        { 
+        {
             if (txtUserName.Text.Trim() == string.Empty)
             {
                 MessageBox.Show(@"请输入登录账号");
@@ -44,7 +34,7 @@ namespace Nikita.Platform.BugClose
                 return;
             }
 
-            DataTable dt = PermissionService.GetPermission(txtUserName.Text.Trim(), txtPassword.Text.Trim(),false);
+            DataTable dt = PermissionService.GetPermission(txtUserName.Text.Trim(), txtPassword.Text.Trim(), false);
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show(@"用户名、密码错误，或者无系统权限");
@@ -52,7 +42,6 @@ namespace Nikita.Platform.BugClose
             }
             this.DialogResult = DialogResult.OK;
         }
-         
 
         private void FrmLogin_Shown(object sender, EventArgs e)
         {
@@ -105,6 +94,5 @@ namespace Nikita.Platform.BugClose
             //}
             //btnOK.Enabled = true;
         }
-         
     }
 }

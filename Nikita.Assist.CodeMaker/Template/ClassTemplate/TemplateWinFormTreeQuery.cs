@@ -63,6 +63,7 @@ namespace Nikita.Assist.CodeMaker.Template.ClassTemplate
             sb.AppendLine("using Nikita.Core.XML;");
             sb.AppendLine("using Nikita.Base.Define;");
             sb.AppendLine("using Nikita.Base.IDAL;");
+            sb.AppendLine("using WeifenLuo.WinFormsUI.Docking;");
 
             sb.AppendLine("namespace " + parameter.NameSpace + "");
             sb.AppendLine("{");

@@ -1,21 +1,14 @@
-/// <summary>说明:FrmBseDictionaryTreeQuery文件
-/// 作者:卢华明
-/// 创建时间:2016-05-22 23:28:06
-/// </summary> 
-using Nikita.Platform.BugClose.Model;
+using Nikita.Base.IDAL;
 using Nikita.Core;
+
+using Nikita.Platform.BugClose.Model;
 using Nikita.WinForm.ExtendControl;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Nikita.Base.IDAL;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Platform.BugClose
@@ -29,34 +22,41 @@ namespace Nikita.Platform.BugClose
     public partial class FrmBseDictionaryTreeQuery : DockContentEx
     {
         #region 常量、变量
+
         /// <summary>DataGridView下拉框绑定数据源
-        /// 
+        ///
         /// </summary>
         private DataSet m_dsGridSource;
+
         /// <summary>操作类
-        /// 
+        ///
         /// </summary>
         private IBseDAL<BseDictionary> m_BseDictionaryDAL;
+
         /// <summary>绑定集合
-        /// 
+        ///
         /// </summary>
         private List<BseDictionary> m_lstBseDictionary;
-        #endregion
+
+        #endregion 常量、变量
 
         #region 构造函数
+
         /// <summary>构造函数
         ///
         /// </summary>
         public FrmBseDictionaryTreeQuery()
         {
             InitializeComponent();
-            m_BseDictionaryDAL =GlobalHelp.GetResolve<IBseDAL<BseDictionary>>();
+            m_BseDictionaryDAL = GlobalHelp.GetResolve<IBseDAL<BseDictionary>>();
             this.dataTreeListView.RootKeyValue = 0u;
             DoInitData();
         }
-        #endregion
+
+        #endregion 构造函数
 
         #region 基础事件
+
         /// <summary>查询
         ///
         /// </summary>
@@ -74,8 +74,9 @@ namespace Nikita.Platform.BugClose
                 btnQuery.Enabled = true;
             }
         }
+
         /// <summary>通用查询
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -83,8 +84,9 @@ namespace Nikita.Platform.BugClose
         {
             this.dataTreeListView.TimedFilter(txtFilter.Text);
         }
+
         /// <summary>执行命令
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -101,16 +103,20 @@ namespace Nikita.Platform.BugClose
                         case "cmdRefresh":
                             DoQueryData();
                             break;
+
                         case "cmdNewSameLevel":
                         case "cmdNewNextLevel":
                             DoNew(cmdItem.Name.Trim());
                             break;
+
                         case "cmdEdit":
                             DoEdit();
                             break;
+
                         case "cmdDelete":
                             DoDeleteOrCancel("删除");
                             break;
+
                         case "cmdCancel":
                             DoDeleteOrCancel("作废");
                             break;
@@ -132,8 +138,9 @@ namespace Nikita.Platform.BugClose
         {
             DoQueryData();
         }
+
         /// <summary>双击修改
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -145,15 +152,18 @@ namespace Nikita.Platform.BugClose
             }
             Command_Click(cmdEdit, null);
         }
-        #endregion
+
+        #endregion 基础事件
 
         #region 基础方法
+
         /// <summary>初始化绑定下拉框等
         ///
         /// </summary>
         private void DoInitData()
         {
         }
+
         /// <summary>执行查询
         ///
         /// </summary>
@@ -177,6 +187,7 @@ namespace Nikita.Platform.BugClose
                 btnQuery.Enabled = true;
             }
         }
+
         /// <summary>根据查询条件构造查询语句
         ///
         /// </summary>
@@ -187,10 +198,10 @@ namespace Nikita.Platform.BugClose
             condition.AddCondition("Name", this.txtQueryName.Text, SqlOperator.Like);
             condition.AddCondition("Value", this.txtQueryValue.Text, SqlOperator.Like);
             return condition.BuildConditionSql().Replace("Where", "");
-
         }
+
         /// <summary>删除/作废
-        /// 
+        ///
         /// </summary>
         /// <param name="strOperation">操作类型</param>
         private void DoDeleteOrCancel(string strOperation)
@@ -221,6 +232,7 @@ namespace Nikita.Platform.BugClose
                 MessageBox.Show(string.Format("{0}失败", strOperation));
             }
         }
+
         /// <summary>编辑
         ///
         /// </summary>
@@ -244,6 +256,7 @@ namespace Nikita.Platform.BugClose
                 }
             }
         }
+
         /// <summary>新增
         ///
         /// </summary>
@@ -271,19 +284,20 @@ namespace Nikita.Platform.BugClose
         }
 
         /// <summary>检查选择
-        /// 
+        ///
         /// </summary>
         /// <param name="strOperation">操作说明</param>
         /// <returns>返回提示信息</returns>
         private string CheckSelect(string strOperation)
         {
             string strMsg = string.Empty;
-            if (dataTreeListView.SelectedObjects.Count == 0 && m_lstBseDictionary.Count>0)
+            if (dataTreeListView.SelectedObjects.Count == 0 && m_lstBseDictionary.Count > 0)
             {
                 strMsg = string.Format("请选择要{0}的行数据", strOperation);
             }
             return strMsg;
         }
-        #endregion
+
+        #endregion 基础方法
     }
 }

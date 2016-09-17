@@ -1,20 +1,15 @@
-/// <summary>说明:FrmBseProjectMasterDetailDialog文件
-/// 作者:卢华明
-/// 创建时间:2016/6/4 18:09:29
-/// </summary>
+using Nikita.Base.Define;
+using Nikita.Base.IDAL;
+using Nikita.Core.WinForm;
+using Nikita.Platform.BugClose.Model;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Windows.Forms; 
-using Nikita.Core.WinForm;
-using Nikita.Base.IDAL;
-using Nikita.Platform.BugClose.Model;
-using Nikita.Base.Define; 
+using System.Windows.Forms;
 
 namespace Nikita.Platform.BugClose
 {
@@ -27,51 +22,63 @@ namespace Nikita.Platform.BugClose
     public partial class FrmBseProjectMasterDetailDialog : Form
     {
         #region 常量、变量
+
         /// <summary>主表对象
-        /// 
+        ///
         /// </summary>
         private BseProject m_BseProject;
+
         /// <summary>主表集合
-        /// 
+        ///
         /// </summary>
         private List<BseProject> m_lstBseProject;
+
         /// <summary>明细集合
-        /// 
+        ///
         /// </summary>
         private List<BseProjectVersion> m_lstBseProjectVersion;
+
         /// <summary>主表操作类
-        /// 
+        ///
         /// </summary>
-        private IBseDAL<BseProject>  m_BseProjectDAL;
+        private IBseDAL<BseProject> m_BseProjectDAL;
+
         /// <summary>子表操作类
-        /// 
+        ///
         /// </summary>
         private IBseDAL<BseProjectVersion> m_BseProjectVersionDAL;
+
         /// <summary>主表编辑状态
-        /// 
-        /// </summary> 
+        ///
+        /// </summary>
         private EntityOperationType m_masterStatus;
+
         /// <summary>明细编辑状态
-        /// 
-        /// </summary> 
+        ///
+        /// </summary>
         private EntityOperationType m_detailStatus;
+
         /// <summary>返回主表对象集合
-        /// 
-        /// </summary> 
+        ///
+        /// </summary>
         public List<BseProject> ListBseProject { get; private set; }
+
         /// <summary>返回子表对象集合
-        /// 
-        /// </summary> 
+        ///
+        /// </summary>
         public List<BseProjectVersion> ListBseProjectVersion { get; private set; }
+
         /// <summary>Detail列表下拉框绑定数据源
-        /// 
+        ///
         /// </summary>
         private DataSet m_dsDetailGridSource;
-        #endregion
+
+        #endregion 常量、变量
 
         #region 构造函数
+
         /// <summary>构造函数
-        /// 
+        ///
         /// </summary>
         /// <param name="modelMaster">modelMaster</param>
         /// <param name="lstBseProject">lstBseProject</param>
@@ -84,7 +91,9 @@ namespace Nikita.Platform.BugClose
             InitializeComponent();
             DoInitMasterData();
             DoInitDetailData();
+
             #region 明细表列表绑定字段
+
             this.gridDetailmrzVersionID.AspectGetter = x => ((BseProjectVersion)x).VersionID;
             this.gridDetailmrzProjectID.AspectGetter = delegate (object x) { return GetDetailProjectID(((BseProjectVersion)x).ProjectID); };
             this.gridDetailmrzName.AspectGetter = x => ((BseProjectVersion)x).Name;
@@ -97,9 +106,11 @@ namespace Nikita.Platform.BugClose
             this.gridDetailmrzCreateUser.AspectGetter = x => ((BseProjectVersion)x).CreateUser;
             this.gridDetailmrzEditDate.AspectGetter = x => ((BseProjectVersion)x).EditDate;
             this.gridDetailmrzEditUser.AspectGetter = x => ((BseProjectVersion)x).EditUser;
-            #endregion
-            this.m_BseProjectDAL = GlobalHelp.GetResolve<IBseDAL<BseProject>> ();
-            this.m_BseProjectVersionDAL = GlobalHelp.GetResolve<IBseDAL<BseProjectVersion>>(); 
+
+            #endregion 明细表列表绑定字段
+
+            this.m_BseProjectDAL = GlobalHelp.GetResolve<IBseDAL<BseProject>>();
+            this.m_BseProjectVersionDAL = GlobalHelp.GetResolve<IBseDAL<BseProjectVersion>>();
             this.m_BseProject = modelMaster;
             this.m_lstBseProject = lstBseProject ?? new List<BseProject>();
             this.m_lstBseProjectVersion = lstBseProjectVersion ?? new List<BseProjectVersion>();
@@ -118,11 +129,13 @@ namespace Nikita.Platform.BugClose
             }
             Command_Click(modelMaster == null ? cmdNew : cmdEdit, null);
         }
-        #endregion
+
+        #endregion 构造函数
 
         #region 基础事件
+
         /// <summary>执行命令
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -136,38 +149,48 @@ namespace Nikita.Platform.BugClose
                     case "cmdNew":
                         DoNewOrEdit(EntityOperationType.新增);
                         break;
+
                     case "cmdEdit":
                         DoNewOrEdit(EntityOperationType.修改);
                         break;
+
                     case "cmdDelete":
                         DoDelete();
                         break;
+
                     case "cmdSave":
                         DoSave();
                         break;
+
                     case "cmdCancel":
                         DoCancel();
                         break;
+
                     case "cmdNewDetail":
                         DoNewOrEditDetail(EntityOperationType.新增明细);
                         break;
+
                     case "cmdEditDetail":
                         DoNewOrEditDetail(EntityOperationType.修改明细);
                         break;
+
                     case "cmdDeleteDetail":
                         DoDeleteDetail();
                         break;
+
                     case "cmdSaveDetail":
                         DoSaveDetail();
                         break;
+
                     case "cmdCancelDetail":
                         DoCancelDetail();
                         break;
                 }
             }
         }
+
         /// <summary>明细表行变化事件
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -183,24 +206,27 @@ namespace Nikita.Platform.BugClose
                 EntityOperateManager.BindAll(this.grpDetail, model);
             }
         }
-        #endregion
+
+        #endregion 基础事件
 
         #region 基本方法
+
         #region 主表操作
+
         /// <summary>新增或者修改主表
-        /// 
+        ///
         /// </summary>
         /// <param name="operationType">操作类型</param>
         private void DoNewOrEdit(EntityOperationType operationType)
         {
             SetMode(operationType);
         }
+
         /// <summary>保存主表
-        /// 
+        ///
         /// </summary>
         private void DoSave()
         {
-
             switch (m_masterStatus)
             {
                 case EntityOperationType.新增:
@@ -225,6 +251,7 @@ namespace Nikita.Platform.BugClose
                         objListViewDetail.Refresh();
                     }
                     break;
+
                 case EntityOperationType.修改:
                     string strNameValueEdit = txtEditName.Text.Trim();
                     if (m_BseProjectDAL.CalcCount(" ProjectID !=" + m_BseProject.ProjectID + "   and  Name='" + strNameValueEdit + "'") > 0)
@@ -243,9 +270,10 @@ namespace Nikita.Platform.BugClose
             }
             SetMode(EntityOperationType.只读);
         }
+
         /// <summary>删除主表，连同明细一起删除
-        /// 
-        /// </summary> 
+        ///
+        /// </summary>
         private void DoDelete()
         {
             m_BseProjectVersionDAL.DeleteByCond("ProjectID=" + m_BseProject.ProjectID + "");
@@ -260,9 +288,10 @@ namespace Nikita.Platform.BugClose
             }
             SetMode(EntityOperationType.只读);
         }
+
         /// <summary>撤销操作
-        /// 
-        /// </summary> 
+        ///
+        /// </summary>
         private void DoCancel()
         {
             if (m_BseProject != null)
@@ -271,10 +300,13 @@ namespace Nikita.Platform.BugClose
                 SetMode(EntityOperationType.只读);
             }
         }
-        #endregion
+
+        #endregion 主表操作
+
         #region 明细表操作
+
         /// <summary>新增或者修改明细表
-        /// 
+        ///
         /// </summary>
         /// <param name="operationType">操作类型</param>
         private void DoNewOrEditDetail(EntityOperationType operationType)
@@ -287,13 +319,14 @@ namespace Nikita.Platform.BugClose
             }
             SetMode(operationType);
         }
+
         /// <summary>保存明细表
-        /// 
+        ///
         /// </summary>
         private void DoSaveDetail()
         {
             string strMsg = DoCheckDetail(EntityOperationType.只读明细);
-            if (strMsg!=string.Empty)
+            if (strMsg != string.Empty)
             {
                 MessageBox.Show(strMsg);
                 return;
@@ -314,6 +347,7 @@ namespace Nikita.Platform.BugClose
                         objListViewDetail.SelectedIndex = m_lstBseProjectVersion.Count - 1;
                     }
                     break;
+
                 case EntityOperationType.修改明细:
                     BseProjectVersion modelDetail = this.objListViewDetail.SelectedObjects[0] as BseProjectVersion;
                     EntityOperateManager.EditEntity(this.grpDetail, modelDetail);
@@ -326,8 +360,9 @@ namespace Nikita.Platform.BugClose
             }
             SetMode(EntityOperationType.只读明细);
         }
+
         /// <summary>删除明细表，允许选中多个进行删除
-        /// 
+        ///
         /// </summary>
         private void DoDeleteDetail()
         {
@@ -347,17 +382,20 @@ namespace Nikita.Platform.BugClose
             }
             SetMode(EntityOperationType.只读明细);
         }
+
         /// <summary>撤销明细表操作
-        /// 
+        ///
         /// </summary>
         private void DoCancelDetail()
         {
             objListViewDetail_SelectedIndexChanged(null, null);
             SetMode(EntityOperationType.只读明细);
         }
-        #endregion
+
+        #endregion 明细表操作
+
         /// <summary>设置按钮跟面板控件的可用性
-        /// 
+        ///
         /// </summary>
         /// <param name="operationType">操作类型</param>
         public void SetMode(EntityOperationType operationType)
@@ -379,6 +417,7 @@ namespace Nikita.Platform.BugClose
                     ControlManager.SetControlEnabled(grpDetail, false);
                     ControlManager.SetBtnEnabled(new Component[] { cmdSaveDetail, cmdCancelDetail, cmdNewDetail, cmdDeleteDetail, cmdEditDetail }, false);
                     break;
+
                 case EntityOperationType.只读:
                     m_masterStatus = operationType;
                     ControlManager.SetControlEnabled(grpMaster, false);
@@ -386,6 +425,7 @@ namespace Nikita.Platform.BugClose
                     ControlManager.SetBtnEnabled(new Component[] { cmdNew, cmdDelete, cmdEdit }, true);
                     SetMode(EntityOperationType.只读明细);
                     break;
+
                 case EntityOperationType.新增明细:
                 case EntityOperationType.修改明细:
                     m_detailStatus = operationType;
@@ -398,6 +438,7 @@ namespace Nikita.Platform.BugClose
                     ControlManager.SetBtnEnabled(new Component[] { cmdNewDetail, cmdDeleteDetail, cmdEditDetail }, false);
                     ControlManager.SetControlEnabled(grpDetail, true);
                     break;
+
                 case EntityOperationType.只读明细:
                     m_detailStatus = operationType;
                     ControlManager.SetControlEnabled(grpDetail, false);
@@ -406,8 +447,9 @@ namespace Nikita.Platform.BugClose
                     break;
             }
         }
+
         /// <summary>检查合法性
-        /// 
+        ///
         /// </summary>
         /// <param name="operationType">操作类型</param>
         /// <returns></returns>
@@ -444,20 +486,22 @@ namespace Nikita.Platform.BugClose
                     txtDetailEditSort.Select();
                     return "排序不能为空";
                 }
-            } 
+            }
 
             return strMsg;
         }
+
         /// <summary>实体对象值显示至控件
-        /// 
+        ///
         /// </summary>
         /// <param name="model">model</param>
         private void DisplayData(BseProject model)
         {
             EntityOperateManager.BindAll(this.grpMaster, model);
         }
+
         /// <summary>初始化Master绑定
-        /// 
+        ///
         /// </summary>
         private void DoInitMasterData()
         {
@@ -467,13 +511,13 @@ namespace Nikita.Platform.BugClose
                 SqlType = SqlType.SqlServer,
                 BindSql = strBindEditSql
             };
-            DataSet ds = BindSourceHelper.GetBindSourceDataSet(bindClass,GlobalHelp.Conn);
+            DataSet ds = BindSourceHelper.GetBindSourceDataSet(bindClass, GlobalHelp.Conn);
             ComboBoxHelper.BindComboBox(cboEditCategory, ds.Tables["cboEditCategory"], "Name", "Value");
             ComboBoxHelper.BindComboBox(cboEditOnLevel, ds.Tables["cboEditOnLevel"], "Name", "Value");
-
         }
+
         /// <summary>初始化Detail绑定
-        /// 
+        ///
         /// </summary>
         private void DoInitDetailData()
         {
@@ -483,16 +527,19 @@ namespace Nikita.Platform.BugClose
                 SqlType = SqlType.SqlServer,
                 BindSql = strBindEditSql
             };
-            DataSet ds = BindSourceHelper.GetBindSourceDataSet(bindClass,GlobalHelp.Conn);
+            DataSet ds = BindSourceHelper.GetBindSourceDataSet(bindClass, GlobalHelp.Conn);
             ComboBoxHelper.BindComboBox(cboDetailEditProjectID, ds.Tables["cboDetailEditProjectID"], "Name", "ProjectID");
-
         }
+
         #region 明细绑定方法
+
         private string GetDetailProjectID(object objProjectID)
         {
             return m_dsDetailGridSource.Tables["gridDetailmrzProjectID"].Select("ProjectID = '" + objProjectID + "'")[0]["Name"].ToString();
         }
-        #endregion 
-        #endregion
+
+        #endregion 明细绑定方法
+
+        #endregion 基本方法
     }
 }

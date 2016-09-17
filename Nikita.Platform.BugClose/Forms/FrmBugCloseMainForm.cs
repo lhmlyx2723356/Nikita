@@ -1,21 +1,15 @@
-using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using System.Reflection;
-using System.Windows.Forms;
-using System.IO;
-using System.Linq;
-using Nikita.WinForm.ExtendControl;
-using Nikita.WinForm.ExtendControl.WinControls;
 using Nikita.Base.CacheStore;
+using Nikita.WinForm.ExtendControl.WinControls;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Platform.BugClose
 {
     public sealed partial class FrmBugCloseMainForm : Form
     {
-        private readonly FrmBugCloseMenu m_bugCloseMenu; 
+        private readonly FrmBugCloseMenu m_bugCloseMenu;
         private readonly ToolStripRenderer m_system = new ToolStripProfessionalRenderer();
 
         public FrmBugCloseMainForm()
@@ -24,7 +18,7 @@ namespace Nikita.Platform.BugClose
             m_bugCloseMenu = new FrmBugCloseMenu { RightToLeftLayout = RightToLeftLayout };
             OutlookBar outLookBarMenu = m_bugCloseMenu.OutlookBarMenu;
             outLookBarMenu.ItemClicked += OnOutlookBarItemClicked;
-            m_bugCloseMenu.Show(dockPanel); 
+            m_bugCloseMenu.Show(dockPanel);
         }
 
         #region Methods
@@ -50,7 +44,6 @@ namespace Nikita.Platform.BugClose
                 }
             }
         }
-         
 
         private IDockContent FindDocument(string text)
         {
@@ -59,8 +52,9 @@ namespace Nikita.Platform.BugClose
                 return (from form in MdiChildren where form.Text == text select form as IDockContent).FirstOrDefault();
             }
             return dockPanel.Documents.FirstOrDefault(content => content.DockHandler.TabText == text);
-        } 
-        #endregion
+        }
+
+        #endregion Methods
 
         private void OpenForm(DockContent itemDockContent)
         {
@@ -77,9 +71,9 @@ namespace Nikita.Platform.BugClose
             }
         }
 
-
         #region Event Handlers
-        void OnOutlookBarItemClicked(OutlookBarBand band, OutlookBarItem item)
+
+        private void OnOutlookBarItemClicked(OutlookBarBand band, OutlookBarItem item)
         {
             if (item.Text == "缺陷字典管理")
             {
@@ -90,34 +84,28 @@ namespace Nikita.Platform.BugClose
             {
                 DockContent itemDockContent = new FrmBseProjectSimpleQuery();
                 OpenForm(itemDockContent);
-
             }
             else if (item.Text == "项目版本")
             {
                 DockContent itemDockContent = new FrmBseProjectMasterDetailQuery();
                 OpenForm(itemDockContent);
-
             }
             else if (item.Text == "项目模块")
             {
                 DockContent itemDockContent = new FrmBseProjectModuleMasterDetailQuery();
                 OpenForm(itemDockContent);
-
             }
             else if (item.Text == "基础表设置")
             {
                 Form itemDockContent = new FrmCacheTablesSimpleQuery();
                 itemDockContent.ShowDialog();
-
             }
             else if (item.Text == "缓存设置")
             {
                 Form itemDockContent = new FrmCacheConfigSimpleQuery();
                 itemDockContent.ShowDialog();
-
             }
         }
-
 
         private void menuItemAbout_Click(object sender, EventArgs e)
         {
@@ -165,8 +153,9 @@ namespace Nikita.Platform.BugClose
         {
             Close();
         }
-        #endregion
-         
+
+        #endregion Event Handlers
+
         private void EnableVSRenderer(VSToolStripExtender.VsVersion version)
         {
             vS2012ToolStripExtender1.SetStyle(this.mainMenu, version);
@@ -191,7 +180,7 @@ namespace Nikita.Platform.BugClose
             //    this.dockPanel.Theme = this.vS2003Theme1;
             //    this.EnableVSRenderer(VSToolStripExtender.VsVersion.Vs2003);
             //}
-              if (sender == this.menuItemSchemaVS2012Light)
+            if (sender == this.menuItemSchemaVS2012Light)
             {
                 this.dockPanel.Theme = this.vS2012LightTheme1;
                 this.EnableVSRenderer(VSToolStripExtender.VsVersion.Vs2012);

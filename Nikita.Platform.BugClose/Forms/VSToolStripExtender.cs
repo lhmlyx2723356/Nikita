@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.ComponentModel;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Nikita.Platform.BugClose
 {
@@ -13,7 +13,6 @@ namespace Nikita.Platform.BugClose
             private VsVersion version = VsVersion.Unkown;
             private readonly ToolStrip strip;
             private readonly Dictionary<ToolStripItem, string> menuText = new Dictionary<ToolStripItem, string>();
-            
 
             public ToolStripProperties(ToolStrip toolstrip)
             {
@@ -24,7 +23,7 @@ namespace Nikita.Platform.BugClose
                     SaveMenuStripText();
             }
 
-            public VsVersion VsVersion 
+            public VsVersion VsVersion
             {
                 get { return this.version; }
                 set
@@ -71,7 +70,7 @@ namespace Nikita.Platform.BugClose
             return extendee is ToolStrip;
         }
 
-        #endregion
+        #endregion IExtenderProvider Members
 
         public ToolStripRenderer DefaultRenderer { get; set; }
 

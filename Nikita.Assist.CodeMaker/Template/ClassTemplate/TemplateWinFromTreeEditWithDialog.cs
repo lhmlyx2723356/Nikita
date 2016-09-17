@@ -65,6 +65,7 @@ namespace Nikita.Assist.CodeMaker.Template.ClassTemplate
             sb.AppendLine("using " + parameter.NameSpace + ".DAL;");
             sb.AppendLine("using " + parameter.NameSpace + ".Model;");
             sb.AppendLine("using Nikita.Base.IDAL;");
+            sb.AppendLine("using WeifenLuo.WinFormsUI.Docking;");
 
             sb.AppendLine("namespace " + parameter.NameSpace + "");
             sb.AppendLine("{");

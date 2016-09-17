@@ -1,23 +1,17 @@
-/// <summary>说明:FrmBseProjectModuleMasterDetailQuery文件
-/// 作者:卢华明
-/// 创建时间:2016/6/5 18:22:40
-/// </summary> 
-using Nikita.Platform.BugClose.Model;
+using Nikita.Base.Define;
+using Nikita.Base.IDAL;
 using Nikita.Core;
+
+using Nikita.Platform.BugClose.Model;
 using Nikita.WinForm.ExtendControl;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Nikita.Base.Define;
-using Nikita.Base.IDAL;
 using WeifenLuo.WinFormsUI.Docking;
+
 namespace Nikita.Platform.BugClose
 {
     /// <summary>说明:FrmBseProjectModuleMasterDetailQuery
@@ -29,33 +23,41 @@ namespace Nikita.Platform.BugClose
     public partial class FrmBseProjectModuleMasterDetailQuery : DockContentEx
     {
         #region 常量、变量
-      /// <summary>主表操作类
-        /// 
+
+        /// <summary>主表操作类
+        ///
         /// </summary>
         private IBseDAL<BseProject> m_BseProjectDAL;
+
         /// <summary>子表操作类
-        /// 
+        ///
         /// </summary>
-        private IBseDAL<BseModule>  m_BseModuleDAL;
+        private IBseDAL<BseModule> m_BseModuleDAL;
+
         /// <summary>主表绑定集合
-        /// 
+        ///
         /// </summary>
-        private List<BseProject>  m_lstBseProject;
+        private List<BseProject> m_lstBseProject;
+
         /// <summary>子表绑定集合
-        /// 
+        ///
         /// </summary>
         private List<BseModule> m_lstBseModule;
+
         /// <summary>Master列表下拉框绑定数据源
-        /// 
+        ///
         /// </summary>
         private DataSet m_dsMasterGridSource;
+
         /// <summary>Detail列表下拉框绑定数据源
-        /// 
+        ///
         /// </summary>
         private DataSet m_dsDetailGridSource;
-        #endregion
-          
+
+        #endregion 常量、变量
+
         #region 构造函数
+
         /// <summary>构造函数
         ///
         /// </summary>
@@ -63,45 +65,53 @@ namespace Nikita.Platform.BugClose
         {
             InitializeComponent();
             cboFilterType.SelectedIndex = 2;
-            m_BseProjectDAL = GlobalHelp.GetResolve<IBseDAL<BseProject>>()  ;
-            m_BseModuleDAL  = GlobalHelp.GetResolve<IBseDAL<BseModule>>();  
+            m_BseProjectDAL = GlobalHelp.GetResolve<IBseDAL<BseProject>>();
+            m_BseModuleDAL = GlobalHelp.GetResolve<IBseDAL<BseModule>>();
             m_lstBseProject = new List<BseProject>();
             DoInitData();
             DoInitMasterGridSource();
             DoInitDetailGridSource();
+
             #region 主表列表绑定字段
-              this.gridmrzProjectID.AspectGetter = x => ((BseProject)x).ProjectID;
-            this.gridmrzCategory.AspectGetter = delegate(object x) { return GetMasterCategory(((BseProject)x).Category); };
-              this.gridmrzName.AspectGetter = x => ((BseProject)x).Name;
-              this.gridmrzStatus.AspectGetter = x => ((BseProject)x).Status;
-            this.gridmrzOnLevel.AspectGetter = delegate(object x) { return GetMasterOnLevel(((BseProject)x).OnLevel); };
-              this.gridmrzRemark.AspectGetter = x => ((BseProject)x).Remark;
-              this.gridmrzSort.AspectGetter = x => ((BseProject)x).Sort;
-              this.gridmrzDeptId.AspectGetter = x => ((BseProject)x).DeptId;
-              this.gridmrzCompanyID.AspectGetter = x => ((BseProject)x).CompanyID;
-              this.gridmrzCreateDate.AspectGetter = x => ((BseProject)x).CreateDate;
-              this.gridmrzCreateUser.AspectGetter = x => ((BseProject)x).CreateUser;
-              this.gridmrzEditDate.AspectGetter = x => ((BseProject)x).EditDate;
-              this.gridmrzEditUser.AspectGetter = x => ((BseProject)x).EditUser;
-            #endregion
+
+            this.gridmrzProjectID.AspectGetter = x => ((BseProject)x).ProjectID;
+            this.gridmrzCategory.AspectGetter = delegate (object x) { return GetMasterCategory(((BseProject)x).Category); };
+            this.gridmrzName.AspectGetter = x => ((BseProject)x).Name;
+            this.gridmrzStatus.AspectGetter = x => ((BseProject)x).Status;
+            this.gridmrzOnLevel.AspectGetter = delegate (object x) { return GetMasterOnLevel(((BseProject)x).OnLevel); };
+            this.gridmrzRemark.AspectGetter = x => ((BseProject)x).Remark;
+            this.gridmrzSort.AspectGetter = x => ((BseProject)x).Sort;
+            this.gridmrzDeptId.AspectGetter = x => ((BseProject)x).DeptId;
+            this.gridmrzCompanyID.AspectGetter = x => ((BseProject)x).CompanyID;
+            this.gridmrzCreateDate.AspectGetter = x => ((BseProject)x).CreateDate;
+            this.gridmrzCreateUser.AspectGetter = x => ((BseProject)x).CreateUser;
+            this.gridmrzEditDate.AspectGetter = x => ((BseProject)x).EditDate;
+            this.gridmrzEditUser.AspectGetter = x => ((BseProject)x).EditUser;
+
+            #endregion 主表列表绑定字段
+
             #region 明细表列表绑定字段
-              this.gridDetailmrzModuleID.AspectGetter = x => ((BseModule)x).ModuleID;
-            this.gridDetailmrzProjectID.AspectGetter = delegate(object x) { return GetDetailProjectID(((BseModule)x).ProjectID); };
-              this.gridDetailmrzName.AspectGetter = x => ((BseModule)x).Name;
-              this.gridDetailmrzStatus.AspectGetter = x => ((BseModule)x).Status;
-              this.gridDetailmrzRemark.AspectGetter = x => ((BseModule)x).Remark;
-              this.gridDetailmrzSort.AspectGetter = x => ((BseModule)x).Sort;
-              this.gridDetailmrzDeptId.AspectGetter = x => ((BseModule)x).DeptId;
-              this.gridDetailmrzCompanyID.AspectGetter = x => ((BseModule)x).CompanyID;
-              this.gridDetailmrzCreateDate.AspectGetter = x => ((BseModule)x).CreateDate;
-              this.gridDetailmrzCreateUser.AspectGetter = x => ((BseModule)x).CreateUser;
-              this.gridDetailmrzEditDate.AspectGetter = x => ((BseModule)x).EditDate;
-              this.gridDetailmrzEditUser.AspectGetter = x => ((BseModule)x).EditUser;
-            #endregion
+
+            this.gridDetailmrzModuleID.AspectGetter = x => ((BseModule)x).ModuleID;
+            this.gridDetailmrzProjectID.AspectGetter = delegate (object x) { return GetDetailProjectID(((BseModule)x).ProjectID); };
+            this.gridDetailmrzName.AspectGetter = x => ((BseModule)x).Name;
+            this.gridDetailmrzStatus.AspectGetter = x => ((BseModule)x).Status;
+            this.gridDetailmrzRemark.AspectGetter = x => ((BseModule)x).Remark;
+            this.gridDetailmrzSort.AspectGetter = x => ((BseModule)x).Sort;
+            this.gridDetailmrzDeptId.AspectGetter = x => ((BseModule)x).DeptId;
+            this.gridDetailmrzCompanyID.AspectGetter = x => ((BseModule)x).CompanyID;
+            this.gridDetailmrzCreateDate.AspectGetter = x => ((BseModule)x).CreateDate;
+            this.gridDetailmrzCreateUser.AspectGetter = x => ((BseModule)x).CreateUser;
+            this.gridDetailmrzEditDate.AspectGetter = x => ((BseModule)x).EditDate;
+            this.gridDetailmrzEditUser.AspectGetter = x => ((BseModule)x).EditUser;
+
+            #endregion 明细表列表绑定字段
         }
-        #endregion
-          
+
+        #endregion 构造函数
+
         #region 基础事件
+
         /// <summary>查询
         ///
         /// </summary>
@@ -109,14 +119,15 @@ namespace Nikita.Platform.BugClose
         /// <param name="e">e</param>
         private void btnQuery_Click(object sender, EventArgs e)
         {
-                DoQueryData();
+            DoQueryData();
         }
+
         /// <summary>执行命令
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
- private void Command_Click(object sender, EventArgs e)
+        private void Command_Click(object sender, EventArgs e)
         {
             ToolStripItem cmdItem = sender as ToolStripItem;
             if (cmdItem != null)
@@ -126,22 +137,26 @@ namespace Nikita.Platform.BugClose
                     case "cmdRefresh":
                         DoQueryData();
                         break;
-                    case  "cmdNew":
+
+                    case "cmdNew":
                         DoNew();
                         break;
-                    case  "cmdEdit":
+
+                    case "cmdEdit":
                         DoEdit();
                         break;
-                    case  "cmdDelete":
+
+                    case "cmdDelete":
                         DoDeleteOrCancel(EntityOperationType.删除);
                         break;
-                    case  "cmdCancel":
+
+                    case "cmdCancel":
                         DoDeleteOrCancel(EntityOperationType.作废);
                         break;
                 }
             }
         }
-         
+
         /// <summary>分页事件
         ///
         /// </summary>
@@ -151,8 +166,9 @@ namespace Nikita.Platform.BugClose
         {
             DoQueryData();
         }
+
         /// <summary>主表选中事件
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -162,16 +178,17 @@ namespace Nikita.Platform.BugClose
             {
                 return;
             }
-            BseProject model = objListViewMaster.SelectedObjects[0] as  BseProject;
+            BseProject model = objListViewMaster.SelectedObjects[0] as BseProject;
             if (model != null)
             {
-                 m_lstBseModule = m_BseModuleDAL.GetListArray("ProjectID=" + model.ProjectID + "");
-                objListViewDetail.SetObjects( m_lstBseModule );
+                m_lstBseModule = m_BseModuleDAL.GetListArray("ProjectID=" + model.ProjectID + "");
+                objListViewDetail.SetObjects(m_lstBseModule);
                 objListViewDetail.Refresh();
             }
         }
+
         /// <summary>通用查询
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -179,8 +196,9 @@ namespace Nikita.Platform.BugClose
         {
             this.objListViewMaster.TimedFilter(txtFilter.Text);
         }
+
         /// <summary>双击修改
-        /// 
+        ///
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
@@ -192,23 +210,25 @@ namespace Nikita.Platform.BugClose
             }
             Command_Click(cmdEdit, null);
         }
-        #endregion
-          
+
+        #endregion 基础事件
+
         #region 基础方法
+
         /// <summary>执行查询
         ///
         /// </summary>
         private void DoQueryData()
         {
-  try
+            try
             {
                 btnQuery.Enabled = false;
                 string strWhere = GetSearchSql();
                 m_lstBseProject = m_BseProjectDAL.GetListArray("*", "ProjectID", "ASC", Pager.PageSize, Pager.PageIndex, strWhere);
                 Pager.RecordCount = m_BseProjectDAL.CalcCount(strWhere);
                 Pager.InitPageInfo();
-                objListViewMaster.SetObjects(  m_lstBseProject );
-                if (  m_lstBseProject .Count > 0)
+                objListViewMaster.SetObjects(m_lstBseProject);
+                if (m_lstBseProject.Count > 0)
                 {
                     objListViewMaster.SelectedIndex = 0;
                 }
@@ -218,6 +238,7 @@ namespace Nikita.Platform.BugClose
                 btnQuery.Enabled = true;
             }
         }
+
         /// <summary>根据查询条件构造查询语句
         ///
         /// </summary>
@@ -225,15 +246,15 @@ namespace Nikita.Platform.BugClose
         private string GetSearchSql()
         {
             SearchCondition condition = new SearchCondition();
-condition.AddCondition("Name", this.txtQueryName.Text, SqlOperator.Like);
+            condition.AddCondition("Name", this.txtQueryName.Text, SqlOperator.Like);
             return condition.BuildConditionSql().Replace("Where", "");
-
         }
+
         /// <summary>删除/作废
-        /// 
+        ///
         /// </summary>
         /// <param name="operationType">操作类型</param>
-    private void DoDeleteOrCancel(EntityOperationType operationType)
+        private void DoDeleteOrCancel(EntityOperationType operationType)
         {
             string strMsg = CheckSelect(operationType);
             if (strMsg != string.Empty)
@@ -264,12 +285,13 @@ condition.AddCondition("Name", this.txtQueryName.Text, SqlOperator.Like);
                 MessageBox.Show(string.Format("{0}失败", operationType));
             }
         }
+
         /// <summary>编辑
         ///
         /// </summary>
         private void DoEdit()
         {
-       string strMsg = CheckSelect(EntityOperationType.修改);
+            string strMsg = CheckSelect(EntityOperationType.修改);
             if (strMsg != string.Empty)
             {
                 MessageBox.Show(strMsg);
@@ -278,34 +300,35 @@ condition.AddCondition("Name", this.txtQueryName.Text, SqlOperator.Like);
             BseProject model = objListViewMaster.SelectedObjects[0] as BseProject;
             if (model != null)
             {
-                FrmBseProjectModuleMasterDetailDialog frmDialog = new  FrmBseProjectModuleMasterDetailDialog(model, m_lstBseProject, m_lstBseModule,m_dsDetailGridSource);
+                FrmBseProjectModuleMasterDetailDialog frmDialog = new FrmBseProjectModuleMasterDetailDialog(model, m_lstBseProject, m_lstBseModule, m_dsDetailGridSource);
                 if (frmDialog.ShowDialog() == DialogResult.OK)
                 {
-                    m_lstBseProject = frmDialog.ListBseProject ;
-                    m_lstBseModule = frmDialog.ListBseModule ;
-                    if ( m_lstBseProject != null)
+                    m_lstBseProject = frmDialog.ListBseProject;
+                    m_lstBseModule = frmDialog.ListBseModule;
+                    if (m_lstBseProject != null)
                     {
-                        objListViewMaster.SetObjects( m_lstBseProject);
+                        objListViewMaster.SetObjects(m_lstBseProject);
                         objListViewMaster.Refresh();
                     }
-                    if (  m_lstBseModule != null)
+                    if (m_lstBseModule != null)
                     {
-                        objListViewDetail.SetObjects(  m_lstBseModule);
+                        objListViewDetail.SetObjects(m_lstBseModule);
                         objListViewDetail.Refresh();
                     }
                 }
             }
         }
+
         /// <summary>新增
         ///
         /// </summary>
         private void DoNew()
         {
-   FrmBseProjectModuleMasterDetailDialog frmDialog = new FrmBseProjectModuleMasterDetailDialog (null, m_lstBseProject, m_lstBseModule,m_dsDetailGridSource);
+            FrmBseProjectModuleMasterDetailDialog frmDialog = new FrmBseProjectModuleMasterDetailDialog(null, m_lstBseProject, m_lstBseModule, m_dsDetailGridSource);
             if (frmDialog.ShowDialog() == DialogResult.OK)
             {
-                m_lstBseProject = frmDialog.ListBseProject ;
-                m_lstBseModule = frmDialog.ListBseModule ;
+                m_lstBseProject = frmDialog.ListBseProject;
+                m_lstBseModule = frmDialog.ListBseModule;
                 if (m_lstBseProject != null)
                 {
                     objListViewMaster.SetObjects(m_lstBseProject);
@@ -318,13 +341,13 @@ condition.AddCondition("Name", this.txtQueryName.Text, SqlOperator.Like);
                 }
             }
         }
-         
+
         /// <summary>检查选择
-        /// 
+        ///
         /// </summary>
         /// <param name="operationType">操作说明</param>
         /// <returns>返回提示信息</returns>
- private string CheckSelect(EntityOperationType operationType)
+        private string CheckSelect(EntityOperationType operationType)
         {
             string strMsg = string.Empty;
             if (objListViewMaster.SelectedObjects.Count == 0)
@@ -333,54 +356,65 @@ condition.AddCondition("Name", this.txtQueryName.Text, SqlOperator.Like);
             }
             return strMsg;
         }
+
         /// <summary>初始化绑定下拉框等
         ///
         /// </summary>
         private void DoInitData()
-        { 
+        {
         }
+
         /// <summary>初始主表数据源
         ///
         /// </summary>
         private void DoInitMasterGridSource()
         {
- const string strBindSql="SELECT   Name,value FROM [BseDictionary] WHERE ParentID=19;SELECT   Name,value FROM [BseDictionary] WHERE ParentID=22;SELECT 'gridmrzCategory ','gridmrzOnLevel '";
-  BindClass bindClass = new BindClass()
-  {
-     SqlType = SqlType.SqlServer,
-      BindSql =strBindSql
-   }; 
-            m_dsMasterGridSource = BindSourceHelper.GetBindSourceDataSet(bindClass,GlobalHelp.Conn);
+            const string strBindSql = "SELECT   Name,value FROM [BseDictionary] WHERE ParentID=19;SELECT   Name,value FROM [BseDictionary] WHERE ParentID=22;SELECT 'gridmrzCategory ','gridmrzOnLevel '";
+            BindClass bindClass = new BindClass()
+            {
+                SqlType = SqlType.SqlServer,
+                BindSql = strBindSql
+            };
+            m_dsMasterGridSource = BindSourceHelper.GetBindSourceDataSet(bindClass, GlobalHelp.Conn);
         }
-        #endregion
-/// <summary>初始化明细数据源
+
+        #endregion 基础方法
+
+        /// <summary>初始化明细数据源
         ///
         /// </summary>
         private void DoInitDetailGridSource()
         {
- const string strBindSql="SELECT ProjectID,Name From BseProject;SELECT 'gridDetailmrzProjectID '";
-  BindClass bindClass = new BindClass()
-  {
-     SqlType = SqlType.SqlServer,
-      BindSql =strBindSql
-   }; 
+            const string strBindSql = "SELECT ProjectID,Name From BseProject;SELECT 'gridDetailmrzProjectID '";
+            BindClass bindClass = new BindClass()
+            {
+                SqlType = SqlType.SqlServer,
+                BindSql = strBindSql
+            };
             m_dsDetailGridSource = BindSourceHelper.GetBindSourceDataSet(bindClass, GlobalHelp.Conn);
         }
-     #region 主表绑定方法
+
+        #region 主表绑定方法
+
         private string GetMasterCategory(object objCategory)
         {
             return m_dsMasterGridSource.Tables["gridmrzCategory"].Select("Value = '" + objCategory + "'")[0]["Name"].ToString();
         }
+
         private string GetMasterOnLevel(object objOnLevel)
         {
             return m_dsMasterGridSource.Tables["gridmrzOnLevel"].Select("Value = '" + objOnLevel + "'")[0]["Name"].ToString();
         }
-        #endregion
-#region 明细绑定方法
+
+        #endregion 主表绑定方法
+
+        #region 明细绑定方法
+
         private string GetDetailProjectID(object objProjectID)
         {
             return m_dsDetailGridSource.Tables["gridDetailmrzProjectID"].Select("ProjectID = '" + objProjectID + "'")[0]["Name"].ToString();
         }
-        #endregion 
+
+        #endregion 明细绑定方法
     }
 }
