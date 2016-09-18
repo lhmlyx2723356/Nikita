@@ -42,13 +42,12 @@ namespace Nikita.DataAccess.PerformanceTest
         }
         static void QueryTest(int takeCount)
         {
-            DbContext context = new DbContext(SqlType.SqlServer, ConnectionString);
-            context.ToList(context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id < takeCount));
 
-            //var list = context.Query<TestEntity>().Take(takeCount).ToList();
+            DbContext context = new DbContext(SqlType.SqlServer, ConnectionString);
+             context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id < takeCount).ToList(); 
 
         }
 
-         
+
     }
 }

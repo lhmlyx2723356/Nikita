@@ -11,12 +11,46 @@ namespace Nikita.DataAccess.Expression2Sql
 {
     public class ExpressionToSql<T>
     {
+
+        public SqlType SqlType { get; private set; }
+
+        public string ConnectionString { get; private set; }
+
+
+        private IDbHelper dbHelper;
         private string _mainTableName = typeof(T).Name;
         private SqlBuilder _sqlBuilder;
 
-        public ExpressionToSql(IDbSqlParser dbSqlParser)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sqlType">数据库类型</param>
+        /// <param name="strConnectionString">数据库连接字符串，如果只是转换成sql语句不需要传入，如果需要转换实体等需要传入连接串</param>
+        public ExpressionToSql(SqlType sqlType, string strConnectionString)
         {
-            this._sqlBuilder = new SqlBuilder(dbSqlParser);
+            this.SqlType = sqlType;
+            this.ConnectionString = strConnectionString;
+            switch (sqlType)
+            {
+                case SqlType.SqlServer:
+                    this._sqlBuilder = new SqlBuilder(new SQLServerSqlParser());
+                    break;
+                case SqlType.Oracle:
+                    this._sqlBuilder = new SqlBuilder(new OracleSqlParser());
+                    break;
+                case SqlType.SQLite:
+                    this._sqlBuilder = new SqlBuilder(new SQLiteSqlParser());
+                    break;
+                case SqlType.MySql:
+                    this._sqlBuilder = new SqlBuilder(new MySQLSqlParser());
+                    break;
+                case SqlType.SqlServerCe:
+                case SqlType.PostgreSql:
+                case SqlType.Db2:
+                case SqlType.Accesss:
+                    throw new Exception("暂不支持此类型数据库");
+            }
+            dbHelper = DbHelper.GetDbHelper(sqlType, strConnectionString);
         }
 
         //public ExpressionToSql(DbContext dbContext)
@@ -388,6 +422,63 @@ namespace Nikita.DataAccess.Expression2Sql
             }
 
             return this;
-        } 
+        }
+
+
+        public List<T> ToList()
+        {
+            if (dbHelper != null)
+            {
+                dbHelper.CreateCommand(this.Sql);
+                foreach (var item in this.DbParams)
+                {
+                    dbHelper.AddParameter(item.Key, item.Value);
+                }
+                return MappingUntilTool.DataReaderToList<T>(typeof(T), dbHelper.ExecuteReader(), "*");
+            }
+            return null;
+        }
+
+        public long ToLong()
+        {
+            if (dbHelper != null)
+            {
+                dbHelper.CreateCommand(this.Sql);
+                foreach (var item in this.DbParams)
+                {
+                    dbHelper.AddParameter(item.Key, item.Value);
+                }
+                return long.Parse(dbHelper.ExecuteScalar());
+            }
+            return 0;
+        }
+
+        public bool ToBool()
+        {
+            if (dbHelper != null)
+            {
+                dbHelper.CreateCommand(this.Sql);
+                foreach (var item in this.DbParams)
+                {
+                    dbHelper.AddParameter(item.Key, item.Value);
+                }
+                return dbHelper.ExecuteNonQuery();
+            }
+            return false;
+        }
+
+        public DataTable ToDataTable()
+        {
+            if (dbHelper != null)
+            {
+                dbHelper.CreateCommand(this.Sql);
+                foreach (var item in this.DbParams)
+                {
+                    dbHelper.AddParameter(item.Key, item.Value);
+                }
+                return dbHelper.ExecuteQuery();
+            }
+            return null;
+        }
     }
 }

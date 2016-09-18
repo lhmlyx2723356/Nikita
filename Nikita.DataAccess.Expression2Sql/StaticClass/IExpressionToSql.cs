@@ -62,6 +62,7 @@ namespace Nikita.DataAccess.Expression2Sql
 
 
         ExpressionToSql<T> Update<T>(Expression<Func<object>> expression);
+         
 
     }
 }

@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Linq.Expressions;
+using Nikita.Base.Define;
 
 namespace Nikita.DataAccess.Expression2Sql
 {
     public  class ExpressionToSqlSQLite : IExpressionToSql
     {
-        public  ExpressionToSql<T> Avg<T>(Expression<Func<T, object>> expression)
+        private DbContext dbContext;
+        public ExpressionToSqlSQLite(DbContext dbContext = null)
+        {
+            this.dbContext = dbContext;
+        }
+
+        public ExpressionToSql<T> Avg<T>(Expression<Func<T, object>> expression)
         {
             return CreateExpressionToSql<T>().Avg(expression);
         }
@@ -97,7 +104,7 @@ namespace Nikita.DataAccess.Expression2Sql
 
         private  ExpressionToSql<T> CreateExpressionToSql<T>()
         {
-            return new ExpressionToSql<T>(new SQLiteSqlParser());
+            return new ExpressionToSql<T>(SqlType.SQLite, dbContext.ConnectionString);
         }
     }
 }

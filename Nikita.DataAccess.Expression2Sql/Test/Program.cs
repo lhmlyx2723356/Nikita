@@ -1,6 +1,7 @@
 ﻿using Nikita.DataAccess.Expression2Sql;
 using System;
 using System.Collections.Generic;
+using Nikita.Base.Define;
 
 namespace Expression2SqlTest
 {
@@ -19,7 +20,7 @@ namespace Expression2SqlTest
             IExpressionToSql ExpressionToSqlSQLite = new ExpressionToSqlSQLite();
             IExpressionToSql ExpressionToSqlOracle = new ExpressionToSqlOracle();
 
-            ExpressionToSql<UserInfo> userInfoSql = new ExpressionToSql<UserInfo>(new MySQLSqlParser());
+            ExpressionToSql<UserInfo> userInfoSql = new ExpressionToSql<UserInfo>(SqlType.MySql,"");
             Printf(
                     userInfoSql.Select().Where(u => u.Id != 1),
                     "Instance class"
