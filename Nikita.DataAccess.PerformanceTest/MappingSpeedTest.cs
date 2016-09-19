@@ -44,10 +44,16 @@ namespace Nikita.DataAccess.PerformanceTest
         {
 
             DbContext context = new DbContext(SqlType.SqlServer, ConnectionString);
-             context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id < takeCount).ToList(); 
+            var result5 = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > 1 && t.F_String.EndsWith("Chloe5"));
+            var result4 = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > 1 && t.F_String.EndsWith("Chloe5")).ToList(); 
+            //var result = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > takeCount2( takeCount )+ 1 && t.Id < takeCount + 100);
+            //var result2 = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > takeCount + 1 && t.Id < takeCount + 100).ToList();
 
         }
 
-
+        public static int takeCount2(int takeCount)
+        {
+            return takeCount + 10;
+        }
     }
 }

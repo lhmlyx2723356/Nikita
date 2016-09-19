@@ -29,7 +29,7 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             if (IsNeedsParentheses(expression, expression.Left))
             {
-                sqlBuilder += "(";
+                sqlBuilder += "("; 
                 Expression2SqlProvider.Where(expression.Left, sqlBuilder);
                 sqlBuilder += ")";
             }
@@ -272,6 +272,62 @@ namespace Nikita.DataAccess.Expression2Sql
                         sqlBuilder.Insert(operatorIndex, " =");
                     }
                     break;
+                //新增类型
+                case ExpressionType.Add:
+                case ExpressionType.AddChecked:
+                    sqlBuilder.Insert(operatorIndex, " +");
+                    break;
+                case ExpressionType.AddAssign:
+                case ExpressionType.AddAssignChecked:
+                    sqlBuilder.Insert(operatorIndex, " +=");
+                    break;
+
+
+                case ExpressionType.AndAssign:
+                    sqlBuilder.Insert(operatorIndex, " &=");
+                    break;
+
+                case ExpressionType.Divide:
+                    sqlBuilder.Insert(operatorIndex, " /");
+                    break;
+                case ExpressionType.DivideAssign:
+                    sqlBuilder.Insert(operatorIndex, " /=");
+                    break;
+                case ExpressionType.ExclusiveOr:
+                    sqlBuilder.Insert(operatorIndex, " ^");
+                    break;
+                case ExpressionType.ExclusiveOrAssign:
+                    sqlBuilder.Insert(operatorIndex, " ^=");
+                    break;
+                case ExpressionType.LeftShift:
+                    sqlBuilder.Insert(operatorIndex, " <<");
+                    break;
+                case ExpressionType.LeftShiftAssign:
+                    sqlBuilder.Insert(operatorIndex, " <<=");
+                    break;
+                case ExpressionType.Modulo:
+                    sqlBuilder.Insert(operatorIndex, " %");
+                    break;
+                case ExpressionType.ModuloAssign:
+                    sqlBuilder.Insert(operatorIndex, " %=");
+                    break;
+                case ExpressionType.Multiply:
+                case ExpressionType.MultiplyChecked:
+                    sqlBuilder.Insert(operatorIndex, " *");
+                    break;
+                case ExpressionType.MultiplyAssign:
+                case ExpressionType.MultiplyAssignChecked:
+                    sqlBuilder.Insert(operatorIndex, " *=");
+                    break;
+                case ExpressionType.Subtract:
+                case ExpressionType.SubtractChecked:
+                    sqlBuilder.Insert(operatorIndex, " -");
+                    break;
+                case ExpressionType.SubtractAssign:
+                case ExpressionType.SubtractAssignChecked:
+                    sqlBuilder.Insert(operatorIndex, " -=");
+                    break;
+
 
                 case ExpressionType.GreaterThan:
                     sqlBuilder.Insert(operatorIndex, " >");
@@ -294,6 +350,7 @@ namespace Nikita.DataAccess.Expression2Sql
 
                 case ExpressionType.Or:
                 case ExpressionType.OrElse:
+                case ExpressionType.OrAssign:
                     sqlBuilder.Insert(operatorIndex, "\nor");
                     break;
 
