@@ -14,6 +14,8 @@ namespace Nikita.DataAccess.Expression2Sql
             {"LikeRight",LikeRight},
             {"StartsWith",StartsWith},
             {"EndsWith",EndsWith},
+            {"Contains",Contains},
+            {"Equals",Equals},
             {"In",InnerIn}
         };
 
@@ -35,7 +37,7 @@ namespace Nikita.DataAccess.Expression2Sql
             if (expression.NodeType == ExpressionType.Call && _Methods.ContainsKey(expression.Method.Name) == false)
             {
                 var Value = Expression.Lambda(expression).Compile().DynamicInvoke();
-                sqlBuilder.AddDbParameter(Value);
+                sqlBuilder.AddDbParameter(Value, true);
                 return sqlBuilder;
             }
             throw new NotImplementedException("Unimplemented method:" + expression.Method);
@@ -48,7 +50,26 @@ namespace Nikita.DataAccess.Expression2Sql
             Expression2SqlProvider.In(expression.Arguments[1], sqlBuilder);
         }
 
+        private static void Contains(MethodCallExpression expression, SqlBuilder sqlBuilder)
+        {
+            if (expression.Object != null)
+            {
+                Expression2SqlProvider.Where(expression.Object, sqlBuilder);
+            }
+            sqlBuilder += " like '%'+";
+            Expression2SqlProvider.Where(expression.Arguments[0], sqlBuilder);
+            sqlBuilder += " +'%'";
+        }
 
+        private static void Equals(MethodCallExpression expression, SqlBuilder sqlBuilder)
+        {
+            if (expression.Object != null)
+            {
+                Expression2SqlProvider.Where(expression.Object, sqlBuilder);
+            }
+            sqlBuilder += " =";
+            Expression2SqlProvider.Where(expression.Arguments[0], sqlBuilder);
+        }
 
         private static void Like(MethodCallExpression expression, SqlBuilder sqlBuilder)
         {
@@ -68,9 +89,11 @@ namespace Nikita.DataAccess.Expression2Sql
             {
                 Expression2SqlProvider.Where(expression.Object, sqlBuilder);
             }
-            sqlBuilder += " like '+";
+            sqlBuilder.AllowAppendEmpty = false;
+            sqlBuilder += " like ";
             Expression2SqlProvider.Where(expression.Arguments[0], sqlBuilder);
-            sqlBuilder += "+'%'";
+            sqlBuilder += " + '%'";
+            sqlBuilder.AllowAppendEmpty = true;
         }
 
         private static void EndsWith(MethodCallExpression expression, SqlBuilder sqlBuilder)
@@ -79,11 +102,11 @@ namespace Nikita.DataAccess.Expression2Sql
             {
                 Expression2SqlProvider.Where(expression.Object, sqlBuilder);
             }
-            sqlBuilder += " like '%+";
+            sqlBuilder.AllowAppendEmpty = false;
+            sqlBuilder += " like '%' +";
             Expression2SqlProvider.Where(expression.Arguments[0], sqlBuilder);
-            sqlBuilder += "+'";
+            sqlBuilder.AllowAppendEmpty = true;
         }
-
 
         private static void LikeLeft(MethodCallExpression expression, SqlBuilder sqlBuilder)
         {

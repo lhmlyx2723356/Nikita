@@ -69,6 +69,11 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             GetExpression2Sql(expression).Where(expression, sqlBuilder);
         }
+        public static void Take(Expression expression, SqlBuilder sqlBuilder)
+        {
+            GetExpression2Sql(expression).Take(expression, sqlBuilder);
+        }
+
 
         private static IExpression2Sql GetExpression2Sql(Expression expression)
         {

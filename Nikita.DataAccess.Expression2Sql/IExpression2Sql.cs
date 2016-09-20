@@ -29,5 +29,6 @@ namespace Nikita.DataAccess.Expression2Sql
         SqlBuilder Update(Expression expression, SqlBuilder sqlBuilder);
 
         SqlBuilder Where(Expression expression, SqlBuilder sqlBuilder);
+        SqlBuilder Take(Expression expression, SqlBuilder sqlBuilder);
     }
 }

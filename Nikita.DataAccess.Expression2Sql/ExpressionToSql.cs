@@ -424,6 +424,16 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
+        public ExpressionToSql<T> Take(Expression<Func<T, object>> expression)
+        {
+            if (expression == null)
+            {
+                throw new ArgumentNullException("expression", "Value cannot be null");
+            }
+             
+            Expression2SqlProvider.Take(expression.Body, this._sqlBuilder);
+            return this;
+        }
 
         public List<T> ToList()
         {

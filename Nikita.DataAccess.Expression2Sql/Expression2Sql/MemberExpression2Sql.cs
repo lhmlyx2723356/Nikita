@@ -124,7 +124,7 @@ namespace Nikita.DataAccess.Expression2Sql
             if (expression.Expression.NodeType == ExpressionType.Constant)
             {
                 object value = GetValue(expression);
-                sqlBuilder.AddDbParameter(value);
+                sqlBuilder.AddDbParameter(value,true);
             }
             else if (expression.Expression.NodeType == ExpressionType.Parameter)
             {

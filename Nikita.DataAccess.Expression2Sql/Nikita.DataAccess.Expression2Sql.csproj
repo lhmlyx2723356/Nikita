@@ -69,6 +69,7 @@
     <Compile Include="StaticClass\ExpressionToSqlSQLite.cs" />
     <Compile Include="StaticClass\ExpressionToSqlSQLServer.cs" />
     <Compile Include="StaticClass\IExpressionToSql.cs" />
+    <Compile Include="TestStatic.cs" />
     <Compile Include="Test\Models\Account.cs" />
     <Compile Include="Test\Models\City.cs" />
     <Compile Include="Test\Models\Class.cs" />

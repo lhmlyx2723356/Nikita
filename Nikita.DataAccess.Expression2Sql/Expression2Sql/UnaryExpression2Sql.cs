@@ -27,7 +27,11 @@ namespace Nikita.DataAccess.Expression2Sql
             Expression2SqlProvider.Max(expression.Operand, sqlBuilder);
             return sqlBuilder;
         }
-
+        protected override SqlBuilder Take(UnaryExpression expression, SqlBuilder sqlBuilder)
+        {
+            Expression2SqlProvider.Take(expression.Operand, sqlBuilder);
+            return sqlBuilder;
+        }
         protected override SqlBuilder Min(UnaryExpression expression, SqlBuilder sqlBuilder)
         {
             Expression2SqlProvider.Min(expression.Operand, sqlBuilder);

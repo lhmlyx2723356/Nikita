@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System;
+using System.Linq.Expressions;
 
 namespace Nikita.DataAccess.Expression2Sql
 {
@@ -17,9 +18,26 @@ namespace Nikita.DataAccess.Expression2Sql
             return sqlBuilder;
         }
 
+        protected override SqlBuilder Take(ConstantExpression expression, SqlBuilder sqlBuilder)
+        {
+            int intOutTakeNum;
+            if (int.TryParse(expression.Value.ToString(), out intOutTakeNum) == false)
+            {
+                throw new Exception("Take 方法输入数字有误");
+            }
+            int intStart = sqlBuilder.Sql.IndexOf("select", StringComparison.Ordinal);
+            sqlBuilder.Insert(intStart + 6, " top " + intOutTakeNum + " ");
+            return sqlBuilder;
+        }
+
         protected override SqlBuilder Where(ConstantExpression expression, SqlBuilder sqlBuilder)
         {
-            sqlBuilder.AddDbParameter(expression.Value);
+            if (sqlBuilder.AllowAppendEmpty == false)
+            {
+                sqlBuilder.AddDbParameter(expression.Value, false);
+                return sqlBuilder;
+            }
+            sqlBuilder.AddDbParameter(expression.Value, true);
             return sqlBuilder;
         }
     }

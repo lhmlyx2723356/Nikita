@@ -104,7 +104,7 @@ namespace Nikita.DataAccess.Expression2Sql
                         case ExpressionType.Constant:
                             sqlBuilder += m.Name + " =";
                             object value = GetValue(expressionMember);
-                            sqlBuilder.AddDbParameter(value);
+                            sqlBuilder.AddDbParameter(value, true);
                             sqlBuilder += ",";
                             break;
 
@@ -115,7 +115,7 @@ namespace Nikita.DataAccess.Expression2Sql
                 else
                 {
                     sqlBuilder += m.Name + " =";
-                    sqlBuilder.AddDbParameter(c.Value);
+                    sqlBuilder.AddDbParameter(c.Value, true);
                     sqlBuilder += ",";
                 }
             }

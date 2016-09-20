@@ -18,7 +18,7 @@ namespace Nikita.DataAccess.PerformanceTest
             long useTime = 0;
 
             //预热
-            QueryTest(2);
+            //QueryTest(2);
 
             useTime = SW.Do(() =>
             {
@@ -42,18 +42,17 @@ namespace Nikita.DataAccess.PerformanceTest
         }
         static void QueryTest(int takeCount)
         {
-
             DbContext context = new DbContext(SqlType.SqlServer, ConnectionString);
-            var result5 = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > 1 && t.F_String.EndsWith("Chloe5"));
-            var result4 = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > 1 && t.F_String.EndsWith("Chloe5")).ToList(); 
+            //var result6 = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > TestStatic.takeCount2(10)).Take(t => 5);
+            var result5 = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > 1 && t.F_String.Equals("Chloe5"));
+            var result4 = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > 1 && t.F_String.EndsWith("Chloe5")).ToList();
             //var result = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > takeCount2( takeCount )+ 1 && t.Id < takeCount + 100);
-            //var result2 = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > takeCount + 1 && t.Id < takeCount + 100).ToList();
-
+            //var result2 = context.ExpressionToSql.Select<TestEntity>().Where(t => t.Id > takeCount + 1 && t.Id < takeCount + 100).ToList(); 
         }
 
-        public static int takeCount2(int takeCount)
-        {
-            return takeCount + 10;
-        }
+        //public static int takeCount2(int takeCount)
+        //{
+        //    return takeCount + 10;
+        //}
     }
 }

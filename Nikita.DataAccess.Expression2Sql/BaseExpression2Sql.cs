@@ -18,6 +18,13 @@ namespace Nikita.DataAccess.Expression2Sql
             return Count((T)expression, sqlBuilder);
         }
 
+
+        public SqlBuilder Take(Expression expression, SqlBuilder sqlBuilder)
+        {
+            Debug();
+            return Take((T)expression, sqlBuilder);
+        }
+
         public SqlBuilder GroupBy(Expression expression, SqlBuilder sqlBuilder)
         {
             Debug();
@@ -94,6 +101,11 @@ namespace Nikita.DataAccess.Expression2Sql
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Count method");
         }
 
+        protected virtual SqlBuilder Take(T expression, SqlBuilder sqlBuilder)
+        {
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Take method");
+        }
+
         protected virtual SqlBuilder GroupBy(T expression, SqlBuilder sqlBuilder)
         {
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.GroupBy method");
@@ -148,6 +160,26 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Where method");
         }
+
+        protected virtual SqlBuilder StartsWith(T expression, SqlBuilder sqlBuilder)
+        {
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.StartsWith method");
+        }
+        protected virtual SqlBuilder EndsWith(T expression, SqlBuilder sqlBuilder)
+        {
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.EndsWith method");
+        }
+        protected virtual SqlBuilder Contains(T expression, SqlBuilder sqlBuilder)
+        {
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Contains method");
+        }
+        protected virtual SqlBuilder Equals(T expression, SqlBuilder sqlBuilder)
+        {
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Equals method");
+        }
+        
+
+
 
         private void Debug()
         {
