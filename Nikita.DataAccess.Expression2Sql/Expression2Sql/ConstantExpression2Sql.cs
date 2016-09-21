@@ -18,12 +18,24 @@ namespace Nikita.DataAccess.Expression2Sql
             return sqlBuilder;
         }
 
-        protected override SqlBuilder Take(ConstantExpression expression, SqlBuilder sqlBuilder)
+        //protected override SqlBuilder Take(ConstantExpression expression, SqlBuilder sqlBuilder)
+        //{
+        //    int intOutTakeNum;
+        //    if (int.TryParse(expression.Value.ToString(), out intOutTakeNum) == false)
+        //    {
+        //        throw new Exception("Take 方法输入数字有误");
+        //    }
+        //    int intStart = sqlBuilder.Sql.IndexOf("select", StringComparison.Ordinal);
+        //    sqlBuilder.Insert(intStart + 6, " top " + intOutTakeNum + " ");
+        //    return sqlBuilder;
+        //}
+
+        protected override SqlBuilder First(ConstantExpression expression, SqlBuilder sqlBuilder)
         {
             int intOutTakeNum;
             if (int.TryParse(expression.Value.ToString(), out intOutTakeNum) == false)
             {
-                throw new Exception("Take 方法输入数字有误");
+                throw new Exception("First 方法输入数字有误");
             }
             int intStart = sqlBuilder.Sql.IndexOf("select", StringComparison.Ordinal);
             sqlBuilder.Insert(intStart + 6, " top " + intOutTakeNum + " ");

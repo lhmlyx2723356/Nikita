@@ -17,6 +17,7 @@ namespace Nikita.DataAccess.Expression2Sql
 
         internal SqlBuilder(IDbSqlParser dbSqlParser)
         {
+            this.AllowAppendEmpty = true;
             this.DbParams = new Dictionary<string, object>();
             this._sqlBuilder = new StringBuilder();
             this.SelectFields = new List<string>();

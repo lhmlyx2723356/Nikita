@@ -19,10 +19,15 @@ namespace Nikita.DataAccess.Expression2Sql
         }
 
 
-        public SqlBuilder Take(Expression expression, SqlBuilder sqlBuilder)
+        //public SqlBuilder Take(Expression expression, SqlBuilder sqlBuilder)
+        //{
+        //    Debug();
+        //    return Take((T)expression, sqlBuilder);
+        //}
+        public SqlBuilder First(Expression expression, SqlBuilder sqlBuilder)
         {
             Debug();
-            return Take((T)expression, sqlBuilder);
+            return First((T)expression, sqlBuilder);
         }
 
         public SqlBuilder GroupBy(Expression expression, SqlBuilder sqlBuilder)
@@ -66,6 +71,22 @@ namespace Nikita.DataAccess.Expression2Sql
             Debug();
             return OrderBy((T)expression, sqlBuilder);
         }
+        public SqlBuilder OrderByDesc(Expression expression, SqlBuilder sqlBuilder)
+        {
+            Debug();
+            return OrderByDesc((T)expression, sqlBuilder);
+        }
+        public SqlBuilder ThenByDesc(Expression expression, SqlBuilder sqlBuilder)
+        {
+            Debug();
+            return ThenByDesc((T)expression, sqlBuilder);
+        }
+        public SqlBuilder ThenBy (Expression expression, SqlBuilder sqlBuilder)
+        {
+            Debug();
+            return ThenBy((T)expression, sqlBuilder);
+        }
+
 
         public SqlBuilder Select(Expression expression, SqlBuilder sqlBuilder)
         {
@@ -101,9 +122,13 @@ namespace Nikita.DataAccess.Expression2Sql
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Count method");
         }
 
-        protected virtual SqlBuilder Take(T expression, SqlBuilder sqlBuilder)
+        //protected virtual SqlBuilder Take(T expression, SqlBuilder sqlBuilder)
+        //{
+        //    throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Take method");
+        //}
+        protected virtual SqlBuilder First(T expression, SqlBuilder sqlBuilder)
         {
-            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Take method");
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.First method");
         }
 
         protected virtual SqlBuilder GroupBy(T expression, SqlBuilder sqlBuilder)
@@ -140,6 +165,19 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.OrderBy method");
         }
+        protected virtual SqlBuilder OrderByDesc(T expression, SqlBuilder sqlBuilder)
+        {
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.OrderByDesc method");
+        }
+
+        protected virtual SqlBuilder ThenByDesc(T expression, SqlBuilder sqlBuilder)
+        {
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.ThenByDesc method");
+        }
+        protected virtual SqlBuilder ThenBy (T expression, SqlBuilder sqlBuilder)
+        {
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.ThenBy method");
+        }
 
         protected virtual SqlBuilder Select(T expression, SqlBuilder sqlBuilder)
         {
@@ -161,25 +199,7 @@ namespace Nikita.DataAccess.Expression2Sql
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Where method");
         }
 
-        protected virtual SqlBuilder StartsWith(T expression, SqlBuilder sqlBuilder)
-        {
-            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.StartsWith method");
-        }
-        protected virtual SqlBuilder EndsWith(T expression, SqlBuilder sqlBuilder)
-        {
-            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.EndsWith method");
-        }
-        protected virtual SqlBuilder Contains(T expression, SqlBuilder sqlBuilder)
-        {
-            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Contains method");
-        }
-        protected virtual SqlBuilder Equals(T expression, SqlBuilder sqlBuilder)
-        {
-            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Equals method");
-        }
-        
-
-
+     
 
         private void Debug()
         {

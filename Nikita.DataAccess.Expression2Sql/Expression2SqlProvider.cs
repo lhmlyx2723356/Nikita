@@ -50,6 +50,19 @@ namespace Nikita.DataAccess.Expression2Sql
             GetExpression2Sql(expression).OrderBy(expression, sqlBuilder);
         }
 
+        public static void OrderByDesc(Expression expression, SqlBuilder sqlBuilder)
+        {
+            GetExpression2Sql(expression).OrderByDesc(expression, sqlBuilder);
+        }
+        public static void ThenBy (Expression expression, SqlBuilder sqlBuilder)
+        {
+            GetExpression2Sql(expression).ThenBy(expression, sqlBuilder);
+        }
+        public static void ThenByDesc(Expression expression, SqlBuilder sqlBuilder)
+        {
+            GetExpression2Sql(expression).ThenByDesc(expression, sqlBuilder);
+        }
+
         public static void Select(Expression expression, SqlBuilder sqlBuilder)
         {
             GetExpression2Sql(expression).Select(expression, sqlBuilder);
@@ -69,11 +82,14 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             GetExpression2Sql(expression).Where(expression, sqlBuilder);
         }
-        public static void Take(Expression expression, SqlBuilder sqlBuilder)
+        //public static void Take(Expression expression, SqlBuilder sqlBuilder)
+        //{
+        //    GetExpression2Sql(expression).Take(expression, sqlBuilder);
+        //}
+        public static void First(Expression expression, SqlBuilder sqlBuilder)
         {
-            GetExpression2Sql(expression).Take(expression, sqlBuilder);
+            GetExpression2Sql(expression).First(expression, sqlBuilder);
         }
-
 
         private static IExpression2Sql GetExpression2Sql(Expression expression)
         {

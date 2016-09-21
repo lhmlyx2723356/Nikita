@@ -102,6 +102,25 @@ namespace Nikita.DataAccess.Expression2Sql
             return sqlBuilder;
         }
 
+        protected override SqlBuilder OrderByDesc(MemberExpression expression, SqlBuilder sqlBuilder)
+        {
+            sqlBuilder.SetTableAlias(expression.Member.DeclaringType.Name);
+            sqlBuilder += sqlBuilder.GetTableAlias(expression.Member.DeclaringType.Name) + "." + expression.Member.Name;
+            return sqlBuilder;
+        }
+        protected override SqlBuilder ThenBy (MemberExpression expression, SqlBuilder sqlBuilder)
+        {
+            sqlBuilder.SetTableAlias(expression.Member.DeclaringType.Name);
+            sqlBuilder += sqlBuilder.GetTableAlias(expression.Member.DeclaringType.Name) + "." + expression.Member.Name;
+            return sqlBuilder;
+        }
+        protected override SqlBuilder ThenByDesc(MemberExpression expression, SqlBuilder sqlBuilder)
+        {
+            sqlBuilder.SetTableAlias(expression.Member.DeclaringType.Name);
+            sqlBuilder += sqlBuilder.GetTableAlias(expression.Member.DeclaringType.Name) + "." + expression.Member.Name;
+            return sqlBuilder;
+        }
+
         protected override SqlBuilder Select(MemberExpression expression, SqlBuilder sqlBuilder)
         {
             sqlBuilder.SetTableAlias(expression.Member.DeclaringType.Name);

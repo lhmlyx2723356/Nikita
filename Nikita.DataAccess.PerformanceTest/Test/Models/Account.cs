@@ -1,10 +1,9 @@
-﻿namespace Nikita.DataAccess.Expression2Sql
+﻿namespace Nikita.DataAccess.PerformanceTest
 {
-    internal class Student
+    internal class Account
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-        public int AccountId { get; set; }
         public string Name { get; set; }
     }
 }

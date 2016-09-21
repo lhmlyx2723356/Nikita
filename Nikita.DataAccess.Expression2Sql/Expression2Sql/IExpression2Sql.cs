@@ -21,6 +21,9 @@ namespace Nikita.DataAccess.Expression2Sql
         SqlBuilder Min(Expression expression, SqlBuilder sqlBuilder);
 
         SqlBuilder OrderBy(Expression expression, SqlBuilder sqlBuilder);
+        SqlBuilder OrderByDesc(Expression expression, SqlBuilder sqlBuilder);
+        SqlBuilder ThenByDesc(Expression expression, SqlBuilder sqlBuilder);
+        SqlBuilder ThenBy(Expression expression, SqlBuilder sqlBuilder);
 
         SqlBuilder Select(Expression expression, SqlBuilder sqlBuilder);
 
@@ -29,6 +32,7 @@ namespace Nikita.DataAccess.Expression2Sql
         SqlBuilder Update(Expression expression, SqlBuilder sqlBuilder);
 
         SqlBuilder Where(Expression expression, SqlBuilder sqlBuilder);
-        SqlBuilder Take(Expression expression, SqlBuilder sqlBuilder);
+        //SqlBuilder Take(Expression expression, SqlBuilder sqlBuilder);
+        SqlBuilder First(Expression expression, SqlBuilder sqlBuilder);
     }
 }

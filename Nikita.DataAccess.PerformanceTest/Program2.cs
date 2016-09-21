@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Nikita.DataAccess.PerformanceTest
 {
-    class Program
+    class Program2
     {
-        static void Main(string[] args)
+        static void Main2(string[] args)
         {
             MappingSpeedTest.SpeedTest();
         }

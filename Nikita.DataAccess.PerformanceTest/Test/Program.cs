@@ -2,8 +2,9 @@
 using System;
 using System.Collections.Generic;
 using Nikita.Base.Define;
+using Nikita.Base.ConnectionManager;
 
-namespace Expression2SqlTest
+namespace Nikita.DataAccess.PerformanceTest
 {
     /// <summary>
     /// Expression2Sql Sample Code
@@ -12,15 +13,20 @@ namespace Expression2SqlTest
     /// </summary>
     internal class Program
     {
+        public static readonly string ConnectionString = ConfigConnection.ORMPerformanceTestConnection;
         private static void Main(string[] args)
         {
             Console.Title = "Expression2SqlTest";
-            IExpressionToSql ExpressionToSqlSQLServer = new ExpressionToSqlSQLServer();
-            IExpressionToSql ExpressionToSqlMySQL = new ExpressionToSqlMySQL();
-            IExpressionToSql ExpressionToSqlSQLite = new ExpressionToSqlSQLite();
-            IExpressionToSql ExpressionToSqlOracle = new ExpressionToSqlOracle();
 
-            ExpressionToSql<UserInfo> userInfoSql = new ExpressionToSql<UserInfo>(SqlType.MySql,"");
+
+            DbContext context = new DbContext(SqlType.SqlServer, ConnectionString);
+            IExpressionToSql ExpressionToSqlSQLServer = context.ExpressionToSql;
+            //IExpressionToSql ExpressionToSqlSQLServer = new ExpressionToSqlSQLServer();
+            //IExpressionToSql ExpressionToSqlMySQL = new ExpressionToSqlMySQL();
+            //IExpressionToSql ExpressionToSqlSQLite = new ExpressionToSqlSQLite();
+            //IExpressionToSql ExpressionToSqlOracle = new ExpressionToSqlOracle();
+
+            ExpressionToSql<UserInfo> userInfoSql = new ExpressionToSql<UserInfo>(SqlType.MySql, "");
             Printf(
                     userInfoSql.Select().Where(u => u.Id != 1),
                     "Instance class"
@@ -31,21 +37,21 @@ namespace Expression2SqlTest
                                         Where(u => u.Name == "Jones"),
                "SQLServer static class"
             );
-            Printf(
-               ExpressionToSqlMySQL.Select<UserInfo>().
-                                        Where(u => u.Name == "Tom"),
-               "MySQL static class"
-            );
-            Printf(
-               ExpressionToSqlSQLite.Select<UserInfo>().
-                                        Where(u => u.Name == "Venus"),
-               "SQLite static class"
-            );
-            Printf(
-               ExpressionToSqlOracle.Select<UserInfo>().
-                                        Where(u => u.Name == "Lucy"),
-               "Oracle static class"
-            );
+            //Printf(
+            //   ExpressionToSqlMySQL.Select<UserInfo>().
+            //                            Where(u => u.Name == "Tom"),
+            //   "MySQL static class"
+            //);
+            //Printf(
+            //   ExpressionToSqlSQLite.Select<UserInfo>().
+            //                            Where(u => u.Name == "Venus"),
+            //   "SQLite static class"
+            //);
+            //Printf(
+            //   ExpressionToSqlOracle.Select<UserInfo>().
+            //                            Where(u => u.Name == "Lucy"),
+            //   "Oracle static class"
+            //);
 
             Printf(
                     ExpressionToSqlSQLServer.Select<UserInfo>(),
@@ -198,11 +204,26 @@ namespace Expression2SqlTest
                  "GroupBy"
             );
 
+
+            Printf(
+                 ExpressionToSqlSQLServer.Select<UserInfo>().
+                                          Take(1),
+                 "OrderBy"
+            );
+
+
             Printf(
                  ExpressionToSqlSQLServer.Select<UserInfo>().
                                           OrderBy(u => u.Id),
                  "OrderBy"
             );
+
+            Printf(
+                ExpressionToSqlSQLServer.Select<UserInfo>().
+                                         OrderByDesc(u => u.Id).ThenByDesc(u => u.Name),
+                "OrderByDesc"
+           );
+
 
             Printf(
                  ExpressionToSqlSQLServer.Max<UserInfo>(u => u.Id),

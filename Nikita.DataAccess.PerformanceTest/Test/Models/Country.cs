@@ -1,4 +1,4 @@
-﻿namespace Nikita.DataAccess.Expression2Sql
+﻿namespace Nikita.DataAccess.PerformanceTest
 {
     internal class Country
     {

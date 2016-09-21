@@ -243,6 +243,44 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
+        public ExpressionToSql<T> ThenByDesc(Expression<Func<T, object>> expression)
+        {
+            if (expression == null)
+            {
+                throw new ArgumentNullException("expression", "Value cannot be null");
+            }
+
+            this._sqlBuilder += ",";
+            Expression2SqlProvider.ThenByDesc(expression.Body, this._sqlBuilder);
+            return this;
+        }
+
+        public ExpressionToSql<T> ThenBy(Expression<Func<T, object>> expression)
+        {
+            if (expression == null)
+            {
+                throw new ArgumentNullException("expression", "Value cannot be null");
+            }
+
+            this._sqlBuilder += ", ";
+            Expression2SqlProvider.ThenBy(expression.Body, this._sqlBuilder);
+            return this;
+        }
+
+
+        public ExpressionToSql<T> OrderByDesc(Expression<Func<T, object>> expression)
+        {
+            if (expression == null)
+            {
+                throw new ArgumentNullException("expression", "Value cannot be null");
+            }
+
+            this._sqlBuilder += "\norder by ";
+            Expression2SqlProvider.OrderByDesc(expression.Body, this._sqlBuilder);
+            this._sqlBuilder += " desc ";
+            return this;
+        }
+
         public ExpressionToSql<T> RightJoin<T2>(Expression<Func<T, T2, bool>> expression)
         {
             return JoinParser(expression, "right ");
@@ -424,14 +462,26 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
-        public ExpressionToSql<T> Take(Expression<Func<T, object>> expression)
+        public ExpressionToSql<T> Take(int intCount)
+        { 
+            if (intCount==0)
+            {
+                throw new Exception("Take 方法输入数字有误");
+            }
+            int intStart = _sqlBuilder.Sql.IndexOf("select", StringComparison.Ordinal);
+            _sqlBuilder.Insert(intStart + 6, " top " + intCount + " "); 
+            return this;
+        }
+
+
+        public ExpressionToSql<T> First(Expression<Func<T, object>> expression)
         {
             if (expression == null)
             {
                 throw new ArgumentNullException("expression", "Value cannot be null");
             }
-             
-            Expression2SqlProvider.Take(expression.Body, this._sqlBuilder);
+
+            Expression2SqlProvider.First(expression.Body, this._sqlBuilder);
             return this;
         }
 

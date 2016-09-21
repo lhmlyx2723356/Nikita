@@ -38,7 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseExpression2Sql.cs" />
+    <Compile Include="Expression2Sql\BaseExpression2Sql.cs" />
     <Compile Include="DbContext.cs" />
     <Compile Include="DbSqlParser\MySQLSqlParser.cs" />
     <Compile Include="DbSqlParser\OracleSqlParser.cs" />
@@ -55,8 +55,8 @@
     <Compile Include="Expression2Sql\ParameterExpression2Sql.cs" />
     <Compile Include="Expression2Sql\UnaryExpression2Sql.cs" />
     <Compile Include="ExpressionToSql.cs" />
-    <Compile Include="IDbSqlParser.cs" />
-    <Compile Include="IExpression2Sql.cs" />
+    <Compile Include="DbSqlParser\IDbSqlParser.cs" />
+    <Compile Include="Expression2Sql\IExpression2Sql.cs" />
     <Compile Include="Mapper\CacheManager.cs" />
     <Compile Include="Mapper\DataReaderEntityBuilder.cs" />
     <Compile Include="Mapper\DataRecordExtensions.cs" />
@@ -70,13 +70,6 @@
     <Compile Include="StaticClass\ExpressionToSqlSQLServer.cs" />
     <Compile Include="StaticClass\IExpressionToSql.cs" />
     <Compile Include="TestStatic.cs" />
-    <Compile Include="Test\Models\Account.cs" />
-    <Compile Include="Test\Models\City.cs" />
-    <Compile Include="Test\Models\Class.cs" />
-    <Compile Include="Test\Models\Country.cs" />
-    <Compile Include="Test\Models\Student.cs" />
-    <Compile Include="Test\Models\User.cs" />
-    <Compile Include="Test\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
