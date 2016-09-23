@@ -11,10 +11,10 @@ namespace Nikita.Base.ConnectionManager
     {
         public  static string CodeMakerDBConnection= "Data Source=" + Application.StartupPath + "\\Database\\CodeMakerDB.db";
 
-        public static string DatabaseManagerDBConnection = "Data Source=" + Application.StartupPath + "\\Database\\" + ConfigHelper.GetConfig("Source","") + " ; Pooling=true;FailIfMissing=false";
+        public static string DatabaseManagerDBConnection = "Data Source=" + Application.StartupPath + "\\Database\\DataBaseManagerDB.db ; Pooling=true;FailIfMissing=false";
          
 
-        public static string SynchronizationDBConnection = "Data Source=" + Application.StartupPath + "\\Database\\" + ConfigHelper.GetConfig("SynchronizationSource", "") + " ; Pooling=true;FailIfMissing=false";
+        public static string SynchronizationDBConnection = "Data Source=" + Application.StartupPath + "\\Database\\SynchronizationDB.db; Pooling=true;FailIfMissing=false";
 
         public static string EmailLocalDBConnection = "Data Source=" + Application.StartupPath + "\\EmailLocalDB.db";
 

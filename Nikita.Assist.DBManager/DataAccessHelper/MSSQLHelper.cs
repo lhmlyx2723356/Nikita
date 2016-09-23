@@ -124,13 +124,13 @@ namespace Nikita.Assist.DBManager.DAL
                 {
                     conn.Close();
                 }
-            }
+            } 
         }
 
         /// <summary>创建Command对象
         /// 默认是SQL语句
         /// </summary>
-        /// <param name="sql">SQL语句</param>
+        /// <param nme="sql">SQL语句</param>
         public void CreateCommand(string sql)
         {
             conn.Open();
