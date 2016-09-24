@@ -11,10 +11,10 @@ namespace Nikita.DataAccess.PerformanceTest
     /// Chinese Technology Blog：http://www.cnblogs.com/strangecity
     /// Expression2Sql Chinese Introduce：http://www.cnblogs.com/StrangeCity/p/4795117.html
     /// </summary>
-    internal class Program
+    internal class Program3
     {
         public static readonly string ConnectionString = ConfigConnection.ORMPerformanceTestConnection;
-        private static void Main(string[] args)
+        private static void Main2(string[] args)
         {
             Console.Title = "Expression2SqlTest";
 

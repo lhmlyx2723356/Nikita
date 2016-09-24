@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Linq.Expressions;
 using Nikita.Base.Define;
@@ -485,7 +486,7 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
-        public List<T> ToList()
+        public List<T> ToList2()
         {
             if (dbHelper != null)
             {
@@ -495,6 +496,21 @@ namespace Nikita.DataAccess.Expression2Sql
                     dbHelper.AddParameter(item.Key, item.Value);
                 }
                 return MappingUntilTool.DataReaderToList<T>(typeof(T), dbHelper.ExecuteReader(), "*");
+            }
+            return null;
+        }
+
+
+        public List<T> ToList()
+        {
+            if (dbHelper != null)
+            {
+                dbHelper.CreateCommand(this.Sql);
+                foreach (var item in this.DbParams)
+                {
+                    dbHelper.AddParameter(item.Key, item.Value);
+                }
+                return Mapping.ReaderToObjectList<T>((DbDataReader)dbHelper.ExecuteReader());
             }
             return null;
         }

@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MappingSpeedTest.cs" />
-    <Compile Include="Program2.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SW.cs" />
     <Compile Include="TestEntity.cs" />
@@ -52,7 +52,7 @@
     <Compile Include="Test\Models\Country.cs" />
     <Compile Include="Test\Models\Student.cs" />
     <Compile Include="Test\Models\User.cs" />
-    <Compile Include="Test\Program.cs" />
+    <Compile Include="Test\Program3.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
