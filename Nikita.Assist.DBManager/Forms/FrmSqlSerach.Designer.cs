@@ -39,7 +39,7 @@ namespace Nikita.Assist.DBManager
             this.txtInput = new System.Windows.Forms.TextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtSql = new Nikita.WinForm.ExtendControl.TextEditorControl();
+            this.txtSql = new ICSharpCode.TextEditor.TextEditorControlEx();
             this.ObjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Schema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Database = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -265,7 +265,7 @@ namespace Nikita.Assist.DBManager
         private CheckedComboBox chkType;
         private System.Windows.Forms.ComboBox cboServer;
         private System.Windows.Forms.Label label1;
-        private Nikita.WinForm.ExtendControl.TextEditorControl txtSql;
+        private ICSharpCode.TextEditor.TextEditorControlEx txtSql;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn ObjectName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Schema;

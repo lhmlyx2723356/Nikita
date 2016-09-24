@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboType = new System.Windows.Forms.ComboBox();
-            this.txtSql = new Nikita.WinForm.ExtendControl.TextEditorControl();
+            this.txtSql = new ICSharpCode.TextEditor.TextEditorControlEx();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -180,7 +180,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboType;
-        private Nikita.WinForm.ExtendControl.TextEditorControl txtSql;
+        private ICSharpCode.TextEditor.TextEditorControlEx txtSql;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

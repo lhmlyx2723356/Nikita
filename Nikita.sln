@@ -195,6 +195,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeVS2013", "Nikita.WinFo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nikita.DataAccess.PerformanceTest", "Nikita.DataAccess.PerformanceTest\Nikita.DataAccess.PerformanceTest.csproj", "{688B0822-40B3-424E-AFF5-CC92F32CD528}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TextEditorEx", "TextEditorEx", "{509DD8BC-F3E6-4590-AE33-B829B439BEC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.TextEditorEx", "Nikita.WinForm.ICSharpCode.TextEditorEx\ICSharpCode.TextEditor\Project\ICSharpCode.TextEditorEx.csproj", "{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1196,6 +1200,24 @@ Global
 		{688B0822-40B3-424E-AFF5-CC92F32CD528}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{688B0822-40B3-424E-AFF5-CC92F32CD528}.Release|x86.ActiveCfg = Release|Any CPU
 		{688B0822-40B3-424E-AFF5-CC92F32CD528}.Release|x86.Build.0 = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Debug|x86.Build.0 = Debug|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Net4|Any CPU.ActiveCfg = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Net4|Any CPU.Build.0 = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Net4|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Net4|Mixed Platforms.Build.0 = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Net4|x86.ActiveCfg = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Net4|x86.Build.0 = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Release|x86.ActiveCfg = Release|Any CPU
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1277,6 +1299,8 @@ Global
 		{4ED4FDB5-9FD0-49E6-876D-1635F727C755} = {AE86A0E6-7886-4607-8133-26229EFD91C5}
 		{245E07F6-10D5-4CFA-B003-0DEB06B223DA} = {AE86A0E6-7886-4607-8133-26229EFD91C5}
 		{688B0822-40B3-424E-AFF5-CC92F32CD528} = {A3203EE2-8D2E-42FA-98A8-708620F27370}
+		{509DD8BC-F3E6-4590-AE33-B829B439BEC0} = {96E00720-94BA-49A6-9314-DBD4BD0AF091}
+		{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D} = {509DD8BC-F3E6-4590-AE33-B829B439BEC0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .

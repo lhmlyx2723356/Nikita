@@ -37,7 +37,7 @@
             this.cboServer = new System.Windows.Forms.ComboBox();
             this.btnRun = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.txtSql = new Nikita.WinForm.ExtendControl.TextEditorControl();
+            this.txtSql = new ICSharpCode.TextEditor.TextEditorControlEx();
             this.grdResult = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -222,7 +222,7 @@
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.ComboBox cboServer;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private Nikita.WinForm.ExtendControl.TextEditorControl txtSql;
+        private ICSharpCode.TextEditor.TextEditorControlEx txtSql;
         private System.Windows.Forms.Label lblServer;
         private System.Windows.Forms.DataGridView grdResult;
         private System.Windows.Forms.Button btnEdit;

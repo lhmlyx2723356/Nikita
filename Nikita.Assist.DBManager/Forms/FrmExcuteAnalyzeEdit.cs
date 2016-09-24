@@ -5,7 +5,8 @@ using Nikita.Assist.DBManager.Model;
 using System;
 using System.Text;
 using System.Windows.Forms;
-using Nikita.WinForm.ExtendControl.Document;
+using ICSharpCode.TextEditor.Document;
+
 
 namespace Nikita.Assist.DBManager
 {
@@ -16,9 +17,6 @@ namespace Nikita.Assist.DBManager
         public FrmExcuteAnalyzeEdit()
         {
             InitializeComponent();
-
-            #region 设置高亮显示TSQL属性
-
             txtSql.ShowEOLMarkers = false;
             txtSql.ShowHRuler = false;
             txtSql.ShowInvalidLines = false;
@@ -27,10 +25,8 @@ namespace Nikita.Assist.DBManager
             txtSql.ShowTabs = false;
             txtSql.ShowVRuler = false;
             txtSql.AllowCaretBeyondEOL = false;
-            txtSql.Document.HighlightingStrategy = HighlightingStrategyFactory.CreateHighlightingStrategy("TSQL");
+            txtSql.Document.HighlightingStrategy = HighlightingStrategyFactory.CreateHighlightingStrategy("SQL");
             txtSql.Encoding = Encoding.GetEncoding("GB2312");
-
-            #endregion 设置高亮显示TSQL属性
         }
 
         private void btnSave_Click(object sender, EventArgs e)

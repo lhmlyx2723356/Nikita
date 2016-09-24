@@ -1,5 +1,5 @@
 ﻿using Nikita.Base.DbSchemaReader.DataSchema;
- 
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,8 +8,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ICSharpCode.TextEditor;
+using ICSharpCode.TextEditor.Document;
 using Nikita.WinForm.ExtendControl;
-using Nikita.WinForm.ExtendControl.Document;
+
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Assist.DBManager
@@ -21,8 +23,6 @@ namespace Nikita.Assist.DBManager
         {
             InitializeComponent();
 
-            #region 设置高亮显示TSQL属性
-
             txtSql.ShowEOLMarkers = false;
             txtSql.ShowHRuler = false;
             txtSql.ShowInvalidLines = false;
@@ -31,10 +31,8 @@ namespace Nikita.Assist.DBManager
             txtSql.ShowTabs = false;
             txtSql.ShowVRuler = false;
             txtSql.AllowCaretBeyondEOL = false;
-            txtSql.Document.HighlightingStrategy = HighlightingStrategyFactory.CreateHighlightingStrategy("TSQL");
+            txtSql.Document.HighlightingStrategy = HighlightingStrategyFactory.CreateHighlightingStrategy("SQL");
             txtSql.Encoding = Encoding.GetEncoding("GB2312");
-
-            #endregion 设置高亮显示TSQL属性
         }
 
         private readonly string[] LoadTypeAry = { "表", "视图", "存储过程", "函数" };
@@ -224,7 +222,7 @@ namespace Nikita.Assist.DBManager
             }
             if (lstStart.Count > 0)
             {
-                Point start = txtSql.Document.OffsetToPosition(lstStart[0]);
+                TextLocation start = txtSql.Document.OffsetToPosition(lstStart[0]);
                 for (int i = lstStart.Count - 1; i >= 0; i--)
                 {
                     //设置选择的文本。

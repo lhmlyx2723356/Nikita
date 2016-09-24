@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<definition name="C#" caseSensitive="true"><!--//但是-->
+  <word color="BLUE">private</word>
+  <word color="BLUE">protected</word>
+  <word color="BLUE">public</word>
+  <word color="BLUE">namespace</word>
+  <word color="BLUE">class</word>
+  <word color="BLUE">for</word>
+  <word color="BLUE">if</word>
+  <word color="BLUE">else</word>
+  <word color="BLUE">while</word>
+  <word color="BLUE">switch</word>
+  <word color="BLUE">case</word>
+  <word color="BLUE">using</word>
+  <word color="BLUE">get</word>
+  <word color="BLUE">return</word>
+  <word color="BLUE">null</word>
+  <word color="BLUE">void</word>
+  <word color="BLUE">int</word>
+  <word color="BLUE">string</word>
+  <word color="BLUE">float</word>
+  <word color="BLUE">char</word>
+  <word color="BLUE">this</word>
+  <word color="BLUE">set</word>
+  <word color="BLUE">new</word>
+  <word color="BLUE">true</word>
+  <word color="BLUE">false</word>
+  <word color="BLUE">const</word>
+  <word color="BLUE">static</word>
+  <word color="BLUE">internal</word>
+  <word color="BLUE">extends</word>
+  <word color="BLUE">super</word>
+  <word color="BLUE">import</word>
+  <word color="BLUE">default</word>
+  <word color="BLUE">break</word>
+  <word color="BLUE">try</word>
+  <word color="BLUE">catch</word>
+  <word color="BLUE">finally</word>
+  <word color="CadetBlue">Main</word>
+  <word color="CadetBlue">WriteLine</word>
+  <word color="CadetBlue">Console</word>
+  <word color="CadetBlue">WriteLine</word>
+  <word color="DarkOrange">;</word>
+  <word color="GREEN">hh</word>
+  <register>printf</register>
+</definition>

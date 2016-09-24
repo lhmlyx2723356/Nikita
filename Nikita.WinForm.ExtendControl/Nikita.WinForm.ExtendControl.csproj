@@ -95,222 +95,10 @@
     <Compile Include="CommonQuery\LambdaBuilder.designer.cs">
       <DependentUpon>LambdaBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="TextEditor\AbstractMargin.cs" />
-    <Compile Include="TextEditor\Actions\AbstractEditAction.cs" />
-    <Compile Include="TextEditor\Actions\AbstractLineFormatAction.cs" />
-    <Compile Include="TextEditor\Actions\AbstractSelectionFormatAction.cs" />
-    <Compile Include="TextEditor\Actions\Backspace.cs" />
-    <Compile Include="TextEditor\Actions\BlockCommentRegion.cs" />
-    <Compile Include="TextEditor\Actions\CapitalizeAction.cs" />
-    <Compile Include="TextEditor\Actions\CaretDown.cs" />
-    <Compile Include="TextEditor\Actions\CaretLeft.cs" />
-    <Compile Include="TextEditor\Actions\CaretRight.cs" />
-    <Compile Include="TextEditor\Actions\CaretUp.cs" />
-    <Compile Include="TextEditor\Actions\ClearAllBookmarks.cs" />
-    <Compile Include="TextEditor\Actions\ClearAllSelections.cs" />
-    <Compile Include="TextEditor\Actions\ConvertLeadingSpacesToTabs.cs" />
-    <Compile Include="TextEditor\Actions\ConvertLeadingTabsToSpaces.cs" />
-    <Compile Include="TextEditor\Actions\ConvertSpacesToTabs.cs" />
-    <Compile Include="TextEditor\Actions\ConvertTabsToSpaces.cs" />
-    <Compile Include="TextEditor\Actions\Copy.cs" />
-    <Compile Include="TextEditor\Actions\Cut.cs" />
-    <Compile Include="TextEditor\Actions\Delete.cs" />
-    <Compile Include="TextEditor\Actions\DeleteLine.cs" />
-    <Compile Include="TextEditor\Actions\DeleteToLineEnd.cs" />
-    <Compile Include="TextEditor\Actions\DeleteWord.cs" />
-    <Compile Include="TextEditor\Actions\End.cs" />
-    <Compile Include="TextEditor\Actions\FormatBuffer.cs" />
-    <Compile Include="TextEditor\Actions\GotoMatchingBrace.cs" />
-    <Compile Include="TextEditor\Actions\GotoNextBookmark.cs" />
-    <Compile Include="TextEditor\Actions\GotoPrevBookmark.cs" />
-    <Compile Include="TextEditor\Actions\Home.cs" />
-    <Compile Include="TextEditor\Actions\IEditAction.cs" />
-    <Compile Include="TextEditor\Actions\IndentSelection.cs" />
-    <Compile Include="TextEditor\Actions\InvertCaseAction.cs" />
-    <Compile Include="TextEditor\Actions\MovePageDown.cs" />
-    <Compile Include="TextEditor\Actions\MovePageUp.cs" />
-    <Compile Include="TextEditor\Actions\MoveToEnd.cs" />
-    <Compile Include="TextEditor\Actions\MoveToStart.cs" />
-    <Compile Include="TextEditor\Actions\Paste.cs" />
-    <Compile Include="TextEditor\Actions\Redo.cs" />
-    <Compile Include="TextEditor\Actions\RemoveLeadingWS.cs" />
-    <Compile Include="TextEditor\Actions\RemoveTrailingWS.cs" />
-    <Compile Include="TextEditor\Actions\Return.cs" />
-    <Compile Include="TextEditor\Actions\ScrollLineDown.cs" />
-    <Compile Include="TextEditor\Actions\ScrollLineUp.cs" />
-    <Compile Include="TextEditor\Actions\SelectWholeDocument.cs" />
-    <Compile Include="TextEditor\Actions\ShiftCaretDown.cs" />
-    <Compile Include="TextEditor\Actions\ShiftCaretLeft.cs" />
-    <Compile Include="TextEditor\Actions\ShiftCaretRight.cs" />
-    <Compile Include="TextEditor\Actions\ShiftCaretUp.cs" />
-    <Compile Include="TextEditor\Actions\ShiftEnd.cs" />
-    <Compile Include="TextEditor\Actions\ShiftHome.cs" />
-    <Compile Include="TextEditor\Actions\ShiftMovePageDown.cs" />
-    <Compile Include="TextEditor\Actions\ShiftMovePageUp.cs" />
-    <Compile Include="TextEditor\Actions\ShiftMoveToEnd.cs" />
-    <Compile Include="TextEditor\Actions\ShiftMoveToStart.cs" />
-    <Compile Include="TextEditor\Actions\ShiftTab.cs" />
-    <Compile Include="TextEditor\Actions\ShiftWordLeft.cs" />
-    <Compile Include="TextEditor\Actions\ShiftWordRight.cs" />
-    <Compile Include="TextEditor\Actions\ShowDefinitionsOnly.cs" />
-    <Compile Include="TextEditor\Actions\Tab.cs" />
-    <Compile Include="TextEditor\Actions\ToggleAllFoldings.cs" />
-    <Compile Include="TextEditor\Actions\ToggleBlockComment.cs" />
-    <Compile Include="TextEditor\Actions\ToggleBookmark.cs" />
-    <Compile Include="TextEditor\Actions\ToggleComment.cs" />
-    <Compile Include="TextEditor\Actions\ToggleEditMode.cs" />
-    <Compile Include="TextEditor\Actions\ToggleFolding.cs" />
-    <Compile Include="TextEditor\Actions\ToggleLineComment.cs" />
-    <Compile Include="TextEditor\Actions\ToLowerCase.cs" />
-    <Compile Include="TextEditor\Actions\ToUpperCase.cs" />
-    <Compile Include="TextEditor\Actions\Undo.cs" />
-    <Compile Include="TextEditor\Actions\WordBackspace.cs" />
-    <Compile Include="TextEditor\Actions\WordLeft.cs" />
-    <Compile Include="TextEditor\Actions\WordRight.cs" />
-    <Compile Include="TextEditor\BracketHighlightingSheme.cs" />
-    <Compile Include="TextEditor\BrushRegistry.cs" />
-    <Compile Include="TextEditor\Caret.cs" />
-    <Compile Include="TextEditor\CaretMode.cs" />
-    <Compile Include="TextEditor\CopyTextEventArgs.cs" />
-    <Compile Include="TextEditor\CopyTextEventHandler.cs" />
-    <Compile Include="TextEditor\DialogKeyProcessor.cs" />
-    <Compile Include="TextEditor\Document\AbstractSegment.cs" />
-    <Compile Include="TextEditor\Document\Bookmark.cs" />
-    <Compile Include="TextEditor\Document\BookmarkEventArgs.cs" />
-    <Compile Include="TextEditor\Document\BookmarkEventHandler.cs" />
-    <Compile Include="TextEditor\Document\BookmarkManager.cs" />
-    <Compile Include="TextEditor\Document\BookmarkManagerMemento.cs" />
-    <Compile Include="TextEditor\Document\BracketHighlightingStyle.cs" />
-    <Compile Include="TextEditor\Document\BracketMatchingStyle.cs" />
-    <Compile Include="TextEditor\Document\ColumnRange.cs" />
-    <Compile Include="TextEditor\Document\CustomLine.cs" />
-    <Compile Include="TextEditor\Document\CustomLineManager.cs" />
-    <Compile Include="TextEditor\Document\DefaultDocument.cs" />
-    <Compile Include="TextEditor\Document\DefaultFormattingStrategy.cs" />
-    <Compile Include="TextEditor\Document\DefaultHighlightingStrategy.cs" />
-    <Compile Include="TextEditor\Document\DefaultLineManager.cs" />
-    <Compile Include="TextEditor\Document\DefaultSelection.cs" />
-    <Compile Include="TextEditor\Document\DefaultTextEditorProperties.cs" />
-    <Compile Include="TextEditor\Document\DocumentEventArgs.cs" />
-    <Compile Include="TextEditor\Document\DocumentEventHandler.cs" />
-    <Compile Include="TextEditor\Document\DocumentFactory.cs" />
-    <Compile Include="TextEditor\Document\DocumentSelectionMode.cs" />
-    <Compile Include="TextEditor\Document\FileSyntaxModeProvider.cs" />
-    <Compile Include="TextEditor\Document\FoldingManager.cs" />
-    <Compile Include="TextEditor\Document\FoldMarker.cs" />
-    <Compile Include="TextEditor\Document\FoldType.cs" />
-    <Compile Include="TextEditor\Document\FontContainer.cs" />
-    <Compile Include="TextEditor\Document\GapTextBufferStrategy.cs" />
-    <Compile Include="TextEditor\Document\HighlightBackground.cs" />
-    <Compile Include="TextEditor\Document\HighlightColor.cs" />
-    <Compile Include="TextEditor\Document\HighlightInfo.cs" />
-    <Compile Include="TextEditor\Document\HighlightingColorNotFoundException.cs" />
-    <Compile Include="TextEditor\Document\HighlightingDefinitionParser.cs" />
-    <Compile Include="TextEditor\Document\HighlightingManager.cs" />
-    <Compile Include="TextEditor\Document\HighlightingStrategyFactory.cs" />
-    <Compile Include="TextEditor\Document\HighlightRuleSet.cs" />
-    <Compile Include="TextEditor\Document\IBookmarkFactory.cs" />
-    <Compile Include="TextEditor\Document\ICustomLineManager.cs" />
-    <Compile Include="TextEditor\Document\IDocument.cs" />
-    <Compile Include="TextEditor\Document\IFoldingStrategy.cs" />
-    <Compile Include="TextEditor\Document\IFormattingStrategy.cs" />
-    <Compile Include="TextEditor\Document\IHighlightingStrategy.cs" />
-    <Compile Include="TextEditor\Document\ILineManager.cs" />
-    <Compile Include="TextEditor\Document\IndentFoldingStrategy.cs" />
-    <Compile Include="TextEditor\Document\IndentStyle.cs" />
-    <Compile Include="TextEditor\Document\ISegment.cs" />
-    <Compile Include="TextEditor\Document\ISelection.cs" />
-    <Compile Include="TextEditor\Document\ISyntaxModeFileProvider.cs" />
-    <Compile Include="TextEditor\Document\ITextBufferStrategy.cs" />
-    <Compile Include="TextEditor\Document\ITextEditorProperties.cs" />
-    <Compile Include="TextEditor\Document\LineLengthEventArgs.cs" />
-    <Compile Include="TextEditor\Document\LineLengthEventHandler.cs" />
-    <Compile Include="TextEditor\Document\LineManagerEventArgs.cs" />
-    <Compile Include="TextEditor\Document\LineManagerEventHandler.cs" />
-    <Compile Include="TextEditor\Document\LineSegment.cs" />
-    <Compile Include="TextEditor\Document\LineViewerStyle.cs" />
-    <Compile Include="TextEditor\Document\MarkerStrategy.cs" />
-    <Compile Include="TextEditor\Document\NextMarker.cs" />
-    <Compile Include="TextEditor\Document\PrevMarker.cs" />
-    <Compile Include="TextEditor\Document\ResourceSyntaxModeProvider.cs" />
-    <Compile Include="TextEditor\Document\SelectionManager.cs" />
-    <Compile Include="TextEditor\Document\Span.cs" />
-    <Compile Include="TextEditor\Document\StringTextBufferStrategy.cs" />
-    <Compile Include="TextEditor\Document\SyntaxMode.cs" />
-    <Compile Include="TextEditor\Document\TextMarker.cs" />
-    <Compile Include="TextEditor\Document\TextMarkerType.cs" />
-    <Compile Include="TextEditor\Document\TextUtilities.cs" />
-    <Compile Include="TextEditor\Document\TextWord.cs" />
-    <Compile Include="TextEditor\Document\TextWordType.cs" />
-    <Compile Include="TextEditor\DrawableLine.cs" />
-    <Compile Include="TextEditor\FoldMargin.cs" />
-    <Compile Include="TextEditor\Gui\CompletionWindow\AbstractCompletionWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TextEditor\Gui\CompletionWindow\CodeCompletionListView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TextEditor\Gui\CompletionWindow\CodeCompletionWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TextEditor\Gui\CompletionWindow\DeclarationViewWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TextEditor\Gui\CompletionWindow\DefaultCompletionData.cs" />
-    <Compile Include="TextEditor\Gui\CompletionWindow\ICompletionData.cs" />
-    <Compile Include="TextEditor\Gui\CompletionWindow\ICompletionDataProvider.cs" />
-    <Compile Include="TextEditor\Gui\CompletionWindow\IDeclarationViewWindow.cs" />
-    <Compile Include="TextEditor\Gui\InsightWindow\IInsightDataProvider.cs" />
-    <Compile Include="TextEditor\Gui\InsightWindow\InsightWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TextEditor\GutterMargin.cs" />
-    <Compile Include="TextEditor\Highlight.cs" />
-    <Compile Include="TextEditor\HRuler.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TextEditor\IconBarMargin.cs" />
-    <Compile Include="TextEditor\Ime.cs" />
-    <Compile Include="TextEditor\KeyEventHandler.cs" />
-    <Compile Include="TextEditor\MarginMouseEventHandler.cs" />
-    <Compile Include="TextEditor\MarginPaintEventHandler.cs" />
-    <Compile Include="TextEditor\TextArea.cs">
+    <Compile Include="HighlightRichBox\Parser.cs" />
+    <Compile Include="HighlightRichBox\SyntaxEditor.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TextEditor\TextAreaClipboardHandler.cs" />
-    <Compile Include="TextEditor\TextAreaControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TextEditor\TextAreaDragDropHandler.cs" />
-    <Compile Include="TextEditor\TextAreaMouseHandler.cs" />
-    <Compile Include="TextEditor\TextAreaUpdate.cs" />
-    <Compile Include="TextEditor\TextAreaUpdateType.cs" />
-    <Compile Include="TextEditor\TextEditorControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TextEditor\TextEditorControlBase.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TextEditor\TextView.cs" />
-    <Compile Include="TextEditor\ToolTipRequestEventArgs.cs" />
-    <Compile Include="TextEditor\ToolTipRequestEventHandler.cs" />
-    <Compile Include="TextEditor\Undo\IUndoableOperation.cs" />
-    <Compile Include="TextEditor\Undo\UndoableDelete.cs" />
-    <Compile Include="TextEditor\Undo\UndoableInsert.cs" />
-    <Compile Include="TextEditor\Undo\UndoableReplace.cs" />
-    <Compile Include="TextEditor\Undo\UndoQueue.cs" />
-    <Compile Include="TextEditor\Undo\UndoStack.cs" />
-    <Compile Include="TextEditor\Util\CountTipText.cs" />
-    <Compile Include="TextEditor\Util\FileReader.cs" />
-    <Compile Include="TextEditor\Util\LookupTable.cs" />
-    <Compile Include="TextEditor\Util\RtfWriter.cs" />
-    <Compile Include="TextEditor\Util\TextUtility.cs" />
-    <Compile Include="TextEditor\Util\TipPainter.cs" />
-    <Compile Include="TextEditor\Util\TipPainterTools.cs" />
-    <Compile Include="TextEditor\Util\TipSection.cs" />
-    <Compile Include="TextEditor\Util\TipSpacer.cs" />
-    <Compile Include="TextEditor\Util\TipSplitter.cs" />
-    <Compile Include="TextEditor\Util\TipText.cs" />
     <Compile Include="OutLookBar\Collections\CollectionWithEvents.cs" />
     <Compile Include="OutLookBar\Collections\MenuCommandCollection.cs" />
     <Compile Include="OutLookBar\Collections\OutlookBarBandCollection.cs" />
@@ -957,11 +745,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataVisualControl\DataVisual.Control说明.txt" />
-    <EmbeddedResource Include="TextEditor\Resources\RightArrow.cur" />
-    <EmbeddedResource Include="TextEditor\Resources\rightarrow1.cur" />
-    <EmbeddedResource Include="TextEditor\Resources\rightarrow2.cur" />
-    <EmbeddedResource Include="TextEditor\Resources\SyntaxModes.xml" />
-    <EmbeddedResource Include="TextEditor\Resources\TextEditorControl.bmp" />
+    <Content Include="HighlightRichBox\csharp.xml" />
+    <Content Include="HighlightRichBox\sql.xml" />
     <Content Include="Properties\DragCursor.cur" />
     <None Include="Resources\syntaxmodes.xml" />
     <Content Include="ZetaHtmlEditControl\ZetaHtmlEditControl说明.txt" />
@@ -1100,23 +885,6 @@
     <Content Include="TreeViewControl\ControlTreeView说明.txt" />
     <EmbeddedResource Include="TreeViewControl\Resources\plus.bmp" />
     <EmbeddedResource Include="TreeViewControl\Resources\minus.bmp" />
-    <EmbeddedResource Include="TextEditor\Resources\ASPX.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\BAT-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\Boo.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\Coco-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\CPP-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\CSharp-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\HTML-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\Java-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\JavaScript-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\Mode.xsd">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TextEditor\Resources\PHP-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\Tex-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\TSQL-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\VBNET-Mode.xshd" />
-    <EmbeddedResource Include="TextEditor\Resources\XML-Mode.xshd" />
     <None Include="ObjectListView2010\FullClassDiagram.cd" />
     <None Include="ObjectListView2010\Resources\clear-filter.png" />
     <None Include="ObjectListView2010\Resources\filter-icons3.png" />

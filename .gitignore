@@ -243,3 +243,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/.nuget/NuGet.targets
+/.nuget/NuGet.exe
+/.nuget/NuGet.Config
+/Nikita.WinForm.ICSharpCode.TextEditorEx/

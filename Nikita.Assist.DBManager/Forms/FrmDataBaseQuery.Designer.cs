@@ -41,7 +41,7 @@
             this.导出结果ExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txtSql = new Nikita.WinForm.ExtendControl.TextEditorControl();
+            this.txtSql = new ICSharpCode.TextEditor.TextEditorControlEx();
             this.contextMenuStrip4Editor = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmdListSplit = new System.Windows.Forms.ToolStripMenuItem();
             this.tabResult = new System.Windows.Forms.TabControl();
@@ -307,7 +307,7 @@
         private System.ComponentModel.BackgroundWorker bckWorker;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.RichTextBox txtRunMessage;
-        private Nikita.WinForm.ExtendControl.TextEditorControl txtSql;
+        private ICSharpCode.TextEditor.TextEditorControlEx txtSql;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip4Editor;
         private System.Windows.Forms.ToolStripMenuItem cmdListSplit;
     }

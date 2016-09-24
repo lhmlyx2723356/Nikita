@@ -5,8 +5,9 @@ using System;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using ICSharpCode.TextEditor.Document;
 using Nikita.WinForm.ExtendControl;
-using Nikita.WinForm.ExtendControl.Document;
+
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace Nikita.Assist.DBManager
@@ -19,9 +20,6 @@ namespace Nikita.Assist.DBManager
         public FrmExcuteAnalyze(TreeNodeCollection treeNodes)
         {
             InitializeComponent();
-
-            #region 设置高亮显示TSQL属性
-
             txtSql.ShowEOLMarkers = false;
             txtSql.ShowHRuler = false;
             txtSql.ShowInvalidLines = false;
@@ -30,11 +28,8 @@ namespace Nikita.Assist.DBManager
             txtSql.ShowTabs = false;
             txtSql.ShowVRuler = false;
             txtSql.AllowCaretBeyondEOL = false;
-            txtSql.Document.HighlightingStrategy = HighlightingStrategyFactory.CreateHighlightingStrategy("TSQL");
+            txtSql.Document.HighlightingStrategy = HighlightingStrategyFactory.CreateHighlightingStrategy("SQL");
             txtSql.Encoding = Encoding.GetEncoding("GB2312");
-
-            #endregion 设置高亮显示TSQL属性
-
             m_treeNodes = treeNodes;
         }
 

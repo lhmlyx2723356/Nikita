@@ -2559,6 +2559,10 @@
       <Project>{db3e8dd9-36c0-4163-b01f-04f09c23738a}</Project>
       <Name>Nikita.WinForm.ExtendControl</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.ICSharpCode.TextEditorEx\ICSharpCode.TextEditor\Project\ICSharpCode.TextEditorEx.csproj">
+      <Project>{2d18be89-d210-49eb-a9dd-2246fbb3df6d}</Project>
+      <Name>ICSharpCode.TextEditorEx</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
