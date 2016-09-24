@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{874CBB9D-85D2-49BA-8C39-9E685BDD37DE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nikita.Core.Sample</RootNamespace>
+    <AssemblyName>Nikita.Core.Sample</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\Nikita发布\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\DLL\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\DLL\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetPrint">
+      <HintPath>..\Nikita.DLL\DotNetPrint.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\Nikita.DLL\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\DLL\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nikita.DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\Nikita.DLL\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Nikita发布\RunDll\SQLite\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UtilityLibrary">
+      <HintPath>..\DLL\UtilityLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Excel导入导出\FrmExcelImport.cs" />
+    <Compile Include="Excel导入导出\FrmExcelImport.Designer.cs">
+      <DependentUpon>FrmExcelImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogger.Designer.cs">
+      <DependentUpon>FrmLogger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSendEmail.Designer.cs">
+      <DependentUpon>FrmSendEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="串口测试\FrmPort.cs" />
+    <Compile Include="串口测试\FrmPort.Designer.cs">
+      <DependentUpon>FrmPort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rabbion\FrmRabbionTest.cs" />
+    <Compile Include="Rabbion\FrmRabbionTest.Designer.cs">
+      <DependentUpon>FrmRabbionTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表控件按钮显示在下方\FrmReportTestToolStrip.cs" />
+    <Compile Include="报表控件按钮显示在下方\FrmReportTestToolStrip.Designer.cs">
+      <DependentUpon>FrmReportTestToolStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWebServiceTest.cs" />
+    <Compile Include="FrmWebServiceTest.Designer.cs">
+      <DependentUpon>FrmWebServiceTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlAgilityPack解析\FrmHtmlAgilityPackTest.cs" />
+    <Compile Include="HtmlAgilityPack解析\FrmHtmlAgilityPackTest.Designer.cs">
+      <DependentUpon>FrmHtmlAgilityPackTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="富文本控件\FrmRichTxtDemo.cs" />
+    <Compile Include="富文本控件\FrmRichTxtDemo.Designer.cs">
+      <DependentUpon>FrmRichTxtDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="标签打印\FrmPrintLable.cs" />
+    <Compile Include="标签打印\FrmPrintLable.designer.cs">
+      <DependentUpon>FrmPrintLable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuartzNet\FrmQuartzNetDemo4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuartzNet\FrmQuartzNetDemo4.Designer.cs">
+      <DependentUpon>FrmQuartzNetDemo4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuartzNet\FrmQuartZNetDemo3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuartzNet\FrmQuartZNetDemo3.Designer.cs">
+      <DependentUpon>FrmQuartZNetDemo3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuartzNet\ICalendar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QuartzNet\FrmQuartzNetDemo2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuartzNet\FrmQuartzNetDemo2.Designer.cs">
+      <DependentUpon>FrmQuartzNetDemo2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuartzNet\FrmQuartzNetDemo.cs" />
+    <Compile Include="QuartzNet\FrmQuartzNetDemo.Designer.cs">
+      <DependentUpon>FrmQuartzNetDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Log4Net\FrmLog4NetDemo.cs" />
+    <Compile Include="Log4Net\FrmLog4NetDemo.Designer.cs">
+      <DependentUpon>FrmLog4NetDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Json.Net\FrmJsonNetDemo.cs" />
+    <Compile Include="Json.Net\FrmJsonNetDemo.Designer.cs">
+      <DependentUpon>FrmJsonNetDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Json.Net\SerializeACollection.cs" />
+    <Compile Include="Json.Net\SerializeADictionary.cs" />
+    <Compile Include="Json.Net\SerializeAnObject.cs" />
+    <Compile Include="Log4Net\LogHelper.cs" />
+    <Compile Include="QuartzNet\HelloJob.cs" />
+    <Compile Include="系统菜单\FrmMenuMgr.cs" />
+    <Compile Include="系统菜单\FrmMenuMgr.Designer.cs">
+      <DependentUpon>FrmMenuMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainDemo.Designer.cs">
+      <DependentUpon>FrmMainDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="系统菜单\FrmMenuMgrEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="系统菜单\FrmMenuMgrEdit.Designer.cs">
+      <DependentUpon>FrmMenuMgrEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Excel导入导出\FrmExcelImport.resx">
+      <DependentUpon>FrmExcelImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogger.resx">
+      <DependentUpon>FrmLogger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSendEmail.resx">
+      <DependentUpon>FrmSendEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rabbion\FrmRabbionTest.resx">
+      <DependentUpon>FrmRabbionTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="串口测试\FrmPort.resx">
+      <DependentUpon>FrmPort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表控件按钮显示在下方\FrmReportTestToolStrip.resx">
+      <DependentUpon>FrmReportTestToolStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWebServiceTest.resx">
+      <DependentUpon>FrmWebServiceTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HtmlAgilityPack解析\FrmHtmlAgilityPackTest.resx">
+      <DependentUpon>FrmHtmlAgilityPackTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="富文本控件\FrmRichTxtDemo.resx">
+      <DependentUpon>FrmRichTxtDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="标签打印\FrmPrintLable.resx">
+      <DependentUpon>FrmPrintLable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuartzNet\FrmQuartzNetDemo4.resx">
+      <DependentUpon>FrmQuartzNetDemo4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuartzNet\FrmQuartZNetDemo3.resx">
+      <DependentUpon>FrmQuartZNetDemo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Json.Net\FrmJsonNetDemo.resx">
+      <DependentUpon>FrmJsonNetDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log4Net\FrmLog4NetDemo.resx">
+      <DependentUpon>FrmLog4NetDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuartzNet\FrmQuartzNetDemo.resx">
+      <DependentUpon>FrmQuartzNetDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuartzNet\FrmQuartzNetDemo2.resx">
+      <DependentUpon>FrmQuartzNetDemo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="系统菜单\FrmMenuMgr.resx">
+      <DependentUpon>FrmMenuMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainDemo.resx">
+      <DependentUpon>FrmMainDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="系统菜单\FrmMenuMgrEdit.resx">
+      <DependentUpon>FrmMenuMgrEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\loginUser" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\Thumbs.db" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\ajs%281%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\ajs.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%281%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%2810%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%2811%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%2812%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%282%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%283%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%284%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%285%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%286%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%287%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%288%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar%289%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\avatar.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\blogno1countdown.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\core.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\count%281%29.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\count.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\imp_countall.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\index.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\stat.php" />
+    <None Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\userface.php" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nikita.Assist.EmailSend\Nikita.Assist.EmailSend.csproj">
+      <Project>{102e802e-84af-40ec-b9fd-6a639b75572f}</Project>
+      <Name>Nikita.Assist.EmailSend</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Assist.Logger\Nikita.Assist.Logger.csproj">
+      <Project>{e14d5bc7-bd4d-45ad-b091-1795a2ebebe7}</Project>
+      <Name>Nikita.Assist.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Core.Sample.DAL\Nikita.Core.Sample.DAL.csproj">
+      <Project>{EBDC899F-B10C-4159-AD92-4837BCBE3194}</Project>
+      <Name>Nikita.Core.Sample.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.Core.Sample.Model\Nikita.Core.Sample.Model.csproj">
+      <Project>{20B5CE52-9B44-433E-9A9D-F77E67F44B04}</Project>
+      <Name>Nikita.Core.Sample.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NiKita.Core.Sample.Support\NiKita.Core.Sample.Support.csproj">
+      <Project>{75AAF98A-15D3-4835-A418-64B7D2318626}</Project>
+      <Name>NiKita.Core.Sample.Support</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Nikita.Core\Nikita.Core.csproj">
+      <Project>{A939C25E-8300-48CA-AD10-48755C95FED8}</Project>
+      <Name>Nikita.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2003.csproj">
+      <Project>{719f0f69-66da-438d-b5bb-2d883ef4ace2}</Project>
+      <Name>ThemeVS2003</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2005Multithreading.csproj">
+      <Project>{01b09009-bd30-47f2-b318-4b583d606c61}</Project>
+      <Name>ThemeVS2005Multithreading</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2012.csproj">
+      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
+      <Name>ThemeVS2012</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2013.csproj">
+      <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
+      <Name>ThemeVS2013</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\WinFormsUI.csproj">
+      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Nikita.WinForm.ExtendControl\Nikita.WinForm.ExtendControl.csproj">
+      <Project>{db3e8dd9-36c0-4163-b01f-04f09c23738a}</Project>
+      <Name>Nikita.WinForm.ExtendControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务.htm" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\1.8.9.css" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\21.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\36.png" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\adsbygoogle.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\bdsstyle.css" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\bds_s_v2.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\code-details-all-in-one.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\h.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\jquery-1.7.2.min.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\logger.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\prettify.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\qq-share.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\sina-share.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HtmlAgilityPack Html Agility Pack基础类介绍及运用 - 为程序员服务_files\site.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客.htm" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\015441962.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\015501307.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\09c6a6618db802fe6939824776ec871e9f84f7.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\21.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\26.css" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\35ff706fd57d11c141cdefcd58d6562b.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\adx.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\allmobilize.min.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\analytics.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\artType01.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\base.css" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\base2.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\blogLogo02.png" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\blog_match_endlook.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\blog_top.css" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\close.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\copyright.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\count.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\def.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\dia.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\dialog_utf8.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\edu_search.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\expert_show.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\expert_show_layout.css" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\favorbox.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\favorite_add_small.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\fck_editorarea.css" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\group.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\h.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\header_master_top.css" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\head_blog_sibebar_logo.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\icon01.png" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\iw.htm" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\jquery-1.7.1.min.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\jquery.cookie.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\jquery.top.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\lightapp.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\logo_ten.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\message.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\nav_ico1.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\pageview.htm" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\pic.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\poptop.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\reply.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\share.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\shCoreDefault.css" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\shCores.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\ssk.png" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\tj.png" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\top_bg_xian.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\top_shequ.gif" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\uparse.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\user_comment.js" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\wKioL1Va1kHzY6tfAAwbEJdPEGc538.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\wKioL1VHFCjRwiyNAAB-jIackwQ674.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\wKioL1VJvgyBaNdHAADPRRZNXvg232.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\wKioL1V_9G_xrXgwAAAzd-ZYvUQ671.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\wKioL1WA6qjzWDNeAAA2BMuC3zI735.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\wKioL1WCPGvDBUNnAAAsviNq220422.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\wKiom1V-ga6x8kyzAAAfu1JlmVY564.jpg" />
+    <Content Include="HtmlAgilityPack解析\HtmlAgilityPackHtml学习文档\HTML解析利器HtmlAgilityPack - 周公（周金桥）的专栏 - 51CTO技术博客_files\wKiom1WA2auTvhBUAADBADE22LY562.jpg" />
+    <Content Include="WebKit\WebKit.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
