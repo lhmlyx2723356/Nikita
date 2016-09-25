@@ -14,7 +14,7 @@ namespace Nikita.DataAccess.PerformanceTest
     internal class Program3
     {
         public static readonly string ConnectionString = ConfigConnection.ORMPerformanceTestConnection;
-        private static void Main2(string[] args)
+        private static void Main(string[] args)
         {
             Console.Title = "Expression2SqlTest";
 
@@ -25,6 +25,27 @@ namespace Nikita.DataAccess.PerformanceTest
             //IExpressionToSql ExpressionToSqlMySQL = new ExpressionToSqlMySQL();
             //IExpressionToSql ExpressionToSqlSQLite = new ExpressionToSqlSQLite();
             //IExpressionToSql ExpressionToSqlOracle = new ExpressionToSqlOracle();
+
+
+            //查询的时候，给字段取别名
+
+            Printf(ExpressionToSqlSQLServer.Select<UserInfo>(x => new { UserId = x.Id, UserName = x.Name, x.Email }),
+            "SQLServer static class"
+         );
+
+            var name2 = "新用户";
+            Printf(
+            ExpressionToSqlSQLServer.Select<UserInfo>().
+                                     Where(u => u.Name == name2),
+            "SQLServer static class"
+         );
+
+            Printf(
+               ExpressionToSqlSQLServer.Select<UserInfo, Account>((u, a) => new { u.Id, a.Name },true).
+                               LeftJoin<Account>((u, a) => u.Id == a.UserId, true) ,
+               "Multi-table join query"
+          );
+
 
             ExpressionToSql<UserInfo> userInfoSql = new ExpressionToSql<UserInfo>(SqlType.MySql, "");
             Printf(
@@ -255,11 +276,12 @@ namespace Nikita.DataAccess.PerformanceTest
                  "Returns the total number of numeric column（total amount）"
             );
 
-            string strName = "Paul";
-            Printf(
-                 ExpressionToSqlSQLServer.Insert<UserInfo>(() => new { Name = strName, Sex = 1, Email = "123456@qq.com" }),
-                 "Insert a record"
-            );
+            //string strName = "Paul";
+            //var aa = new {Name = strName, Sex = 1, Email = "123456@qq.com"};
+            //Printf(
+            //     ExpressionToSqlSQLServer.Insert<UserInfo>(() => aa),
+            //     "Insert a record"
+            //);
 
             Printf(
                  ExpressionToSqlSQLServer.Delete<UserInfo>(),

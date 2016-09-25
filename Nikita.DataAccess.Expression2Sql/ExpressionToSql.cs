@@ -142,14 +142,14 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
-        public ExpressionToSql<T> FullJoin<T2>(Expression<Func<T, T2, bool>> expression)
+        public ExpressionToSql<T> FullJoin<T2>(Expression<Func<T, T2, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser(expression, "full ");
+            return JoinParser(expression, blnWithNoLock, "full ");
         }
 
-        public ExpressionToSql<T> FullJoin<T2, T3>(Expression<Func<T2, T3, bool>> expression)
+        public ExpressionToSql<T> FullJoin<T2, T3>(Expression<Func<T2, T3, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser2(expression, "full ");
+            return JoinParser2(expression, blnWithNoLock, "full ");
         }
 
         public ExpressionToSql<T> GroupBy(Expression<Func<T, object>> expression)
@@ -164,14 +164,14 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
-        public ExpressionToSql<T> InnerJoin<T2>(Expression<Func<T, T2, bool>> expression)
+        public ExpressionToSql<T> InnerJoin<T2>(Expression<Func<T, T2, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser(expression, "inner ");
+            return JoinParser(expression, blnWithNoLock, "inner ");
         }
 
-        public ExpressionToSql<T> InnerJoin<T2, T3>(Expression<Func<T2, T3, bool>> expression)
+        public ExpressionToSql<T> InnerJoin<T2, T3>(Expression<Func<T2, T3, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser2(expression, "inner ");
+            return JoinParser2(expression, blnWithNoLock, "inner ");
         }
 
         public ExpressionToSql<T> Insert(Expression<Func<object>> expression)
@@ -188,24 +188,24 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
-        public ExpressionToSql<T> Join<T2>(Expression<Func<T, T2, bool>> expression)
+        public ExpressionToSql<T> Join<T2>(Expression<Func<T, T2, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser(expression);
+            return JoinParser(expression, blnWithNoLock);
         }
 
-        public ExpressionToSql<T> Join<T2, T3>(Expression<Func<T2, T3, bool>> expression)
+        public ExpressionToSql<T> Join<T2, T3>(Expression<Func<T2, T3, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser2(expression);
+            return JoinParser2(expression, blnWithNoLock:blnWithNoLock);
         }
 
-        public ExpressionToSql<T> LeftJoin<T2>(Expression<Func<T, T2, bool>> expression)
+        public ExpressionToSql<T> LeftJoin<T2>(Expression<Func<T, T2, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser(expression, "left ");
+            return JoinParser(expression, blnWithNoLock, "left ");
         }
 
-        public ExpressionToSql<T> LeftJoin<T2, T3>(Expression<Func<T2, T3, bool>> expression)
+        public ExpressionToSql<T> LeftJoin<T2, T3>(Expression<Func<T2, T3, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser2(expression, "left ");
+            return JoinParser2(expression, blnWithNoLock, "left ");
         }
 
         public ExpressionToSql<T> Max(Expression<Func<T, object>> expression)
@@ -282,64 +282,64 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
-        public ExpressionToSql<T> RightJoin<T2>(Expression<Func<T, T2, bool>> expression)
+        public ExpressionToSql<T> RightJoin<T2>(Expression<Func<T, T2, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser(expression, "right ");
+            return JoinParser(expression, blnWithNoLock,"right ");
         }
 
-        public ExpressionToSql<T> RightJoin<T2, T3>(Expression<Func<T2, T3, bool>> expression)
+        public ExpressionToSql<T> RightJoin<T2, T3>(Expression<Func<T2, T3, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser2(expression, "right ");
+            return JoinParser2(expression, blnWithNoLock, "right ");
         }
 
-        public ExpressionToSql<T> Select(Expression<Func<T, object>> expression = null)
+        public ExpressionToSql<T> Select(Expression<Func<T, object>> expression = null, bool blnWithNoLock = false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock,typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2>(Expression<Func<T, T2, object>> expression = null)
+        public ExpressionToSql<T> Select<T2>(Expression<Func<T, T2, object>> expression = null, bool blnWithNoLock = false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3>(Expression<Func<T, T2, T3, object>> expression = null)
+        public ExpressionToSql<T> Select<T2, T3>(Expression<Func<T, T2, T3, object>> expression = null,bool blnWithNoLock=false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock,typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3, T4>(Expression<Func<T, T2, T3, T4, object>> expression = null)
+        public ExpressionToSql<T> Select<T2, T3, T4>(Expression<Func<T, T2, T3, T4, object>> expression = null, bool blnWithNoLock = false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3, T4, T5>(Expression<Func<T, T2, T3, T4, T5, object>> expression = null)
+        public ExpressionToSql<T> Select<T2, T3, T4, T5>(Expression<Func<T, T2, T3, T4, T5, object>> expression = null,bool blnWithNoLock=false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6>(Expression<Func<T, T2, T3, T4, T5, T6, object>> expression = null)
+        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6>(Expression<Func<T, T2, T3, T4, T5, T6, object>> expression = null,bool blnWithNoLock=false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6, T7>(Expression<Func<T, T2, T3, T4, T5, T6, T7, object>> expression = null)
+        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6, T7>(Expression<Func<T, T2, T3, T4, T5, T6, T7, object>> expression = null,bool blnWithNoLock=false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6, T7, T8>(Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, object>> expression = null)
+        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6, T7, T8>(Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, object>> expression = null, bool blnWithNoLock = false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6, T7, T8, T9>(Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, object>> expression = null)
+        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6, T7, T8, T9>(Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, object>> expression = null, bool blnWithNoLock = false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6, T7, T8, T9, T10>(Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, T10, object>> expression = null)
+        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6, T7, T8, T9, T10>(Expression<Func<T, T2, T3, T4, T5, T6, T7, T8, T9, T10, object>> expression = null, bool blnWithNoLock = false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
         public ExpressionToSql<T> Sum(Expression<Func<T, object>> expression)
@@ -385,7 +385,7 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
-        private ExpressionToSql<T> JoinParser<T2>(Expression<Func<T, T2, bool>> expression, string leftOrRightJoin = "")
+        private ExpressionToSql<T> JoinParser<T2>(Expression<Func<T, T2, bool>> expression, bool blnWithNoLock = false, string leftOrRightJoin = "")
         {
             if (expression == null)
             {
@@ -398,17 +398,23 @@ namespace Nikita.DataAccess.Expression2Sql
             this._sqlBuilder.JoinTables.Add(strAlias, joinTableName);
             if (_sqlBuilder.JoinTables.Count(t => t.Value.Equals(joinTableName)) > 1)
             {
-                this._sqlBuilder.AppendFormat("\n{0}join {1} on", leftOrRightJoin, joinTableName + " " + strAlias);
+                this._sqlBuilder.AppendFormat("\n{0}join {1} ", leftOrRightJoin, joinTableName + " " + strAlias); 
             }
             else
             {
-                this._sqlBuilder.AppendFormat("\n{0}join {1} on", leftOrRightJoin, joinTableName + " " + this._sqlBuilder.GetTableAlias(joinTableName));
+                this._sqlBuilder.AppendFormat("\n{0}join {1} ", leftOrRightJoin, joinTableName + " " + this._sqlBuilder.GetTableAlias(joinTableName));
             }
+            if (blnWithNoLock)
+            {
+                this._sqlBuilder.AppendFormat(" {0} ", AsNoLock());
+            }
+            this._sqlBuilder.AppendFormat(" {0} ", "on");
             Expression2SqlProvider.Join(expression.Body, this._sqlBuilder);
             return this;
         }
+         
 
-        private ExpressionToSql<T> JoinParser2<T2, T3>(Expression<Func<T2, T3, bool>> expression, string leftOrRightJoin = "")
+        private ExpressionToSql<T> JoinParser2<T2, T3>(Expression<Func<T2, T3, bool>> expression, bool blnWithNoLock = false, string leftOrRightJoin = "")
         {
             if (expression == null)
             {
@@ -427,12 +433,16 @@ namespace Nikita.DataAccess.Expression2Sql
             {
                 this._sqlBuilder.AppendFormat("\n{0}join {1} on", leftOrRightJoin,
                     joinTableName + " " + this._sqlBuilder.GetTableAlias(joinTableName));
+            } 
+            if (blnWithNoLock)
+            {
+                this._sqlBuilder.AppendFormat(" {0} ", AsNoLock());
             }
             Expression2SqlProvider.Join(expression.Body, this._sqlBuilder);
             return this;
         }
 
-        private ExpressionToSql<T> SelectParser(Expression expression, Expression expressionBody, params Type[] ary)
+        private ExpressionToSql<T> SelectParser(Expression expression, Expression expressionBody, bool blnAsNoLock = false, params Type[] ary)
         {
             this.Clear();
             this._sqlBuilder.IsSingleTable = false;
@@ -449,7 +459,10 @@ namespace Nikita.DataAccess.Expression2Sql
             }
 
             string sql = "select {0}\nfrom " + this._mainTableName + " " + this._sqlBuilder.GetTableAlias(this._mainTableName);
-
+            if (blnAsNoLock)
+            {
+                sql += AsNoLock();
+            }
             if (expression == null)
             {
                 this._sqlBuilder.AppendFormat(sql, "*");
@@ -464,14 +477,27 @@ namespace Nikita.DataAccess.Expression2Sql
         }
 
         public ExpressionToSql<T> Take(int intCount)
-        { 
-            if (intCount==0)
+        {
+            if (intCount == 0)
             {
                 throw new Exception("Take 方法输入数字有误");
             }
             int intStart = _sqlBuilder.Sql.IndexOf("select", StringComparison.Ordinal);
-            _sqlBuilder.Insert(intStart + 6, " top " + intCount + " "); 
+            _sqlBuilder.Insert(intStart + 6, " top " + intCount + " ");
             return this;
+        }
+
+        /// <summary>AsNoLock 适用于SqlServer
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private string AsNoLock()
+        {
+            if (this.SqlType==SqlType.SqlServer)
+            { 
+               return " with(nolock) ";
+            }
+            return "";
         }
 
 
@@ -486,6 +512,11 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
+
+        /// <summary>执行查询
+        /// 
+        /// </summary>
+        /// <returns>返回实体对象</returns>
         public List<T> ToList2()
         {
             if (dbHelper != null)
@@ -500,6 +531,10 @@ namespace Nikita.DataAccess.Expression2Sql
             return null;
         }
 
+        /// <summary>执行查询
+        /// 
+        /// </summary>
+        /// <returns>返回实体对象</returns>
 
         public List<T> ToList()
         {
@@ -515,6 +550,11 @@ namespace Nikita.DataAccess.Expression2Sql
             return null;
         }
 
+
+        /// <summary>执行查询
+        /// 
+        /// </summary>
+        /// <returns>返回第一行第一列值</returns>
         public long ToLong()
         {
             if (dbHelper != null)
@@ -528,7 +568,10 @@ namespace Nikita.DataAccess.Expression2Sql
             }
             return 0;
         }
-
+        /// <summary>执行增删改
+        /// 
+        /// </summary>
+        /// <returns>执行成功返回True，否则返回失败</returns>
         public bool ToBool()
         {
             if (dbHelper != null)
@@ -543,6 +586,10 @@ namespace Nikita.DataAccess.Expression2Sql
             return false;
         }
 
+        /// <summary>执行查询
+        /// 
+        /// </summary>
+        /// <returns>返回表</returns>
         public DataTable ToDataTable()
         {
             if (dbHelper != null)

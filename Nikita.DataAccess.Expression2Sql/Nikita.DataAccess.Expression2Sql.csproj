@@ -57,12 +57,12 @@
     <Compile Include="ExpressionToSql.cs" />
     <Compile Include="DbSqlParser\IDbSqlParser.cs" />
     <Compile Include="Expression2Sql\IExpression2Sql.cs" />
-    <Compile Include="Mapper\CacheManager.cs" />
-    <Compile Include="Mapper\DataReaderEntityBuilder.cs" />
-    <Compile Include="Mapper\DataRecordExtensions.cs" />
-    <Compile Include="Mapper\IStorageObject.cs" />
+    <Compile Include="Mapper\Mapping\CacheManager.cs" />
+    <Compile Include="Mapper\Mapping\DataReaderEntityBuilder.cs" />
+    <Compile Include="Mapper\Mapping\DataRecordExtensions.cs" />
+    <Compile Include="Mapper\Mapping\IStorageObject.cs" />
     <Compile Include="Mapper\Mapping2\Mapping.cs" />
-    <Compile Include="Mapper\MappingUntilTool.cs" />
+    <Compile Include="Mapper\Mapping\MappingUntilTool.cs" />
     <Compile Include="Mapper\Mapping2\OrmFieldAttribute.cs" />
     <Compile Include="Mapper\Mapping2\OrmTableAttribute.cs" />
     <Compile Include="Mapper\Mapping2\ReflectionInfo.cs" />
