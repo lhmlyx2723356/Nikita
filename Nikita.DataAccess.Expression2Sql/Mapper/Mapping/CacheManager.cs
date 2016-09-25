@@ -5,29 +5,34 @@ using System.Linq;
 namespace Nikita.DataAccess.Expression2Sql.Mapper
 {
     /// <summary>
-    /// ** 描述：缓存操作类 
+    /// ** 描述：缓存操作类
     /// </summary>
     /// <typeparam name="TV">值</typeparam>
     internal class CacheManager<TV> : IStorageObject<TV>
     {
-
-        readonly System.Collections.Concurrent.ConcurrentDictionary<string, TV> _instanceCache = new System.Collections.Concurrent.ConcurrentDictionary<string, TV>();
+        private readonly System.Collections.Concurrent.ConcurrentDictionary<string, TV> _instanceCache = new System.Collections.Concurrent.ConcurrentDictionary<string, TV>();
 
         #region 全局变量
+
         private static CacheManager<TV> _instance;
         private static readonly object _instanceLock = new object();
-        #endregion
+
+        #endregion 全局变量
 
         #region 构造函数
 
-        private CacheManager() { }
-        #endregion
+        private CacheManager()
+        {
+        }
 
-        #region  属性
-        /// <summary>         
-        ///根据key获取value     
-        /// </summary>         
-        /// <value></value>      
+        #endregion 构造函数
+
+        #region 属性
+
+        /// <summary>
+        ///根据key获取value
+        /// </summary>
+        /// <value></value>
         public override TV this[string key]
         {
             get
@@ -35,34 +40,35 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                 return Get(key);
             }
         }
-        #endregion
+
+        #endregion 属性
 
         #region 公共函数
 
-        /// <summary>         
-        /// 验证key是否存在       
-        /// </summary>         
-        /// <param name="key">key</param>         
-        /// <returns> /// 	存在<c>true</c> 不存在<c>false</c>.        /// /// </returns>         
+        /// <summary>
+        /// 验证key是否存在
+        /// </summary>
+        /// <param name="key">key</param>
+        /// <returns> /// 	存在<c>true</c> 不存在<c>false</c>.        /// /// </returns>
         public override bool ContainsKey(string key)
         {
-            return this._instanceCache.ContainsKey(key); 
+            return this._instanceCache.ContainsKey(key);
         }
 
-        /// <summary>         
-        /// 根据key获取value  
-        /// </summary>         
-        /// <param name="key">key</param>         
-        /// <returns></returns>         
+        /// <summary>
+        /// 根据key获取value
+        /// </summary>
+        /// <param name="key">key</param>
+        /// <returns></returns>
         public override TV Get(string key)
         {
             return this._instanceCache[key];
         }
 
-        /// <summary>         
-        /// 获取实例 （单例模式）       
-        /// </summary>         
-        /// <returns></returns>         
+        /// <summary>
+        /// 获取实例 （单例模式）
+        /// </summary>
+        /// <returns></returns>
         public static CacheManager<TV> GetInstance()
         {
             if (_instance == null)
@@ -72,35 +78,35 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
             return _instance;
         }
 
-        /// <summary>         
-        /// 插入缓存(默认20分钟)        
-        /// </summary>         
-        /// <param name="key"> key</param>         
-        /// <param name="value">value</param>          
+        /// <summary>
+        /// 插入缓存(默认20分钟)
+        /// </summary>
+        /// <param name="key"> key</param>
+        /// <param name="value">value</param>
         public override void Add(string key, TV value)
         {
             this._instanceCache.GetOrAdd(key, value);
         }
 
-        /// <summary>         
-        /// 插入缓存        
-        /// </summary>         
-        /// <param name="key"> key</param>         
-        /// <param name="value">value</param>         
-        /// <param name="cacheDurationInSeconds">过期时间单位秒</param>         
+        /// <summary>
+        /// 插入缓存
+        /// </summary>
+        /// <param name="key"> key</param>
+        /// <param name="value">value</param>
+        /// <param name="cacheDurationInSeconds">过期时间单位秒</param>
         public void Add(string key, TV value, int cacheDurationInSeconds)
         {
             Add(key, value);
-        } 
+        }
 
-        /// <summary>         
-        /// 删除缓存         
-        /// </summary>         
-        /// <param name="key">key</param>         
+        /// <summary>
+        /// 删除缓存
+        /// </summary>
+        /// <param name="key">key</param>
         public override void Remove(string key)
         {
             TV val;
-            this._instanceCache.TryRemove(key, out val); 
+            this._instanceCache.TryRemove(key, out val);
         }
 
         /// <summary>
@@ -109,15 +115,14 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
         public override void RemoveAll()
         {
             this._instanceCache.Clear();
-
         }
 
         /// <summary>
         /// 清除所有包含关键字的缓存
-        /// </summary> 
+        /// </summary>
         /// <param name="removeExpression">关键字</param>
         public override void RemoveAll(Func<string, bool> removeExpression)
-        { 
+        {
             var allKeyList = GetAllKey();
             var delKeyList = allKeyList.Where(removeExpression).ToList();
             foreach (var key in delKeyList)
@@ -132,10 +137,9 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
         /// <returns></returns>
         public override IEnumerable<string> GetAllKey()
         {
-            return this._instanceCache.Keys; 
+            return this._instanceCache.Keys;
         }
-        #endregion
 
-
+        #endregion 公共函数
     }
 }

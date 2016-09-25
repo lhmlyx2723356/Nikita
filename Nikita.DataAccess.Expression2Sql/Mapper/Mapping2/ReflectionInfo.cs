@@ -7,12 +7,13 @@ using System.Reflection;
 
 namespace Nikita.DataAccess.Expression2Sql.Mapper
 {
-
-    static class ReflectionHelper
+    internal static class ReflectionHelper
     {
-        static Dictionary<Type, object> ReflectionInfoCache = new Dictionary<Type, object>(50);
+        private static Dictionary<Type, object> ReflectionInfoCache = new Dictionary<Type, object>(50);
+
         //用于匿名对象
-        static Dictionary<Type, PropertyInfo[]> PropertysDict = new Dictionary<Type, PropertyInfo[]>();
+        private static Dictionary<Type, PropertyInfo[]> PropertysDict = new Dictionary<Type, PropertyInfo[]>();
+
         public static ReflectionInfo<TObject> GetInfo<TObject>()
         {
             var type = typeof(TObject);
@@ -29,7 +30,6 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
             }
         }
 
-
         public static PropertyInfo[] GetCachedProperties(Type type)
         {
             PropertyInfo[] value;
@@ -43,15 +43,15 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
         }
     }
 
-    class ReflectionInfo<TObject>
+    internal class ReflectionInfo<TObject>
     {
         public string TableName { get; set; }
-
 
         private Dictionary<string, Accessor> accessorDict;
         public Dictionary<PropertyInfo, OrmFieldAttribute> FieldAttrDict { get; private set; }
         public PropertyInfo[] Properties { get; }
         public Func<TObject> NewInstance;
+
         public ReflectionInfo(Type modelType)
         {
             var tableAttr = modelType.GetCustomAttributes(typeof(OrmTableAttribute), true).FirstOrDefault() as OrmTableAttribute;
@@ -215,7 +215,6 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
             }
         }
 
-
         public Accessor GetAccessor(string fieldName)
         {
             Accessor accessor;
@@ -225,7 +224,6 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
             }
             return new EmptyAccessor();
         }
-
 
         public OrmFieldAttribute GetFieldAttr(PropertyInfo prop)
         {
@@ -239,7 +237,6 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                 return null;
             }
         }
-
 
         public abstract class Accessor
         {
@@ -258,14 +255,14 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
             }
 
             protected abstract void DoSet(TObject obj, object value);
-            protected abstract object DoGet(TObject obj);
 
+            protected abstract object DoGet(TObject obj);
         }
 
         #region Accessor
+
         public class EmptyAccessor : Accessor
         {
-
             protected override object DoGet(TObject obj)
             {
                 return null;
@@ -279,18 +276,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class StringAccessor : Accessor
         {
-            Action<TObject, string> setter;
-            Func<TObject, string> getter;
+            private Action<TObject, string> setter;
+            private Func<TObject, string> getter;
 
             public StringAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, string>)Delegate.CreateDelegate(typeof(Action<TObject, string>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, string>)Delegate.CreateDelegate(typeof(Func<TObject, string>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (string)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -299,17 +298,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class IntAccessor : Accessor
         {
-            Action<TObject, int> setter;
-            Func<TObject, int> getter;
+            private Action<TObject, int> setter;
+            private Func<TObject, int> getter;
+
             public IntAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, int>)Delegate.CreateDelegate(typeof(Action<TObject, int>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, int>)Delegate.CreateDelegate(typeof(Func<TObject, int>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (int)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -318,17 +320,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class IntNullableAccessor : Accessor
         {
-            Action<TObject, int?> setter;
-            Func<TObject, int?> getter;
+            private Action<TObject, int?> setter;
+            private Func<TObject, int?> getter;
+
             public IntNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, int?>)Delegate.CreateDelegate(typeof(Action<TObject, int?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, int?>)Delegate.CreateDelegate(typeof(Func<TObject, int?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (int)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -337,18 +342,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class DateTimeAccessor : Accessor
         {
-            Action<TObject, DateTime> setter;
-            Func<TObject, DateTime> getter;
+            private Action<TObject, DateTime> setter;
+            private Func<TObject, DateTime> getter;
+
             public DateTimeAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, DateTime>)Delegate.CreateDelegate(typeof(Action<TObject, DateTime>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, DateTime>)Delegate.CreateDelegate(typeof(Func<TObject, DateTime>), null, prop.GetGetMethod(true));
-
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (DateTime)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -357,13 +364,15 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class DateTimeNullableAccessor : Accessor
         {
-            Action<TObject, DateTime?> setter;
-            Func<TObject, DateTime?> getter;
+            private Action<TObject, DateTime?> setter;
+            private Func<TObject, DateTime?> getter;
+
             public DateTimeNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, DateTime?>)Delegate.CreateDelegate(typeof(Action<TObject, DateTime?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, DateTime?>)Delegate.CreateDelegate(typeof(Func<TObject, DateTime?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (DateTime?)value);
@@ -377,13 +386,15 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class LongAccessor : Accessor
         {
-            Action<TObject, long> setter;
-            Func<TObject, long> getter;
+            private Action<TObject, long> setter;
+            private Func<TObject, long> getter;
+
             public LongAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, long>)Delegate.CreateDelegate(typeof(Action<TObject, long>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, long>)Delegate.CreateDelegate(typeof(Func<TObject, long>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (long)value);
@@ -397,17 +408,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class LongNullableAccessor : Accessor
         {
-            Action<TObject, long?> setter;
-            Func<TObject, long?> getter;
+            private Action<TObject, long?> setter;
+            private Func<TObject, long?> getter;
+
             public LongNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, long?>)Delegate.CreateDelegate(typeof(Action<TObject, long?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, long?>)Delegate.CreateDelegate(typeof(Func<TObject, long?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (long)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -416,17 +430,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class DoubleAccessor : Accessor
         {
-            Action<TObject, double> setter;
-            Func<TObject, double> getter;
+            private Action<TObject, double> setter;
+            private Func<TObject, double> getter;
+
             public DoubleAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, double>)Delegate.CreateDelegate(typeof(Action<TObject, double>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, double>)Delegate.CreateDelegate(typeof(Func<TObject, double>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (double)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -435,17 +452,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class DoubleNullableAccessor : Accessor
         {
-            Action<TObject, double?> setter;
-            Func<TObject, double?> getter;
+            private Action<TObject, double?> setter;
+            private Func<TObject, double?> getter;
+
             public DoubleNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, double?>)Delegate.CreateDelegate(typeof(Action<TObject, double?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, double?>)Delegate.CreateDelegate(typeof(Func<TObject, double?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (double)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -454,17 +474,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class FloatAccessor : Accessor
         {
-            Action<TObject, float> setter;
-            Func<TObject, float> getter;
+            private Action<TObject, float> setter;
+            private Func<TObject, float> getter;
+
             public FloatAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, float>)Delegate.CreateDelegate(typeof(Action<TObject, float>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, float>)Delegate.CreateDelegate(typeof(Func<TObject, float>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (float)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -473,17 +496,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class FloatNullableAccessor : Accessor
         {
-            Action<TObject, float?> setter;
-            Func<TObject, float?> getter;
+            private Action<TObject, float?> setter;
+            private Func<TObject, float?> getter;
+
             public FloatNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, float?>)Delegate.CreateDelegate(typeof(Action<TObject, float?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, float?>)Delegate.CreateDelegate(typeof(Func<TObject, float?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (float)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -492,17 +518,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class GuidAccessor : Accessor
         {
-            Action<TObject, Guid> setter;
-            Func<TObject, Guid> getter;
+            private Action<TObject, Guid> setter;
+            private Func<TObject, Guid> getter;
+
             public GuidAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, Guid>)Delegate.CreateDelegate(typeof(Action<TObject, Guid>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, Guid>)Delegate.CreateDelegate(typeof(Func<TObject, Guid>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (Guid)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -511,17 +540,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class GuidNullableAccessor : Accessor
         {
-            Action<TObject, Guid?> setter;
-            Func<TObject, Guid?> getter;
+            private Action<TObject, Guid?> setter;
+            private Func<TObject, Guid?> getter;
+
             public GuidNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, Guid?>)Delegate.CreateDelegate(typeof(Action<TObject, Guid?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, Guid?>)Delegate.CreateDelegate(typeof(Func<TObject, Guid?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (Guid)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -530,13 +562,15 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class ByteAccessor : Accessor
         {
-            Action<TObject, byte> setter;
-            Func<TObject, byte> getter;
+            private Action<TObject, byte> setter;
+            private Func<TObject, byte> getter;
+
             public ByteAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, byte>)Delegate.CreateDelegate(typeof(Action<TObject, byte>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, byte>)Delegate.CreateDelegate(typeof(Func<TObject, byte>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 if (value is byte)
@@ -547,23 +581,25 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                 {
                     setter(obj, Convert.ToByte(value));
                 }
-
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
             }
         }
+
         public class ByteNullableAccessor : Accessor
         {
-            Action<TObject, byte?> setter;
-            Func<TObject, byte?> getter;
+            private Action<TObject, byte?> setter;
+            private Func<TObject, byte?> getter;
 
             public ByteNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, byte?>)Delegate.CreateDelegate(typeof(Action<TObject, byte?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, byte?>)Delegate.CreateDelegate(typeof(Func<TObject, byte?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 if (value is byte)
@@ -575,6 +611,7 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                     setter(obj, Convert.ToByte(value));
                 }
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -583,35 +620,42 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class ShortAccessor : Accessor
         {
-            Action<TObject, short> setter;
-            Func<TObject, short> getter;
+            private Action<TObject, short> setter;
+            private Func<TObject, short> getter;
+
             public ShortAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, short>)Delegate.CreateDelegate(typeof(Action<TObject, short>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, short>)Delegate.CreateDelegate(typeof(Func<TObject, short>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (short)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
             }
         }
+
         public class ShortNullableAccessor : Accessor
         {
-            Action<TObject, short?> setter;
-            Func<TObject, short?> getter;
+            private Action<TObject, short?> setter;
+            private Func<TObject, short?> getter;
+
             public ShortNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, short?>)Delegate.CreateDelegate(typeof(Action<TObject, short?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, short?>)Delegate.CreateDelegate(typeof(Func<TObject, short?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (short)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -620,17 +664,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class CharAccessor : Accessor
         {
-            Action<TObject, char> setter;
-            Func<TObject, char> getter;
+            private Action<TObject, char> setter;
+            private Func<TObject, char> getter;
+
             public CharAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, char>)Delegate.CreateDelegate(typeof(Action<TObject, char>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, char>)Delegate.CreateDelegate(typeof(Func<TObject, char>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (char)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -639,17 +686,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class CharNullableAccessor : Accessor
         {
-            Action<TObject, char?> setter;
-            Func<TObject, char?> getter;
+            private Action<TObject, char?> setter;
+            private Func<TObject, char?> getter;
+
             public CharNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, char?>)Delegate.CreateDelegate(typeof(Action<TObject, char?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, char?>)Delegate.CreateDelegate(typeof(Func<TObject, char?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (char)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -658,13 +708,15 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class BoolAccessor : Accessor
         {
-            Action<TObject, bool> setter;
-            Func<TObject, bool> getter;
+            private Action<TObject, bool> setter;
+            private Func<TObject, bool> getter;
+
             public BoolAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, bool>)Delegate.CreateDelegate(typeof(Action<TObject, bool>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, bool>)Delegate.CreateDelegate(typeof(Func<TObject, bool>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 if (value is bool)
@@ -676,6 +728,7 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                     setter(obj, Convert.ToUInt16(value) > 0);
                 }
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -684,13 +737,15 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class BoolNullableAccessor : Accessor
         {
-            Action<TObject, bool?> setter;
-            Func<TObject, bool?> getter;
+            private Action<TObject, bool?> setter;
+            private Func<TObject, bool?> getter;
+
             public BoolNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, bool?>)Delegate.CreateDelegate(typeof(Action<TObject, bool?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, bool?>)Delegate.CreateDelegate(typeof(Func<TObject, bool?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 if (value is bool)
@@ -702,6 +757,7 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                     setter(obj, Convert.ToUInt16(value) > 0);
                 }
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -710,17 +766,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class TimeSpanAccessor : Accessor
         {
-            Action<TObject, TimeSpan> setter;
-            Func<TObject, TimeSpan> getter;
+            private Action<TObject, TimeSpan> setter;
+            private Func<TObject, TimeSpan> getter;
+
             public TimeSpanAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, TimeSpan>)Delegate.CreateDelegate(typeof(Action<TObject, TimeSpan>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, TimeSpan>)Delegate.CreateDelegate(typeof(Func<TObject, TimeSpan>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (TimeSpan)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -729,17 +788,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class TimeSpanNullableAccessor : Accessor
         {
-            Action<TObject, TimeSpan?> setter;
-            Func<TObject, TimeSpan?> getter;
+            private Action<TObject, TimeSpan?> setter;
+            private Func<TObject, TimeSpan?> getter;
+
             public TimeSpanNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, TimeSpan?>)Delegate.CreateDelegate(typeof(Action<TObject, TimeSpan?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, TimeSpan?>)Delegate.CreateDelegate(typeof(Func<TObject, TimeSpan?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (TimeSpan)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -748,17 +810,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class DecimalAccessor : Accessor
         {
-            Action<TObject, decimal> setter;
-            Func<TObject, decimal> getter;
+            private Action<TObject, decimal> setter;
+            private Func<TObject, decimal> getter;
+
             public DecimalAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, decimal>)Delegate.CreateDelegate(typeof(Action<TObject, decimal>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, decimal>)Delegate.CreateDelegate(typeof(Func<TObject, decimal>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (decimal)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -767,17 +832,20 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class DecimalNullableAccessor : Accessor
         {
-            Action<TObject, decimal?> setter;
-            Func<TObject, decimal?> getter;
+            private Action<TObject, decimal?> setter;
+            private Func<TObject, decimal?> getter;
+
             public DecimalNullableAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, decimal?>)Delegate.CreateDelegate(typeof(Action<TObject, decimal?>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, decimal?>)Delegate.CreateDelegate(typeof(Func<TObject, decimal?>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (decimal)value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
@@ -786,26 +854,26 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         public class ByteArrayAccessor : Accessor
         {
-            Action<TObject, byte[]> setter;
-            Func<TObject, byte[]> getter;
+            private Action<TObject, byte[]> setter;
+            private Func<TObject, byte[]> getter;
+
             public ByteArrayAccessor(PropertyInfo prop)
             {
                 setter = (Action<TObject, byte[]>)Delegate.CreateDelegate(typeof(Action<TObject, byte[]>), null, prop.GetSetMethod(true));
                 getter = (Func<TObject, byte[]>)Delegate.CreateDelegate(typeof(Func<TObject, byte[]>), null, prop.GetGetMethod(true));
             }
+
             protected override void DoSet(TObject obj, object value)
             {
                 setter(obj, (byte[])value);
             }
+
             protected override object DoGet(TObject obj)
             {
                 return getter(obj);
             }
         }
 
-        #endregion
-
+        #endregion Accessor
     }
-
-
 }

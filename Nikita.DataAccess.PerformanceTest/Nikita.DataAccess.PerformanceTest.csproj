@@ -52,7 +52,6 @@
     <Compile Include="Test\Models\Country.cs" />
     <Compile Include="Test\Models\Student.cs" />
     <Compile Include="Test\Models\User.cs" />
-    <Compile Include="Test\Program3.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">

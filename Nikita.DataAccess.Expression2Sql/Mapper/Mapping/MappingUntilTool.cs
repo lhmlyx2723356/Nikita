@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 namespace Nikita.DataAccess.Expression2Sql.Mapper
 {
     /// <summary>
-    /// ** 描述：工具类 
+    /// ** 描述：工具类
     /// </summary>
     public class MappingUntilTool
     {
@@ -61,7 +61,6 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                 return strReval;
             }
 
-
             var cacheManager = CacheManager<DataReaderEntityBuilder<T>>.GetInstance();
             string key = "DataReaderToList." + fields + type.FullName;
             DataReaderEntityBuilder<T> eblist = null;
@@ -102,6 +101,7 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                 }
             }
         }
+
         private static void FillValueTypeToDictionary<T>(Type type, IDataReader dr, List<T> strReval)
         {
             using (IDataReader re = dr)
@@ -136,11 +136,12 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                     }
                     else
                     {
-                        throw new Exception( "暂时不支持该类型的Dictionary 你可以试试 Dictionary<string ,string>或者联系作者！！");
+                        throw new Exception("暂时不支持该类型的Dictionary 你可以试试 Dictionary<string ,string>或者联系作者！！");
                     }
                 }
             }
         }
+
         private static void FillValueTypeToArray<T>(Type type, IDataReader dr, List<T> strReval)
         {
             using (IDataReader re = dr)
@@ -171,8 +172,8 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                     else if (childType == MappingUntilTool.IntType)
                         strReval.Add((T)Convert.ChangeType(array.Select(it => (int)it).ToArray(), type));
                     else
-                        
-                    throw new Exception( "暂时不支持该类型的Array 你可以试试 object[] 或者联系作者！！");
+
+                        throw new Exception("暂时不支持该类型的Array 你可以试试 object[] 或者联系作者！！");
                 }
             }
         }
@@ -185,11 +186,7 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                 par.Size = 4000;
             }
         }
- 
- 
 
- 
-         
         /// <summary>
         /// 处理like条件的通配符
         /// </summary>
@@ -217,6 +214,7 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
             PropertyInfo propertyInfo = obj.GetType().GetProperty(property);
             return (Guid)propertyInfo.GetValue(obj, null);
         }
+
         /// <summary>
         /// 包装SQL
         /// </summary>
@@ -232,8 +230,6 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
         /// 使用页面自动填充sqlParameter时 Request.Form出现特殊字符时可以重写Request.Form方法，使用时注意加锁并且用到将该值设为null
         /// </summary>
         public static Func<string, string> SpecialRequestForm = null;
- 
-      
 
         /// <summary>
         /// 获取最底层类型

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Net.NetworkInformation;
 
 namespace Nikita.DataAccess.Expression2Sql
 {

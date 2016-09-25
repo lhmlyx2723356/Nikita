@@ -108,12 +108,14 @@ namespace Nikita.DataAccess.Expression2Sql
             sqlBuilder += sqlBuilder.GetTableAlias(expression.Member.DeclaringType.Name) + "." + expression.Member.Name;
             return sqlBuilder;
         }
-        protected override SqlBuilder ThenBy (MemberExpression expression, SqlBuilder sqlBuilder)
+
+        protected override SqlBuilder ThenBy(MemberExpression expression, SqlBuilder sqlBuilder)
         {
             sqlBuilder.SetTableAlias(expression.Member.DeclaringType.Name);
             sqlBuilder += sqlBuilder.GetTableAlias(expression.Member.DeclaringType.Name) + "." + expression.Member.Name;
             return sqlBuilder;
         }
+
         protected override SqlBuilder ThenByDesc(MemberExpression expression, SqlBuilder sqlBuilder)
         {
             sqlBuilder.SetTableAlias(expression.Member.DeclaringType.Name);
@@ -143,7 +145,7 @@ namespace Nikita.DataAccess.Expression2Sql
             if (expression.Expression.NodeType == ExpressionType.Constant)
             {
                 object value = GetValue(expression);
-                sqlBuilder.AddDbParameter(value,true);
+                sqlBuilder.AddDbParameter(value, true);
             }
             else if (expression.Expression.NodeType == ExpressionType.Parameter)
             {

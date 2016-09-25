@@ -1,29 +1,28 @@
-﻿using System;
+﻿using Nikita.Base.Define;
+using Nikita.DataAccess.Expression2Sql.Mapper;
+using Nikita.DataAccess4DBHelper;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Linq.Expressions;
-using Nikita.Base.Define;
-using Nikita.DataAccess.Expression2Sql.Mapper;
-using Nikita.DataAccess4DBHelper;
+using System.Reflection;
 
 namespace Nikita.DataAccess.Expression2Sql
 {
     public class ExpressionToSql<T>
     {
-
         public SqlType SqlType { get; private set; }
 
         public string ConnectionString { get; private set; }
-
 
         private IDbHelper dbHelper;
         private string _mainTableName = typeof(T).Name;
         private SqlBuilder _sqlBuilder;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="sqlType">数据库类型</param>
         /// <param name="strConnectionString">数据库连接字符串，如果只是转换成sql语句不需要传入，如果需要转换实体等需要传入连接串</param>
@@ -36,15 +35,19 @@ namespace Nikita.DataAccess.Expression2Sql
                 case SqlType.SqlServer:
                     this._sqlBuilder = new SqlBuilder(new SQLServerSqlParser());
                     break;
+
                 case SqlType.Oracle:
                     this._sqlBuilder = new SqlBuilder(new OracleSqlParser());
                     break;
+
                 case SqlType.SQLite:
                     this._sqlBuilder = new SqlBuilder(new SQLiteSqlParser());
                     break;
+
                 case SqlType.MySql:
                     this._sqlBuilder = new SqlBuilder(new MySQLSqlParser());
                     break;
+
                 case SqlType.SqlServerCe:
                 case SqlType.PostgreSql:
                 case SqlType.Db2:
@@ -188,6 +191,85 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
+        public ExpressionToSql<T> Insert(T t)
+        {
+            if (t == null)
+            {
+                throw new ArgumentNullException("t", "Value cannot be null");
+            }
+
+            this.Clear();
+            this._sqlBuilder.IsSingleTable = true;
+            var refInfo = ReflectionHelper.GetInfo<T>();
+            var propertys = refInfo.Properties;
+            this._sqlBuilder.AppendFormat("insert into [{0}]", this._mainTableName);
+            this._sqlBuilder.AppendFormat("{0}", "(");
+            for (int i = 0; i < propertys.Length; i++)
+            {
+                var property = propertys[i];
+
+                var fieldAttr = refInfo.GetFieldAttr(property);
+                if (fieldAttr != null && fieldAttr.InsertIgnore)
+                {
+                    continue;
+                }
+
+                if (i == propertys.Length - 1)
+                {
+                    this._sqlBuilder.AppendFormat("{0}", property.Name);
+                }
+                else
+                {
+                    this._sqlBuilder.AppendFormat("{0}", property.Name + ",");
+                }
+            }
+            this._sqlBuilder.AppendFormat("{0}", ")");
+            this._sqlBuilder.AppendFormat("{0}", "Values(");
+            for (int i = 0; i < propertys.Length; i++)
+            {
+                var property = propertys[i];
+                var fieldAttr = refInfo.GetFieldAttr(property);
+                if (fieldAttr != null && fieldAttr.InsertIgnore)
+                {
+                    continue;
+                }
+                string dbParamName = this._sqlBuilder.SqlParser.DbParamPrefix + "param" + i;
+                if (i == propertys.Length - 1)
+                {
+                    this._sqlBuilder.AppendFormat("{0}", dbParamName);
+                }
+                else
+                {
+                    this._sqlBuilder.AppendFormat("{0}", dbParamName + ",");
+                }
+
+                var fieldName = property.Name;
+                var accessor = refInfo.GetAccessor(fieldName);
+                if (accessor == null) continue;
+
+                var val = accessor.Get(t);
+                if (val == null)
+                {
+                    if (property.PropertyType == typeof(string))
+                    {
+                        val = string.Empty;
+                    }
+                }
+                else
+                {
+                    if (property.PropertyType == typeof(DateTime) && (DateTime)val == DateTime.MinValue)
+                    {
+                        val = DateTime.Now;
+                    }
+                }
+
+                this.DbParams.Add(dbParamName, val);
+            }
+
+            this._sqlBuilder.AppendFormat("{0}", ")");
+            return this;
+        }
+
         public ExpressionToSql<T> Join<T2>(Expression<Func<T, T2, bool>> expression, bool blnWithNoLock = false)
         {
             return JoinParser(expression, blnWithNoLock);
@@ -195,7 +277,7 @@ namespace Nikita.DataAccess.Expression2Sql
 
         public ExpressionToSql<T> Join<T2, T3>(Expression<Func<T2, T3, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser2(expression, blnWithNoLock:blnWithNoLock);
+            return JoinParser2(expression, blnWithNoLock: blnWithNoLock);
         }
 
         public ExpressionToSql<T> LeftJoin<T2>(Expression<Func<T, T2, bool>> expression, bool blnWithNoLock = false)
@@ -268,7 +350,6 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
-
         public ExpressionToSql<T> OrderByDesc(Expression<Func<T, object>> expression)
         {
             if (expression == null)
@@ -284,7 +365,7 @@ namespace Nikita.DataAccess.Expression2Sql
 
         public ExpressionToSql<T> RightJoin<T2>(Expression<Func<T, T2, bool>> expression, bool blnWithNoLock = false)
         {
-            return JoinParser(expression, blnWithNoLock,"right ");
+            return JoinParser(expression, blnWithNoLock, "right ");
         }
 
         public ExpressionToSql<T> RightJoin<T2, T3>(Expression<Func<T2, T3, bool>> expression, bool blnWithNoLock = false)
@@ -294,7 +375,7 @@ namespace Nikita.DataAccess.Expression2Sql
 
         public ExpressionToSql<T> Select(Expression<Func<T, object>> expression = null, bool blnWithNoLock = false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock,typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
         public ExpressionToSql<T> Select<T2>(Expression<Func<T, T2, object>> expression = null, bool blnWithNoLock = false)
@@ -302,9 +383,9 @@ namespace Nikita.DataAccess.Expression2Sql
             return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3>(Expression<Func<T, T2, T3, object>> expression = null,bool blnWithNoLock=false)
+        public ExpressionToSql<T> Select<T2, T3>(Expression<Func<T, T2, T3, object>> expression = null, bool blnWithNoLock = false)
         {
-            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock,typeof(T));
+            return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
         public ExpressionToSql<T> Select<T2, T3, T4>(Expression<Func<T, T2, T3, T4, object>> expression = null, bool blnWithNoLock = false)
@@ -312,17 +393,17 @@ namespace Nikita.DataAccess.Expression2Sql
             return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3, T4, T5>(Expression<Func<T, T2, T3, T4, T5, object>> expression = null,bool blnWithNoLock=false)
+        public ExpressionToSql<T> Select<T2, T3, T4, T5>(Expression<Func<T, T2, T3, T4, T5, object>> expression = null, bool blnWithNoLock = false)
         {
             return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6>(Expression<Func<T, T2, T3, T4, T5, T6, object>> expression = null,bool blnWithNoLock=false)
+        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6>(Expression<Func<T, T2, T3, T4, T5, T6, object>> expression = null, bool blnWithNoLock = false)
         {
             return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
 
-        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6, T7>(Expression<Func<T, T2, T3, T4, T5, T6, T7, object>> expression = null,bool blnWithNoLock=false)
+        public ExpressionToSql<T> Select<T2, T3, T4, T5, T6, T7>(Expression<Func<T, T2, T3, T4, T5, T6, T7, object>> expression = null, bool blnWithNoLock = false)
         {
             return SelectParser(expression, expression == null ? null : expression.Body, blnWithNoLock, typeof(T));
         }
@@ -368,6 +449,91 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
+        public ExpressionToSql<T> Update(T t)
+        {
+            if (t == null)
+            {
+                throw new ArgumentNullException("t", "Value cannot be null");
+            }
+
+            this.Clear();
+            var refInfo = ReflectionHelper.GetInfo<T>();
+            var propertys = refInfo.Properties;
+            this._sqlBuilder.IsSingleTable = true;
+            this._sqlBuilder.AppendFormat("update {0} set ", this._mainTableName);
+            bool blnPrimaryKey = false;
+            string strWhere = string.Empty;
+            string strParamName;
+            for (int i = 0; i < propertys.Length; i++)
+            {
+                strParamName = this._sqlBuilder.SqlParser.DbParamPrefix + "param" + i;
+                PropertyInfo property = propertys[i];
+                var fieldAttr = refInfo.GetFieldAttr(property);
+                if (fieldAttr != null && fieldAttr.IsPrimaryKey)
+                {
+                    blnPrimaryKey = true;
+                    strWhere = string.Format(" where {0}={1}", property.Name, strParamName);
+                    continue;
+                }
+                if (fieldAttr != null && fieldAttr.UpdateIgnore)
+                {
+                    continue;
+                }
+                if (i == propertys.Length - 1)
+                {
+                    this._sqlBuilder.AppendFormat(" {0} ", property.Name + "=" + strParamName);
+                }
+                else
+                {
+                    this._sqlBuilder.AppendFormat(" {0} ", property.Name + "=" + strParamName);
+                }
+            }
+
+            if (blnPrimaryKey == false)
+            {
+                throw new ArgumentNullException("PrimaryKey", "not PrimaryKey");
+            }
+            this._sqlBuilder.AppendFormat(" {0} ", strWhere);
+
+            for (int i = 0; i < propertys.Length; i++)
+            {
+                var property = propertys[i];
+                var fieldAttr = refInfo.GetFieldAttr(property);
+                //if (fieldAttr != null && fieldAttr.IsPrimaryKey)
+                //{
+                //    continue;
+                //}
+                if (fieldAttr != null && fieldAttr.UpdateIgnore)
+                {
+                    continue;
+                }
+                strParamName = this._sqlBuilder.SqlParser.DbParamPrefix + "param" + i;
+                var fieldName = property.Name;
+                var accessor = refInfo.GetAccessor(fieldName);
+                if (accessor == null) continue;
+
+                var val = accessor.Get(t);
+                if (val == null)
+                {
+                    if (property.PropertyType == typeof(string))
+                    {
+                        val = string.Empty;
+                    }
+                }
+                else
+                {
+                    if (property.PropertyType == typeof(DateTime) && (DateTime)val == DateTime.MinValue)
+                    {
+                        val = DateTime.Now;
+                    }
+                }
+
+                this.DbParams.Add(strParamName, val);
+            }
+
+            return this;
+        }
+
         public ExpressionToSql<T> Where(Expression<Func<T, bool>> expression)
         {
             if (expression == null)
@@ -398,7 +564,7 @@ namespace Nikita.DataAccess.Expression2Sql
             this._sqlBuilder.JoinTables.Add(strAlias, joinTableName);
             if (_sqlBuilder.JoinTables.Count(t => t.Value.Equals(joinTableName)) > 1)
             {
-                this._sqlBuilder.AppendFormat("\n{0}join {1} ", leftOrRightJoin, joinTableName + " " + strAlias); 
+                this._sqlBuilder.AppendFormat("\n{0}join {1} ", leftOrRightJoin, joinTableName + " " + strAlias);
             }
             else
             {
@@ -412,7 +578,6 @@ namespace Nikita.DataAccess.Expression2Sql
             Expression2SqlProvider.Join(expression.Body, this._sqlBuilder);
             return this;
         }
-         
 
         private ExpressionToSql<T> JoinParser2<T2, T3>(Expression<Func<T2, T3, bool>> expression, bool blnWithNoLock = false, string leftOrRightJoin = "")
         {
@@ -433,7 +598,7 @@ namespace Nikita.DataAccess.Expression2Sql
             {
                 this._sqlBuilder.AppendFormat("\n{0}join {1} on", leftOrRightJoin,
                     joinTableName + " " + this._sqlBuilder.GetTableAlias(joinTableName));
-            } 
+            }
             if (blnWithNoLock)
             {
                 this._sqlBuilder.AppendFormat(" {0} ", AsNoLock());
@@ -488,18 +653,17 @@ namespace Nikita.DataAccess.Expression2Sql
         }
 
         /// <summary>AsNoLock 适用于SqlServer
-        /// 
+        ///
         /// </summary>
         /// <returns></returns>
         private string AsNoLock()
         {
-            if (this.SqlType==SqlType.SqlServer)
-            { 
-               return " with(nolock) ";
+            if (this.SqlType == SqlType.SqlServer)
+            {
+                return " with(nolock) ";
             }
             return "";
         }
-
 
         public ExpressionToSql<T> First(Expression<Func<T, object>> expression)
         {
@@ -512,9 +676,8 @@ namespace Nikita.DataAccess.Expression2Sql
             return this;
         }
 
-
         /// <summary>执行查询
-        /// 
+        ///
         /// </summary>
         /// <returns>返回实体对象</returns>
         public List<T> ToList2()
@@ -532,7 +695,7 @@ namespace Nikita.DataAccess.Expression2Sql
         }
 
         /// <summary>执行查询
-        /// 
+        ///
         /// </summary>
         /// <returns>返回实体对象</returns>
 
@@ -550,9 +713,8 @@ namespace Nikita.DataAccess.Expression2Sql
             return null;
         }
 
-
         /// <summary>执行查询
-        /// 
+        ///
         /// </summary>
         /// <returns>返回第一行第一列值</returns>
         public long ToLong()
@@ -568,8 +730,9 @@ namespace Nikita.DataAccess.Expression2Sql
             }
             return 0;
         }
+
         /// <summary>执行增删改
-        /// 
+        ///
         /// </summary>
         /// <returns>执行成功返回True，否则返回失败</returns>
         public bool ToBool()
@@ -587,7 +750,7 @@ namespace Nikita.DataAccess.Expression2Sql
         }
 
         /// <summary>执行查询
-        /// 
+        ///
         /// </summary>
         /// <returns>返回表</returns>
         public DataTable ToDataTable()

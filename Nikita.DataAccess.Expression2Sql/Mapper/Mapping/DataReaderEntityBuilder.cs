@@ -7,11 +7,10 @@ using System.Reflection.Emit;
 namespace Nikita.DataAccess.Expression2Sql.Mapper
 {
     /// <summary>
-    /// ** 描述：DataReader实体生成 
+    /// ** 描述：DataReader实体生成
     /// </summary>
     public class DataReaderEntityBuilder<T>
     {
-
         private static readonly MethodInfo isDBNullMethod = typeof(IDataRecord).GetMethod("IsDBNull", new Type[] { typeof(int) });
 
         //default method
@@ -19,6 +18,7 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
 
         //dr valueType method
         private static readonly MethodInfo getBoolean = typeof(IDataRecord).GetMethod("GetBoolean", new Type[] { typeof(int) });
+
         private static readonly MethodInfo getByte = typeof(IDataRecord).GetMethod("GetByte", new Type[] { typeof(int) });
         private static readonly MethodInfo getDateTime = typeof(IDataRecord).GetMethod("GetDateTime", new Type[] { typeof(int) });
         private static readonly MethodInfo getDecimal = typeof(IDataRecord).GetMethod("GetDecimal", new Type[] { typeof(int) });
@@ -29,9 +29,10 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
         private static readonly MethodInfo getInt32 = typeof(IDataRecord).GetMethod("GetInt32", new Type[] { typeof(int) });
         private static readonly MethodInfo getInt64 = typeof(IDataRecord).GetMethod("GetInt64", new Type[] { typeof(int) });
         private static readonly MethodInfo getString = typeof(IDataRecord).GetMethod("GetString", new Type[] { typeof(int) });
-          
+
         //convert method
         private static readonly MethodInfo getConvertBoolean = typeof(DataRecordExtensions).GetMethod("GetConvertBoolean");
+
         private static readonly MethodInfo getConvertByte = typeof(DataRecordExtensions).GetMethod("GetConvertByte");
         private static readonly MethodInfo getConvertChar = typeof(DataRecordExtensions).GetMethod("GetConvertChar");
         private static readonly MethodInfo getConvertDateTime = typeof(DataRecordExtensions).GetMethod("GetConvertDateTime");
@@ -45,9 +46,6 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
         private static readonly MethodInfo getOtherNull = typeof(DataRecordExtensions).GetMethod("GetOtherNull");
         private static readonly MethodInfo getOther = typeof(DataRecordExtensions).GetMethod("GetOther");
 
-
-
-
         private delegate T Load(IDataRecord dataRecord);
 
         private Load handler;
@@ -56,9 +54,9 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
         {
             return handler(dataRecord);
         }
+
         public static DataReaderEntityBuilder<T> CreateBuilder(Type type, IDataRecord dataRecord)
         {
-
             {
                 DataReaderEntityBuilder<T> dynamicBuilder = new DataReaderEntityBuilder<T>();
                 DynamicMethod method = new DynamicMethod("DynamicCreateEntity", type,
@@ -75,7 +73,7 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                     if (propertyInfo != null && propertyInfo.GetSetMethod() != null)
                     {
                         bool isNullable = false;
-                        var underType =MappingUntilTool.GetUnderType(propertyInfo, ref isNullable);
+                        var underType = MappingUntilTool.GetUnderType(propertyInfo, ref isNullable);
 
                         generator.Emit(OpCodes.Ldarg_0);
                         generator.Emit(OpCodes.Ldc_I4, i);
@@ -96,7 +94,6 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
             }
         }
 
-
         private static void CheckType(List<string> errorTypes, string objType, string dbType, string field)
         {
             var isAny = errorTypes.Contains(objType);
@@ -105,7 +102,6 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                 throw new Exception(string.Format("{0} can't  convert {1} to {2}", field, dbType, objType));
             }
         }
-
 
         /// <summary>
         /// 动态获取IDataRecord里面的函数
@@ -134,7 +130,7 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
             {
                 typeName = "ENUMNAME";
             }
-            else if (dbTypeName.Contains("hierarchyid") || typeName == "byte[]"||objTypeName== "object")
+            else if (dbTypeName.Contains("hierarchyid") || typeName == "byte[]" || objTypeName == "object")
             {
                 generator.Emit(OpCodes.Call, getValueMethod);
                 generator.Emit(OpCodes.Unbox_Any, pro.PropertyType);//找不到类型才执行拆箱（类型转换）
@@ -180,12 +176,12 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                         var isNotShort = objTypeName != "int16" && objTypeName != "short";
                         method = isNotShort ? getOtherNull.MakeGenericMethod(type) : getConvertInt16;
                         break;
+
                     default:
                         method = getOtherNull.MakeGenericMethod(type); break;
                 }
 
                 generator.Emit(OpCodes.Call, method);
-
             }
             else
             {
@@ -227,6 +223,7 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                         var isNotShort = objTypeName != "int16" && objTypeName != "short";
                         method = isNotShort ? getOther.MakeGenericMethod(type) : getInt16;
                         break;
+
                     default: method = getOther.MakeGenericMethod(type); break;
                 }
 
@@ -237,9 +234,8 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                     generator.Emit(OpCodes.Unbox_Any, pro.PropertyType);//找不到类型才执行拆箱（类型转换）
                 }
             }
-
-
         }
+
         /// <summary>
         /// 将SqlType转成C#Type
         /// </summary>
@@ -253,84 +249,108 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                 case "int":
                     reval = "int";
                     break;
+
                 case "text":
                     reval = "string";
                     break;
+
                 case "bigint":
                     reval = "long";
                     break;
+
                 case "binary":
                     reval = "object";
                     break;
+
                 case "bit":
                     reval = "bool";
                     break;
+
                 case "char":
                     reval = "string";
                     break;
+
                 case "datetime":
                     reval = "dateTime";
                     break;
+
                 case "decimal":
                     reval = "decimal";
                     break;
+
                 case "float":
                     reval = "double";
                     break;
+
                 case "image":
                     reval = "byte[]";
                     break;
+
                 case "money":
                     reval = "decimal";
                     break;
+
                 case "nchar":
                     reval = "string";
                     break;
+
                 case "ntext":
                     reval = "string";
                     break;
+
                 case "numeric":
                     reval = "decimal";
                     break;
+
                 case "nvarchar":
                     reval = "string";
                     break;
+
                 case "real":
                     reval = "float";
                     break;
+
                 case "smalldatetime":
                     reval = "dateTime";
                     break;
+
                 case "smallint":
                     reval = "short";
                     break;
+
                 case "smallmoney":
                     reval = "decimal";
                     break;
+
                 case "timestamp":
                     reval = "dateTime";
                     break;
+
                 case "tinyint":
                     reval = "byte";
                     break;
+
                 case "uniqueidentifier":
                     reval = "guid";
                     break;
+
                 case "varbinary":
                     reval = "byte[]";
                     break;
+
                 case "varchar":
                     reval = "string";
                     break;
+
                 case "Variant":
                     reval = "object";
                     break;
+
                 default:
                     reval = "string";
                     break;
             }
             return reval;
         }
-
     }
 }

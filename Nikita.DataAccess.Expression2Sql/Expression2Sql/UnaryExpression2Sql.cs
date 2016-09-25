@@ -27,6 +27,7 @@ namespace Nikita.DataAccess.Expression2Sql
             Expression2SqlProvider.Max(expression.Operand, sqlBuilder);
             return sqlBuilder;
         }
+
         //protected override SqlBuilder Take(UnaryExpression expression, SqlBuilder sqlBuilder)
         //{
         //    Expression2SqlProvider.Take(expression, sqlBuilder);
@@ -43,12 +44,12 @@ namespace Nikita.DataAccess.Expression2Sql
             Expression2SqlProvider.OrderBy(expression.Operand, sqlBuilder);
             return sqlBuilder;
         }
+
         protected override SqlBuilder OrderByDesc(UnaryExpression expression, SqlBuilder sqlBuilder)
         {
             Expression2SqlProvider.OrderByDesc(expression.Operand, sqlBuilder);
             return sqlBuilder;
         }
-
 
         protected override SqlBuilder ThenByDesc(UnaryExpression expression, SqlBuilder sqlBuilder)
         {
@@ -56,13 +57,11 @@ namespace Nikita.DataAccess.Expression2Sql
             return sqlBuilder;
         }
 
-
-        protected override SqlBuilder ThenBy (UnaryExpression expression, SqlBuilder sqlBuilder)
+        protected override SqlBuilder ThenBy(UnaryExpression expression, SqlBuilder sqlBuilder)
         {
             Expression2SqlProvider.ThenBy(expression.Operand, sqlBuilder);
             return sqlBuilder;
         }
-
 
         protected override SqlBuilder Select(UnaryExpression expression, SqlBuilder sqlBuilder)
         {

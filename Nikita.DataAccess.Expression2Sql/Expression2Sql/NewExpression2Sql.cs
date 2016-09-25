@@ -17,8 +17,7 @@ namespace Nikita.DataAccess.Expression2Sql
         protected override SqlBuilder Insert(NewExpression expression, SqlBuilder sqlBuilder)
         {
             string columns = " (";
-            string values = " values (";
-
+            string values = " values ("; 
             for (int i = 0; i < expression.Members.Count; i++)
             {
                 MemberInfo m = expression.Members[i];

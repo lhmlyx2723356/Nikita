@@ -10,10 +10,17 @@ namespace Nikita.DataAccess.Expression2Sql
         private static readonly List<string> S_listEnglishWords = new List<string> { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
 
         private IDbSqlParser _dbSqlParser;
+
+        public IDbSqlParser SqlParser
+        {
+            get { return _dbSqlParser; }
+            set { _dbSqlParser = value; }
+        }
+
         private Dictionary<string, string> _dicTableName = new Dictionary<string, string>();
         private Queue<string> _queueEnglishWords = new Queue<string>(S_listEnglishWords);
         private StringBuilder _sqlBuilder;
-        public bool AllowAppendEmpty { get; set; } 
+        public bool AllowAppendEmpty { get; set; }
 
         internal SqlBuilder(IDbSqlParser dbSqlParser)
         {
@@ -108,7 +115,7 @@ namespace Nikita.DataAccess.Expression2Sql
             return this._sqlBuilder.ToString();
         }
 
-        internal string AddDbParameter(object dbParamValue, bool allowAutoAppend  )
+        internal string AddDbParameter(object dbParamValue, bool allowAutoAppend)
         {
             string dbParamName = "";
             if (dbParamValue == null || dbParamValue == DBNull.Value)
@@ -127,7 +134,7 @@ namespace Nikita.DataAccess.Expression2Sql
                     this._sqlBuilder.Append(" " + dbParamName);
                 }
                 else
-                { 
+                {
                     this._sqlBuilder.Append(dbParamName);
                 }
             }

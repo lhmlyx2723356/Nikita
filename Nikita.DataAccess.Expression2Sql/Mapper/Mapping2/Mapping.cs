@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Dynamic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Common;
+using System.Dynamic;
 
 namespace Nikita.DataAccess.Expression2Sql.Mapper
 {
-
     /// <summary>
     /// ORM映射类，从reader到模型
     /// </summary>
@@ -111,7 +105,6 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
                     newobj = Convert.ToInt32(obj);
                 }
                 return (T)newobj;
-
             }
         }
 

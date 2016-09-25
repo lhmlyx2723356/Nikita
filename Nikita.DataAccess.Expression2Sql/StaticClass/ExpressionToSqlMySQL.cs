@@ -1,16 +1,18 @@
-﻿using System;
+﻿using Nikita.Base.Define;
+using System;
 using System.Linq.Expressions;
-using Nikita.Base.Define;
 
 namespace Nikita.DataAccess.Expression2Sql
 {
     public class ExpressionToSqlMySQL : IExpressionToSql
     {
         private DbContext dbContext;
+
         public ExpressionToSqlMySQL(DbContext dbContext = null)
         {
             this.dbContext = dbContext;
         }
+
         public ExpressionToSql<T> Avg<T>(Expression<Func<T, object>> expression)
         {
             return CreateExpressionToSql<T>().Avg(expression);
@@ -29,6 +31,11 @@ namespace Nikita.DataAccess.Expression2Sql
         public ExpressionToSql<T> Insert<T>(Expression<Func<object>> expression)
         {
             return CreateExpressionToSql<T>().Insert(expression);
+        }
+
+        public ExpressionToSql<T> Insert<T>(T t)
+        {
+            return CreateExpressionToSql<T>().Insert(t);
         }
 
         public ExpressionToSql<T> Max<T>(Expression<Func<T, object>> expression)
@@ -91,7 +98,6 @@ namespace Nikita.DataAccess.Expression2Sql
             return CreateExpressionToSql<T>().Select(expression, blnWithNoLock);
         }
 
-
         public ExpressionToSql<T> Sum<T>(Expression<Func<T, object>> expression)
         {
             return CreateExpressionToSql<T>().Sum(expression);
@@ -102,9 +108,14 @@ namespace Nikita.DataAccess.Expression2Sql
             return CreateExpressionToSql<T>().Update(expression);
         }
 
+        public ExpressionToSql<T> Update<T>(T t)
+        {
+            return CreateExpressionToSql<T>().Update(t);
+        }
+
         private ExpressionToSql<T> CreateExpressionToSql<T>()
         {
-            return new ExpressionToSql<T>(SqlType.MySql,dbContext.ConnectionString);
+            return new ExpressionToSql<T>(SqlType.MySql, dbContext.ConnectionString);
         }
     }
 }

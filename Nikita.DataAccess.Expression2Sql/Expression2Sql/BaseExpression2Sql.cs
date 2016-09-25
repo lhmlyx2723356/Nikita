@@ -18,7 +18,6 @@ namespace Nikita.DataAccess.Expression2Sql
             return Count((T)expression, sqlBuilder);
         }
 
-
         //public SqlBuilder Take(Expression expression, SqlBuilder sqlBuilder)
         //{
         //    Debug();
@@ -48,6 +47,12 @@ namespace Nikita.DataAccess.Expression2Sql
             return Insert((T)expression, sqlBuilder);
         }
 
+        public SqlBuilder Insert<T>(T t)
+        {
+            Debug();
+            return Insert(t);
+        }
+
         public SqlBuilder Join(Expression expression, SqlBuilder sqlBuilder)
         {
             Debug();
@@ -71,22 +76,24 @@ namespace Nikita.DataAccess.Expression2Sql
             Debug();
             return OrderBy((T)expression, sqlBuilder);
         }
+
         public SqlBuilder OrderByDesc(Expression expression, SqlBuilder sqlBuilder)
         {
             Debug();
             return OrderByDesc((T)expression, sqlBuilder);
         }
+
         public SqlBuilder ThenByDesc(Expression expression, SqlBuilder sqlBuilder)
         {
             Debug();
             return ThenByDesc((T)expression, sqlBuilder);
         }
-        public SqlBuilder ThenBy (Expression expression, SqlBuilder sqlBuilder)
+
+        public SqlBuilder ThenBy(Expression expression, SqlBuilder sqlBuilder)
         {
             Debug();
             return ThenBy((T)expression, sqlBuilder);
         }
-
 
         public SqlBuilder Select(Expression expression, SqlBuilder sqlBuilder)
         {
@@ -146,6 +153,11 @@ namespace Nikita.DataAccess.Expression2Sql
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Insert method");
         }
 
+        protected virtual SqlBuilder Insert<T>()
+        {
+            throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Insert method");
+        }
+
         protected virtual SqlBuilder Join(T expression, SqlBuilder sqlBuilder)
         {
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Join method");
@@ -165,6 +177,7 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.OrderBy method");
         }
+
         protected virtual SqlBuilder OrderByDesc(T expression, SqlBuilder sqlBuilder)
         {
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.OrderByDesc method");
@@ -174,7 +187,8 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.ThenByDesc method");
         }
-        protected virtual SqlBuilder ThenBy (T expression, SqlBuilder sqlBuilder)
+
+        protected virtual SqlBuilder ThenBy(T expression, SqlBuilder sqlBuilder)
         {
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.ThenBy method");
         }
@@ -198,8 +212,6 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             throw new NotImplementedException("Unimplemented " + typeof(T).Name + "2Sql.Where method");
         }
-
-     
 
         private void Debug()
         {

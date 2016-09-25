@@ -54,10 +54,12 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             GetExpression2Sql(expression).OrderByDesc(expression, sqlBuilder);
         }
-        public static void ThenBy (Expression expression, SqlBuilder sqlBuilder)
+
+        public static void ThenBy(Expression expression, SqlBuilder sqlBuilder)
         {
             GetExpression2Sql(expression).ThenBy(expression, sqlBuilder);
         }
+
         public static void ThenByDesc(Expression expression, SqlBuilder sqlBuilder)
         {
             GetExpression2Sql(expression).ThenByDesc(expression, sqlBuilder);
@@ -82,6 +84,7 @@ namespace Nikita.DataAccess.Expression2Sql
         {
             GetExpression2Sql(expression).Where(expression, sqlBuilder);
         }
+
         //public static void Take(Expression expression, SqlBuilder sqlBuilder)
         //{
         //    GetExpression2Sql(expression).Take(expression, sqlBuilder);

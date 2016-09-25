@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Nikita.DataAccess.Expression2Sql.Mapper
 {
@@ -22,10 +18,12 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
         /// 为Ture时，整体插入时会忽略该字段，如自增
         /// </summary>
         public bool InsertIgnore { get; set; }
+
         /// <summary>
         /// 为Ture时，整体修改时会忽略该字段，如较大的字段
         /// </summary>
         public bool UpdateIgnore { get; set; }
+
         /// <summary>
         /// 为Ture时，说明该字段是主键，整体修改时用它作为修改条件
         /// </summary>
@@ -35,6 +33,5 @@ namespace Nikita.DataAccess.Expression2Sql.Mapper
         /// 为Ture时，说明该字段不对应表字段
         /// </summary>
         public bool Ignore { get; set; }
-
     }
 }
