@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\..\..\Nikita发布\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -56,23 +56,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nikita.Assist.WcfService\Nikita.Assist.WcfService.csproj">
+    <ProjectReference Include="..\..\..\..\Nikita.Assist.WcfService\Nikita.Assist.WcfService.csproj">
       <Project>{d82032c5-712d-4ab4-bd6f-092e1b23b201}</Project>
       <Name>Nikita.Assist.WcfService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nikita.Base.Aop\Nikita.Base.Aop.csproj">
+    <ProjectReference Include="..\..\..\..\Nikita.Base.Aop\Nikita.Base.Aop.csproj">
       <Project>{7e18fbf1-0b47-46ec-8b90-382cdd60366f}</Project>
       <Name>Nikita.Base.Aop</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
+    <ProjectReference Include="..\..\..\..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
       <Project>{a59d284c-0dbb-4ffb-972a-70bb761a7e76}</Project>
       <Name>Nikita.Base.ConnectionManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
+    <ProjectReference Include="..\..\..\..\Nikita.Base.Define\Nikita.Base.Define.csproj">
       <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
       <Name>Nikita.Base.Define</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nikita.Base.IDAL\Nikita.Base.IDAL.csproj">
+    <ProjectReference Include="..\..\..\..\Nikita.Base.IDAL\Nikita.Base.IDAL.csproj">
       <Project>{fc9e5c67-4c86-4cd0-be8c-5091820bb805}</Project>
       <Name>Nikita.Base.IDAL</Name>
     </ProjectReference>

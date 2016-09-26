@@ -32,7 +32,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Nikita发布\</OutputPath>
+    <OutputPath>..\..\..\..\..\Nikita发布\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -76,7 +76,9 @@
     <Compile Include="Forms\FrmBseDictionaryTreeDialog.designer.cs">
       <DependentUpon>FrmBseDictionaryTreeDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmBseDictionaryTreeQuery.cs" />
+    <Compile Include="Forms\FrmBseDictionaryTreeQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmBseDictionaryTreeQuery.Designer.cs">
       <DependentUpon>FrmBseDictionaryTreeQuery.cs</DependentUpon>
     </Compile>
@@ -86,7 +88,9 @@
     <Compile Include="Forms\FrmBseProjectMasterDetailDialog.designer.cs">
       <DependentUpon>FrmBseProjectMasterDetailDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmBseProjectMasterDetailQuery.cs" />
+    <Compile Include="Forms\FrmBseProjectMasterDetailQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmBseProjectMasterDetailQuery.Designer.cs">
       <DependentUpon>FrmBseProjectMasterDetailQuery.cs</DependentUpon>
     </Compile>
@@ -96,7 +100,9 @@
     <Compile Include="Forms\FrmBseProjectModuleMasterDetailDialog.Designer.cs">
       <DependentUpon>FrmBseProjectModuleMasterDetailDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmBseProjectModuleMasterDetailQuery.cs" />
+    <Compile Include="Forms\FrmBseProjectModuleMasterDetailQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmBseProjectModuleMasterDetailQuery.designer.cs">
       <DependentUpon>FrmBseProjectModuleMasterDetailQuery.cs</DependentUpon>
     </Compile>
@@ -106,11 +112,15 @@
     <Compile Include="Forms\FrmBseProjectSimpleDialog.designer.cs">
       <DependentUpon>FrmBseProjectSimpleDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmBseProjectSimpleQuery.cs" />
+    <Compile Include="Forms\FrmBseProjectSimpleQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmBseProjectSimpleQuery.Designer.cs">
       <DependentUpon>FrmBseProjectSimpleQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmBugCloseMenu.cs" />
+    <Compile Include="Forms\FrmBugCloseMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmBugCloseMenu.designer.cs">
       <DependentUpon>FrmBugCloseMenu.cs</DependentUpon>
     </Compile>
@@ -172,57 +182,53 @@
     <None Include="Document\BugClose.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Nikita.Base.CacheStore\Nikita.Base.CacheStore.csproj">
+    <ProjectReference Include="..\..\..\..\Nikita.Base.CacheStore\Nikita.Base.CacheStore.csproj">
       <Project>{71be6f6d-4843-4652-84ad-10646648cac7}</Project>
       <Name>Nikita.Base.CacheStore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
-      <Project>{A59D284C-0DBB-4FFB-972A-70BB761A7E76}</Project>
+    <ProjectReference Include="..\..\..\..\Nikita.Base.ConnectionManager\Nikita.Base.ConnectionManager.csproj">
+      <Project>{a59d284c-0dbb-4ffb-972a-70bb761a7e76}</Project>
       <Name>Nikita.Base.ConnectionManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nikita.Base.Define\Nikita.Base.Define.csproj">
+    <ProjectReference Include="..\..\..\..\Nikita.Base.Define\Nikita.Base.Define.csproj">
       <Project>{61337224-a7d7-4f94-a660-1a56308f6680}</Project>
       <Name>Nikita.Base.Define</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nikita.Base.IDAL\Nikita.Base.IDAL.csproj">
-      <Project>{fc9e5c67-4c86-4cd0-be8c-5091820bb805}</Project>
-      <Name>Nikita.Base.IDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nikita.Base.Services\Nikita.Base.Services.csproj">
+    <ProjectReference Include="..\..\..\..\Nikita.Base.Services\Nikita.Base.Services.csproj">
       <Project>{978a6591-bbe0-4475-8318-416ea7a07d65}</Project>
       <Name>Nikita.Base.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Nikita.WinForm.DockingPanel\ThemeVS2003.csproj">
+      <Project>{719f0f69-66da-438d-b5bb-2d883ef4ace2}</Project>
+      <Name>ThemeVS2003</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Nikita.WinForm.DockingPanel\ThemeVS2005Multithreading.csproj">
+      <Project>{01b09009-bd30-47f2-b318-4b583d606c61}</Project>
+      <Name>ThemeVS2005Multithreading</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Nikita.WinForm.DockingPanel\ThemeVS2012.csproj">
+      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
+      <Name>ThemeVS2012</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Nikita.WinForm.DockingPanel\ThemeVS2013.csproj">
+      <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
+      <Name>ThemeVS2013</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Nikita.WinForm.DockingPanel\WinFormsUI.csproj">
+      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Nikita.Base.IDAL\Nikita.Base.IDAL.csproj">
+      <Project>{fc9e5c67-4c86-4cd0-be8c-5091820bb805}</Project>
+      <Name>Nikita.Base.IDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Nikita.Core\Nikita.Core.csproj">
       <Project>{a939c25e-8300-48ca-ad10-48755c95fed8}</Project>
       <Name>Nikita.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nikita.Platform.BugClose.DAL\Nikita.Platform.BugClose.DAL.csproj">
-      <Project>{8ccbe846-df17-4b14-88c5-563f6debddac}</Project>
-      <Name>Nikita.Platform.BugClose.DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Nikita.Platform.BugClose.Model\Nikita.Platform.BugClose.Model.csproj">
       <Project>{f0d06987-d107-4d60-9653-9869b6f5639e}</Project>
       <Name>Nikita.Platform.BugClose.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2003.csproj">
-      <Project>{719f0f69-66da-438d-b5bb-2d883ef4ace2}</Project>
-      <Name>ThemeVS2003</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2005Multithreading.csproj">
-      <Project>{01b09009-bd30-47f2-b318-4b583d606c61}</Project>
-      <Name>ThemeVS2005Multithreading</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2012.csproj">
-      <Project>{4ed4fdb5-9fd0-49e6-876d-1635f727c755}</Project>
-      <Name>ThemeVS2012</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\ThemeVS2013.csproj">
-      <Project>{245e07f6-10d5-4cfa-b003-0deb06b223da}</Project>
-      <Name>ThemeVS2013</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Nikita.WinForm.DockingPanel\WinFormsUI.csproj">
-      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
-      <Name>WinFormsUI</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Nikita.WinForm.ExtendControl\Nikita.WinForm.ExtendControl.csproj">
       <Project>{db3e8dd9-36c0-4163-b01f-04f09c23738a}</Project>

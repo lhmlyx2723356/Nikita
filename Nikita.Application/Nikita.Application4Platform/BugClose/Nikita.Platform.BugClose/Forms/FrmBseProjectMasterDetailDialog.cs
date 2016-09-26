@@ -505,7 +505,7 @@ namespace Nikita.Platform.BugClose
         /// </summary>
         private void DoInitMasterData()
         {
-            const string strBindEditSql = "SELECT   Name,value FROM [BseDictionary] WHERE ParentID=19;SELECT   Name,value FROM [BseDictionary] WHERE ParentID=22;SELECT 'cboEditCategory ','cboEditOnLevel '";
+            const string strBindEditSql = "SELECT   Name,value FROM [BseDictionary] WHERE ParentID=19;SELECT Name,value FROM [BseDictionary] WHERE ParentID=22;SELECT 'cboEditCategory ','cboEditOnLevel '";
             BindClass bindClass = new BindClass()
             {
                 SqlType = SqlType.SqlServer,
